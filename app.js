@@ -320,7 +320,8 @@ let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false
 function scoreColor(v){const hue=v*1.2;return `hsl(${hue},70%,72%)`;}
 function revColor(v){return `hsl(${205-v*150},72%,${68-v*22}%)`;} // low: light blue, high: deep red
 function initMap(){
-  map=L.map("leaflet-map",{maxZoom:19,zoomSnap:0.5}).setView([51.515,-0.11],12);
+  map=L.map("leaflet-map",{maxZoom:19,zoomSnap:0.5,zoomControl:false}).setView([51.515,-0.11],12);
+  L.control.zoom({position:"topright"}).addTo(map);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:19}).addTo(map);
   map.on("zoomend",()=>{
     const z=map.getZoom();

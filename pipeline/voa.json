@@ -94,5 +94,45 @@
  "Richmond upon Thames": {
   "retail_rv_m2": 263.0,
   "office_rv_m2": 223.0
+ },
+ "Barking and Dagenham": {
+  "retail_rv_m2": 149.0,
+  "office_rv_m2": 121.0
+ },
+ "Brentwood": {
+  "retail_rv_m2": 168.0,
+  "office_rv_m2": 166.0
+ },
+ "Croydon": {
+  "retail_rv_m2": 172.0,
+  "office_rv_m2": 154.0
+ },
+ "Enfield": {
+  "retail_rv_m2": 178.0,
+  "office_rv_m2": 127.0
+ },
+ "Epping Forest": {
+  "retail_rv_m2": 180.0,
+  "office_rv_m2": 119.0
+ },
+ "Harrow": {
+  "retail_rv_m2": 185.0,
+  "office_rv_m2": 140.0
+ },
+ "Havering": {
+  "retail_rv_m2": 159.0,
+  "office_rv_m2": 141.0
+ },
+ "Hillingdon": {
+  "retail_rv_m2": 185.0,
+  "office_rv_m2": 192.0
+ },
+ "Three Rivers": {
+  "retail_rv_m2": 180.0,
+  "office_rv_m2": 146.0
+ },
+ "Watford": {
+  "retail_rv_m2": 191.0,
+  "office_rv_m2": 137.0
  }
 }

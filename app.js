@@ -587,7 +587,7 @@ function renderMethod(){
     <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records inside the covered segments (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
     <p>Resolution: real buildings and coordinates; the revenue colour is modelled. A coloured unit is not a vacant unit - check availability with agents.</p></div>
   <div class="m-card"><h4>Coverage</h4>
-    <p>${SEGS.length} named street segments across TfL Zones 1-3, chosen as recognisable commercial pitches, plus ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded inside them. It is not yet every street in London: the data pipeline (station flows, POI counts, census LSOA joins, street-level crime) scales to more segments as they are added.</p>
+    <p>${SEGS.length} segments covering all of London: ${SEGS.filter(s=>s.stype!=="transport_hub"||!s.name.endsWith("station area")).length} curated commercial pitches plus ${SEGS.filter(s=>s.stype==="transport_hub"&&s.name.endsWith("station area")).length} station catchments - every Greater London TfL station with 1.5M+ annual entries/exits (Zones 1-9) - plus ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded inside them. Town centres served only by National Rail (no TfL station) are not covered yet: there is no public flow series for them.</p>
     <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>`;
 }
 

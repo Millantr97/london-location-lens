@@ -301,10 +301,10 @@ function renderRankings(ranked){
       <div class="rank-num">${i+1}</div>
       <div class="rank-name">${s.name}<span class="sub">${s.zone} · ${s.borough}</span></div>
       <div class="cell"><span class="scorepill">${Math.round(r.score)}</span></div>
-      <div class="cell"><span class="v">${Math.round(r.crit.demand.score)}</span><span class="k">Demand@hours</span></div>
-      <div class="cell opt"><span class="v">${Math.round(r.crit.opportunity.score)}</span><span class="k">Opportunity</span></div>
-      <div class="cell opt"><span class="v">${Math.round(r.crit.rent.score)}</span><span class="k">Rent fit</span></div>
-      <div class="cell opt"><span class="v">${Math.round(r.crit.access.score)}</span><span class="k">Access</span></div>
+      <div class="cell"><span class="v">${Math.round(r.crit.demand.score*100)}</span><span class="k">Demand@hours</span></div>
+      <div class="cell opt"><span class="v">${Math.round(r.crit.opportunity.score*100)}</span><span class="k">Opportunity</span></div>
+      <div class="cell opt"><span class="v">${Math.round(r.crit.rent.score*100)}</span><span class="k">Rent fit</span></div>
+      <div class="cell opt"><span class="v">${Math.round(r.crit.access.score*100)}</span><span class="k">Access</span></div>
     </div>`;
   }).join("");
   document.querySelectorAll("[data-sel]").forEach(el=>el.onclick=()=>selectSegment(el.dataset.sel,true));

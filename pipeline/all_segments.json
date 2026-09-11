@@ -916,5 +916,230 @@
   "lat": 51.4395,
   "lng": -0.053,
   "stype": "high_street"
+ },
+ {
+  "id": "goodge-street",
+  "name": "Goodge Street, Fitzrovia",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.5205,
+  "lng": -0.1347,
+  "stype": "high_street"
+ },
+ {
+  "id": "berwick-street",
+  "name": "Berwick Street, Soho",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5135,
+  "lng": -0.1355,
+  "stype": "side_street"
+ },
+ {
+  "id": "south-molton",
+  "name": "South Molton Street, Mayfair",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5138,
+  "lng": -0.1488,
+  "stype": "side_street"
+ },
+ {
+  "id": "elizabeth-street",
+  "name": "Elizabeth Street, Belgravia",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.4927,
+  "lng": -0.1523,
+  "stype": "side_street"
+ },
+ {
+  "id": "pavilion-road",
+  "name": "Pavilion Road, Chelsea",
+  "borough": "Kensington and Chelsea",
+  "zone": "Zone 1",
+  "lat": 51.4925,
+  "lng": -0.156,
+  "stype": "side_street"
+ },
+ {
+  "id": "hatton-garden",
+  "name": "Hatton Garden, Clerkenwell",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.5227,
+  "lng": -0.1084,
+  "stype": "side_street"
+ },
+ {
+  "id": "whitecross-street",
+  "name": "Whitecross Street Market, Barbican",
+  "borough": "Islington",
+  "zone": "Zone 1",
+  "lat": 51.5236,
+  "lng": -0.0925,
+  "stype": "market"
+ },
+ {
+  "id": "drury-lane",
+  "name": "Drury Lane, Covent Garden",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5142,
+  "lng": -0.1227,
+  "stype": "high_street"
+ },
+ {
+  "id": "tooley-street",
+  "name": "Tooley Street, London Bridge",
+  "borough": "Southwark",
+  "zone": "Zone 1",
+  "lat": 51.5046,
+  "lng": -0.0835,
+  "stype": "high_street"
+ },
+ {
+  "id": "bankside",
+  "name": "Bankside, Southwark",
+  "borough": "Southwark",
+  "zone": "Zone 1",
+  "lat": 51.5081,
+  "lng": -0.0976,
+  "stype": "side_street"
+ },
+ {
+  "id": "st-katharine-docks",
+  "name": "St Katharine Docks",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 1",
+  "lat": 51.5072,
+  "lng": -0.0727,
+  "stype": "managed_estate"
+ },
+ {
+  "id": "connaught-village",
+  "name": "Connaught Village, Bayswater",
+  "borough": "Westminster",
+  "zone": "Zone 2",
+  "lat": 51.5142,
+  "lng": -0.1635,
+  "stype": "side_street"
+ },
+ {
+  "id": "essex-road",
+  "name": "Essex Road, Canonbury",
+  "borough": "Islington",
+  "zone": "Zone 2",
+  "lat": 51.5358,
+  "lng": -0.096,
+  "stype": "high_street"
+ },
+ {
+  "id": "east-dulwich",
+  "name": "Lordship Lane, East Dulwich",
+  "borough": "Southwark",
+  "zone": "Zones 2/3",
+  "lat": 51.4538,
+  "lng": -0.0637,
+  "stype": "high_street"
+ },
+ {
+  "id": "munster-road",
+  "name": "Munster Village, Fulham",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.4805,
+  "lng": -0.1965,
+  "stype": "side_street"
+ },
+ {
+  "id": "brook-green",
+  "name": "Brook Green, Hammersmith",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.496,
+  "lng": -0.217,
+  "stype": "side_street"
+ },
+ {
+  "id": "goldhawk-road",
+  "name": "Goldhawk Road, Shepherd's Bush",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.503,
+  "lng": -0.223,
+  "stype": "high_street"
+ },
+ {
+  "id": "ravenscourt-park",
+  "name": "Ravenscourt Park",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.4942,
+  "lng": -0.2356,
+  "stype": "side_street"
+ },
+ {
+  "id": "de-beauvoir",
+  "name": "De Beauvoir Town, Dalston",
+  "borough": "Hackney",
+  "zone": "Zone 2",
+  "lat": 51.541,
+  "lng": -0.0775,
+  "stype": "side_street"
+ },
+ {
+  "id": "clapton",
+  "name": "Upper Clapton Road",
+  "borough": "Hackney",
+  "zone": "Zones 2/3",
+  "lat": 51.555,
+  "lng": -0.056,
+  "stype": "high_street"
+ },
+ {
+  "id": "chamberlayne-road",
+  "name": "Chamberlayne Road, Kensal Rise",
+  "borough": "Brent",
+  "zone": "Zone 2",
+  "lat": 51.534,
+  "lng": -0.215,
+  "stype": "high_street"
+ },
+ {
+  "id": "maiden-vale",
+  "name": "Elgin Avenue, Maida Vale",
+  "borough": "Westminster",
+  "zone": "Zone 2",
+  "lat": 51.525,
+  "lng": -0.186,
+  "stype": "side_street"
+ },
+ {
+  "id": "stockwell",
+  "name": "Clapham Road, Stockwell",
+  "borough": "Lambeth",
+  "zone": "Zone 2",
+  "lat": 51.4725,
+  "lng": -0.1225,
+  "stype": "high_street"
+ },
+ {
+  "id": "abbeville-road",
+  "name": "Abbeville Road, Clapham",
+  "borough": "Lambeth",
+  "zone": "Zone 2",
+  "lat": 51.458,
+  "lng": -0.14,
+  "stype": "side_street"
+ },
+ {
+  "id": "colliers-wood",
+  "name": "High Street, Colliers Wood",
+  "borough": "Merton",
+  "zone": "Zone 3",
+  "lat": 51.418,
+  "lng": -0.1755,
+  "stype": "high_street"
  }
 ]

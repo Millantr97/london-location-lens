@@ -316,12 +316,17 @@ function renderWindows(){
 }
 
 /* ---------- map ---------- */
-let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false;
+let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false,unitsAuto=false;
 function scoreColor(v){const hue=v*1.2;return `hsl(${hue},70%,72%)`;}
 function revColor(v){return `hsl(${205-v*150},72%,${68-v*22}%)`;} // low: light blue, high: deep red
 function initMap(){
-  map=L.map("leaflet-map").setView([51.515,-0.11],12);
-  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:'Tiles &copy; Esri - Esri, DeLorme, NAVTEQ · Data &copy; OpenStreetMap contributors',maxZoom:16}).addTo(map);
+  map=L.map("leaflet-map",{maxZoom:19,zoomSnap:0.5}).setView([51.515,-0.11],12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:19}).addTo(map);
+  map.on("zoomend",()=>{
+    const z=map.getZoom();
+    if(z>=15&&!unitsOn){unitsOn=true;unitsAuto=true;renderMapControls();update();}
+    else if(z<14&&unitsAuto&&unitsOn){unitsOn=false;unitsAuto=false;renderMapControls();update();}
+  });
   SEGS.forEach(s=>{
     const m=L.marker([s.lat,s.lng],{icon:L.divIcon({className:"leaflet-div-icon",html:`<div class="pin" style="background:#ddd"><span>·</span></div>`,iconSize:[26,26],iconAnchor:[13,26]})}).addTo(map);
     m.on("click",()=>selectSegment(s.id));
@@ -390,7 +395,8 @@ function paintUnits(ranked){
   const t=v=>hi>lo?(Math.log10(1+v)-lo)/(hi-lo):0.5;
   UNITS.forEach((u,i)=>{
     const rv=rvs[i];
-    const m=L.circleMarker([u[0],u[1]],{renderer:canvasRenderer,radius:3.5,weight:0,fillColor:revColor(t(rv)),fillOpacity:0.55});
+    const rad=map.getZoom()>=16?5:3.5;
+    const m=L.circleMarker([u[0],u[1]],{renderer:canvasRenderer,radius:rad,weight:0,fillColor:revColor(t(rv)),fillOpacity:0.6});
     m.on("click",()=>{
       const catName=UNITCATS[u[2]].replace("_"," ");
       L.popup().setLatLng([u[0],u[1]]).setContent( // eslint ok
@@ -406,7 +412,8 @@ function paintUnits(ranked){
 let rankedCache=[];
 function renderRankings(ranked){
   rankedCache=ranked;
-  $("rank-list").innerHTML=ranked.map((r,i)=>{
+  $("ranking-sub").textContent=`The 20 best-matching street segments out of ${ranked.length}, sorted by overall fit for the current concept. The map still shows every segment.`;
+  $("rank-list").innerHTML=ranked.slice(0,20).map((r,i)=>{
     const s=r.seg;
     return `<div class="rank-row" data-sel="${s.id}">
       <div class="rank-num">${i+1}</div>
@@ -580,7 +587,8 @@ function renderMapControls(){
     <button class="mc ${unitsOn?'on':''}" id="mc-units" title="Every real commercial unit from OpenStreetMap inside the covered segments, coloured by estimated monthly revenue for your concept">Every unit (${UNITS.length.toLocaleString("en-GB")})</button>`;
   $("mc-fit").onclick=()=>{mapMetric="fit";renderMapControls();update();};
   $("mc-rev").onclick=()=>{mapMetric="rev";renderMapControls();update();};
-  $("mc-units").onclick=()=>{unitsOn=!unitsOn;renderMapControls();update();};
+  $("mc-units").onclick=()=>{unitsOn=!unitsOn;unitsAuto=false;renderMapControls();update();};
 }
 
+$("seg-count").textContent=SEGS.length;
 renderPresets(); renderConcept(); renderMethod(); initMap(); renderMapControls(); update();

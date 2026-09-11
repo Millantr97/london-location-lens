@@ -118,3 +118,5 @@ h1,h2,h3{letter-spacing:-.03em}
 .cell .v.rev{font-weight:700}
 @media(max-width:640px){.cell .k{font-size:9px}}
 .leaflet-popup-content .chip{font-size:9px}
+.hero-cta{display:inline-block;margin-top:18px;background:var(--ink);color:var(--lime);font-weight:850;text-decoration:none;padding:12px 20px;border-radius:12px;font-size:15px}
+.hero-cta:hover{background:#1e3a30}

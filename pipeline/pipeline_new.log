@@ -1,0 +1,53 @@
+mapped all 127
+goodge-street {'code': 'E01000851', 'name': 'Camden 026B'}
+berwick-street {'code': 'E01035716', 'name': 'Westminster 013G'}
+south-molton {'code': 'E01035716', 'name': 'Westminster 013G'}
+elizabeth-street {'code': 'E01004687', 'name': 'Westminster 019A'}
+pavilion-road {'code': 'E01002902', 'name': 'Kensington and Chelsea 018D'}
+hatton-garden {'code': 'E01002724', 'name': 'Islington 022D'}
+whitecross-street {'code': 'E01002704', 'name': 'Islington 023D'}
+drury-lane {'code': 'E01004735', 'name': 'Westminster 018B'}
+tooley-street {'code': 'E01033884', 'name': 'Southwark 035A'}
+bankside {'code': 'E01003935', 'name': 'Southwark 002D'}
+st-katharine-docks {'code': 'E01004293', 'name': 'Tower Hamlets 027B'}
+connaught-village {'code': 'E01004680', 'name': 'Westminster 015A'}
+essex-road {'code': 'E01002800', 'name': 'Islington 018E'}
+east-dulwich {'code': 'E01004015', 'name': 'Southwark 028C'}
+munster-road {'code': 'E01001880', 'name': 'Hammersmith and Fulham 017A'}
+brook-green {'code': 'E01001869', 'name': 'Hammersmith and Fulham 010D'}
+goldhawk-road {'code': 'E01001857', 'name': 'Hammersmith and Fulham 007D'}
+ravenscourt-park {'code': 'E01001932', 'name': 'Hammersmith and Fulham 011C'}
+de-beauvoir {'code': 'E01001750', 'name': 'Hackney 031D'}
+clapton {'code': 'E01033703', 'name': 'Hackney 010F'}
+chamberlayne-road {'code': 'E01000582', 'name': 'Brent 032C'}
+maiden-vale {'code': 'E01035715', 'name': 'Westminster 007H'}
+stockwell {'code': 'E01003126', 'name': 'Lambeth 008D'}
+abbeville-road {'code': 'E01003033', 'name': 'Lambeth 019E'}
+colliers-wood {'code': 'E01034580', 'name': 'Merton 005F'}
+LSOA DONE
+goodge-street {'shoplifting': 601, 'theft_person': 693, 'robbery_biz': 109, 'burglary_biz': 157}
+berwick-street {'shoplifting': 1755, 'theft_person': 6162, 'robbery_biz': 740, 'burglary_biz': 228}
+south-molton {'shoplifting': 1530, 'theft_person': 1570, 'robbery_biz': 185, 'burglary_biz': 135}
+elizabeth-street {'shoplifting': 134, 'theft_person': 261, 'robbery_biz': 43, 'burglary_biz': 45}
+pavilion-road {'shoplifting': 299, 'theft_person': 216, 'robbery_biz': 37, 'burglary_biz': 47}
+hatton-garden {'shoplifting': 484, 'theft_person': 349, 'robbery_biz': 102, 'burglary_biz': 112}
+whitecross-street {'shoplifting': 557, 'theft_person': 279, 'robbery_biz': 90, 'burglary_biz': 113}
+drury-lane {'shoplifting': 895, 'theft_person': 1207, 'robbery_biz': 168, 'burglary_biz': 176}
+tooley-street {'shoplifting': 115, 'theft_person': 673, 'robbery_biz': 103, 'burglary_biz': 78}
+bankside {'shoplifting': 20, 'theft_person': 288, 'robbery_biz': 43, 'burglary_biz': 30}
+st-katharine-docks {'shoplifting': 52, 'theft_person': 93, 'robbery_biz': 27, 'burglary_biz': 54}
+connaught-village {'shoplifting': 289, 'theft_person': 504, 'robbery_biz': 180, 'burglary_biz': 72}
+essex-road {'shoplifting': 25, 'theft_person': 116, 'robbery_biz': 26, 'burglary_biz': 50}
+east-dulwich {'shoplifting': 7, 'theft_person': 4, 'robbery_biz': 4, 'burglary_biz': 16}
+munster-road {'shoplifting': 247, 'theft_person': 46, 'robbery_biz': 36, 'burglary_biz': 76}
+brook-green {'shoplifting': 15, 'theft_person': 10, 'robbery_biz': 10, 'burglary_biz': 52}
+goldhawk-road {'shoplifting': 353, 'theft_person': 137, 'robbery_biz': 97, 'burglary_biz': 75}
+ravenscourt-park {'shoplifting': 251, 'theft_person': 30, 'robbery_biz': 19, 'burglary_biz': 51}
+de-beauvoir {'shoplifting': 10, 'theft_person': 194, 'robbery_biz': 51, 'burglary_biz': 40}
+clapton {'shoplifting': 81, 'theft_person': 97, 'robbery_biz': 36, 'burglary_biz': 66}
+chamberlayne-road {'shoplifting': 23, 'theft_person': 38, 'robbery_biz': 17, 'burglary_biz': 39}
+maiden-vale {'shoplifting': 3, 'theft_person': 18, 'robbery_biz': 14, 'burglary_biz': 77}
+stockwell {'shoplifting': 38, 'theft_person': 107, 'robbery_biz': 58, 'burglary_biz': 33}
+abbeville-road {'shoplifting': 6, 'theft_person': 30, 'robbery_biz': 33, 'burglary_biz': 19}
+colliers-wood {'shoplifting': 116, 'theft_person': 14, 'robbery_biz': 14, 'burglary_biz': 17}
+CRIME DONE

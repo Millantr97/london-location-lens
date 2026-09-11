@@ -876,13 +876,11 @@ selectSegment=function(id,scroll){
   head.parentNode.insertBefore(actions,head.nextSibling);
   $("dp-fav").onclick=()=>toggleFavourite(id);$("dp-compare").onclick=()=>toggleCompare(id);$("dp-report").onclick=()=>openSlideReport(id);
   if(r){
-    const vt=verdictText(r),shareTxt=vt+" - London Location Lens: https://millantr97.github.io/london-location-lens/";
+    const vt=verdictText(r),shareTxt="Check the conclusion of my investment in https://millantr97.github.io/london-location-lens/#expert";
     const v=document.createElement("div");v.className="verdict-line";
-    v.innerHTML=`<div class="vt">"${vt}"</div><div class="vbtns"><button class="vbtn" id="v-copy">Copy verdict</button><a class="vbtn" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(shareTxt)}">WhatsApp</a><a class="vbtn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTxt)}">Post on X</a></div>`;
+    v.innerHTML=`<div class="vt">"${vt}"</div><div class="vbtns"><a class="vbtn" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(shareTxt)}">WhatsApp</a><a class="vbtn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTxt)}">Post on X</a></div>`;
     const why=dp.querySelector(".dp-why");
     if(why)why.parentNode.insertBefore(v,why.nextSibling);else actions.parentNode.insertBefore(v,actions.nextSibling);
-    $("v-copy").onclick=()=>{const done=()=>{const b=$("v-copy");b.textContent="Copied";b.classList.add("vcopied");setTimeout(()=>{b.textContent="Copy verdict";b.classList.remove("vcopied");},1600);};
-      if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(shareTxt).then(done,done);else done();};
     const cmp=comparablesFor(r);
     if(cmp){
       const card=document.createElement("div");card.className="ev-card";

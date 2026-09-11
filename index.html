@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
 <header class="top">
@@ -122,30 +122,32 @@
   <div class="section-head feature-head premium-feature-head">
     <div class="feature-number">02</div><div>
     <div class="eyebrow">Premium tools</div>
-    <h2>The decision toolkit <span class="premium-pill">PREMIUM</span></h2>
+    <h2>The decision toolkit</h2>
     <p>Built for subscribers - free to preview while the subscription goes live. Three tools that turn the map into a decision.</p>
     <div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div></div>
   </div>
   <div class="premium-grid">
-    <div class="tool-card prem-card"><h3>What's missing here <span class="premium-pill">PREMIUM</span></h3>
-      <p class="tool-copy">Pick a street or area; see which concepts are underserved there - high demand at their hours, few rivals recorded.</p>
-      <select id="gap-seg" class="prem-select"></select>
-      <button id="gap-run" class="action primary">Find the gaps</button>
+    <div class="tool-card prem-card gap-tool"><div class="tool-kicker"><span>01</span> Opportunity finder</div><h3>What's missing here?</h3>
+      <p class="tool-copy">Choose a street to uncover concepts with strong demand at the right hours and little recorded competition.</p>
+      <label class="prem-field"><span>Street or area</span><select id="gap-seg" class="prem-select"></select></label>
+      <button id="gap-run" class="action primary tool-run">Find underserved concepts <span>→</span></button>
+      <div class="tool-promise"><b>You will get</b><span>8 ranked concepts with demand, local supply and an opportunity score.</span></div>
       <div id="gap-results" class="prem-results"></div>
     </div>
-    <div class="tool-card prem-card"><h3>I already have premises <span class="premium-pill">PREMIUM</span></h3>
-      <p class="tool-copy">Inverse mode: enter your address, unit size and rent - get the best concepts for that exact spot.</p>
-      <input id="inv-addr" class="prem-input" placeholder="Address or street, e.g. 114 Curtain Road">
-      <div class="prem-2col"><input id="inv-size" class="prem-input" type="number" value="70" min="10" step="5" title="Size m²"><input id="inv-rent" class="prem-input" type="number" value="600" min="50" step="10" title="Rent £/m²/yr"></div>
-      <div class="prem-2col-labels"><span>size m²</span><span>rent £/m²/yr</span></div>
-      <select id="inv-seg" class="prem-select" title="Fallback street if the address is not found"></select>
-      <button id="inv-run" class="action primary">Rank concepts for it</button>
+    <div class="tool-card prem-card premises-tool"><div class="tool-kicker"><span>02</span> Premises-first analysis</div><h3>I already have premises</h3>
+      <p class="tool-copy">Start with the site you have. Add its address, size and rent to rank the concepts that fit it best.</p>
+      <label class="prem-field"><span>Address</span><input id="inv-addr" class="prem-input" placeholder="e.g. 114 Curtain Road, London"></label>
+      <div class="prem-2col"><label class="prem-field"><span>Size</span><div class="input-unit"><input id="inv-size" class="prem-input" type="number" value="70" min="10" step="5"><i>m²</i></div></label><label class="prem-field"><span>Annual rent</span><div class="input-unit"><input id="inv-rent" class="prem-input" type="number" value="600" min="50" step="10"><i>£/m²</i></div></label></div>
+      <label class="prem-field prem-fallback"><span>Fallback street if the address cannot be found</span><select id="inv-seg" class="prem-select"></select></label>
+      <button id="inv-run" class="action primary tool-run">Rank the best concepts <span>→</span></button>
+      <div class="tool-promise"><b>You will get</b><span>10 concepts ranked by fit, modelled revenue and strongest reason.</span></div>
       <div id="inv-results" class="prem-results"></div>
     </div>
-    <div class="tool-card prem-card"><h3>Stress test <span class="premium-pill">PREMIUM</span></h3>
-      <p class="tool-copy">What happens to your revenue if footfall drops 20%, or a strong competitor opens next door - on the concept you are currently building.</p>
-      <select id="stress-seg" class="prem-select"></select>
-      <button id="stress-run" class="action primary">Run the stress test</button>
+    <div class="tool-card prem-card stress-tool"><div class="tool-kicker"><span>03</span> Downside planner</div><h3>Stress-test the plan</h3>
+      <p class="tool-copy">See how your current concept holds up if footfall falls 20%, a strong competitor opens nearby, or both happen together.</p>
+      <label class="prem-field"><span>Street to test</span><select id="stress-seg" class="prem-select"></select></label>
+      <button id="stress-run" class="action primary tool-run">Run downside scenarios <span>→</span></button>
+      <div class="tool-promise"><b>You will get</b><span>Base case and three downside scenarios with revenue impact.</span></div>
       <div id="stress-results" class="prem-results"></div>
     </div>
   </div>

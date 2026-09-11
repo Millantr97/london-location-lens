@@ -274,7 +274,7 @@ let map,markers={};
 function scoreColor(v){const hue=v*1.2;return `hsl(${hue},70%,72%)`;}
 function initMap(){
   map=L.map("leaflet-map").setView([51.515,-0.11],12);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{attribution:'&copy; OpenStreetMap contributors &copy; CARTO',maxZoom:19}).addTo(map);
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:'Tiles &copy; Esri - Esri, DeLorme, NAVTEQ · Data &copy; OpenStreetMap contributors',maxZoom:16}).addTo(map);
   SEGS.forEach(s=>{
     const m=L.marker([s.lat,s.lng],{icon:L.divIcon({className:"leaflet-div-icon",html:`<div class="pin" style="background:#ddd"><span>·</span></div>`,iconSize:[26,26],iconAnchor:[13,26]})}).addTo(map);
     m.on("click",()=>selectSegment(s.id));

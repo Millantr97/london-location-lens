@@ -1,6 +1,6 @@
 /* ---------- tab navigation ---------- */
 (function(){
-  const NAMES=["concept","detail","trends","premium","shortlist","expert"];
+  const NAMES=["concept","detail","trends","opportunity","method","rankings","expert"];
   let current="concept";
   window.activateTab=function(name,opts){
     if(NAMES.indexOf(name)<0)name="concept";
@@ -27,7 +27,7 @@
     activateTab("concept",{scroll:false});
     const c=document.getElementById("concept");if(c)c.scrollIntoView({behavior:"smooth",block:"start"});
   });
-  document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>{const target=b.dataset.goto;if(target==="map"||target==="rankings"){activateTab("concept",{scroll:false});setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:"smooth",block:"start"}),50);}else activateTab(target);}));
+  document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>{const target=b.dataset.goto;if(target==="map"||target==="top20"){activateTab("concept",{scroll:false});setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:"smooth",block:"start"}),50);}else activateTab(target);}));
   // selecting a street with intent to view (rank row, shortlist, gap finder) opens the Street tab
   const _sel=selectSegment;
   selectSegment=function(id,scroll){

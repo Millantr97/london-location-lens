@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=22">
+<link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
 <header class="top">
@@ -17,8 +17,9 @@
       <a href="#concept" data-tab="concept" class="on">Concept</a>
       <a href="#detail" data-tab="detail">Street</a>
       <a href="#trends" data-tab="trends">Trends</a>
-      <a href="#premium" data-tab="premium">Premium</a>
-      <a href="#shortlist" data-tab="shortlist">Workspace &amp; Method</a>
+      <a href="#opportunity" data-tab="opportunity">Opportunity</a>
+      <a href="#method" data-tab="method">Method</a>
+      <a href="#rankings" data-tab="rankings">Rankings</a>
       <a href="#expert" data-tab="expert" class="expert-tab">Expert help</a>
     </nav>
   </div>
@@ -60,7 +61,7 @@
   </div>
 </section>
 
-<section class="rankings-wrap tab-panel on" data-panel="concept" id="rankings">
+<section class="rankings-wrap tab-panel on" data-panel="concept" id="top20">
   <div class="section-head">
     <div class="eyebrow">Step 3</div>
     <h2>Top 20 streets for your concept</h2>
@@ -73,25 +74,26 @@
   <div class="detail-empty" id="detail-empty">
     <div class="de-title">No street open yet</div>
     <p>Select a segment on the map or in the top-20 table to open its full evidence panel: demand at your hours, named competitors, rent context, crime, revenue range and the slide report.</p>
-    <div class="de-btns"><button class="action primary" data-goto="map">Open the map</button><button class="action" data-goto="rankings">See the top 20</button></div>
+    <div class="de-btns"><button class="action primary" data-goto="map">Open the map</button><button class="action" data-goto="top20">See the top 20</button></div>
   </div>
   <div class="detail-panel" id="detail-panel" hidden></div>
+  <div class="workspace-block">
+    <div class="section-head">
+      <div class="eyebrow">Your workspace · saved on this device</div>
+      <h2>Shortlist, compare, track changes</h2>
+      <p>Save streets as favourites, compare up to three side by side, and see what changed in the published data since your last visit. Everything stays on this device.</p>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card"><h3>Favourites <span id="fav-count" class="count-badge">0</span></h3><div id="fav-list" class="saved-list"></div></div>
+      <div class="tool-card"><h3>Compare streets <span id="compare-count" class="count-badge">0/3</span></h3><div id="compare-list" class="saved-list"></div><button id="open-compare" class="action primary" disabled>Compare side by side</button></div>
+      <div class="tool-card"><h3>Change alerts</h3><p class="tool-copy">Favourites are checked against the latest published dataset whenever you return. If a competitor count, flow anchor or modelled score changes, you will see exactly what changed here.</p><div id="alert-list" class="saved-list"></div><p class="micro">ON-VISIT CHECK · A server is required for email or push alerts while this page is closed.</p></div>
+    </div>
+    <div id="compare-panel" class="compare-panel" hidden></div>
+  </div>
 </section>
 
 
-<section class="tools-wrap tab-panel" data-panel="shortlist" id="shortlist">
-  <div class="section-head">
-    <div class="eyebrow">Decision workspace</div>
-    <h2>Your shortlist</h2>
-    <p>Save streets, compare up to three side by side, and open the full slide report for any street. Everything stays on this device.</p>
-  </div>
-  <div class="tool-grid">
-    <div class="tool-card"><h3>Favourites <span id="fav-count" class="count-badge">0</span></h3><div id="fav-list" class="saved-list"></div></div>
-    <div class="tool-card"><h3>Compare streets <span id="compare-count" class="count-badge">0/3</span></h3><div id="compare-list" class="saved-list"></div><button id="open-compare" class="action primary" disabled>Compare side by side</button></div>
-    <div class="tool-card"><h3>Change alerts</h3><p class="tool-copy">Favourites are checked against the latest published dataset whenever you return. If a competitor count, flow anchor or modelled score changes, you will see exactly what changed here.</p><div id="alert-list" class="saved-list"></div><p class="micro">ON-VISIT CHECK · A server is required for email or push alerts while this page is closed.</p></div>
-  </div>
-  <div id="compare-panel" class="compare-panel" hidden></div>
-  <div class="workspace-divider"><span>How the model works</span></div>
+<section class="tools-wrap tab-panel" data-panel="method" id="method">
   <div class="section-head method-head">
     <div class="eyebrow">Sources &amp; transparency</div>
     <h2>Method, sources and limits</h2>
@@ -118,10 +120,10 @@
   <div class="trend-note">Honest labels: the venue series counts <b>every recorded venue in the concept's category</b> (all cafés, all restaurants...) in the OpenStreetMap extract history - mapper coverage grows over time, so some of the rise is better mapping, not just more openings; it is OBSERVED data with that caveat. The search series is Google Trends interest for a matching keyword, an ESTIMATED index of attention, not shops or sales. Concept-level shop counts per year are not published by any open source at this granularity - where a figure is not available, the row says so instead of guessing.</div>
 </section>
 
-<section class="tools-wrap tab-panel" data-panel="premium" id="premium">
+<section class="tools-wrap tab-panel" data-panel="opportunity" id="opportunity">
   <div class="section-head feature-head premium-feature-head">
     <div class="feature-number">02</div><div>
-    <div class="eyebrow">Premium tools</div>
+    <div class="eyebrow">Opportunity tools</div>
     <h2>The decision toolkit</h2>
     <p>Built for subscribers - free to preview while the subscription goes live. Three tools that turn the map into a decision.</p>
     <div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div></div>
@@ -152,6 +154,48 @@
     </div>
   </div>
 </section>
+
+<section class="tools-wrap tab-panel" data-panel="rankings" id="rankings">
+  <div class="section-head feature-head">
+    <div class="feature-number">03</div><div>
+    <div class="eyebrow">Rankings &amp; guides</div>
+    <h2>London, ranked by the model</h2>
+    <p>Data-driven rankings built with the same engine as the map: real station flows, recorded competition, Census context and transparent modelled revenue. Every figure keeps its honesty label.</p></div>
+  </div>
+  <div class="article-grid" id="article-grid"><a class="article-card" href="articles/london-fastest-growing-concepts-2026.html">
+      <span class="art-kick">Trends</span>
+      <h3>London's fastest-growing hospitality and retail concepts (2017-2026 data)</h3>
+      <p>Recorded venues 2017-2026 and search interest 2021-2026: coworking, gyms, matcha and pilates rise; pubs stay flat.</p>
+      <span class="art-go">Read the ranking →</span>
+    </a><a class="article-card" href="articles/best-streets-coffee-shop-london.html">
+      <span class="art-kick">Coffee</span>
+      <h3>The 10 best streets to open a coffee shop in London (2026 data)</h3>
+      <p>No. 1: Ladywell station area (Lewisham), fit 66/100. Plus nine more streets, with modelled revenue, real flows and competition counts.</p>
+      <span class="art-go">Read the ranking →</span>
+    </a><a class="article-card" href="articles/best-streets-cocktail-bar-london.html">
+      <span class="art-kick">Bars</span>
+      <h3>The 10 best streets to open a cocktail bar in London (2026 data)</h3>
+      <p>No. 1: St Johns station area (Lewisham), fit 78/100. Plus nine more streets, with modelled revenue, real flows and competition counts.</p>
+      <span class="art-go">Read the ranking →</span>
+    </a><a class="article-card" href="articles/best-streets-bakery-london.html">
+      <span class="art-kick">Bakery</span>
+      <h3>The 10 best streets to open a bakery in London (2026 data)</h3>
+      <p>No. 1: Sloane Street (Brompton Road, Knightsbridge) (Kensington and Chelsea), fit 70/100. Plus nine more streets, with modelled revenue, real flows and competition counts.</p>
+      <span class="art-go">Read the ranking →</span>
+    </a><a class="article-card" href="articles/best-streets-gym-london.html">
+      <span class="art-kick">Fitness</span>
+      <h3>The 10 best streets to open a gym or fitness studio in London (2026 data)</h3>
+      <p>No. 1: Ladywell station area (Lewisham), fit 77/100. Plus nine more streets, with modelled revenue, real flows and competition counts.</p>
+      <span class="art-go">Read the ranking →</span>
+    </a><a class="article-card" href="articles/best-streets-restaurant-london.html">
+      <span class="art-kick">Restaurants</span>
+      <h3>The 10 best streets to open a restaurant in London (2026 data)</h3>
+      <p>No. 1: Surrey Quays (Southwark), fit 71/100. Plus nine more streets, with modelled revenue, real flows and competition counts.</p>
+      <span class="art-go">Read the ranking →</span>
+    </a></div>
+  <div class="trend-note">Each ranking is one fixed concept run through the published model over 2,480 London street segments. Scores and revenues are MODELLED planning estimates; station flows and venue counts are OBSERVED at named sources; residents, rents and crime are AREA CONTEXT. Use a ranking to shortlist, then walk the street.</div>
+</section>
+
 
 <section class="expert-wrap tab-panel" data-panel="expert" id="expert">
   <div class="expert-shell">
@@ -186,18 +230,18 @@
 </main>
 
 <footer class="foot">
-  <div>London Location Lens · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="#expert" data-expert>Expert geomarketing</a><a href="privacy.html">Privacy Notice</a></div>
+  <div>London Location Lens · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="#rankings" data-goto="rankings">Rankings &amp; guides</a><a href="#expert" data-expert>Expert geomarketing</a><a href="privacy.html">Privacy Notice</a></div>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="segments.js?v=13"></script>
 <script src="units.js?v=13"></script>
 <script src="competitors.js?v=13"></script>
-<script src="app.js?v=21"></script>
+<script src="app.js?v=22"></script>
 <script src="report.js?v=19"></script>
 <script src="trends.js?v=18"></script>
-<script src="extras.js?v=19"></script>
-<script src="tabs.js?v=21"></script>
-<script src="leads.js?v=19"></script>
+<script src="extras.js?v=20"></script>
+<script src="tabs.js?v=22"></script>
+<script src="leads.js?v=20"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* ---------- tab navigation ---------- */
 (function(){
-  const NAMES=["concept","map","rankings","detail","trends","premium","shortlist","expert","method"];
+  const NAMES=["concept","detail","trends","premium","shortlist","expert","method"];
   let current="concept";
   window.activateTab=function(name,opts){
     if(NAMES.indexOf(name)<0)name="concept";
@@ -9,7 +9,7 @@
     document.querySelectorAll("[data-panel]").forEach(el=>el.classList.toggle("on",el.dataset.panel===name));
     document.querySelectorAll("#tabbar [data-tab]").forEach(a=>a.classList.toggle("on",a.dataset.tab===name));
     if(("#"+name)!==location.hash){try{history.replaceState(null,"","#"+name);}catch(e){}}
-    if(name==="map"){setTimeout(()=>{try{if(typeof map!=="undefined"&&map&&map.invalidateSize)map.invalidateSize();}catch(e){}},90);}
+    if(name==="concept"){setTimeout(()=>{try{if(typeof map!=="undefined"&&map&&map.invalidateSize)map.invalidateSize();}catch(e){}},90);}
     if(opts.scroll!==false)window.scrollTo({top:0,behavior:"auto"});
   };
   document.querySelectorAll("#tabbar [data-tab]").forEach(a=>{
@@ -27,7 +27,7 @@
     activateTab("concept",{scroll:false});
     const c=document.getElementById("concept");if(c)c.scrollIntoView({behavior:"smooth",block:"start"});
   });
-  document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>activateTab(b.dataset.goto)));
+  document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>{const target=b.dataset.goto;if(target==="map"||target==="rankings"){activateTab("concept",{scroll:false});setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:"smooth",block:"start"}),50);}else activateTab(target);}));
   // selecting a street with intent to view (rank row, shortlist, gap finder) opens the Street tab
   const _sel=selectSegment;
   selectSegment=function(id,scroll){

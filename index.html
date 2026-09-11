@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=19">
+<link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
 <header class="top">
@@ -15,8 +15,6 @@
     <div class="brand">London <span>Location Lens</span></div>
     <nav class="tabs" id="tabbar" aria-label="Sections">
       <a href="#concept" data-tab="concept" class="on">Concept</a>
-      <a href="#map" data-tab="map">Map</a>
-      <a href="#rankings" data-tab="rankings">Top 20</a>
       <a href="#detail" data-tab="detail">Street</a>
       <a href="#trends" data-tab="trends">Trends</a>
       <a href="#premium" data-tab="premium">Premium</a>
@@ -51,7 +49,7 @@
   <div class="concept-grid" id="concept-grid"></div>
 </section>
 
-<section class="map-first tab-panel" data-panel="map" id="map">
+<section class="map-first tab-panel on" data-panel="concept" id="map">
   <div class="section-head">
     <div class="eyebrow">Step 2</div>
     <h2>The map answers back</h2>
@@ -63,7 +61,7 @@
   </div>
 </section>
 
-<section class="rankings-wrap tab-panel" data-panel="rankings" id="rankings">
+<section class="rankings-wrap tab-panel on" data-panel="concept" id="rankings">
   <div class="section-head">
     <div class="eyebrow">Step 3</div>
     <h2>Top 20 streets for your concept</h2>
@@ -195,7 +193,7 @@
 <script src="report.js?v=19"></script>
 <script src="trends.js?v=18"></script>
 <script src="extras.js?v=19"></script>
-<script src="tabs.js?v=19"></script>
+<script src="tabs.js?v=20"></script>
 <script src="leads.js?v=19"></script>
 </body>
 </html>

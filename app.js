@@ -12,7 +12,7 @@ const DAYPARTS=[
 ];
 const AUDIENCES=[
   ["office","Office workers"],["residents","Local residents"],["young","Young professionals (20-39)"],
-  ["students","Students"],["tourists","Tourists & visitors"],["nightlife","Nightlife crowd"],["families","Families"],
+  ["students","Students"],["tourists","Tourists & visitors"],["nightlife","Nightlife crowd"],["families","Families"],["intl","International communities"],
 ];
 
 const PRESETS=[
@@ -58,10 +58,56 @@ const PRESETS=[
  {id:"flex-workspace",name:"Flexible workspace",cat:"cowork",ticket:35,seats:120,floorspace:400,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:true,
   audience:{office:5,residents:2,young:3,students:1,tourists:0,nightlife:0,families:0},rent:650,
   windows:[{days:[0,1,2,3,4],from:480,to:1080}]},
- {id:"dessert",name:"Dessert & bubble tea",cat:"cafe",ticket:8,seats:20,floorspace:60,takeaway:60,delivery:20,alcohol:false,terrace:false,franchise:false,
+ {id:"dessert",name:"Dessert & bubble tea",cat:"cafe",ticket:8,seats:20,floorspace:60,delivery:20,takeaway:60,alcohol:false,terrace:false,franchise:false,
   audience:{office:1,residents:3,young:4,students:5,tourists:3,nightlife:3,families:2},rent:600,
   windows:[{days:[0,1,2,3,4,5,6],from:720,to:1320}]},
+ {id:"burger",name:"Smashed burgers",cat:"fast_food",ticket:14,seats:30,floorspace:90,takeaway:50,delivery:25,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:3,young:4,students:4,tourists:2,nightlife:3,families:1,intl:2},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:690,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1350}]},
+ {id:"ramen",name:"Ramen & noodle bar",cat:"restaurant",ticket:18,seats:34,floorspace:80,takeaway:20,delivery:10,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:2,young:5,students:4,tourists:3,nightlife:2,families:0,intl:3},rent:650,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1350}]},
+ {id:"poke",name:"Poke & healthy bowls",cat:"fast_food",ticket:13,seats:14,floorspace:60,takeaway:65,delivery:30,alcohol:false,terrace:false,franchise:false,
+  audience:{office:5,residents:2,young:4,students:2,tourists:1,nightlife:0,families:0,intl:1},rent:650,
+  windows:[{days:[0,1,2,3,4],from:630,to:930}]},
+ {id:"gelato",name:"Gelato & ice cream",cat:"cafe",ticket:7,seats:16,floorspace:55,takeaway:80,delivery:5,alcohol:false,terrace:true,franchise:false,family:true,
+  audience:{office:1,residents:3,young:3,students:3,tourists:4,nightlife:1,families:5,intl:1},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:660,to:1140}]},
+ {id:"taproom",name:"Craft beer taproom",cat:"pub_bar",ticket:24,seats:50,floorspace:120,takeaway:0,delivery:0,alcohol:true,terrace:true,franchise:false,
+  audience:{office:3,residents:3,young:5,students:1,tourists:2,nightlife:4,families:0,intl:1},rent:600,
+  windows:[{days:[2,3,4,5,6],from:960,to:1410}]},
+ {id:"wineshop",name:"Wine shop & tasting room",cat:"grocery",ticket:26,seats:10,floorspace:65,takeaway:85,delivery:5,alcohol:true,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:3,students:0,tourists:2,nightlife:1,families:2,intl:1},rent:500,
+  windows:[{days:[1,2,3,4,5],from:600,to:1200}]},
+ {id:"allday-breakfast",name:"All-day breakfast cafe",cat:"cafe",ticket:11,seats:40,floorspace:90,takeaway:25,delivery:5,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:5,young:3,students:1,tourists:2,nightlife:0,families:3,intl:1},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:420,to:960}]},
+ {id:"yoga",name:"Yoga & Pilates studio",cat:"fitness",ticket:18,seats:18,floorspace:110,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:4,young:5,students:1,tourists:0,nightlife:0,families:2,intl:0},rent:550,
+  windows:[{days:[0,1,2,3,4],from:390,to:540},{days:[0,1,2,3,4],from:1050,to:1230},{days:[5,6],from:540,to:720}]},
+ {id:"budget-gym",name:"24/7 budget gym",cat:"fitness",ticket:20,seats:120,floorspace:450,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:true,
+  audience:{office:3,residents:5,young:4,students:4,tourists:0,nightlife:1,families:1,intl:1},rent:350,
+  windows:[{days:[0,1,2,3,4,5,6],from:360,to:1440}]},
+ {id:"kebab",name:"Kebab & late-night grill",cat:"fast_food",ticket:10,seats:18,floorspace:70,takeaway:70,delivery:20,alcohol:false,terrace:false,franchise:false,
+  audience:{office:1,residents:3,young:3,students:3,tourists:1,nightlife:5,families:0,intl:2},rent:450,
+  windows:[{days:[0,1,2,3,4,5,6],from:1020,to:1560}]},
 ];
+
+/* neutral starting point for "start from scratch" - fully manual concept */
+const SCRATCH={id:"scratch",name:"My concept",cat:"cafe",ticket:12,seats:30,floorspace:70,takeaway:30,delivery:10,
+ alcohol:false,terrace:false,franchise:false,family:false,compStance:0,
+ audience:{office:3,residents:3,young:3,students:1,tourists:1,nightlife:0,families:2,intl:1},rent:600,
+ priorities:{rent:3,access:3,safety:3,green:3,residential:3},
+ windows:[{days:[0,1,2,3,4],from:480,to:1080}]};
+
+/* fill defaults for fields older presets do not set */
+function normalizeConcept(c){
+  c.priorities=Object.assign({rent:3,access:3,safety:3,green:3,residential:3},c.priorities||{});
+  c.compStance=c.compStance??0;
+  c.family=c.family??false;
+  AUDIENCES.forEach(([k])=>{c.audience[k]=c.audience[k]??0;});
+  return c;
+}
 
 const $=id=>document.getElementById(id);
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -76,7 +122,7 @@ function estRates(s,c){ // business rates proxy: unit RV ~ est rent; SBRR 2025-2
 }
 
 /* ---------- concept state ---------- */
-let concept=JSON.parse(JSON.stringify(PRESETS[0]));
+let concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS[0])));
 let activePreset=PRESETS[0].id;
 
 /* ---------- precomputation over baked segments ---------- */
@@ -94,6 +140,8 @@ const nNightV=logNorm(SEGS.map(s=>s.osm.pub_bar));const nNight=s=>nNightV(s.osm.
 const nParksV=norm(SEGS.map(s=>s.osm.parks_600));const nParks=s=>nParksV(s.osm.parks_600);
 const nCoworkV=logNorm(SEGS.map(s=>s.osm.cowork));const nCowork=s=>nCoworkV(s.osm.cowork);
 const nFamiliesV=norm(SEGS.map(s=>s.lsoa.pct_under20*0.6+s.osm.parks_600*8));const nFamilies=s=>nFamiliesV(s.lsoa.pct_under20*0.6+s.osm.parks_600*8);
+const nDivV=norm(SEGS.map(s=>s.lsoa.diversity));const nDiv=s=>nDivV(s.lsoa.diversity);
+const nNonUKV=norm(SEGS.map(s=>s.lsoa.pct_nonuk));const nNonUK=s=>nNonUKV(s.lsoa.pct_nonuk);
 const nSpendV=norm(SEGS.map(s=>s.model.spend_est));const nSpend=s=>nSpendV(s.model.spend_est);
 const nCrimeV=norm(SEGS.map(s=>s.crime.per1000));const nCrime=s=>nCrimeV(s.crime.per1000);
 const CATNORM={};
@@ -111,6 +159,7 @@ function audienceSupply(s){
     tourists:clamp(0.6*nCulture(s)+0.4*s.flow.weekend_ratio_norm,0,1),
     nightlife:clamp(0.55*nNight(s)+0.45*s.flow.fri_sat_norm,0,1),
     families:nFamilies(s),
+    intl:clamp(0.5*nDiv(s)+0.5*nNonUK(s),0,1),
   };
 }
 
@@ -133,7 +182,8 @@ const allDemand=s=>windowDemand(s,concept);
 /* scoring */
 function scoreSegment(s,c){
   const sup=audienceSupply(s);
-  const aw=c.audience, awSum=Object.values(aw).reduce((a,b)=>a+b,0);
+  const aw={...c.audience}; if(c.family)aw.families=Math.min(10,(aw.families||0)+3); // family-friendly focus counts families extra
+  const awSum=Object.values(aw).reduce((a,b)=>a+b,0);
   const audFit=awSum?Object.keys(aw).reduce((acc,k)=>acc+aw[k]*sup[k],0)/awSum:0.5;
 
   const demandRaw=allDemand(s);
@@ -170,11 +220,18 @@ function scoreSegment(s,c){
     access:{score:access,w:0.07,label:"Transport access",how:"obs"},
     safety:{score:safety,w:0.02,label:"Business crime (inverse)",how:"ctx"},
     green:{score:green,w:0.01,label:"Green space",how:"obs"},
+    residential:{score:nResidents(s),w:0.05,label:"Residential base",how:"ctx"},
   };
   // weight tweaks from concept attributes
   if(c.delivery>30){crit.audience.w+=0.04;crit.demand.w-=0.04;}
   if(c.alcohol){crit.format.w+=0.03;crit.safety.w+=0.01;crit.green.w-=0.01;crit.access.w-=0.03;}
   if(c.terrace){crit.green.w+=0.03;crit.demand.w-=0.03;}
+  if(c.family){crit.safety.w+=0.02;crit.green.w+=0.02;crit.demand.w-=0.02;crit.access.w-=0.02;}
+  // user-set priorities rescale the weights (3 = standard, 0 = ignore, 5 = dominate)
+  const pr=c.priorities||{};
+  crit.rent.w*=(pr.rent??3)/3; crit.access.w*=(pr.access??3)/3;
+  crit.safety.w*=(pr.safety??3)/3; crit.green.w*=(pr.green??3)/3;
+  crit.residential.w*=(pr.residential??3)/3;
   return crit;
 }
 
@@ -196,7 +253,8 @@ function revenueFor(s,c){
   const people=weeklyFlowAbs(s)*cover;
   const comp=1/(1+R.dil*(s.osm[c.cat]||0));
   const sup=audienceSupply(s);
-  const aw=c.audience,awSum=Object.values(aw).reduce((a,b)=>a+b,0);
+  const aw={...c.audience}; if(c.family)aw.families=Math.min(10,(aw.families||0)+3);
+  const awSum=Object.values(aw).reduce((a,b)=>a+b,0);
   const audFit=awSum?Object.keys(aw).reduce((acc,k)=>acc+aw[k]*sup[k],0)/awSum:0.5;
   const aud=0.5+audFit;
   let month,weekTrans,members,capped=false;
@@ -227,7 +285,9 @@ function computeAll(c){
     crit.demand.score=nDem(raws[i]);
     // opportunity: demand tempered by saturation
     const compN=catN(c.cat,s.osm[c.cat]);
-    crit.opportunity.score=clamp(nDem(raws[i])*(1-0.65*compN)+0.15*(1-compN),0,1);
+    const stance=(c.compStance||0)/100; // 0 = avoid rivals, 1 = proven clusters attract you
+    const pen=0.65-0.85*stance; // penalty on saturated areas flips to a mild cluster bonus
+    crit.opportunity.score=clamp(nDem(raws[i])*(1-pen*compN)+0.15*(1-stance)*(1-compN),0,1);
     let wsum=0,acc=0;
     for(const k in crit){acc+=crit[k].score*crit[k].w;wsum+=crit[k].w;}
     return {seg:s,crit,score:100*acc/wsum,rev:revenueFor(s,c)};
@@ -242,9 +302,11 @@ function chipFor(how){
 }
 
 function renderPresets(){
-  $("preset-row").innerHTML=PRESETS.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("");
+  $("preset-row").innerHTML=PRESETS.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
+    +`<button class="preset scratch ${activePreset==='scratch'?'active':''}" data-p="scratch">Start from scratch - no template</button>`;
   document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{
-    activePreset=b.dataset.p; concept=JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===activePreset)));
+    activePreset=b.dataset.p;
+    concept=normalizeConcept(JSON.parse(JSON.stringify(activePreset==="scratch"?SCRATCH:PRESETS.find(p=>p.id===activePreset))));
     renderPresets(); renderConcept(); update();
   });
 }
@@ -253,13 +315,20 @@ function sliderField(label,key,min,max,step,fmtf){
   return `<div class="field"><label>${label}<b id="v-${key}">${fmtf(concept[key])}</b></label>
   <input type="range" min="${min}" max="${max}" step="${step}" value="${concept[key]}" data-k="${key}"></div>`;
 }
+function prioField(label,key){
+  return `<div class="field"><label>${label}<b id="vp-${key}">${concept.priorities[key]}</b></label>
+  <input type="range" min="0" max="5" step="1" value="${concept.priorities[key]}" data-pr="${key}"></div>`;
+}
 
 function renderConcept(){
   const c=concept;
   const audRows=AUDIENCES.map(([k,label])=>`
     <div class="aud-row"><span>${label}</span><input type="range" min="0" max="5" step="1" value="${c.audience[k]}" data-aud="${k}"><span class="val" id="av-${k}">${c.audience[k]}</span></div>`).join("");
+  const cats=[["cafe","Cafe / coffee"],["restaurant","Restaurant"],["fast_food","Fast food"],["pub_bar","Pub / bar"],["grocery","Grocery & food retail"],["fitness","Fitness"],["cowork","Coworking"]];
   $("concept-grid").innerHTML=`
   <div class="cg-card"><h3>Format &amp; offer</h3>
+    <div class="field"><label>Concept name</label><input type="text" id="c-name" value="${(c.name||"").replace(/"/g,"&quot;")}" maxlength="60"></div>
+    <div class="field"><label>Category</label><select id="c-cat">${cats.map(([k,l])=>`<option value="${k}" ${c.cat===k?"selected":""}>${l}</option>`).join("")}</select></div>
     ${sliderField("Average ticket (per person)","ticket",3,120,1,money)}
     ${sliderField("Seats / capacity","seats",0,200,2,v=>v)}
     ${sliderField("Floorspace (m²)","floorspace",15,400,5,v=>v+" m²")}
@@ -269,6 +338,7 @@ function renderConcept(){
       <span class="tog ${c.alcohol?'on':''}" data-tog="alcohol">Alcohol licence</span>
       <span class="tog ${c.terrace?'on':''}" data-tog="terrace">Outdoor terrace</span>
       <span class="tog ${c.franchise?'on':''}" data-tog="franchise">Franchise / chain format</span>
+      <span class="tog ${c.family?'on':''}" data-tog="family">Family-friendly focus</span>
     </div>
   </div>
   <div class="cg-card"><h3>Opening windows <span style="font-weight:500;color:var(--muted);font-size:12px">exact days and hours</span></h3>
@@ -281,12 +351,26 @@ function renderConcept(){
   <div class="cg-card"><h3>Money</h3>
     ${sliderField("Rent tolerance (rateable-value proxy, £/m²/yr)","rent",100,1500,25,v=>money(v)+"/m²")}
     <p style="font-size:12px;color:var(--muted)">Compared with the borough's VOA retail rateable value per m²${chipFor("ctx")} - a proxy for occupancy cost, not a quote for a specific unit.</p>
+  </div>
+  <div class="cg-card"><h3>Priorities &amp; competition <span style="font-weight:500;color:var(--muted);font-size:12px">3 = standard, 0 = ignore, 5 = dominate</span></h3>
+    ${sliderField("Competition stance: avoid rivals (0) - seek proven clusters (100)","compStance",0,100,5,v=>v)}
+    ${prioField("Low rent matters","rent")}
+    ${prioField("Transport access matters","access")}
+    ${prioField("Low business crime matters","safety")}
+    ${prioField("Green space matters","green")}
+    ${prioField("Strong residential base matters","residential")}
+    <p style="font-size:12px;color:var(--muted)">These re-weight the criteria in the score. Stance flips existing rivals from a penalty into a cluster bonus - useful for categories that trade better next to competitors.</p>
   </div>`;
   document.querySelectorAll("[data-k]").forEach(el=>el.oninput=()=>{
     concept[el.dataset.k]=+el.value;
-    const f={ticket:money,rent:v=>money(v)+"/m²",floorspace:v=>v+" m²",takeaway:v=>v+"%",delivery:v=>v+"%",seats:v=>v}[el.dataset.k]||(v=>v);
+    const f={ticket:money,rent:v=>money(v)+"/m²",floorspace:v=>v+" m²",takeaway:v=>v+"%",delivery:v=>v+"%",seats:v=>v,compStance:v=>v}[el.dataset.k]||(v=>v);
     $("v-"+el.dataset.k).textContent=f(+el.value); update();
   });
+  document.querySelectorAll("[data-pr]").forEach(el=>el.oninput=()=>{
+    concept.priorities[el.dataset.pr]=+el.value; $("vp-"+el.dataset.pr).textContent=el.value; update();
+  });
+  $("c-name").oninput=e=>{concept.name=e.target.value; update();};
+  $("c-cat").onchange=e=>{concept.cat=e.target.value; update();};
   document.querySelectorAll("[data-tog]").forEach(el=>el.onclick=()=>{
     concept[el.dataset.tog]=!concept[el.dataset.tog]; el.classList.toggle("on"); update();
   });

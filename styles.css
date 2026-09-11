@@ -124,3 +124,6 @@ h1,h2,h3{letter-spacing:-.03em}
 .chainb{display:inline-block;background:#eef2ff;color:#4f46e5;border-radius:4px;font-size:10px;padding:0 4px;margin-right:2px;}
 .street{cursor:pointer;}
 .street:hover{background:#f3f6fb;border-radius:6px;}
+
+.field input[type=text],.field select{width:100%;font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:#fff}
+.preset.scratch{border-style:dashed;border-width:2px;font-weight:850}

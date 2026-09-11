@@ -9,7 +9,7 @@
     document.querySelectorAll("[data-panel]").forEach(el=>el.classList.toggle("on",el.dataset.panel===name));
     document.querySelectorAll("#tabbar [data-tab]").forEach(a=>a.classList.toggle("on",a.dataset.tab===name));
     if(("#"+name)!==location.hash){try{history.replaceState(null,"","#"+name);}catch(e){}}
-    if(name==="map"&&window.map){setTimeout(()=>{try{map.invalidateSize();}catch(e){}},90);}
+    if(name==="map"){setTimeout(()=>{try{if(typeof map!=="undefined"&&map&&map.invalidateSize)map.invalidateSize();}catch(e){}},90);}
     if(opts.scroll!==false)window.scrollTo({top:0,behavior:"auto"});
   };
   document.querySelectorAll("#tabbar [data-tab]").forEach(a=>{
@@ -39,7 +39,7 @@
     }
   };
   // map marker click: small summary popup with a door into the evidence panel
-  if(window.L&&window.markers){
+  if(typeof L!=="undefined"&&typeof markers!=="undefined"){
     Object.keys(markers).forEach(id=>{
       markers[id].on("click",()=>{
         setTimeout(()=>{

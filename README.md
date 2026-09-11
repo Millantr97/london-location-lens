@@ -23,3 +23,11 @@ Segment definitions: `pipeline/segments_def.py` (new) and `pipeline/existing_def
 - Crime: data.police.uk street-level (Met Police), ~450 m around anchor
 - Occupancy cost: VOA NDR business floorspace 2023 (borough rateable value per m2); passing rent is modelled
 - Revenue: modelled - rules and constants documented in the site's Method section
+
+
+## Decision workspace
+
+- Favourites and a two-to-three street comparator persist locally in the browser.
+- Each street evidence panel can export a labelled PDF report.
+- On-visit change alerts compare saved snapshots when a newer published dataset loads. Background email or push alerts require a backend.
+- The available-premises connector intentionally contains no copied portal inventory. Current portal terms were reviewed: public listing pages are not a lawful reusable feed. Connect an agent-owned feed or licensed syndication API before populating it.

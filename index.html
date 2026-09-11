@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 <header class="top">
@@ -16,6 +16,7 @@
     <a href="#concept">Concept</a>
     <a href="#map">Map</a>
     <a href="#rankings">Top 20</a>
+    <a href="#shortlist">Shortlist</a>
     <a href="#method">Method</a>
   </nav>
 </header>
@@ -69,6 +70,34 @@
   <div class="detail-panel" id="detail-panel" hidden></div>
 </section>
 
+
+<section class="tools-wrap" id="shortlist">
+  <div class="section-head">
+    <div class="eyebrow">Decision workspace</div>
+    <h2>Your shortlist</h2>
+    <p>Save streets, compare up to three side by side, and export a street report. Everything stays on this device.</p>
+  </div>
+  <div class="tool-grid">
+    <div class="tool-card"><h3>Favourites <span id="fav-count" class="count-badge">0</span></h3><div id="fav-list" class="saved-list"></div></div>
+    <div class="tool-card"><h3>Compare streets <span id="compare-count" class="count-badge">0/3</span></h3><div id="compare-list" class="saved-list"></div><button id="open-compare" class="action primary" disabled>Compare side by side</button></div>
+    <div class="tool-card"><h3>Change alerts</h3><p class="tool-copy">Favourites are checked against the latest published dataset whenever you return. If a competitor count, flow anchor or modelled score changes, you will see exactly what changed here.</p><div id="alert-list" class="saved-list"></div><p class="micro">ON-VISIT CHECK · A server is required for email or push alerts while this page is closed.</p></div>
+  </div>
+  <div id="compare-panel" class="compare-panel" hidden></div>
+</section>
+
+<section class="tools-wrap" id="available-premises">
+  <div class="section-head">
+    <div class="eyebrow">Available premises</div>
+    <h2>Live units, when the source permits reuse</h2>
+    <p>Location Lens is ready to join an authorised agent feed to every street score. No portal listing is copied without a licence.</p>
+  </div>
+  <div class="source-card">
+    <div><b>Authorised feed status</b><span class="status-pill">AWAITING DATA LICENCE</span></div>
+    <p>Rightmove and CommercialUK offer upload feeds for agents, not a public read API for third-party products. Zoopla forbids automated extraction and commercial reuse without a licence. The safe route is an agent-owned XML/JSON feed or a written syndication agreement. Once connected, each listing will show address, size, asking rent, agent, last-updated date and its Location Lens score.</p>
+    <div class="source-links"><a href="https://api-docs.rightmove.co.uk/docs/property-feed-api-product/1/overview" target="_blank" rel="noopener">Rightmove feed docs</a><a href="https://www.zoopla.co.uk/terms/" target="_blank" rel="noopener">Zoopla terms</a><a href="https://www.commercial-uk.co.uk/terms" target="_blank" rel="noopener">CommercialUK terms</a></div>
+  </div>
+</section>
+
 <section class="method" id="method">
   <div class="section-head">
     <div class="eyebrow">Step 4</div>
@@ -82,9 +111,10 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="segments.js?v=12"></script>
-<script src="units.js?v=12"></script>
-<script src="competitors.js?v=12"></script>
-<script src="app.js?v=12"></script>
+<script src="segments.js?v=13"></script>
+<script src="units.js?v=13"></script>
+<script src="competitors.js?v=13"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

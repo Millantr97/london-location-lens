@@ -806,3 +806,45 @@ function renderMapControls(){
 
 $("seg-count").textContent=SEGS.length;
 renderPresets(); renderConcept(); renderMethod(); initMap(); renderMapControls(); update();
+
+/* ---------- shortlist, comparison, reports and on-visit change alerts ---------- */
+const STORAGE_KEY="locationLensWorkspaceV1";
+let workspace={favourites:[],compare:[],snapshots:{}};
+try{workspace={...workspace,...JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}")};}catch(e){}
+workspace.favourites=Array.isArray(workspace.favourites)?workspace.favourites:[];
+workspace.compare=Array.isArray(workspace.compare)?workspace.compare:[];
+workspace.snapshots=workspace.snapshots||{};
+const saveWorkspace=()=>localStorage.setItem(STORAGE_KEY,JSON.stringify(workspace));
+function rowFor(id){return rankedCache.find(x=>x.seg.id===id);}
+function snapshotFor(r){return r?{score:Math.round(r.score),flow:Math.round(weeklyFlowAbs(r.seg)),competitors:r.seg.osm[concept.cat]||0,dataset:META.built}:null;}
+function comparisonMetrics(r){const s=r.seg;return [
+ ["Fit score",Math.round(r.score),"mod"],["Est. monthly revenue",money(r.rev.month),"mod"],["Weekly station flow anchor",fmt(Math.round(weeklyFlowAbs(s))),s.weak?"mod":"obs"],
+ ["People in your trading hours",fmt(Math.round(r.rev.people)),"mod"],["Competing "+concept.cat.replace(/_/g," "),s.osm[concept.cat]||0,"obs"],["Typical ticket nearby",money(s.model.spend_est),"mod"],
+ ["Est. rent / m²",money(s.rent.est_rent_m2),"mod"],["Residents",fmt(Math.round(s.lsoa.residents)),"ctx"],["Business crime / 1,000",s.crime.per1000.toFixed(1),"ctx"]
+];}
+function renderWorkspace(){
+ const favs=workspace.favourites.map(rowFor).filter(Boolean),comps=workspace.compare.map(rowFor).filter(Boolean);
+ $("fav-count").textContent=favs.length; $("compare-count").textContent=comps.length+"/3";
+ $("fav-list").innerHTML=favs.length?favs.map(r=>`<div class="saved-item"><div class="nm">${r.seg.name}<span class="sub">${r.seg.borough} · score ${Math.round(r.score)}</span></div><button class="mini" data-open="${r.seg.id}">Open</button><button class="mini" data-fav-remove="${r.seg.id}">×</button></div>`).join(""):'<div class="saved-empty">No favourites yet. Open a street and tap “Save favourite”.</div>';
+ $("compare-list").innerHTML=comps.length?comps.map(r=>`<div class="saved-item"><div class="nm">${r.seg.name}<span class="sub">${r.seg.borough}</span></div><button class="mini" data-compare-remove="${r.seg.id}">×</button></div>`).join(""):'<div class="saved-empty">Add two or three streets from their evidence panels.</div>';
+ $("open-compare").disabled=comps.length<2;
+ const changes=[]; favs.forEach(r=>{const now=snapshotFor(r),old=workspace.snapshots[r.seg.id];if(old&&old.dataset!==now.dataset){["score","flow","competitors"].forEach(k=>{if(old[k]!==now[k])changes.push(`${r.seg.name}: ${k} ${old[k]} → ${now[k]}`);});}workspace.snapshots[r.seg.id]=now;}); saveWorkspace();
+ $("alert-list").innerHTML=changes.length?changes.map(x=>`<div class="alert-change">${x}</div>`).join(""):'<div class="saved-empty">No changes detected in saved streets on this visit.</div>';
+ document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>selectSegment(b.dataset.open,true));
+ document.querySelectorAll("[data-fav-remove]").forEach(b=>b.onclick=()=>{workspace.favourites=workspace.favourites.filter(x=>x!==b.dataset.favRemove);saveWorkspace();renderWorkspace();if(selected)selectSegment(selected,false);});
+ document.querySelectorAll("[data-compare-remove]").forEach(b=>b.onclick=()=>{workspace.compare=workspace.compare.filter(x=>x!==b.dataset.compareRemove);saveWorkspace();renderWorkspace();if(selected)selectSegment(selected,false);});
+}
+function toggleFavourite(id){const on=workspace.favourites.includes(id);workspace.favourites=on?workspace.favourites.filter(x=>x!==id):[...workspace.favourites,id];if(!on)workspace.snapshots[id]=snapshotFor(rowFor(id));saveWorkspace();renderWorkspace();selectSegment(id,false);}
+function toggleCompare(id){const on=workspace.compare.includes(id);if(on)workspace.compare=workspace.compare.filter(x=>x!==id);else if(workspace.compare.length<3)workspace.compare.push(id);else{alert("Compare up to three streets. Remove one first.");return;}saveWorkspace();renderWorkspace();selectSegment(id,false);}
+function showComparison(){const rows=workspace.compare.map(rowFor).filter(Boolean);if(rows.length<2)return;const metrics=rows.map(comparisonMetrics),labels=metrics[0].map(x=>x[0]);
+ $("compare-panel").hidden=false;$("compare-panel").innerHTML=`<div class="compare-head"><h3>Side-by-side for “${concept.name}”</h3><button class="mini" id="close-compare">Close</button></div><table class="compare-table"><thead><tr><th>Evidence</th>${rows.map(r=>`<th>${r.seg.name}<br><small>${r.seg.borough}</small></th>`).join("")}</tr></thead><tbody>${labels.map((l,i)=>`<tr><td>${l}${chipFor(metrics[0][i][2])}</td>${rows.map((r,j)=>`<td>${metrics[j][i][1]}</td>`).join("")}</tr>`).join("")}</tbody></table>`;$("close-compare").onclick=()=>$("compare-panel").hidden=true;$("compare-panel").scrollIntoView({behavior:"smooth",block:"start"});}
+function downloadStreetPDF(id){const r=rowFor(id);if(!r)return;const s=r.seg,jsPDF=window.jspdf&&window.jspdf.jsPDF;if(!jsPDF){alert("The PDF library did not load. Try again online.");return;}const doc=new jsPDF({unit:"mm",format:"a4"});let y=18;const line=(label,value,tag)=>{if(y>278){doc.addPage();y=18;}doc.setFont("helvetica","bold");doc.text(label,16,y);doc.setFont("helvetica","normal");doc.text(String(value),194,y,{align:"right"});if(tag){doc.setFontSize(7);doc.text(tag,16,y+4);doc.setFontSize(10);}y+=10;};
+ doc.setTextColor(16,37,31);doc.setFontSize(19);doc.setFont("helvetica","bold");doc.text("London Location Lens",16,y);y+=9;doc.setFontSize(16);doc.text(s.name,16,y);y+=7;doc.setFontSize(9);doc.setFont("helvetica","normal");doc.text(`${s.zone} · ${s.borough} · ${s.stype.replace(/_/g," ")}`,16,y);y+=12;
+ line("Fit score",Math.round(r.score)+" / 100","MODELLED");line("Estimated monthly revenue",money(r.rev.month),"MODELLED");line("Plausible revenue range",money(r.rev.low)+" - "+money(r.rev.high),"MODELLED");line("Weekly station flow anchor",fmt(Math.round(weeklyFlowAbs(s))),s.weak?"MODELLED":"OBSERVED");line("People in your trading hours",fmt(Math.round(r.rev.people)),"MODELLED");line("Competing "+concept.cat.replace(/_/g," "),s.osm[concept.cat]||0,"OBSERVED · within 250 m");line("Nearby typical spend",money(s.model.spend_est),"MODELLED");line("Estimated rent / m²",money(s.rent.est_rent_m2),"MODELLED from VOA area context");line("Residents",fmt(Math.round(s.lsoa.residents)),"AREA CONTEXT · Census 2021 LSOA");line("Business crime / 1,000",s.crime.per1000.toFixed(1),"AREA CONTEXT");
+ y+=3;doc.setFont("helvetica","bold");doc.text("Concept",16,y);y+=7;doc.setFont("helvetica","normal");doc.text(`${concept.name} · ${concept.cat.replace(/_/g," ")} · ${money(concept.ticket)} ticket · ${concept.floorspace} m²`,16,y,{maxWidth:178});y+=14;doc.setFontSize(8);doc.setTextColor(95,111,105);doc.text("Evidence labels matter: OBSERVED is measured at a named source; AREA CONTEXT describes the surrounding statistical area; MODELLED is a transparent planning estimate. Verify a shortlist with on-street counts, agent particulars and licensing checks before signing a lease.",16,y,{maxWidth:178});y+=20;doc.text(`Dataset ${META.built} · OSM ${META.osm_date} · Generated ${new Date().toLocaleDateString("en-GB")}`,16,y);
+ doc.save(`location-lens-${s.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}.pdf`);
+}
+const _selectSegment=selectSegment;
+selectSegment=function(id,scroll){_selectSegment(id,scroll);const dp=$("detail-panel"),head=dp&&dp.querySelector(".dp-head");if(!head)return;const actions=document.createElement("div");actions.className="dp-actions";actions.innerHTML=`<button class="action ${workspace.favourites.includes(id)?"on":""}" id="dp-fav">${workspace.favourites.includes(id)?"Saved favourite":"Save favourite"}</button><button class="action ${workspace.compare.includes(id)?"on":""}" id="dp-compare">${workspace.compare.includes(id)?"Added to compare":"Add to compare"}</button><button class="action primary" id="dp-pdf">Download PDF report</button>`;head.parentNode.insertBefore(actions,head.nextSibling);$("dp-fav").onclick=()=>toggleFavourite(id);$("dp-compare").onclick=()=>toggleCompare(id);$("dp-pdf").onclick=()=>downloadStreetPDF(id);};
+$("open-compare").onclick=showComparison;
+renderWorkspace();

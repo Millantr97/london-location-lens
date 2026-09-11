@@ -571,8 +571,12 @@ function paintMarkers(ranked){
   const lv=ranked.map(r=>Math.log10(1+r.rev.month));
   const lo=Math.min(...lv),hi=Math.max(...lv);
   revScale=v=>hi>lo?(Math.log10(1+v)-lo)/(hi-lo):0.5;
+  const top20=new Set(ranked.slice(0,20).map(r=>r.seg.id)); /* map shows only the top 20, matching the ranking table */
   SEGS.forEach(s=>{
     const st=s.lvl==="street", sz=st?16:26, anch=st?[8,14]:[13,26];
+    const lyr=markers[s.id],onMap=st?streetLayer.hasLayer(lyr):map.hasLayer(lyr);
+    if(!top20.has(s.id)){if(onMap){st?streetLayer.removeLayer(lyr):map.removeLayer(lyr);}return;}
+    if(!onMap){st?streetLayer.addLayer(lyr):lyr.addTo(map);}
     if(mapMetric==="fit"){
       const v=byId[s.id];
       markers[s.id].setIcon(L.divIcon({className:"leaflet-div-icon",
@@ -644,7 +648,7 @@ function paintUnits(ranked){
 let rankedCache=[];
 function renderRankings(ranked){
   rankedCache=ranked;
-  $("ranking-sub").textContent=`The 20 best-matching segments (areas and streets) out of ${ranked.length}, sorted by overall fit for the current concept. The map still shows every segment.`;
+  $("ranking-sub").textContent=`The 20 best-matching segments (areas and streets) out of ${ranked.length}, sorted by overall fit for the current concept. The map shows these 20 only.`;
   $("rank-list").innerHTML=ranked.slice(0,20).map((r,i)=>{
     const s=r.seg;
     return `<div class="rank-row" data-sel="${s.id}">

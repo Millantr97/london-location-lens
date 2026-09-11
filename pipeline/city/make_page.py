@@ -25,11 +25,11 @@ city_js=f"""window.CITY={{id:"{cid}",name:"{C['name']}",region:"{C['region']}",m
 }}}};"""
 open(f'{ROOT}/{cid}/city.js','w').write(city_js)
 s=tpl
-s=s.replace('<title>London Location Lens - Street-level revenue and site selection for London</title>',
-            f'<title>{C["name"]} Location Lens - Street-level revenue and site selection for {C["name"]}</title>')
+s=s.replace('<title>London Location Potential - Street-level revenue and site selection for London</title>',
+            f'<title>{C["name"]} Location Potential - Street-level revenue and site selection for {C["name"]}</title>')
 s=s.replace('<meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">',
             f'<meta name="description" content="Compare {C["name"]} street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">')
-s=s.replace('London <span>Location Lens</span>',f'{C["name"]} <span>Location Lens</span>')
+s=s.replace('London <span>Location Potential</span>',f'{C["name"]} <span>Location Potential</span>')
 s=s.replace('Street-level site selection · all of London',f'Street-level site selection · all of {C["region"]}')
 s=s.replace('<span id="seg-count">2,480</span> London street segments',f'<span id="seg-count">{nseg:,}</span> {C["name"]} street segments')
 s=s.replace('<h2>London, ranked by the model</h2>',f'<h2>{C["name"]}, ranked by the model</h2>')
@@ -37,9 +37,9 @@ s=re.sub(r'<div class="article-grid" id="article-grid">.*?</div>\s*<div class="t
          f'<div class="article-grid" id="article-grid"></div>\n  <div class="trend-note">',s,flags=re.S)
 s=s.replace('Each ranking is one fixed concept run through the published model over 2,480 London street segments.',
             f'Each ranking is one fixed concept run through the published model over {nseg:,} {C["name"]} street segments.')
-s=s.replace('<div>London Location Lens ·',f'<div>{C["name"]} Location Lens ·')
+s=s.replace('<div>London Location Potential ·',f'<div>{C["name"]} Location Potential ·')
 s=s.replace('href="privacy.html"','href="../privacy.html"')
-s=s.replace('value="London Location Lens expert brief"',f'value="{C["name"]} Location Lens expert brief"')
+s=s.replace('value="London Location Potential expert brief"',f'value="{C["name"]} Location Potential expert brief"')
 s=re.sub(r'<script src="cities\.js\?v=\d+"></script>\s*<script src="segments\.js\?v=\d+"></script>\s*<script src="units\.js\?v=\d+"></script>\s*<script src="competitors\.js\?v=\d+"></script>\s*<script src="app\.js\?v=\d+"></script>\s*<script src="report\.js\?v=\d+"></script>\s*<script src="trends\.js\?v=\d+"></script>',
  '<script src="../cities.js?v=1"></script>\n<script src="city.js?v=1"></script>\n<script src="data/segments.js?v=1"></script>\n<script src="data/units.js?v=1"></script>\n<script src="data/competitors.js?v=1"></script>\n<script src="../app.js?v=22"></script>\n<script src="../report.js?v=19"></script>\n<script src="data/trends.js?v=1"></script>',s)
 s=s.replace('<script src="extras.js?v=20"></script>','<script src="../extras.js?v=20"></script>')

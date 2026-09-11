@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://millantr97.github.io/london-location-lens/sitemap.xml
+Sitemap: https://locationpotential.com/sitemap.xml

@@ -9,7 +9,7 @@ const bar=(l,pct,t,extra)=>`<div class="rbar-row"><div class="rbar-l">${l}${t?ch
 const slide=(n,total,kicker,title,body)=>`<section class="rslide"><div class="rslide-in">
   <div class="rslide-top"><span class="rkick">${kicker}</span><span class="rpage">${n} / ${total}</span></div>
   <h3 class="rtitle">${title}</h3>${body}
-  <div class="rfoot"><span>${CITY.name} <b>Location Lens</b></span><span class="rfoot-d"></span></div>
+  <div class="rfoot"><span>${CITY.name} <b>Location Potential</b></span><span class="rfoot-d"></span></div>
 </div></section>`;
 
 function buildReport(id){
@@ -29,7 +29,7 @@ function buildReport(id){
 
   /* S1 cover */
   const s1=`<section class="rslide rcover"><div class="rslide-in">
-    <div class="rcover-brand">${CITY.name} <b>Location Lens</b></div>
+    <div class="rcover-brand">${CITY.name} <b>Location Potential</b></div>
     <div class="rcover-kick">STREET REPORT · ${today.toUpperCase()}</div>
     <h1>${esc(s.name)}</h1>
     <div class="rcover-sub">${esc(s.zone)} · ${esc(s.borough)} · ${s.stype.replace(/_/g," ")} ${chip("cur")}</div>
@@ -219,18 +219,18 @@ function buildReport(id){
 
   /* S11 closing */
   const s11=`<section class="rslide rclose"><div class="rslide-in">
-    <div class="rcover-brand">${CITY.name} <b>Location Lens</b></div>
+    <div class="rcover-brand">${CITY.name} <b>Location Potential</b></div>
     <h3 class="rtitle">Next steps before you commit</h3>
     <div class="rsteps">
       <div class="rstep"><b>1 · Count it yourself.</b> Stand on ${esc(s.name)} during your exact trading windows (${esc(windowsTxt)}) and count passers-by. Override the modelled layers with your numbers.</div>
       <div class="rstep"><b>2 · Walk the competition.</b> Visit the ${catCount} ${c.cat.replace(/_/g," ")} venues within 250 m at peak time. Queue length beats any model.</div>
       <div class="rstep"><b>3 · Get real quotes.</b> Ask agents for live availability and quoting rents around this street - the ${money(s.rent.est_rent_m2)}/m² here is a modelled borough estimate, not an asking rent.</div>
       <div class="rstep"><b>4 · Check licensing and planning.</b> ${c.alcohol?"Alcohol licence, late-night refreshment and ":""}Use-class, extraction and terrace permissions with ${esc(s.borough)} council.</div>
-      <div class="rstep"><b>5 · Compare your finalists.</b> Shortlist up to three streets in Location Lens and compare them side by side before deciding.</div>
+      <div class="rstep"><b>5 · Compare your finalists.</b> Shortlist up to three streets in Location Potential and compare them side by side before deciding.</div>
     </div>
-    <div class="rmodel-cta"><span><b>Need a stronger model?</b> These are estimates from a simple model and public data. Get better data, a detailed report and hands-on geomarketing.</span><a href="https://millantr97.github.io/london-location-lens/#expert">Request expert help →</a></div>
+    <div class="rmodel-cta"><span><b>Need a stronger model?</b> These are estimates from a simple model and public data. Get better data, a detailed report and hands-on geomarketing.</span><a href="https://locationpotential.com/#expert">Request expert help →</a></div>
     <div class="rclose-disc">This report is a decision-support prototype, not a valuation. OBSERVED figures are measured at named sources; AREA CONTEXT describes the surrounding area; MODELLED figures are transparent planning estimates. Verify any shortlist with on-street counts, agent particulars and a licensing check before signing a lease.</div>
-    <div class="rclose-url">millantr97.github.io/london-location-lens · generated ${today} · dataset ${META.built}</div>
+    <div class="rclose-url">locationpotential.com · generated ${today} · dataset ${META.built}</div>
   </div></section>`;
 
   const html=[
@@ -246,7 +246,7 @@ function buildReport(id){
     slide(++n,T,"Transparency","Method, sources & labels",s10body),
     s11
   ].join("");
-  return {html,title:`Location Lens - ${s.name} - ${c.name}`};
+  return {html,title:`Location Potential - ${s.name} - ${c.name}`};
 }
 
 let overlay=null;

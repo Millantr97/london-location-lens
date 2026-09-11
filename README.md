@@ -1,7 +1,7 @@
 # london-location-lens
 Transparent street-level evidence and revenue estimates for commercial location decisions across London.
 
-Live: https://millantr97.github.io/london-location-lens/
+Live: https://locationpotential.com/
 
 ## Rebuild the data
 ```

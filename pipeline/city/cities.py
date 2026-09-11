@@ -1,4 +1,4 @@
-"""Per-city configuration for the Location Lens UK expansion.
+"""Per-city configuration for the Location Potential UK expansion.
 bbox = (lat0, lng0, lat1, lng1); center = city-centre anchor for distance bands."""
 CITIES = {
  'manchester': dict(

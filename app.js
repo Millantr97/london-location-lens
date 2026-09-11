@@ -1,4 +1,4 @@
-/* Location Lens - concept builder, scoring engine, rendering (city-aware; London defaults) */
+/* Location Potential - concept builder, scoring engine, rendering (city-aware; London defaults) */
 const CITY=window.CITY||{id:"london",name:"London",region:"Greater London",mapCenter:[51.515,-0.11],mapZoom:12,texts:{}};
 "use strict";
 
@@ -931,7 +931,7 @@ selectSegment=function(id,scroll){
   head.parentNode.insertBefore(actions,head.nextSibling);
   $("dp-fav").onclick=()=>toggleFavourite(id);$("dp-compare").onclick=()=>toggleCompare(id);$("dp-report").onclick=()=>openSlideReport(id);
   if(r){
-    const vt=verdictText(r),shareTxt="The best location for my new business is: https://millantr97.github.io/london-location-lens/"+(CITY.id==="london"?"":CITY.id+"/")+"#expert";
+    const vt=verdictText(r),shareTxt="The best location for my new business is: https://locationpotential.com/"+(CITY.id==="london"?"":CITY.id+"/")+"#expert";
     const v=document.createElement("div");v.className="verdict-line";
     v.innerHTML=`<div class="vt">"${vt}"</div><div class="vbtns"><a class="vbtn" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(shareTxt)}">WhatsApp</a><a class="vbtn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTxt)}">Post on X</a></div>`;
     const why=dp.querySelector(".dp-why");

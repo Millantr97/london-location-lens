@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>London Location Lens - Street-level site selection for Zones 1-3</title>
+<meta name="description" content="Compare London street segments for your exact business concept: real station flows, competition, residents, crime and rents across TfL Zones 1-3.">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">London <span>Location Lens</span></div>
+  <nav>
+    <a href="#concept">Concept</a>
+    <a href="#map">Map</a>
+    <a href="#rankings">Rankings</a>
+    <a href="#method">Method</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Street-level site selection · TfL Zones 1-3</div>
+    <h1>Where should your business open?</h1>
+    <p>Define the concept you actually want to run - ticket, format, hours, audience - and score <span id="seg-count">64</span> London street segments against it. Every figure is labelled: observed at that street, area context, or modelled.</p>
+  </div>
+  <aside class="truth">
+    <strong>Read the labels, not just the score</strong>
+    <p><b class="c-obs">OBSERVED</b> measured at the street or station. <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it. <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. Nothing is presented as more precise than its source.</p>
+  </aside>
+</section>
+
+<section class="map-first" id="map">
+  <div class="mapbox"><div id="leaflet-map"></div>
+    <div class="map-note" id="map-note">Markers are street segments. Colour = fit for the concept below. Click one for the full evidence panel.</div>
+  </div>
+</section>
+
+<section class="concept-wrap" id="concept">
+  <div class="section-head">
+    <div class="eyebrow">Step 1</div>
+    <h2>Define your concept</h2>
+    <p>Start from a preset, then change anything. The ranking updates live.</p>
+  </div>
+  <div class="preset-row" id="preset-row"></div>
+  <div class="concept-grid" id="concept-grid"></div>
+</section>
+
+<section class="rankings-wrap" id="rankings">
+  <div class="section-head">
+    <div class="eyebrow">Step 2</div>
+    <h2>Segment ranking</h2>
+    <p id="ranking-sub">Sorted by overall fit for the current concept.</p>
+  </div>
+  <div class="rank-list" id="rank-list"></div>
+</section>
+
+<section class="detail-wrap" id="detail">
+  <div class="detail-empty" id="detail-empty">Select a segment on the map or the ranking to open its full evidence panel.</div>
+  <div class="detail-panel" id="detail-panel" hidden></div>
+</section>
+
+<section class="method" id="method">
+  <div class="section-head">
+    <div class="eyebrow">Step 3</div>
+    <h2>Method, sources and limits</h2>
+  </div>
+  <div class="method-grid" id="method-grid"></div>
+</section>
+
+<footer class="foot">
+  <div>London Location Lens · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="segments.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

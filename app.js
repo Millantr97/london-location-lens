@@ -497,7 +497,7 @@ function renderWindows(){
 }
 
 /* ---------- map ---------- */
-let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false,unitsAuto=false;
+let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false,unitsAuto=false,streetLayer=null,streetsOn=false,streetsAuto=false;
 function scoreColor(v){const hue=v*1.2;return `hsl(${hue},70%,72%)`;}
 function revColor(v){return `hsl(${205-v*150},72%,${68-v*22}%)`;} // low: light blue, high: deep red
 function initMap(){
@@ -508,29 +508,36 @@ function initMap(){
     const z=map.getZoom();
     if(z>=15&&!unitsOn){unitsOn=true;unitsAuto=true;renderMapControls();update();}
     else if(z<14&&unitsAuto&&unitsOn){unitsOn=false;unitsAuto=false;renderMapControls();update();}
+    if(z>=12.5&&!streetsOn){streetsOn=true;streetsAuto=true;renderMapControls();update();}
+    else if(z<12&&streetsAuto&&streetsOn){streetsOn=false;streetsAuto=false;renderMapControls();update();}
   });
+  streetLayer=L.layerGroup();
   SEGS.forEach(s=>{
-    const m=L.marker([s.lat,s.lng],{icon:L.divIcon({className:"leaflet-div-icon",html:`<div class="pin" style="background:#ddd"><span>·</span></div>`,iconSize:[26,26],iconAnchor:[13,26]})}).addTo(map);
+    const st=s.lvl==="street", sz=st?16:26;
+    const m=L.marker([s.lat,s.lng],{icon:L.divIcon({className:"leaflet-div-icon",html:`<div class="pin${st?" pin-st":""}" style="background:#ddd"><span>·</span></div>`,iconSize:[sz,sz],iconAnchor:[sz/2,st?14:26]})});
+    if(st) streetLayer.addLayer(m); else m.addTo(map);
     m.on("click",()=>selectSegment(s.id));
     markers[s.id]=m;
   });
 }
 function paintMarkers(ranked){
+  window._revById={}; ranked.forEach(r=>window._revById[r.seg.id]=r.rev.month);
   const byId={},byRev={}; ranked.forEach(r=>{byId[r.seg.id]=r.score;byRev[r.seg.id]=r.rev.month;});
   const lv=ranked.map(r=>Math.log10(1+r.rev.month));
   const lo=Math.min(...lv),hi=Math.max(...lv);
   revScale=v=>hi>lo?(Math.log10(1+v)-lo)/(hi-lo):0.5;
   SEGS.forEach(s=>{
+    const st=s.lvl==="street", sz=st?16:26, anch=st?[8,14]:[13,26];
     if(mapMetric==="fit"){
       const v=byId[s.id];
       markers[s.id].setIcon(L.divIcon({className:"leaflet-div-icon",
-        html:`<div class="pin" style="background:${scoreColor(v/100)}"><span>${Math.round(v)}</span></div>`,iconSize:[26,26],iconAnchor:[13,26]}));
-      markers[s.id].setZIndexOffset(Math.round(v*10));
+        html:`<div class="pin${st?" pin-st":""}" style="background:${scoreColor(v/100)}"><span>${st?"":Math.round(v)}</span></div>`,iconSize:[sz,sz],iconAnchor:anch}));
+      markers[s.id].setZIndexOffset(st?Math.round(v):Math.round(v*10)+1000);
     }else{
       const rv=byRev[s.id],t=revScale(rv);
       markers[s.id].setIcon(L.divIcon({className:"leaflet-div-icon",
-        html:`<div class="pin" style="background:${revColor(t)}"><span>${fmt(rv)}</span></div>`,iconSize:[26,26],iconAnchor:[13,26]}));
-      markers[s.id].setZIndexOffset(Math.round(t*1000));
+        html:`<div class="pin${st?" pin-st":""}" style="background:${revColor(t)}"><span>${st?"":fmt(rv)}</span></div>`,iconSize:[sz,sz],iconAnchor:anch}));
+      markers[s.id].setZIndexOffset(st?Math.round(t*100):Math.round(t*1000)+1000);
     }
   });
   if(unitsOn){clearTimeout(window._uT);window._rk=ranked;window._uT=setTimeout(()=>paintUnits(window._rk),450);}
@@ -559,9 +566,7 @@ function comp150(u,catIdx){
   return n;
 }
 function unitRevenue(u,ranked){
-  const r=ranked.find(x=>x.seg.id===SEGMENTS[u[4]].id);
-  if(!r)return 0;
-  const base=r.rev.month;
+  const base=(window._revById||{})[SEGMENTS[u[4]].id]||0;
   const distF=Math.exp(-(u[5]||0)/450);
   const c150=comp150(u,UNITCATS.indexOf(concept.cat));
   const compF=c150<=2?1.15:c150>=8?0.75:1.0;
@@ -594,7 +599,7 @@ function paintUnits(ranked){
 let rankedCache=[];
 function renderRankings(ranked){
   rankedCache=ranked;
-  $("ranking-sub").textContent=`The 20 best-matching street segments out of ${ranked.length}, sorted by overall fit for the current concept. The map still shows every segment.`;
+  $("ranking-sub").textContent=`The 20 best-matching segments (areas and streets) out of ${ranked.length}, sorted by overall fit for the current concept. The map still shows every segment.`;
   $("rank-list").innerHTML=ranked.slice(0,20).map((r,i)=>{
     const s=r.seg;
     return `<div class="rank-row" data-sel="${s.id}">
@@ -619,7 +624,7 @@ function selectSegment(id,scroll){
   const r=rankedCache.find(x=>x.seg.id===id); if(!r)return;
   const s=r.seg;
   const fl=s.flow;
-  const maxDay=Math.max(...Object.values(fl.days));
+  const maxDay=Math.max(1,...Object.values(fl.days));
   const dayBars=[["Mon","mon"],["Tue-Thu","mid"],["Fri","fri"],["Sat","sat"],["Sun","sun"]].map(([l,k])=>
     `<div class="col"><div class="b" style="height:${Math.max(2,80*fl.days[k]/maxDay)}px"></div><div class="t">${l}</div></div>`).join("");
   const windowsTxt=concept.windows.map(w=>`${w.days.map(d=>DAYNAMES[d]).join(" ")} ${mm(w.from)}-${mm(w.to%1560)}`).join(" · ")||"no windows set";
@@ -653,7 +658,8 @@ function selectSegment(id,scroll){
   <p class="dp-why"><b>For “${concept.name}”</b> trading ${windowsTxt}: strongest on ${strengths.map(x=>x.label.toLowerCase()).join(" and ")} (${strengths.map(x=>pct(x.score)).join(" / ")}); weakest on ${weak.map(x=>x.label.toLowerCase()).join(" and ")} (${weak.map(x=>pct(x.score)).join(" / ")}).</p>
   <div class="crit">${critRows}</div>
   <div class="dp-cols">
-    <div class="ev-card"><h4>Movement at named stations${chipFor("obs")}</h4>
+    <div class="ev-card"><h4>Movement at named stations${chipFor(s.weak?"mod":"obs")}</h4>
+      ${s.weak?`<div class="ev-line"><span class="lv">${s.flow.modelled_from?`Street pitch - no count taken on this street itself. Flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${s.flow.modelled_from} catchment, whose stations are listed below.`:`No station count within 900 m of this street - it has no flow anchor. Offer, audience, rents and crime below still use observed data.`}</span></div>`:''}
       ${anchors}
       <div class="ev-line"><span class="lv">Combined typical-day entries + exits (TfL Annual Station Counts 2025; NR stations: ORR 2024-25)</span></div>
       <div class="dayflow">${dayBars}</div>
@@ -739,7 +745,7 @@ function selectSegment(id,scroll){
 function renderMethod(){
   $("method-grid").innerHTML=`
   <div class="m-card"><h4>Movement &amp; transport${chipFor("obs")}</h4>
-    <p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL Annual Station Counts 2025, summed over the stations named for each segment. National Rail stations without TfL counts use ORR Estimates of Station Usage 2024-25 (annual entries + exits, marked NR · ORR); their day-of-week split is modelled on the median London Overground profile, since ORR publishes annual totals only. Stations within 900 m from OpenStreetMap.</p>
+    <p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL Annual Station Counts 2025, summed over the stations named for each segment. National Rail stations without TfL counts use ORR Estimates of Station Usage 2024-25 (annual entries + exits, marked NR · ORR); their day-of-week split is modelled on the median London Overground profile, since ORR publishes annual totals only. Stations within 900 m from OpenStreetMap. Street-level pitches inherit their parent catchment's counts scaled to the street's share of recorded commercial units (marked MODELLED); streets beyond 900 m of any station show no flow at all.</p>
     <p><a href="https://crowding.data.tfl.gov.uk/Annual%20Station%20Counts/2024/AC2024_AnnualisedEntryExit_Public.xlsx">crowding.data.tfl.gov.uk - AC2024 Annualised Entry/Exit</a></p>
     <p>Resolution: named station, not the pavement. A station 400 m away on a desire line matters more than one across a railway.</p></div>
   <div class="m-card"><h4>Street offer &amp; competition${chipFor("obs")}</h4>
@@ -765,14 +771,18 @@ function renderMethod(){
     <p>Estimated monthly revenue for your concept, per segment and per unit. Weekly station entries+exits passing in your exact trading windows are multiplied by a category capture rate (share of passers-by who transact: grocery 3.0%, cafe 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2%), a competition dilution factor 1/(1 + k x rivals within 250 m), and an audience-fit factor (x0.5 to x1.5). Resident spend nearby is added from LSOA population x weekly purchase propensity. Monthly revenue = transactions x your average ticket x 4.33. A unit can only serve what fits through it: seats x weekly covers plus floorspace x weekly throughput per m² caps transactions, with soft absorption (queues, faster turns) beyond it. Fitness and coworking use membership models: residents and flow convert to members at fixed rates, capped by capacity, priced at ~2.6x day ticket (fitness) or ~9x day desk rate (coworking).</p>
     <p>The shown range is x0.55 to x1.6 of the central estimate - capture-rate uncertainty dominates. These are transparent planning assumptions you can argue with, not observed takings. No source publishes real per-street revenue; where a chain unit's accounts exist they are for the company, not the site.</p></div>
   <div class="m-card"><h4>Every commercial unit${chipFor("obs")}</h4>
-    <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records inside the covered segments (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
+    <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records across all covered streets and areas (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
     <p>Resolution: real buildings and coordinates; the revenue colour is modelled. A coloured unit is not a vacant unit - check availability with agents.</p></div>
   <div class="m-card"><h4>Coverage</h4>
-    <p>${SEGS.length} segments covering all of London: ${SEGS.filter(s=>s.stype!=="transport_hub"||!s.name.endsWith("station area")).length} curated commercial pitches plus ${SEGS.filter(s=>s.stype==="transport_hub"&&s.name.endsWith("station area")).length} station catchments - every station on the TfL network (Annual Station Counts 2025, no minimum flow) and every Greater London National Rail station (ORR 2024-25), including National-Rail-only town centres such as Kingston, Sutton, Bromley and Croydon - plus ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded inside them. Where TfL and ORR both count a station, TfL counts are used. A handful of TfL-network termini beyond the London billing authorities (Amersham, Chesham, Slough-side Elizabeth line stops) stay out because the borough rent evidence does not reach them.</p>    <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>`;
+    <p>${SEGS.length.toLocaleString("en-GB")} segments covering all of London at street level: ${SEGS.filter(s=>s.lvl!=="street").length} area pitches (curated commercial areas plus every TfL station catchment and every Greater London National Rail station catchment - TfL Annual Station Counts 2025, no minimum flow; National Rail: ORR Estimates of Station Usage 2024-25) and ${SEGS.filter(s=>s.lvl==="street").length.toLocaleString("en-GB")} street pitches - every named retail street and parade with 8 or more recorded commercial units, long streets split into roughly 400 m stretches. ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded across them. A street pitch inside a station catchment carries that catchment's flow MODELLED down to the street's share of recorded units; a street more than 900 m from any station has no flow anchor and says so on its panel. Where TfL and ORR both count a station, TfL counts are used. A handful of TfL-network termini beyond the London billing authorities (Amersham, Chesham, Slough-side Elizabeth line stops) stay out because the borough rent evidence does not reach them.</p>    <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>`;
 }
 
 /* ---------- main loop ---------- */
 function update(){
+  if(map&&streetLayer){
+    if(streetsOn&&!map.hasLayer(streetLayer)) map.addLayer(streetLayer);
+    else if(!streetsOn&&map.hasLayer(streetLayer)) map.removeLayer(streetLayer);
+  }
   const ranked=computeAll(concept);
   paintMarkers(ranked);
   renderRankings(ranked);
@@ -786,10 +796,12 @@ function renderMapControls(){
     <span class="mc-label">Colour by:</span>
     <button class="mc ${mapMetric==='fit'?'on':''}" id="mc-fit">Fit score</button>
     <button class="mc ${mapMetric==='rev'?'on':''}" id="mc-rev">Est. revenue</button>
+    <button class="mc ${streetsOn?'on':''}" id="mc-streets" title="Street-level pitches: every named retail street and parade with 8+ recorded units. They appear automatically when you zoom in.">Streets (${SEGS.filter(s=>s.lvl==='street').length.toLocaleString("en-GB")})</button>
     <button class="mc ${unitsOn?'on':''}" id="mc-units" title="Every real commercial unit from OpenStreetMap inside the covered segments, coloured by estimated monthly revenue for your concept">Every unit (${UNITS.length.toLocaleString("en-GB")})</button>`;
   $("mc-fit").onclick=()=>{mapMetric="fit";renderMapControls();update();};
   $("mc-rev").onclick=()=>{mapMetric="rev";renderMapControls();update();};
   $("mc-units").onclick=()=>{unitsOn=!unitsOn;unitsAuto=false;renderMapControls();update();};
+  $("mc-streets").onclick=()=>{streetsOn=!streetsOn;streetsAuto=false;renderMapControls();update();};
 }
 
 $("seg-count").textContent=SEGS.length;

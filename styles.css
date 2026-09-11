@@ -128,3 +128,5 @@ h1,h2,h3{letter-spacing:-.03em}
 .field input[type=text],.field select{width:100%;font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:#fff}
 .preset.scratch{border-style:dashed;border-width:2px;font-weight:850}
 .preset.more{border-style:dashed;border-width:2px;font-weight:850}
+.pin.pin-st{width:16px;height:16px;border-width:1.5px}
+.pin.pin-st span{font-size:7px}

@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
 <header class="top">
@@ -17,6 +17,8 @@
     <a href="#map">Map</a>
     <a href="#rankings">Top 20</a>
     <a href="#shortlist">Shortlist</a>
+    <a href="#trends">Trends</a>
+    <a href="#premium">Premium</a>
     <a href="#method">Method</a>
   </nav>
 </header>
@@ -85,16 +87,47 @@
   <div id="compare-panel" class="compare-panel" hidden></div>
 </section>
 
-<section class="tools-wrap" id="available-premises">
+
+
+<section class="tools-wrap" id="trends">
   <div class="section-head">
-    <div class="eyebrow">Available premises</div>
-    <h2>Live units, when the source permits reuse</h2>
-    <p>Location Lens is ready to join an authorised agent feed to every street score. No portal listing is copied without a licence.</p>
+    <div class="eyebrow">Concept trends</div>
+    <h2>Is your concept rising or fading?</h2>
+    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers.</p>
   </div>
-  <div class="source-card">
-    <div><b>Authorised feed status</b><span class="status-pill">AWAITING DATA LICENCE</span></div>
-    <p>Rightmove and CommercialUK offer upload feeds for agents, not a public read API for third-party products. Zoopla forbids automated extraction and commercial reuse without a licence. The safe route is an agent-owned XML/JSON feed or a written syndication agreement. Once connected, each listing will show address, size, asking rent, agent, last-updated date and its Location Lens score.</p>
-    <div class="source-links"><a href="https://api-docs.rightmove.co.uk/docs/property-feed-api-product/1/overview" target="_blank" rel="noopener">Rightmove feed docs</a><a href="https://www.zoopla.co.uk/terms/" target="_blank" rel="noopener">Zoopla terms</a><a href="https://www.commercial-uk.co.uk/terms" target="_blank" rel="noopener">CommercialUK terms</a></div>
+  <div class="trend-controls"><label>Sort: <select id="trend-sort"><option value="growth">Fastest rising search interest</option><option value="osm">Most venues added</option><option value="az">A-Z</option></select></label></div>
+  <div id="trend-list" class="trend-list"></div>
+  <div class="trend-note">Honest labels: the venue series counts <b>every recorded venue in the concept's category</b> (all cafés, all restaurants...) in the OpenStreetMap extract history - mapper coverage grows over time, so some of the rise is better mapping, not just more openings; it is OBSERVED data with that caveat. The search series is Google Trends interest for a matching keyword, an ESTIMATED index of attention, not shops or sales. Concept-level shop counts per year are not published by any open source at this granularity - where a figure is not available, the row says so instead of guessing.</div>
+</section>
+
+<section class="tools-wrap" id="premium">
+  <div class="section-head">
+    <div class="eyebrow">Premium tools</div>
+    <h2>The decision toolkit <span class="premium-pill">PREMIUM</span></h2>
+    <p>Built for subscribers - free to preview while the subscription goes live. Three tools that turn the map into a decision.</p>
+  </div>
+  <div class="premium-grid">
+    <div class="tool-card prem-card"><h3>What's missing here <span class="premium-pill">PREMIUM</span></h3>
+      <p class="tool-copy">Pick a street or area; see which concepts are underserved there - high demand at their hours, few rivals recorded.</p>
+      <select id="gap-seg" class="prem-select"></select>
+      <button id="gap-run" class="action primary">Find the gaps</button>
+      <div id="gap-results" class="prem-results"></div>
+    </div>
+    <div class="tool-card prem-card"><h3>I already have premises <span class="premium-pill">PREMIUM</span></h3>
+      <p class="tool-copy">Inverse mode: enter your address, unit size and rent - get the best concepts for that exact spot.</p>
+      <input id="inv-addr" class="prem-input" placeholder="Address or street, e.g. 114 Curtain Road">
+      <div class="prem-2col"><input id="inv-size" class="prem-input" type="number" value="70" min="10" step="5" title="Size m²"><input id="inv-rent" class="prem-input" type="number" value="600" min="50" step="10" title="Rent £/m²/yr"></div>
+      <div class="prem-2col-labels"><span>size m²</span><span>rent £/m²/yr</span></div>
+      <select id="inv-seg" class="prem-select" title="Fallback street if the address is not found"></select>
+      <button id="inv-run" class="action primary">Rank concepts for it</button>
+      <div id="inv-results" class="prem-results"></div>
+    </div>
+    <div class="tool-card prem-card"><h3>Stress test <span class="premium-pill">PREMIUM</span></h3>
+      <p class="tool-copy">What happens to your revenue if footfall drops 20%, or a strong competitor opens next door - on the concept you are currently building.</p>
+      <select id="stress-seg" class="prem-select"></select>
+      <button id="stress-run" class="action primary">Run the stress test</button>
+      <div id="stress-results" class="prem-results"></div>
+    </div>
   </div>
 </section>
 
@@ -114,7 +147,9 @@
 <script src="segments.js?v=13"></script>
 <script src="units.js?v=13"></script>
 <script src="competitors.js?v=13"></script>
-<script src="app.js?v=14"></script>
-<script src="report.js?v=14"></script>
+<script src="app.js?v=15"></script>
+<script src="report.js?v=15"></script>
+<script src="trends.js?v=15"></script>
+<script src="extras.js?v=15"></script>
 </body>
 </html>

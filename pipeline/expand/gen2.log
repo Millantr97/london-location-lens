@@ -1,0 +1,20 @@
+candidates: 275
+HTTP 429 Burnham
+HTTP 429 Burnham
+HTTP 429 Mortlake
+HTTP 429 Mortlake
+HTTP 429 Mortlake
+HTTP 429 Mortlake
+HTTP 429 Syon Lane
+HTTP 429 Syon Lane
+HTTP 429 Syon Lane
+HTTP 429 Syon Lane
+HTTP 429 Wimbledon Chase
+HTTP 429 Wimbledon Chase
+HTTP 429 Wimbledon Chase
+HTTP 429 Wimbledon Chase
+with coords: 274
+Traceback (most recent call last):
+  File "/tmp/lens/pipeline/expand/gen2_enrich.py", line 127, in <module>
+    for c,r in zip(cands,res['result']):
+KeyError: 'result'

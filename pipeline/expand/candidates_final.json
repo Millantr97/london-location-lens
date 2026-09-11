@@ -1,0 +1,4784 @@
+[
+ {
+  "station": "Moorgate",
+  "modes": "LU",
+  "annual": 27148108,
+  "lat": 51.518252,
+  "lng": -0.089063,
+  "osm_name": "Moorgate",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Moorgate",
+   "lat": 51.518338,
+   "lon": -0.088627,
+   "zone": "1",
+   "id": "HUBZMG"
+  },
+  "borough": "City of London"
+ },
+ {
+  "station": "East Croydon",
+  "modes": "NR",
+  "annual": 20592106,
+  "lat": 51.375845,
+  "lng": -0.092732,
+  "osm_name": "East Croydon",
+  "nlc": "5355",
+  "tlc": "ECR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "East Croydon",
+   "lat": 51.375995,
+   "lon": -0.091172,
+   "zone": null,
+   "id": "HUBECY"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Westminster",
+  "modes": "LU",
+  "annual": 18559654,
+  "lat": 51.501356,
+  "lng": -0.12493,
+  "osm_name": "Westminster",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Westminster",
+   "lat": 51.501603,
+   "lon": -0.125984,
+   "zone": "1",
+   "id": "HUBWSM"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "Gloucester Road",
+  "modes": "LU",
+  "annual": 11504721,
+  "lat": 51.494527,
+  "lng": -0.18377,
+  "osm_name": "Gloucester Road",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Gloucester Road Underground Station",
+   "lat": 51.494316,
+   "lon": -0.182658,
+   "zone": "1",
+   "id": "940GZZLUGTR"
+  },
+  "borough": "Kensington and Chelsea"
+ },
+ {
+  "station": "Shenfield",
+  "modes": "EZL",
+  "annual": 9029467,
+  "lat": 51.630877,
+  "lng": 0.329851,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Shenfield Rail Station",
+   "lat": 51.630877,
+   "lon": 0.329851,
+   "zone": null,
+   "id": "910GSHENFLD"
+  },
+  "borough": "Brentwood"
+ },
+ {
+  "station": "Marylebone LU",
+  "modes": "LU",
+  "annual": 8332429,
+  "lat": 51.522236,
+  "lng": -0.163505,
+  "osm_name": "Marylebone",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Marylebone",
+   "lat": 51.521602,
+   "lon": -0.163013,
+   "zone": "1",
+   "id": "HUBMYB"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "Pimlico",
+  "modes": "LU",
+  "annual": 7641420,
+  "lat": 51.489158,
+  "lng": -0.135331,
+  "osm_name": "Pimlico",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Pimlico Underground Station",
+   "lat": 51.489097,
+   "lon": -0.133761,
+   "zone": "1",
+   "id": "940GZZLUPCO"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "City Thameslink",
+  "modes": "NR",
+  "annual": 7635634,
+  "lat": 51.515126,
+  "lng": -0.103564,
+  "osm_name": "City Thameslink",
+  "nlc": "5121",
+  "tlc": "CTK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "City Thameslink Rail Station",
+   "lat": 51.513936,
+   "lon": -0.10359,
+   "zone": "1",
+   "id": "910GCTMSLNK"
+  },
+  "borough": "City of London"
+ },
+ {
+  "station": "Surbiton",
+  "modes": "NR",
+  "annual": 7589564,
+  "lat": 51.392411,
+  "lng": -0.303999,
+  "osm_name": "Surbiton",
+  "nlc": "5571",
+  "tlc": "SUR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Surbiton Rail Station",
+   "lat": 51.39246,
+   "lon": -0.303958,
+   "zone": "6",
+   "id": "910GSURBITN"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Watford Junction",
+  "modes": "LO",
+  "annual": 7368388,
+  "lat": 51.663908,
+  "lng": -0.395928,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Watford Junction",
+   "lat": 51.663908,
+   "lon": -0.395928,
+   "zone": null,
+   "id": "HUBWFJ"
+  },
+  "borough": "Watford"
+ },
+ {
+  "station": "Bromley South",
+  "modes": "NR",
+  "annual": 6193798,
+  "lat": 51.400041,
+  "lng": 0.018277,
+  "osm_name": "Bromley South",
+  "nlc": "5064",
+  "tlc": "BMS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Bromley South Rail Station",
+   "lat": 51.399976,
+   "lon": 0.017344,
+   "zone": "5",
+   "id": "910GBROMLYS"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Great Portland Street",
+  "modes": "LU",
+  "annual": 5681467,
+  "lat": 51.523815,
+  "lng": -0.143705,
+  "osm_name": "Great Portland Street",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Great Portland Street Underground Station",
+   "lat": 51.52384,
+   "lon": -0.144262,
+   "zone": "1",
+   "id": "940GZZLUGPS"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "Putney",
+  "modes": "NR",
+  "annual": 5645484,
+  "lat": 51.460934,
+  "lng": -0.215348,
+  "osm_name": "Putney",
+  "nlc": "5603",
+  "tlc": "PUT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Putney Rail Station",
+   "lat": 51.461303,
+   "lon": -0.216475,
+   "zone": "2+3",
+   "id": "910GPUTNEY"
+  },
+  "borough": "Wandsworth"
+ },
+ {
+  "station": "Earlsfield",
+  "modes": "NR",
+  "annual": 5569216,
+  "lat": 51.442403,
+  "lng": -0.187694,
+  "osm_name": "Earlsfield",
+  "nlc": "5584",
+  "tlc": "EAD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Earlsfield Rail Station",
+   "lat": 51.442337,
+   "lon": -0.187715,
+   "zone": "3",
+   "id": "910GERLFLD"
+  },
+  "borough": "Wandsworth"
+ },
+ {
+  "station": "Swiss Cottage",
+  "modes": "LU",
+  "annual": 5429725,
+  "lat": 51.543722,
+  "lng": -0.174982,
+  "osm_name": "Swiss Cottage",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Swiss Cottage Underground Station",
+   "lat": 51.543681,
+   "lon": -0.174894,
+   "zone": "2",
+   "id": "940GZZLUSWC"
+  },
+  "borough": "Camden"
+ },
+ {
+  "station": "Colindale",
+  "modes": "LU",
+  "annual": 5409247,
+  "lat": 51.595409,
+  "lng": -0.24993,
+  "osm_name": "Colindale",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Colindale Underground Station",
+   "lat": 51.595424,
+   "lon": -0.249919,
+   "zone": "4",
+   "id": "940GZZLUCND"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "West Brompton",
+  "modes": "LU",
+  "annual": 5263230,
+  "lat": 51.486976,
+  "lng": -0.195185,
+  "osm_name": "West Brompton",
+  "src": "AC2025",
+  "tfl": {
+   "name": "West Brompton",
+   "lat": 51.487168,
+   "lon": -0.195593,
+   "zone": "2",
+   "id": "HUBWBP"
+  },
+  "borough": "Kensington and Chelsea"
+ },
+ {
+  "station": "West Ham",
+  "modes": "LU",
+  "annual": 5215465,
+  "lat": 51.528097,
+  "lng": 0.004568,
+  "osm_name": "West Ham",
+  "src": "AC2025",
+  "tfl": {
+   "name": "West Ham",
+   "lat": 51.528178,
+   "lon": 0.004997,
+   "zone": "2/3",
+   "id": "HUBWEH"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Orpington",
+  "modes": "NR",
+  "annual": 4989622,
+  "lat": 51.373604,
+  "lng": 0.08872,
+  "osm_name": "Orpington",
+  "nlc": "5122",
+  "tlc": "ORP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Orpington Rail Station",
+   "lat": 51.373296,
+   "lon": 0.089091,
+   "zone": "6",
+   "id": "910GORPNGTN"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Twickenham",
+  "modes": "NR",
+  "annual": 4972204,
+  "lat": 51.450579,
+  "lng": -0.32884,
+  "osm_name": "Twickenham",
+  "nlc": "5574",
+  "tlc": "TWI",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Twickenham Rail Station",
+   "lat": 51.450031,
+   "lon": -0.330394,
+   "zone": "5",
+   "id": "910GTWCKNHM"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Sutton (London)",
+  "modes": "NR",
+  "annual": 4639520,
+  "lat": 51.359677,
+  "lng": -0.190886,
+  "nlc": "5385",
+  "tlc": "SUO",
+  "src": "ORR2024-25",
+  "osm_name": "Sutton",
+  "tfl": {
+   "name": "Sutton (London) Rail Station",
+   "lat": 51.359533,
+   "lon": -0.191215,
+   "zone": "5",
+   "id": "910GSUTTON"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Putney Bridge",
+  "modes": "LU",
+  "annual": 4551722,
+  "lat": 51.4683,
+  "lng": -0.208795,
+  "osm_name": "Putney Bridge",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Putney Bridge Underground Station",
+   "lat": 51.468262,
+   "lon": -0.208731,
+   "zone": "2",
+   "id": "940GZZLUPYB"
+  },
+  "borough": "Hammersmith and Fulham"
+ },
+ {
+  "station": "Cannon Street LU",
+  "modes": "LU",
+  "annual": 4387491,
+  "lat": 51.511381,
+  "lng": -0.090363,
+  "osm_name": "Cannon Street",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Cannon Street",
+   "lat": 51.511451,
+   "lon": -0.090357,
+   "zone": "1",
+   "id": "HUBCST"
+  },
+  "borough": "City of London"
+ },
+ {
+  "station": "Kingston",
+  "modes": "NR",
+  "annual": 4360664,
+  "lat": 51.412933,
+  "lng": -0.30182,
+  "osm_name": "Kingston",
+  "nlc": "5565",
+  "tlc": "KNG",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Kingston Rail Station",
+   "lat": 51.412751,
+   "lon": -0.301166,
+   "zone": "6",
+   "id": "910GKGSTON"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Maryland",
+  "modes": "EZL",
+  "annual": 4157832,
+  "lat": 51.546124,
+  "lng": 0.006378,
+  "osm_name": "Maryland",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Maryland Rail Station",
+   "lat": 51.546081,
+   "lon": 0.005815,
+   "zone": "3",
+   "id": "910GMRYLAND"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Caledonian Road",
+  "modes": "LU",
+  "annual": 4008167,
+  "lat": 51.548482,
+  "lng": -0.118359,
+  "osm_name": "Caledonian Road",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Caledonian Road Underground Station",
+   "lat": 51.548519,
+   "lon": -0.118493,
+   "zone": "2",
+   "id": "940GZZLUCAR"
+  },
+  "borough": "Islington"
+ },
+ {
+  "station": "Westferry",
+  "modes": "DLR",
+  "annual": 3984906,
+  "lat": 51.509403,
+  "lng": -0.026644,
+  "osm_name": "Westferry",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Westferry DLR Station",
+   "lat": 51.509431,
+   "lon": -0.02675,
+   "zone": "2",
+   "id": "940GZZDLWFE"
+  },
+  "borough": "Tower Hamlets"
+ },
+ {
+  "station": "South Quay",
+  "modes": "DLR",
+  "annual": 3852456,
+  "lat": 51.500036,
+  "lng": -0.016252,
+  "osm_name": "South Quay",
+  "src": "AC2025",
+  "tfl": {
+   "name": "South Quay DLR Station",
+   "lat": 51.50005,
+   "lon": -0.01597,
+   "zone": "2",
+   "id": "940GZZDLSOQ"
+  },
+  "borough": "Tower Hamlets"
+ },
+ {
+  "station": "Wandsworth Town",
+  "modes": "NR",
+  "annual": 3786146,
+  "lat": 51.460963,
+  "lng": -0.188251,
+  "osm_name": "Wandsworth Town",
+  "nlc": "5576",
+  "tlc": "WNT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Wandsworth Town Rail Station",
+   "lat": 51.461048,
+   "lon": -0.188125,
+   "zone": "2",
+   "id": "910GWDWTOWN"
+  },
+  "borough": "Wandsworth"
+ },
+ {
+  "station": "Stratford International DLR",
+  "modes": "DLR",
+  "annual": 3739316,
+  "lat": 51.5452515,
+  "lng": -0.009054,
+  "osm_name": "Stratford International DLR",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Stratford International DLR Station",
+   "lat": 51.545265,
+   "lon": -0.009638,
+   "zone": "2/3",
+   "id": "940GZZDLSIT"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Feltham",
+  "modes": "NR",
+  "annual": 3626102,
+  "lat": 51.447838,
+  "lng": -0.410283,
+  "osm_name": "Feltham",
+  "nlc": "5559",
+  "tlc": "FEL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Feltham Rail Station",
+   "lat": 51.447898,
+   "lon": -0.409838,
+   "zone": "6",
+   "id": "910GFELTHAM"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "Brentwood",
+  "modes": "EZL",
+  "annual": 3557037,
+  "lat": 51.613605,
+  "lng": 0.299586,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Brentwood Rail Station",
+   "lat": 51.613605,
+   "lon": 0.299586,
+   "zone": "9",
+   "id": "910GBRTWOOD"
+  },
+  "borough": "Brentwood"
+ },
+ {
+  "station": "Raynes Park",
+  "modes": "NR",
+  "annual": 3497682,
+  "lat": 51.408966,
+  "lng": -0.23054,
+  "osm_name": "Raynes Park",
+  "nlc": "5569",
+  "tlc": "RAY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Raynes Park Rail Station",
+   "lat": 51.409173,
+   "lon": -0.230151,
+   "zone": "4",
+   "id": "910GRAYNSPK"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Hampstead Heath",
+  "modes": "LO",
+  "annual": 3480963,
+  "lat": 51.55524,
+  "lng": -0.165391,
+  "osm_name": "Hampstead Heath",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Hampstead Heath Rail Station",
+   "lat": 51.55521,
+   "lon": -0.165705,
+   "zone": "2",
+   "id": "910GHMPSTDH"
+  },
+  "borough": "Camden"
+ },
+ {
+  "station": "Epping",
+  "modes": "LU",
+  "annual": 3282863,
+  "lat": 51.69368,
+  "lng": 0.113767,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Epping Underground Station",
+   "lat": 51.69368,
+   "lon": 0.113767,
+   "zone": "6",
+   "id": "940GZZLUEPG"
+  },
+  "borough": "Epping Forest"
+ },
+ {
+  "station": "Hyde Park Corner",
+  "modes": "LU",
+  "annual": 3152357,
+  "lat": 51.502726,
+  "lng": -0.154325,
+  "osm_name": "Hyde Park Corner",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Hyde Park Corner Underground Station",
+   "lat": 51.503035,
+   "lon": -0.152441,
+   "zone": "1",
+   "id": "940GZZLUHPC"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "New Malden",
+  "modes": "NR",
+  "annual": 3077144,
+  "lat": 51.403962,
+  "lng": -0.255759,
+  "osm_name": "New Malden",
+  "nlc": "5567",
+  "tlc": "NEM",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "New Malden Rail Station",
+   "lat": 51.404075,
+   "lon": -0.25594,
+   "zone": "4",
+   "id": "910GNEWMLDN"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Hither Green",
+  "modes": "NR",
+  "annual": 2899052,
+  "lat": 51.451587,
+  "lng": -0.000647,
+  "osm_name": "Hither Green",
+  "nlc": "5107",
+  "tlc": "HGR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hither Green Rail Station",
+   "lat": 51.452025,
+   "lon": -0.000944,
+   "zone": "3",
+   "id": "910GHTHRGRN"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Lancaster Gate",
+  "modes": "LU",
+  "annual": 2839456,
+  "lat": 51.511843,
+  "lng": -0.175381,
+  "osm_name": "Lancaster Gate",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Lancaster Gate Underground Station",
+   "lat": 51.511723,
+   "lon": -0.175494,
+   "zone": "1",
+   "id": "940GZZLULGT"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "Purley",
+  "modes": "NR",
+  "annual": 2777102,
+  "lat": 51.33748,
+  "lng": -0.113913,
+  "osm_name": "Purley",
+  "nlc": "5379",
+  "tlc": "PUR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Purley Rail Station",
+   "lat": 51.337579,
+   "lon": -0.114035,
+   "zone": "6",
+   "id": "910GPURLEY"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Streatham Common",
+  "modes": "NR",
+  "annual": 2765402,
+  "lat": 51.418566,
+  "lng": -0.135926,
+  "osm_name": "Streatham Common",
+  "nlc": "5384",
+  "tlc": "SRC",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Streatham Common Rail Station",
+   "lat": 51.41873,
+   "lon": -0.13601,
+   "zone": "3",
+   "id": "910GSTRHCOM"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Loughton",
+  "modes": "LU",
+  "annual": 2697032,
+  "lat": 51.641443,
+  "lng": 0.055476,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Loughton Underground Station",
+   "lat": 51.641443,
+   "lon": 0.055476,
+   "zone": "6",
+   "id": "940GZZLULGN"
+  },
+  "borough": "Epping Forest"
+ },
+ {
+  "station": "Gospel Oak",
+  "modes": "LO",
+  "annual": 2617543,
+  "lat": 51.555487,
+  "lng": -0.151577,
+  "osm_name": "Gospel Oak",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Gospel Oak Rail Station",
+   "lat": 51.555335,
+   "lon": -0.15077,
+   "zone": "2",
+   "id": "910GGOSPLOK"
+  },
+  "borough": "Camden"
+ },
+ {
+  "station": "Sidcup",
+  "modes": "NR",
+  "annual": 2614930,
+  "lat": 51.434021,
+  "lng": 0.10343,
+  "osm_name": "Sidcup",
+  "nlc": "5125",
+  "tlc": "SID",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Sidcup Rail Station",
+   "lat": 51.43387,
+   "lon": 0.103795,
+   "zone": "5",
+   "id": "910GSIDCUP"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Catford Bridge",
+  "modes": "NR",
+  "annual": 2512134,
+  "lat": 51.444591,
+  "lng": -0.024923,
+  "osm_name": "Catford Bridge",
+  "nlc": "5047",
+  "tlc": "CFB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Catford Bridge Rail Station",
+   "lat": 51.444741,
+   "lon": -0.024791,
+   "zone": "3",
+   "id": "910GCATFBDG"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Streatham (Greater London)",
+  "modes": "NR",
+  "annual": 2437720,
+  "lat": 51.425961,
+  "lng": -0.131313,
+  "nlc": "5383",
+  "tlc": "STE",
+  "src": "ORR2024-25",
+  "osm_name": "Streatham",
+  "tfl": {
+   "name": "Streatham Rail Station",
+   "lat": 51.425808,
+   "lon": -0.13155,
+   "zone": "3",
+   "id": "910GSTRETHM"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Herne Hill",
+  "modes": "NR",
+  "annual": 2434224,
+  "lat": 51.453469,
+  "lng": -0.102283,
+  "osm_name": "Herne Hill",
+  "nlc": "5066",
+  "tlc": "HNH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Herne Hill Rail Station",
+   "lat": 51.453305,
+   "lon": -0.102289,
+   "zone": "2+3",
+   "id": "910GHERNEH"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Thornton Heath",
+  "modes": "NR",
+  "annual": 2432008,
+  "lat": 51.398944,
+  "lng": -0.100516,
+  "osm_name": "Thornton Heath",
+  "nlc": "5388",
+  "tlc": "TTH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Thornton Heath Rail Station",
+   "lat": 51.398777,
+   "lon": -0.100306,
+   "zone": "4",
+   "id": "910GTHTH"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Kensington (Olympia)",
+  "modes": "LO",
+  "annual": 2426096,
+  "lat": 51.497437,
+  "lng": -0.209495,
+  "osm_name": "Kensington (Olympia)",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Kensington (Olympia)",
+   "lat": 51.496156,
+   "lon": -0.210502,
+   "zone": "2",
+   "id": "HUBKPA"
+  },
+  "borough": "Kensington and Chelsea"
+ },
+ {
+  "station": "Bushey",
+  "modes": "LO",
+  "annual": 2415066,
+  "lat": 51.645582,
+  "lng": -0.384752,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Bushey",
+   "lat": 51.645582,
+   "lon": -0.384752,
+   "zone": null,
+   "id": "HUBBSH"
+  },
+  "borough": "Watford"
+ },
+ {
+  "station": "Island Gardens",
+  "modes": "DLR",
+  "annual": 2378396,
+  "lat": 51.488068,
+  "lng": -0.010505,
+  "osm_name": "Island Gardens",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Island Gardens DLR Station",
+   "lat": 51.487811,
+   "lon": -0.010139,
+   "zone": "2",
+   "id": "940GZZDLISL"
+  },
+  "borough": "Tower Hamlets"
+ },
+ {
+  "station": "Norbury",
+  "modes": "NR",
+  "annual": 2348766,
+  "lat": 51.41137,
+  "lng": -0.121802,
+  "osm_name": "Norbury",
+  "nlc": "5428",
+  "tlc": "NRB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Norbury Rail Station",
+   "lat": 51.411446,
+   "lon": -0.121926,
+   "zone": "3",
+   "id": "910GNORBURY"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Grove Park",
+  "modes": "NR",
+  "annual": 2296634,
+  "lat": 51.430765,
+  "lng": 0.022024,
+  "osm_name": "Grove Park",
+  "nlc": "5139",
+  "tlc": "GRP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Grove Park Rail Station",
+   "lat": 51.430863,
+   "lon": 0.021726,
+   "zone": "4",
+   "id": "910GGRVPK"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Blackheath",
+  "modes": "NR",
+  "annual": 2278510,
+  "lat": 51.465799,
+  "lng": 0.008922,
+  "osm_name": "Blackheath",
+  "nlc": "5095",
+  "tlc": "BKH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Blackheath Rail Station",
+   "lat": 51.465796,
+   "lon": 0.008872,
+   "zone": "3",
+   "id": "910GBLKHTH"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Norbiton",
+  "modes": "NR",
+  "annual": 2269820,
+  "lat": 51.412311,
+  "lng": -0.284084,
+  "osm_name": "Norbiton",
+  "nlc": "5568",
+  "tlc": "NBT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Norbiton Rail Station",
+   "lat": 51.412358,
+   "lon": -0.284025,
+   "zone": "5",
+   "id": "910GNRBITON"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Finchley Road & Frognal",
+  "modes": "LO",
+  "annual": 2262724,
+  "lat": 51.550113,
+  "lng": -0.183584,
+  "osm_name": "Finchley Road & Frognal",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Finchley Road & Frognal Rail Station",
+   "lat": 51.550266,
+   "lon": -0.183141,
+   "zone": "2",
+   "id": "910GFNCHLYR"
+  },
+  "borough": "Camden"
+ },
+ {
+  "station": "Barnes",
+  "modes": "NR",
+  "annual": 2251810,
+  "lat": 51.466783,
+  "lng": -0.241182,
+  "osm_name": "Barnes",
+  "nlc": "5551",
+  "tlc": "BNS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Barnes Rail Station",
+   "lat": 51.467086,
+   "lon": -0.242164,
+   "zone": "3",
+   "id": "910GBARNES"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Devons Road",
+  "modes": "DLR",
+  "annual": 2235584,
+  "lat": 51.522208,
+  "lng": -0.017273,
+  "osm_name": "Devons Road",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Devons Road DLR Station",
+   "lat": 51.522667,
+   "lon": -0.017615,
+   "zone": "2",
+   "id": "940GZZDLDEV"
+  },
+  "borough": "Tower Hamlets"
+ },
+ {
+  "station": "Royal Oak",
+  "modes": "LU",
+  "annual": 2183636,
+  "lat": 51.519022,
+  "lng": -0.187444,
+  "osm_name": "Royal Oak",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Royal Oak Underground Station",
+   "lat": 51.519113,
+   "lon": -0.188748,
+   "zone": "2",
+   "id": "940GZZLURYO"
+  },
+  "borough": "Westminster"
+ },
+ {
+  "station": "Battersea Park",
+  "modes": "NR",
+  "annual": 2183506,
+  "lat": 51.47761,
+  "lng": -0.147585,
+  "osm_name": "Battersea Park",
+  "nlc": "5420",
+  "tlc": "BAK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Battersea Park Rail Station",
+   "lat": 51.47696,
+   "lon": -0.147533,
+   "zone": "2",
+   "id": "910GBATRSPK"
+  },
+  "borough": "Wandsworth"
+ },
+ {
+  "station": "Tulse Hill",
+  "modes": "NR",
+  "annual": 2181520,
+  "lat": 51.439927,
+  "lng": -0.104847,
+  "osm_name": "Tulse Hill",
+  "nlc": "5390",
+  "tlc": "TUH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Tulse Hill Rail Station",
+   "lat": 51.439861,
+   "lon": -0.105077,
+   "zone": "3",
+   "id": "910GTULSEH"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Buckhurst Hill",
+  "modes": "LU",
+  "annual": 2124309,
+  "lat": 51.626605,
+  "lng": 0.046757,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Buckhurst Hill Underground Station",
+   "lat": 51.626605,
+   "lon": 0.046757,
+   "zone": "5",
+   "id": "940GZZLUBKH"
+  },
+  "borough": "Epping Forest"
+ },
+ {
+  "station": "Latimer Road",
+  "modes": "LU",
+  "annual": 2103833,
+  "lat": 51.513475,
+  "lng": -0.217787,
+  "osm_name": "Latimer Road",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Latimer Road Underground Station",
+   "lat": 51.513389,
+   "lon": -0.217799,
+   "zone": "2",
+   "id": "940GZZLULRD"
+  },
+  "borough": "Kensington and Chelsea"
+ },
+ {
+  "station": "Royal Victoria",
+  "modes": "DLR",
+  "annual": 2098750,
+  "lat": 51.509117,
+  "lng": 0.017591,
+  "osm_name": "Royal Victoria",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Royal Victoria",
+   "lat": 51.50934,
+   "lon": 0.018505,
+   "zone": "3",
+   "id": "HUBRVC"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Arsenal",
+  "modes": "LU",
+  "annual": 2094155,
+  "lat": 51.558384,
+  "lng": -0.107487,
+  "osm_name": "Arsenal",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Arsenal Underground Station",
+   "lat": 51.558655,
+   "lon": -0.107457,
+   "zone": "2",
+   "id": "940GZZLUASL"
+  },
+  "borough": "Islington"
+ },
+ {
+  "station": "South Ealing",
+  "modes": "LU",
+  "annual": 2085840,
+  "lat": 51.500862,
+  "lng": -0.307681,
+  "osm_name": "South Ealing",
+  "src": "AC2025",
+  "tfl": {
+   "name": "South Ealing Underground Station",
+   "lat": 51.501003,
+   "lon": -0.307424,
+   "zone": "3",
+   "id": "940GZZLUSEA"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "New Eltham",
+  "modes": "NR",
+  "annual": 2038220,
+  "lat": 51.438014,
+  "lng": 0.070947,
+  "osm_name": "New Eltham",
+  "nlc": "5119",
+  "tlc": "NEH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "New Eltham Rail Station",
+   "lat": 51.43806,
+   "lon": 0.070533,
+   "zone": "4",
+   "id": "910GNWELTHM"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Bruce Grove",
+  "modes": "LO",
+  "annual": 2009181,
+  "lat": 51.593711,
+  "lng": -0.070005,
+  "osm_name": "Bruce Grove",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Bruce Grove Rail Station",
+   "lat": 51.593959,
+   "lon": -0.069867,
+   "zone": "3",
+   "id": "910GBRUCGRV"
+  },
+  "borough": "Haringey"
+ },
+ {
+  "station": "Coulsdon South",
+  "modes": "NR",
+  "annual": 1959570,
+  "lat": 51.315543,
+  "lng": -0.137974,
+  "osm_name": "Coulsdon South",
+  "nlc": "5408",
+  "tlc": "CDS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Coulsdon South Rail Station",
+   "lat": 51.315838,
+   "lon": -0.137887,
+   "zone": "6",
+   "id": "910GCOLSDNS"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Debden",
+  "modes": "LU",
+  "annual": 1885766,
+  "lat": 51.645386,
+  "lng": 0.083782,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Debden Underground Station",
+   "lat": 51.645386,
+   "lon": 0.083782,
+   "zone": "6",
+   "id": "940GZZLUDBN"
+  },
+  "borough": "Epping Forest"
+ },
+ {
+  "station": "Mill Hill Broadway",
+  "modes": "NR",
+  "annual": 1874860,
+  "lat": 51.612669,
+  "lng": -0.2488,
+  "osm_name": "Mill Hill Broadway",
+  "nlc": "1527",
+  "tlc": "MIL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Mill Hill Broadway Rail Station",
+   "lat": 51.613093,
+   "lon": -0.24924,
+   "zone": "4",
+   "id": "910GMLHB"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "Rickmansworth",
+  "modes": "LU",
+  "annual": 1864913,
+  "lat": 51.640247,
+  "lng": -0.473273,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Rickmansworth",
+   "lat": 51.640247,
+   "lon": -0.473273,
+   "zone": "7",
+   "id": "HUBRIC"
+  },
+  "borough": "Three Rivers"
+ },
+ {
+  "station": "Alexandra Palace",
+  "modes": "NR",
+  "annual": 1855806,
+  "lat": 51.598202,
+  "lng": -0.120663,
+  "osm_name": "Alexandra Palace",
+  "nlc": "6025",
+  "tlc": "AAP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Alexandra Palace Rail Station",
+   "lat": 51.597924,
+   "lon": -0.120235,
+   "zone": "3",
+   "id": "910GALEXNDP"
+  },
+  "borough": "Haringey"
+ },
+ {
+  "station": "Streatham Hill",
+  "modes": "NR",
+  "annual": 1824266,
+  "lat": 51.438328,
+  "lng": -0.127785,
+  "osm_name": "Streatham Hill",
+  "nlc": "5435",
+  "tlc": "SRH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Streatham Hill Rail Station",
+   "lat": 51.438193,
+   "lon": -0.12716,
+   "zone": "3",
+   "id": "910GSTRHILL"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Eltham",
+  "modes": "NR",
+  "annual": 1758352,
+  "lat": 51.455594,
+  "lng": 0.052269,
+  "osm_name": "Eltham",
+  "nlc": "5103",
+  "tlc": "ELW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Eltham Rail Station",
+   "lat": 51.455644,
+   "lon": 0.052472,
+   "zone": "4",
+   "id": "910GELTHAM"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Teddington",
+  "modes": "NR",
+  "annual": 1717082,
+  "lat": 51.424466,
+  "lng": -0.332573,
+  "osm_name": "Teddington",
+  "nlc": "5572",
+  "tlc": "TED",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Teddington Rail Station",
+   "lat": 51.424481,
+   "lon": -0.332706,
+   "zone": "6",
+   "id": "910GTEDNGTN"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Watford",
+  "modes": "LU",
+  "annual": 1710540,
+  "lat": 51.657446,
+  "lng": -0.417377,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Watford Underground Station",
+   "lat": 51.657446,
+   "lon": -0.417377,
+   "zone": "7",
+   "id": "940GZZLUWAF"
+  },
+  "borough": "Watford"
+ },
+ {
+  "station": "Petts Wood",
+  "modes": "NR",
+  "annual": 1707602,
+  "lat": 51.388626,
+  "lng": 0.074561,
+  "osm_name": "Petts Wood",
+  "nlc": "5123",
+  "tlc": "PET",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Petts Wood Rail Station",
+   "lat": 51.388619,
+   "lon": 0.074481,
+   "zone": "5",
+   "id": "910GPETSWD"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Beckenham Junction",
+  "modes": "NR",
+  "annual": 1694068,
+  "lat": 51.411062,
+  "lng": -0.025987,
+  "osm_name": "Beckenham Junction",
+  "nlc": "5046",
+  "tlc": "BKJ",
+  "src": "ORR2024-25",
+  "tfl": {
+   "zone": "4",
+   "name": "Beckenham Junction"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Kenton",
+  "modes": "LU",
+  "annual": 1683642,
+  "lat": 51.581525,
+  "lng": -0.316638,
+  "osm_name": "Kenton",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Kenton",
+   "lat": 51.581786,
+   "lon": -0.316946,
+   "zone": "4",
+   "id": "HUBKNT"
+  },
+  "borough": "Brent"
+ },
+ {
+  "station": "Hornsey",
+  "modes": "NR",
+  "annual": 1664926,
+  "lat": 51.586321,
+  "lng": -0.111683,
+  "osm_name": "Hornsey",
+  "nlc": "6015",
+  "tlc": "HRN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hornsey Rail Station",
+   "lat": 51.586461,
+   "lon": -0.111975,
+   "zone": "3",
+   "id": "910GHRNSY"
+  },
+  "borough": "Haringey"
+ },
+ {
+  "station": "St James Street",
+  "modes": "LO",
+  "annual": 1663120,
+  "lat": 51.581172,
+  "lng": -0.032205,
+  "osm_name": "St James Street",
+  "src": "AC2025",
+  "tfl": {
+   "name": "St James Street (London) Rail Station",
+   "lat": 51.580981,
+   "lon": -0.032918,
+   "zone": "3",
+   "id": "910GSTJMSST"
+  },
+  "borough": "Waltham Forest"
+ },
+ {
+  "station": "Gallions Reach",
+  "modes": "DLR",
+  "annual": 1652784,
+  "lat": 51.508962,
+  "lng": 0.071794,
+  "osm_name": "Gallions Reach",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Gallions Reach DLR Station",
+   "lat": 51.508941,
+   "lon": 0.071555,
+   "zone": "3",
+   "id": "940GZZDLGAL"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Deptford",
+  "modes": "NR",
+  "annual": 1643802,
+  "lat": 51.478982,
+  "lng": -0.026635,
+  "osm_name": "Deptford",
+  "nlc": "5145",
+  "tlc": "DEP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Deptford Rail Station",
+   "lat": 51.478848,
+   "lon": -0.02627,
+   "zone": "2",
+   "id": "910GDEPTFD"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Kidbrooke",
+  "modes": "NR",
+  "annual": 1620822,
+  "lat": 51.462032,
+  "lng": 0.0279,
+  "osm_name": "Kidbrooke",
+  "nlc": "5108",
+  "tlc": "KDB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Kidbrooke Rail Station",
+   "lat": 51.462121,
+   "lon": 0.027498,
+   "zone": "3",
+   "id": "910GKIDBROK"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Wallington",
+  "modes": "NR",
+  "annual": 1609134,
+  "lat": 51.360235,
+  "lng": -0.15059,
+  "osm_name": "Wallington",
+  "nlc": "5394",
+  "tlc": "WLT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Wallington Rail Station",
+   "lat": 51.360386,
+   "lon": -0.150833,
+   "zone": "5",
+   "id": "910GWALNGTN"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Palmers Green",
+  "modes": "NR",
+  "annual": 1557022,
+  "lat": 51.618661,
+  "lng": -0.110169,
+  "osm_name": "Palmers Green",
+  "nlc": "6021",
+  "tlc": "PAL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Palmers Green Rail Station",
+   "lat": 51.618314,
+   "lon": -0.110437,
+   "zone": "4",
+   "id": "910GPALMRSG"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Mudchute",
+  "modes": "DLR",
+  "annual": 1549170,
+  "lat": 51.491519,
+  "lng": -0.014913,
+  "osm_name": "Mudchute",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Mudchute DLR Station",
+   "lat": 51.490704,
+   "lon": -0.014738,
+   "zone": "2",
+   "id": "940GZZDLMUD"
+  },
+  "borough": "Tower Hamlets"
+ },
+ {
+  "station": "Mortlake",
+  "modes": "NR",
+  "annual": 1546638,
+  "lat": 51.468064,
+  "lng": -0.267371,
+  "osm_name": "Mortlake",
+  "nlc": "5600",
+  "tlc": "MTL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Mortlake Rail Station",
+   "lat": 51.468087,
+   "lon": -0.267106,
+   "zone": "3",
+   "id": "910GMRTLKE"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Welling",
+  "modes": "NR",
+  "annual": 1527888,
+  "lat": 51.464821,
+  "lng": 0.101629,
+  "osm_name": "Welling",
+  "nlc": "5128",
+  "tlc": "WLI",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Welling Rail Station",
+   "lat": 51.464798,
+   "lon": 0.10169,
+   "zone": "4",
+   "id": "910GWELLING"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "King George V",
+  "modes": "DLR",
+  "annual": 1527226,
+  "lat": 51.502006,
+  "lng": 0.062353,
+  "osm_name": "King George V",
+  "src": "AC2025",
+  "tfl": {
+   "name": "King George V DLR Station",
+   "lat": 51.502003,
+   "lon": 0.062624,
+   "zone": "3",
+   "id": "940GZZDLKGV"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Rainham (Essex)",
+  "modes": "NR",
+  "annual": 1525196,
+  "lat": 51.51672,
+  "lng": 0.190622,
+  "nlc": "7454",
+  "tlc": "RNM",
+  "src": "ORR2024-25",
+  "osm_name": "Rainham",
+  "tfl": {
+   "name": "Rainham (London) Rail Station",
+   "lat": 51.516723,
+   "lon": 0.190634,
+   "zone": "6",
+   "id": "910GRNHAME"
+  },
+  "borough": "Havering"
+ },
+ {
+  "station": "Rotherhithe",
+  "modes": "LO",
+  "annual": 1519098,
+  "lat": 51.500824,
+  "lng": -0.051967,
+  "osm_name": "Rotherhithe",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Rotherhithe Rail Station",
+   "lat": 51.500817,
+   "lon": -0.052048,
+   "zone": "2",
+   "id": "910GRTHERHI"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "West Norwood",
+  "modes": "NR",
+  "annual": 1507342,
+  "lat": 51.431627,
+  "lng": -0.103491,
+  "osm_name": "West Norwood",
+  "nlc": "5438",
+  "tlc": "WNW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "West Norwood Rail Station",
+   "lat": 51.431748,
+   "lon": -0.10383,
+   "zone": "3",
+   "id": "910GWNORWOD"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Lee (London)",
+  "modes": "NR",
+  "annual": 1482668,
+  "lat": 51.449689,
+  "lng": 0.014373,
+  "nlc": "5110",
+  "tlc": "LEE",
+  "src": "ORR2024-25",
+  "osm_name": "Lee",
+  "tfl": {
+   "name": "Mile End Underground Station",
+   "lat": 51.525122,
+   "lon": -0.03364,
+   "zone": "2",
+   "id": "940GZZLUMED"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "North Harrow",
+  "modes": "LU",
+  "annual": 1478822,
+  "lat": 51.585162,
+  "lng": -0.363176,
+  "osm_name": "North Harrow",
+  "src": "AC2025",
+  "tfl": {
+   "name": "North Harrow Underground Station",
+   "lat": 51.584872,
+   "lon": -0.362408,
+   "zone": "5",
+   "id": "940GZZLUNHA"
+  },
+  "borough": "Harrow"
+ },
+ {
+  "station": "Bexleyheath",
+  "modes": "NR",
+  "annual": 1475374,
+  "lat": 51.463565,
+  "lng": 0.132945,
+  "osm_name": "Bexleyheath",
+  "nlc": "5094",
+  "tlc": "BXH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Bexleyheath Rail Station",
+   "lat": 51.4635,
+   "lon": 0.133735,
+   "zone": "5",
+   "id": "910GBXLYHTH"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Northwood Hills",
+  "modes": "LU",
+  "annual": 1465915,
+  "lat": 51.600153,
+  "lng": -0.408457,
+  "osm_name": "Northwood Hills",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Northwood Hills Underground Station",
+   "lat": 51.600572,
+   "lon": -0.409464,
+   "zone": "6",
+   "id": "940GZZLUNWH"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "Enfield Lock",
+  "modes": "NR",
+  "annual": 1459366,
+  "lat": 51.670611,
+  "lng": -0.028569,
+  "osm_name": "Enfield Lock",
+  "nlc": "6815",
+  "tlc": "ENL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Enfield Lock Rail Station",
+   "lat": 51.670922,
+   "lon": -0.028532,
+   "zone": "6",
+   "id": "910GENFLDLK"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Leytonstone High Road",
+  "modes": "LO",
+  "annual": 1444733,
+  "lat": 51.563682,
+  "lng": 0.008201,
+  "osm_name": "Leytonstone High Road",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Leytonstone High Road Rail Station",
+   "lat": 51.563554,
+   "lon": 0.008416,
+   "zone": "3",
+   "id": "910GLYTNSHR"
+  },
+  "borough": "Waltham Forest"
+ },
+ {
+  "station": "Worcester Park",
+  "modes": "NR",
+  "annual": 1422222,
+  "lat": 51.381427,
+  "lng": -0.244964,
+  "osm_name": "Worcester Park",
+  "nlc": "5579",
+  "tlc": "WCP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Worcester Park Rail Station",
+   "lat": 51.381253,
+   "lon": -0.245167,
+   "zone": "4",
+   "id": "910GWRCSTRP"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Cockfosters",
+  "modes": "LU",
+  "annual": 1420222,
+  "lat": 51.651366,
+  "lng": -0.148515,
+  "osm_name": "Cockfosters",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Cockfosters Underground Station",
+   "lat": 51.65152,
+   "lon": -0.149171,
+   "zone": "5",
+   "id": "940GZZLUCKS"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Carpenders Park",
+  "modes": "LO",
+  "annual": 1413253,
+  "lat": 51.628351,
+  "lng": -0.385939,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Carpenders Park Rail Station",
+   "lat": 51.628351,
+   "lon": -0.385939,
+   "zone": "7",
+   "id": "910GCRPNDPK"
+  },
+  "borough": "Three Rivers"
+ },
+ {
+  "station": "Chorleywood",
+  "modes": "LU",
+  "annual": 1408489,
+  "lat": 51.654249,
+  "lng": -0.518312,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Chorleywood",
+   "lat": 51.654249,
+   "lon": -0.518312,
+   "zone": "7",
+   "id": "HUBCLW"
+  },
+  "borough": "Three Rivers"
+ },
+ {
+  "station": "Winchmore Hill",
+  "modes": "NR",
+  "annual": 1408426,
+  "lat": 51.634068,
+  "lng": -0.100941,
+  "osm_name": "Winchmore Hill",
+  "nlc": "6024",
+  "tlc": "WIH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Winchmore Hill Rail Station",
+   "lat": 51.633942,
+   "lon": -0.1009,
+   "zone": "4",
+   "id": "910GWNMHILL"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "West Ruislip",
+  "modes": "LU",
+  "annual": 1407748,
+  "lat": 51.569505,
+  "lng": -0.437045,
+  "osm_name": "West Ruislip",
+  "src": "AC2025",
+  "tfl": {
+   "name": "West Ruislip",
+   "lat": 51.569721,
+   "lon": -0.437816,
+   "zone": "6",
+   "id": "HUBWRU"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "Watford High Street",
+  "modes": "LO",
+  "annual": 1403678,
+  "lat": 51.652655,
+  "lng": -0.391711,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Watford High Street Rail Station",
+   "lat": 51.652655,
+   "lon": -0.391711,
+   "zone": "8",
+   "id": "910GWATFDHS"
+  },
+  "borough": "Watford"
+ },
+ {
+  "station": "Gipsy Hill",
+  "modes": "NR",
+  "annual": 1401264,
+  "lat": 51.424533,
+  "lng": -0.084042,
+  "osm_name": "Gipsy Hill",
+  "nlc": "5363",
+  "tlc": "GIP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Gipsy Hill Rail Station",
+   "lat": 51.424453,
+   "lon": -0.083836,
+   "zone": "3",
+   "id": "910GGIPSYH"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "Maze Hill",
+  "modes": "NR",
+  "annual": 1397904,
+  "lat": 51.482648,
+  "lng": 0.00375,
+  "osm_name": "Maze Hill",
+  "nlc": "5149",
+  "tlc": "MZH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Maze Hill Rail Station",
+   "lat": 51.482625,
+   "lon": 0.002914,
+   "zone": "3",
+   "id": "910GMAZEH"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "North Wembley",
+  "modes": "LU",
+  "annual": 1384166,
+  "lat": 51.562402,
+  "lng": -0.30387,
+  "osm_name": "North Wembley",
+  "src": "AC2025",
+  "tfl": {
+   "name": "North Wembley",
+   "lat": 51.56258,
+   "lon": -0.303992,
+   "zone": "4",
+   "id": "HUBNWB"
+  },
+  "borough": "Brent"
+ },
+ {
+  "station": "Mottingham",
+  "modes": "NR",
+  "annual": 1374680,
+  "lat": 51.440252,
+  "lng": 0.049962,
+  "osm_name": "Mottingham",
+  "nlc": "5118",
+  "tlc": "MTG",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Mottingham Rail Station",
+   "lat": 51.440218,
+   "lon": 0.050054,
+   "zone": "4",
+   "id": "910GMOTNGHM"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Ruislip",
+  "modes": "LU",
+  "annual": 1365346,
+  "lat": 51.571403,
+  "lng": -0.421337,
+  "osm_name": "Ruislip",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Ruislip Underground Station",
+   "lat": 51.571354,
+   "lon": -0.421898,
+   "zone": "6",
+   "id": "940GZZLURSP"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "Ruislip Manor",
+  "modes": "LU",
+  "annual": 1349876,
+  "lat": 51.573397,
+  "lng": -0.4118,
+  "osm_name": "Ruislip Manor",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Ruislip Manor Underground Station",
+   "lat": 51.573202,
+   "lon": -0.412973,
+   "zone": "6",
+   "id": "940GZZLURSM"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "West Finchley",
+  "modes": "LU",
+  "annual": 1336354,
+  "lat": 51.60943,
+  "lng": -0.188331,
+  "osm_name": "West Finchley",
+  "src": "AC2025",
+  "tfl": {
+   "name": "West Finchley Underground Station",
+   "lat": 51.609426,
+   "lon": -0.188362,
+   "zone": "4",
+   "id": "940GZZLUWFN"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "East Dulwich",
+  "modes": "NR",
+  "annual": 1335792,
+  "lat": 51.461037,
+  "lng": -0.080798,
+  "osm_name": "East Dulwich",
+  "nlc": "5358",
+  "tlc": "EDW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "East Dulwich Rail Station",
+   "lat": 51.461494,
+   "lon": -0.080572,
+   "zone": "2",
+   "id": "910GEDULWCH"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "St Mary Cray",
+  "modes": "NR",
+  "annual": 1334744,
+  "lat": 51.394738,
+  "lng": 0.105719,
+  "osm_name": "St Mary Cray",
+  "nlc": "5073",
+  "tlc": "SMY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "St Mary Cray Rail Station",
+   "lat": 51.394749,
+   "lon": 0.106384,
+   "zone": "6",
+   "id": "910GSTMRYC"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Hillingdon",
+  "modes": "LU",
+  "annual": 1319482,
+  "lat": 51.553603,
+  "lng": -0.450464,
+  "osm_name": "Hillingdon",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Hillingdon Underground Station",
+   "lat": 51.553715,
+   "lon": -0.449828,
+   "zone": "6",
+   "id": "940GZZLUHGD"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "Mitcham Eastfields",
+  "modes": "NR",
+  "annual": 1318094,
+  "lat": 51.407395,
+  "lng": -0.154872,
+  "osm_name": "Mitcham Eastfields",
+  "nlc": "5069",
+  "tlc": "MTC",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Mitcham Eastfields Rail Station",
+   "lat": 51.407739,
+   "lon": -0.154646,
+   "zone": "3",
+   "id": "910GESTFLDS"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Blackwall",
+  "modes": "DLR",
+  "annual": 1299338,
+  "lat": 51.507938,
+  "lng": -0.007184,
+  "osm_name": "Blackwall",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Blackwall DLR Station",
+   "lat": 51.507991,
+   "lon": -0.006969,
+   "zone": "2",
+   "id": "940GZZDLBLA"
+  },
+  "borough": "Tower Hamlets"
+ },
+ {
+  "station": "Brondesbury Park",
+  "modes": "LO",
+  "annual": 1291263,
+  "lat": 51.540514,
+  "lng": -0.210336,
+  "osm_name": "Brondesbury Park",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Brondesbury Park Rail Station",
+   "lat": 51.540734,
+   "lon": -0.210054,
+   "zone": "2",
+   "id": "910GBRBYPK"
+  },
+  "borough": "Brent"
+ },
+ {
+  "station": "Whitton (London)",
+  "modes": "NR",
+  "annual": 1291066,
+  "lat": 51.449498,
+  "lng": -0.357782,
+  "nlc": "5611",
+  "tlc": "WTN",
+  "src": "ORR2024-25",
+  "osm_name": "Whitton",
+  "tfl": {
+   "name": "Whitton Rail Station",
+   "lat": 51.449607,
+   "lon": -0.357681,
+   "zone": "5",
+   "id": "910GWHTTON"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Boston Manor",
+  "modes": "LU",
+  "annual": 1279016,
+  "lat": 51.495339,
+  "lng": -0.32544,
+  "osm_name": "Boston Manor",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Boston Manor Underground Station",
+   "lat": 51.495635,
+   "lon": -0.324939,
+   "zone": "4",
+   "id": "940GZZLUBOS"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "New Barnet",
+  "modes": "NR",
+  "annual": 1272760,
+  "lat": 51.648278,
+  "lng": -0.172624,
+  "osm_name": "New Barnet",
+  "nlc": "6018",
+  "tlc": "NBA",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "New Barnet Rail Station",
+   "lat": 51.648575,
+   "lon": -0.172997,
+   "zone": "5",
+   "id": "910GNBARNET"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "Charlton",
+  "modes": "NR",
+  "annual": 1269452,
+  "lat": 51.48676,
+  "lng": 0.030809,
+  "osm_name": "Charlton",
+  "nlc": "5144",
+  "tlc": "CTN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Charlton Rail Station",
+   "lat": 51.486813,
+   "lon": 0.031258,
+   "zone": "3",
+   "id": "910GCRLN"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Ladywell",
+  "modes": "NR",
+  "annual": 1254886,
+  "lat": 51.456026,
+  "lng": -0.019192,
+  "osm_name": "Ladywell",
+  "nlc": "5057",
+  "tlc": "LAD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Ladywell Rail Station",
+   "lat": 51.456244,
+   "lon": -0.019041,
+   "zone": "3",
+   "id": "910GLDYW"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Elverson Road",
+  "modes": "DLR",
+  "annual": 1252134,
+  "lat": 51.468523,
+  "lng": -0.016207,
+  "osm_name": "Elverson Road",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Elverson Road DLR Station",
+   "lat": 51.469074,
+   "lon": -0.016728,
+   "zone": "2+3",
+   "id": "940GZZDLELV"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Penge East",
+  "modes": "NR",
+  "annual": 1235544,
+  "lat": 51.419315,
+  "lng": -0.054136,
+  "osm_name": "Penge East",
+  "nlc": "5072",
+  "tlc": "PNE",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Penge East Rail Station",
+   "lat": 51.419334,
+   "lon": -0.05422,
+   "zone": "4",
+   "id": "910GPNGEE"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Loughborough Junction",
+  "modes": "NR",
+  "annual": 1233640,
+  "lat": 51.466255,
+  "lng": -0.102161,
+  "osm_name": "Loughborough Junction",
+  "nlc": "5082",
+  "tlc": "LGJ",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Loughborough Junction Rail Station",
+   "lat": 51.466298,
+   "lon": -0.102182,
+   "zone": "2",
+   "id": "910GLBGHJN"
+  },
+  "borough": "Lambeth"
+ },
+ {
+  "station": "Royal Albert",
+  "modes": "DLR",
+  "annual": 1227791,
+  "lat": 51.508395,
+  "lng": 0.045884,
+  "osm_name": "Royal Albert",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Royal Albert DLR Station",
+   "lat": 51.508357,
+   "lon": 0.045935,
+   "zone": "3",
+   "id": "940GZZDLRAL"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Selhurst",
+  "modes": "NR",
+  "annual": 1217928,
+  "lat": 51.392214,
+  "lng": -0.088654,
+  "osm_name": "Selhurst",
+  "nlc": "5434",
+  "tlc": "SRS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Selhurst Rail Station",
+   "lat": 51.391927,
+   "lon": -0.0883,
+   "zone": "4",
+   "id": "910GSELHRST"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Anerley",
+  "modes": "LO",
+  "annual": 1203540,
+  "lat": 51.412577,
+  "lng": -0.065494,
+  "osm_name": "Anerley",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Anerley Rail Station",
+   "lat": 51.412153,
+   "lon": -0.065886,
+   "zone": "4",
+   "id": "910GANERLEY"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "West Harrow",
+  "modes": "LU",
+  "annual": 1200932,
+  "lat": 51.579599,
+  "lng": -0.353136,
+  "osm_name": "West Harrow",
+  "src": "AC2025",
+  "tfl": {
+   "name": "West Harrow Underground Station",
+   "lat": 51.57971,
+   "lon": -0.3534,
+   "zone": "5",
+   "id": "940GZZLUWHW"
+  },
+  "borough": "Harrow"
+ },
+ {
+  "station": "Enfield Chase",
+  "modes": "NR",
+  "annual": 1166152,
+  "lat": 51.652638,
+  "lng": -0.090864,
+  "osm_name": "Enfield Chase",
+  "nlc": "6010",
+  "tlc": "ENC",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Enfield Chase Rail Station",
+   "lat": 51.653254,
+   "lon": -0.090696,
+   "zone": "5",
+   "id": "910GENFC"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Kew Bridge",
+  "modes": "NR",
+  "annual": 1162156,
+  "lat": 51.489502,
+  "lng": -0.287225,
+  "osm_name": "Kew Bridge",
+  "nlc": "5593",
+  "tlc": "KWB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Kew Bridge Rail Station",
+   "lat": 51.489513,
+   "lon": -0.287108,
+   "zone": "3",
+   "id": "910GKEWBDGE"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "Turkey Street",
+  "modes": "LO",
+  "annual": 1160545,
+  "lat": 51.673233,
+  "lng": -0.046969,
+  "osm_name": "Turkey Street",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Turkey Street Rail Station",
+   "lat": 51.672628,
+   "lon": -0.047217,
+   "zone": "6",
+   "id": "910GTURKYST"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Gordon Hill",
+  "modes": "NR",
+  "annual": 1152836,
+  "lat": 51.662951,
+  "lng": -0.09422,
+  "osm_name": "Gordon Hill",
+  "nlc": "6028",
+  "tlc": "GDH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Gordon Hill Rail Station",
+   "lat": 51.66411,
+   "lon": -0.095,
+   "zone": "5",
+   "id": "910GGORDONH"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Barkingside",
+  "modes": "LU",
+  "annual": 1152026,
+  "lat": 51.585818,
+  "lng": 0.088624,
+  "osm_name": "Barkingside",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Barkingside Underground Station",
+   "lat": 51.585689,
+   "lon": 0.088585,
+   "zone": "4",
+   "id": "940GZZLUBKE"
+  },
+  "borough": "Redbridge"
+ },
+ {
+  "station": "Harringay",
+  "modes": "NR",
+  "annual": 1140210,
+  "lat": 51.577558,
+  "lng": -0.10527,
+  "osm_name": "Harringay",
+  "nlc": "6012",
+  "tlc": "HGY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Harringay Rail Station",
+   "lat": 51.577358,
+   "lon": -0.105136,
+   "zone": "3",
+   "id": "910GHRGY"
+  },
+  "borough": "Haringey"
+ },
+ {
+  "station": "Carshalton",
+  "modes": "NR",
+  "annual": 1139060,
+  "lat": 51.368577,
+  "lng": -0.166381,
+  "osm_name": "Carshalton",
+  "nlc": "5405",
+  "tlc": "CSH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Carshalton Rail Station",
+   "lat": 51.368454,
+   "lon": -0.166368,
+   "zone": "5",
+   "id": "910GCRSHLTN"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Brimsdown",
+  "modes": "NR",
+  "annual": 1135474,
+  "lat": 51.655571,
+  "lng": -0.030791,
+  "osm_name": "Brimsdown",
+  "nlc": "6810",
+  "tlc": "BMD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Brimsdown Rail Station",
+   "lat": 51.655583,
+   "lon": -0.030817,
+   "zone": "5",
+   "id": "910GBRIMSDN"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Shortlands",
+  "modes": "NR",
+  "annual": 1128652,
+  "lat": 51.405905,
+  "lng": 0.002168,
+  "osm_name": "Shortlands",
+  "nlc": "5084",
+  "tlc": "SRT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Shortlands Rail Station",
+   "lat": 51.405801,
+   "lon": 0.001784,
+   "zone": "4",
+   "id": "910GSHRTLND"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Southbury",
+  "modes": "LO",
+  "annual": 1121182,
+  "lat": 51.648031,
+  "lng": -0.05263,
+  "osm_name": "Southbury",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Southbury Rail Station",
+   "lat": 51.648705,
+   "lon": -0.052437,
+   "zone": "5",
+   "id": "910GSBURY"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Woodgrange Park",
+  "modes": "LO",
+  "annual": 1114494,
+  "lat": 51.549168,
+  "lng": 0.044728,
+  "osm_name": "Woodgrange Park",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Woodgrange Park Rail Station",
+   "lat": 51.549264,
+   "lon": 0.044423,
+   "zone": "3+4",
+   "id": "910GWDGRNPK"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Slade Green",
+  "modes": "NR",
+  "annual": 1103814,
+  "lat": 51.467673,
+  "lng": 0.19031,
+  "osm_name": "Slade Green",
+  "nlc": "5154",
+  "tlc": "SGR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Slade Green Rail Station",
+   "lat": 51.467786,
+   "lon": 0.190491,
+   "zone": "6",
+   "id": "910GSLADEGN"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Barking Riverside",
+  "modes": "LO",
+  "annual": 1103076,
+  "lat": 51.519558,
+  "lng": 0.116013,
+  "osm_name": "Barking Riverside",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Barking Riverside",
+   "lat": 51.51953,
+   "lon": 0.11596,
+   "zone": "4",
+   "id": "910GBARKRIV"
+  },
+  "borough": "Barking and Dagenham"
+ },
+ {
+  "station": "Bexley",
+  "modes": "NR",
+  "annual": 1096808,
+  "lat": 51.440238,
+  "lng": 0.147949,
+  "osm_name": "Bexley",
+  "nlc": "5093",
+  "tlc": "BXY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Bexley Rail Station",
+   "lat": 51.440219,
+   "lon": 0.147903,
+   "zone": "6",
+   "id": "910GBEXLEY"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "South Croydon",
+  "modes": "NR",
+  "annual": 1088648,
+  "lat": 51.362917,
+  "lng": -0.093356,
+  "osm_name": "South Croydon",
+  "nlc": "5410",
+  "tlc": "SCY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "South Croydon Rail Station",
+   "lat": 51.362965,
+   "lon": -0.093457,
+   "zone": "5",
+   "id": "910GSCROYDN"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Crayford",
+  "modes": "NR",
+  "annual": 1086958,
+  "lat": 51.448177,
+  "lng": 0.178389,
+  "osm_name": "Crayford",
+  "nlc": "5100",
+  "tlc": "CRY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Crayford Rail Station",
+   "lat": 51.44828,
+   "lon": 0.178936,
+   "zone": "6",
+   "id": "910GCRFD"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "West Acton",
+  "modes": "LU",
+  "annual": 1079495,
+  "lat": 51.518352,
+  "lng": -0.280413,
+  "osm_name": "West Acton",
+  "src": "AC2025",
+  "tfl": {
+   "name": "West Acton Underground Station",
+   "lat": 51.518001,
+   "lon": -0.28098,
+   "zone": "3",
+   "id": "940GZZLUWTA"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "Clock House",
+  "modes": "NR",
+  "annual": 1067284,
+  "lat": 51.408345,
+  "lng": -0.040818,
+  "osm_name": "Clock House",
+  "nlc": "5048",
+  "tlc": "CLK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Clock House Rail Station",
+   "lat": 51.408586,
+   "lon": -0.040657,
+   "zone": "4",
+   "id": "910GCLOCKHS"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Stratford High Street",
+  "modes": "DLR",
+  "annual": 1063870,
+  "lat": 51.537647,
+  "lng": -0.000129,
+  "osm_name": "Stratford High Street",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Stratford High Street DLR Station",
+   "lat": 51.538196,
+   "lon": -0.001078,
+   "zone": "2/3",
+   "id": "940GZZDLSHS"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Northumberland Park",
+  "modes": "NR",
+  "annual": 1052358,
+  "lat": 51.601908,
+  "lng": -0.053865,
+  "osm_name": "Northumberland Park",
+  "nlc": "6971",
+  "tlc": "NUM",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Northumberland Park Rail Station",
+   "lat": 51.601969,
+   "lon": -0.053932,
+   "zone": "3",
+   "id": "910GNMBRLPK"
+  },
+  "borough": "Haringey"
+ },
+ {
+  "station": "Hendon",
+  "modes": "NR",
+  "annual": 1027036,
+  "lat": 51.580217,
+  "lng": -0.23888,
+  "osm_name": "Hendon",
+  "nlc": "1522",
+  "tlc": "HEN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hendon Rail Station",
+   "lat": 51.580068,
+   "lon": -0.238674,
+   "zone": "3+4",
+   "id": "910GHDON"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "South Acton",
+  "modes": "LO",
+  "annual": 1025488,
+  "lat": 51.499722,
+  "lng": -0.269898,
+  "osm_name": "South Acton",
+  "src": "AC2025",
+  "tfl": {
+   "name": "South Acton Rail Station",
+   "lat": 51.499695,
+   "lon": -0.270157,
+   "zone": "3",
+   "id": "910GSACTON"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "St Margarets (London)",
+  "modes": "NR",
+  "annual": 1014718,
+  "lat": 51.455154,
+  "lng": -0.320219,
+  "nlc": "5604",
+  "tlc": "SMG",
+  "src": "ORR2024-25",
+  "osm_name": "St Margarets",
+  "tfl": {
+   "name": "St Margarets (London) Rail Station",
+   "lat": 51.455236,
+   "lon": -0.3202,
+   "zone": "4",
+   "id": "910GSTMGTS"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Chislehurst",
+  "modes": "NR",
+  "annual": 1012880,
+  "lat": 51.405163,
+  "lng": 0.057867,
+  "osm_name": "Chislehurst",
+  "nlc": "5099",
+  "tlc": "CIT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Chislehurst Rail Station",
+   "lat": 51.405557,
+   "lon": 0.057418,
+   "zone": "5",
+   "id": "910GCHSLHRS"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Nunhead",
+  "modes": "NR",
+  "annual": 997310,
+  "lat": 51.466835,
+  "lng": -0.052375,
+  "osm_name": "Nunhead",
+  "nlc": "5068",
+  "tlc": "NHD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Nunhead Rail Station",
+   "lat": 51.466828,
+   "lon": -0.052273,
+   "zone": "2",
+   "id": "910GNUNHEAD"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "Brentford",
+  "modes": "NR",
+  "annual": 976928,
+  "lat": 51.487657,
+  "lng": -0.309683,
+  "osm_name": "Brentford",
+  "nlc": "5552",
+  "tlc": "BFD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Brentford Rail Station",
+   "lat": 51.487547,
+   "lon": -0.309651,
+   "zone": "4",
+   "id": "910GBNTFORD"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "Wandsworth Common",
+  "modes": "NR",
+  "annual": 961536,
+  "lat": 51.446124,
+  "lng": -0.163517,
+  "osm_name": "Wandsworth Common",
+  "nlc": "5395",
+  "tlc": "WSW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Wandsworth Common Rail Station",
+   "lat": 51.446185,
+   "lon": -0.163386,
+   "zone": "3",
+   "id": "910GWANDCMN"
+  },
+  "borough": "Wandsworth"
+ },
+ {
+  "station": "Isleworth",
+  "modes": "NR",
+  "annual": 956838,
+  "lat": 51.474882,
+  "lng": -0.336895,
+  "osm_name": "Isleworth",
+  "nlc": "5592",
+  "tlc": "ISL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Isleworth Rail Station",
+   "lat": 51.474763,
+   "lon": -0.336907,
+   "zone": "4",
+   "id": "910GISLEWTH"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "Barnehurst",
+  "modes": "NR",
+  "annual": 955890,
+  "lat": 51.465021,
+  "lng": 0.159647,
+  "osm_name": "Barnehurst",
+  "nlc": "5089",
+  "tlc": "BNH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Barnehurst Rail Station",
+   "lat": 51.464959,
+   "lon": 0.159646,
+   "zone": "6",
+   "id": "910GBRNHRST"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Hampton (London)",
+  "modes": "NR",
+  "annual": 948726,
+  "lat": 51.415908,
+  "lng": -0.372155,
+  "nlc": "5560",
+  "tlc": "HMP",
+  "src": "ORR2024-25",
+  "osm_name": "Hampton",
+  "tfl": {
+   "name": "Hampton (London) Rail Station",
+   "lat": 51.415934,
+   "lon": -0.372119,
+   "zone": "6",
+   "id": "910GHAMPTON"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Hayes (Kent)",
+  "modes": "NR",
+  "annual": 940160,
+  "lat": 51.376596,
+  "lng": 0.009507,
+  "nlc": "5050",
+  "tlc": "HYS",
+  "src": "ORR2024-25",
+  "osm_name": "Hayes",
+  "tfl": {
+   "name": "Hayes (Kent) Rail Station",
+   "lat": 51.376334,
+   "lon": 0.010557,
+   "zone": "5",
+   "id": "910GHAYS"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Cheam",
+  "modes": "NR",
+  "annual": 932574,
+  "lat": 51.355661,
+  "lng": -0.214513,
+  "osm_name": "Cheam",
+  "nlc": "5352",
+  "tlc": "CHE",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Cheam Rail Station",
+   "lat": 51.355479,
+   "lon": -0.214167,
+   "zone": "5",
+   "id": "910GCHEAM"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Westcombe Park",
+  "modes": "NR",
+  "annual": 931670,
+  "lat": 51.48424,
+  "lng": 0.01862,
+  "osm_name": "Westcombe Park",
+  "nlc": "5151",
+  "tlc": "WCB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Westcombe Park Rail Station",
+   "lat": 51.484203,
+   "lon": 0.018395,
+   "zone": "3",
+   "id": "910GWCOMBEP"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Elmstead Woods",
+  "modes": "NR",
+  "annual": 927220,
+  "lat": 51.416798,
+  "lng": 0.044657,
+  "osm_name": "Elmstead Woods",
+  "nlc": "5135",
+  "tlc": "ESD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Elmstead Woods Rail Station",
+   "lat": 51.417118,
+   "lon": 0.044274,
+   "zone": "4",
+   "id": "910GELMW"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Oakleigh Park",
+  "modes": "NR",
+  "annual": 924194,
+  "lat": 51.637667,
+  "lng": -0.166225,
+  "osm_name": "Oakleigh Park",
+  "nlc": "6020",
+  "tlc": "OKL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Oakleigh Park Rail Station",
+   "lat": 51.637678,
+   "lon": -0.166209,
+   "zone": "4",
+   "id": "910GOKLGHPK"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "Plumstead",
+  "modes": "NR",
+  "annual": 923038,
+  "lat": 51.489768,
+  "lng": 0.084018,
+  "osm_name": "Plumstead",
+  "nlc": "5208",
+  "tlc": "PLU",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Plumstead Rail Station",
+   "lat": 51.489795,
+   "lon": 0.084257,
+   "zone": "4",
+   "id": "910GPLMS"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "New Southgate",
+  "modes": "NR",
+  "annual": 920392,
+  "lat": 51.613804,
+  "lng": -0.142809,
+  "osm_name": "New Southgate",
+  "nlc": "6019",
+  "tlc": "NSG",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "New Southgate Rail Station",
+   "lat": 51.614114,
+   "lon": -0.143038,
+   "zone": "4",
+   "id": "910GNEWSGAT"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "Hackbridge",
+  "modes": "NR",
+  "annual": 911110,
+  "lat": 51.378028,
+  "lng": -0.15372,
+  "osm_name": "Hackbridge",
+  "nlc": "5364",
+  "tlc": "HCB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hackbridge Rail Station",
+   "lat": 51.377872,
+   "lon": -0.153907,
+   "zone": "4",
+   "id": "910GHKBG"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "South Kenton",
+  "modes": "LU",
+  "annual": 901280,
+  "lat": 51.57008,
+  "lng": -0.308367,
+  "osm_name": "South Kenton",
+  "src": "AC2025",
+  "tfl": {
+   "name": "South Kenton",
+   "lat": 51.570229,
+   "lon": -0.308448,
+   "zone": "4",
+   "id": "HUBSOK"
+  },
+  "borough": "Brent"
+ },
+ {
+  "station": "Fairlop",
+  "modes": "LU",
+  "annual": 899449,
+  "lat": 51.595948,
+  "lng": 0.09113,
+  "osm_name": "Fairlop",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Fairlop Underground Station",
+   "lat": 51.595618,
+   "lon": 0.091004,
+   "zone": "4",
+   "id": "940GZZLUFLP"
+  },
+  "borough": "Redbridge"
+ },
+ {
+  "station": "Wembley Stadium",
+  "modes": "NR",
+  "annual": 884860,
+  "lat": 51.554249,
+  "lng": -0.284766,
+  "osm_name": "Wembley Stadium",
+  "nlc": "1509",
+  "tlc": "WCX",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Wembley Stadium Rail Station",
+   "lat": 51.554416,
+   "lon": -0.285608,
+   "zone": "4",
+   "id": "910GWEMBLSM"
+  },
+  "borough": "Brent"
+ },
+ {
+  "station": "Ponders End",
+  "modes": "NR",
+  "annual": 884028,
+  "lat": 51.642847,
+  "lng": -0.034786,
+  "osm_name": "Ponders End",
+  "nlc": "6819",
+  "tlc": "PON",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Ponders End Rail Station",
+   "lat": 51.642256,
+   "lon": -0.03508,
+   "zone": "5",
+   "id": "910GPNDRSEN"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Lea Bridge",
+  "modes": "NR",
+  "annual": 877314,
+  "lat": 51.566751,
+  "lng": -0.037122,
+  "osm_name": "Lea Bridge",
+  "nlc": "6927",
+  "tlc": "LEB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Lea Bridge Rail Station",
+   "lat": 51.566548,
+   "lon": -0.036673,
+   "zone": "3",
+   "id": "910GLEABDGE"
+  },
+  "borough": "Waltham Forest"
+ },
+ {
+  "station": "Croxley",
+  "modes": "LU",
+  "annual": 877170,
+  "lat": 51.647044,
+  "lng": -0.441718,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Croxley Underground Station",
+   "lat": 51.647044,
+   "lon": -0.441718,
+   "zone": "7",
+   "id": "940GZZLUCXY"
+  },
+  "borough": "Three Rivers"
+ },
+ {
+  "station": "Barnes Bridge",
+  "modes": "NR",
+  "annual": 872264,
+  "lat": 51.472012,
+  "lng": -0.252633,
+  "osm_name": "Barnes Bridge",
+  "nlc": "5580",
+  "tlc": "BNI",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Barnes Bridge Rail Station",
+   "lat": 51.472009,
+   "lon": -0.25263,
+   "zone": "3",
+   "id": "910GBNSBDGE"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Syon Lane",
+  "modes": "NR",
+  "annual": 868730,
+  "lat": 51.481815,
+  "lng": -0.32478,
+  "osm_name": "Syon Lane",
+  "nlc": "5609",
+  "tlc": "SYL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Syon Lane Rail Station",
+   "lat": 51.481785,
+   "lon": -0.324842,
+   "zone": "4",
+   "id": "910GSYONLA"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "West Dulwich",
+  "modes": "NR",
+  "annual": 864428,
+  "lat": 51.440285,
+  "lng": -0.090891,
+  "osm_name": "West Dulwich",
+  "nlc": "5086",
+  "tlc": "WDU",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "West Dulwich Rail Station",
+   "lat": 51.440718,
+   "lon": -0.091371,
+   "zone": "3",
+   "id": "910GWDULWCH"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "Cricklewood",
+  "modes": "NR",
+  "annual": 859464,
+  "lat": 51.558755,
+  "lng": -0.212975,
+  "osm_name": "Cricklewood",
+  "nlc": "1519",
+  "tlc": "CRI",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Cricklewood Rail Station",
+   "lat": 51.558453,
+   "lon": -0.212677,
+   "zone": "3",
+   "id": "910GCRKLWD"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "Hounslow",
+  "modes": "NR",
+  "annual": 850306,
+  "lat": 51.462097,
+  "lng": -0.361729,
+  "osm_name": "Hounslow",
+  "nlc": "5563",
+  "tlc": "HOU",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hounslow Rail Station",
+   "lat": 51.461946,
+   "lon": -0.362277,
+   "zone": "5",
+   "id": "910GHOUNSLW"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "Sanderstead",
+  "modes": "NR",
+  "annual": 844182,
+  "lat": 51.348394,
+  "lng": -0.093459,
+  "osm_name": "Sanderstead",
+  "nlc": "5433",
+  "tlc": "SNR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Sanderstead Rail Station",
+   "lat": 51.348283,
+   "lon": -0.093678,
+   "zone": "6",
+   "id": "910GSDSD"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "St Johns (London)",
+  "modes": "NR",
+  "annual": 842382,
+  "lat": 51.469091,
+  "lng": -0.022185,
+  "nlc": "5059",
+  "tlc": "SAJ",
+  "src": "ORR2024-25",
+  "osm_name": "St Johns",
+  "tfl": {
+   "name": "St Johns (London) Rail Station",
+   "lat": 51.469391,
+   "lon": -0.022719,
+   "zone": "2",
+   "id": "910GSTJOHNS"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Upminster Bridge",
+  "modes": "LU",
+  "annual": 825358,
+  "lat": 51.558265,
+  "lng": 0.234769,
+  "osm_name": "Upminster Bridge",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Upminster Bridge Underground Station",
+   "lat": 51.55856,
+   "lon": 0.235809,
+   "zone": "6",
+   "id": "940GZZLUUPB"
+  },
+  "borough": "Havering"
+ },
+ {
+  "station": "Ruislip Gardens",
+  "modes": "LU",
+  "annual": 825357,
+  "lat": 51.560657,
+  "lng": -0.410461,
+  "osm_name": "Ruislip Gardens",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Ruislip Gardens Underground Station",
+   "lat": 51.560736,
+   "lon": -0.41071,
+   "zone": "5",
+   "id": "940GZZLURSG"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "Falconwood",
+  "modes": "NR",
+  "annual": 823276,
+  "lat": 51.45923,
+  "lng": 0.079304,
+  "osm_name": "Falconwood",
+  "nlc": "5137",
+  "tlc": "FCN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Falconwood Rail Station",
+   "lat": 51.459154,
+   "lon": 0.079305,
+   "zone": "4",
+   "id": "910GFALCNWD"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Motspur Park",
+  "modes": "NR",
+  "annual": 822372,
+  "lat": 51.394875,
+  "lng": -0.239608,
+  "osm_name": "Motspur Park",
+  "nlc": "5645",
+  "tlc": "MOT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Motspur Park Rail Station",
+   "lat": 51.395196,
+   "lon": -0.239531,
+   "zone": "4",
+   "id": "910GMOTSPRP"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Ickenham",
+  "modes": "LU",
+  "annual": 816974,
+  "lat": 51.56157,
+  "lng": -0.442351,
+  "osm_name": "Ickenham",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Ickenham Underground Station",
+   "lat": 51.561992,
+   "lon": -0.442001,
+   "zone": "6",
+   "id": "940GZZLUICK"
+  },
+  "borough": "Hillingdon"
+ },
+ {
+  "station": "Kent House",
+  "modes": "NR",
+  "annual": 814336,
+  "lat": 51.412275,
+  "lng": -0.045213,
+  "osm_name": "Kent House",
+  "nlc": "5080",
+  "tlc": "KTH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Kent House Rail Station",
+   "lat": 51.412215,
+   "lon": -0.045247,
+   "zone": "4",
+   "id": "910GKENTHOS"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Hampton Wick",
+  "modes": "NR",
+  "annual": 810634,
+  "lat": 51.414558,
+  "lng": -0.31235,
+  "osm_name": "Hampton Wick",
+  "nlc": "5589",
+  "tlc": "HMW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hampton Wick Rail Station",
+   "lat": 51.414524,
+   "lon": -0.312489,
+   "zone": "6",
+   "id": "910GHAMWICK"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Penge West",
+  "modes": "LO",
+  "annual": 810098,
+  "lat": 51.417503,
+  "lng": -0.060661,
+  "osm_name": "Penge West",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Penge West Rail Station",
+   "lat": 51.417555,
+   "lon": -0.06084,
+   "zone": "4",
+   "id": "910GPENEW"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Moor Park",
+  "modes": "LU",
+  "annual": 806282,
+  "lat": 51.629845,
+  "lng": -0.432454,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Moor Park Underground Station",
+   "lat": 51.629845,
+   "lon": -0.432454,
+   "zone": "6+7",
+   "id": "940GZZLUMPK"
+  },
+  "borough": "Three Rivers"
+ },
+ {
+  "station": "Hatch End",
+  "modes": "LO",
+  "annual": 804997,
+  "lat": 51.609578,
+  "lng": -0.368784,
+  "osm_name": "Hatch End",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Hatch End Rail Station",
+   "lat": 51.609417,
+   "lon": -0.368601,
+   "zone": "6",
+   "id": "910GHTCHEND"
+  },
+  "borough": "Harrow"
+ },
+ {
+  "station": "Tooting",
+  "modes": "NR",
+  "annual": 803666,
+  "lat": 51.419846,
+  "lng": -0.161323,
+  "osm_name": "Tooting",
+  "nlc": "5389",
+  "tlc": "TOO",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Tooting Rail Station",
+   "lat": 51.419848,
+   "lon": -0.161278,
+   "zone": "3",
+   "id": "910GTOOTING"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Elmers End",
+  "modes": "NR",
+  "annual": 802120,
+  "lat": 51.398012,
+  "lng": -0.049702,
+  "osm_name": "Elmers End",
+  "nlc": "5049",
+  "tlc": "ELE",
+  "src": "ORR2024-25",
+  "tfl": {
+   "zone": "4",
+   "name": "Elmers End"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "West Wickham",
+  "modes": "NR",
+  "annual": 792638,
+  "lat": 51.381514,
+  "lng": -0.014733,
+  "osm_name": "West Wickham",
+  "nlc": "5054",
+  "tlc": "WWI",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "West Wickham Rail Station",
+   "lat": 51.381301,
+   "lon": -0.014432,
+   "zone": "5",
+   "id": "910GWWICKHM"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Carshalton Beeches",
+  "modes": "NR",
+  "annual": 786788,
+  "lat": 51.357196,
+  "lng": -0.169351,
+  "osm_name": "Carshalton Beeches",
+  "nlc": "5406",
+  "tlc": "CSB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Carshalton Beeches Rail Station",
+   "lat": 51.357411,
+   "lon": -0.169797,
+   "zone": "5",
+   "id": "910GCRSHLTB"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Lower Sydenham",
+  "modes": "NR",
+  "annual": 786602,
+  "lat": 51.424745,
+  "lng": -0.0333,
+  "osm_name": "Lower Sydenham",
+  "nlc": "5053",
+  "tlc": "LSY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Lower Sydenham Rail Station",
+   "lat": 51.424831,
+   "lon": -0.033345,
+   "zone": "4",
+   "id": "910GLSYDNHM"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Albany Park",
+  "modes": "NR",
+  "annual": 775024,
+  "lat": 51.435384,
+  "lng": 0.125965,
+  "osm_name": "Albany Park",
+  "nlc": "5132",
+  "tlc": "AYP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Albany Park Rail Station",
+   "lat": 51.435453,
+   "lon": 0.125737,
+   "zone": "5",
+   "id": "910GALBNYPK"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Erith",
+  "modes": "NR",
+  "annual": 740404,
+  "lat": 51.481578,
+  "lng": 0.175195,
+  "osm_name": "Erith",
+  "nlc": "5104",
+  "tlc": "ERH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Erith Rail Station",
+   "lat": 51.481671,
+   "lon": 0.175055,
+   "zone": "6",
+   "id": "910GERITH"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Bickley",
+  "modes": "NR",
+  "annual": 738246,
+  "lat": 51.400064,
+  "lng": 0.044337,
+  "osm_name": "Bickley",
+  "nlc": "5063",
+  "tlc": "BKL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Bickley Rail Station",
+   "lat": 51.400104,
+   "lon": 0.045241,
+   "zone": "5",
+   "id": "910GBICKLEY"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "North Dulwich",
+  "modes": "NR",
+  "annual": 730666,
+  "lat": 51.454178,
+  "lng": -0.088329,
+  "osm_name": "North Dulwich",
+  "nlc": "5429",
+  "tlc": "NDL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "North Dulwich Rail Station",
+   "lat": 51.45451,
+   "lon": -0.087917,
+   "zone": "2+3",
+   "id": "910GNDULWCH"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "Drayton Park",
+  "modes": "NR",
+  "annual": 728922,
+  "lat": 51.553106,
+  "lng": -0.10577,
+  "osm_name": "Drayton Park",
+  "nlc": "6000",
+  "tlc": "DYP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Drayton Park Rail Station",
+   "lat": 51.55277,
+   "lon": -0.105509,
+   "zone": "2",
+   "id": "910GDRYP"
+  },
+  "borough": "Islington"
+ },
+ {
+  "station": "Headstone Lane",
+  "modes": "LO",
+  "annual": 727319,
+  "lat": 51.602553,
+  "lng": -0.356952,
+  "osm_name": "Headstone Lane",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Headstone Lane Rail Station",
+   "lat": 51.602649,
+   "lon": -0.35722,
+   "zone": "5",
+   "id": "910GHEDSTNL"
+  },
+  "borough": "Harrow"
+ },
+ {
+  "station": "New Beckenham",
+  "modes": "NR",
+  "annual": 721184,
+  "lat": 51.416939,
+  "lng": -0.035207,
+  "osm_name": "New Beckenham",
+  "nlc": "5058",
+  "tlc": "NBC",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "New Beckenham Rail Station",
+   "lat": 51.41677,
+   "lon": -0.035273,
+   "zone": "4",
+   "id": "910GNBCKNHM"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Theydon Bois",
+  "modes": "LU",
+  "annual": 709377,
+  "lat": 51.671759,
+  "lng": 0.103085,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Theydon Bois Underground Station",
+   "lat": 51.671759,
+   "lon": 0.103085,
+   "zone": "6",
+   "id": "940GZZLUTHB"
+  },
+  "borough": "Epping Forest"
+ },
+ {
+  "station": "Chiswick",
+  "modes": "NR",
+  "annual": 707048,
+  "lat": 51.481147,
+  "lng": -0.268175,
+  "osm_name": "Chiswick",
+  "nlc": "5583",
+  "tlc": "CHK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Chiswick Rail Station",
+   "lat": 51.481137,
+   "lon": -0.267835,
+   "zone": "3",
+   "id": "910GCHISWCK"
+  },
+  "borough": "Hounslow"
+ },
+ {
+  "station": "Crofton Park",
+  "modes": "NR",
+  "annual": 699392,
+  "lat": 51.455215,
+  "lng": -0.03663,
+  "osm_name": "Crofton Park",
+  "nlc": "5078",
+  "tlc": "CFT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Crofton Park Rail Station",
+   "lat": 51.455189,
+   "lon": -0.036503,
+   "zone": "3",
+   "id": "910GCFPK"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Essex Road",
+  "modes": "NR",
+  "annual": 697932,
+  "lat": 51.540733,
+  "lng": -0.096186,
+  "osm_name": "Essex Road",
+  "nlc": "6004",
+  "tlc": "EXR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Essex Road Rail Station",
+   "lat": 51.540705,
+   "lon": -0.096276,
+   "zone": "2",
+   "id": "910GESSEXRD"
+  },
+  "borough": "Islington"
+ },
+ {
+  "station": "Belvedere",
+  "modes": "NR",
+  "annual": 696406,
+  "lat": 51.492227,
+  "lng": 0.153367,
+  "osm_name": "Belvedere",
+  "nlc": "5092",
+  "tlc": "BVD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Belvedere Rail Station",
+   "lat": 51.492118,
+   "lon": 0.152286,
+   "zone": "5",
+   "id": "910GBELVEDR"
+  },
+  "borough": "Bexley"
+ },
+ {
+  "station": "Sydenham Hill",
+  "modes": "NR",
+  "annual": 694346,
+  "lat": 51.43261,
+  "lng": -0.08015,
+  "osm_name": "Sydenham Hill",
+  "nlc": "5085",
+  "tlc": "SYH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Sydenham Hill Rail Station",
+   "lat": 51.432714,
+   "lon": -0.080339,
+   "zone": "3",
+   "id": "910GSYDNHMH"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "Strawberry Hill",
+  "modes": "NR",
+  "annual": 687594,
+  "lat": 51.439192,
+  "lng": -0.339331,
+  "osm_name": "Strawberry Hill",
+  "nlc": "5607",
+  "tlc": "STW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Strawberry Hill Rail Station",
+   "lat": 51.438963,
+   "lon": -0.339358,
+   "zone": "5",
+   "id": "910GSTRWBYH"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Brent Cross West",
+  "modes": "NR",
+  "annual": 675392,
+  "lat": 51.568819,
+  "lng": -0.226544,
+  "osm_name": "Brent Cross West",
+  "nlc": "7777",
+  "tlc": "BCZ",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Brent Cross West Station",
+   "lat": 51.568429,
+   "lon": -0.225488,
+   "zone": "3",
+   "id": "910GBRENTX"
+  },
+  "borough": "Barnet"
+ },
+ {
+  "station": "South Hampstead",
+  "modes": "LO",
+  "annual": 639290,
+  "lat": 51.541434,
+  "lng": -0.178801,
+  "osm_name": "South Hampstead",
+  "src": "AC2025",
+  "tfl": {
+   "name": "South Hampstead Rail Station",
+   "lat": 51.541432,
+   "lon": -0.178878,
+   "zone": "2",
+   "id": "910GSHMPSTD"
+  },
+  "borough": "Camden"
+ },
+ {
+  "station": "South Bermondsey",
+  "modes": "NR",
+  "annual": 632694,
+  "lat": 51.487951,
+  "lng": -0.054456,
+  "osm_name": "South Bermondsey",
+  "nlc": "5425",
+  "tlc": "SBM",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "South Bermondsey Rail Station",
+   "lat": 51.488136,
+   "lon": -0.054678,
+   "zone": "2",
+   "id": "910GSBRMNDS"
+  },
+  "borough": "Southwark"
+ },
+ {
+  "station": "Bellingham",
+  "modes": "NR",
+  "annual": 623114,
+  "lat": 51.432831,
+  "lng": -0.019519,
+  "osm_name": "Bellingham",
+  "nlc": "5062",
+  "tlc": "BGM",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Bellingham Rail Station",
+   "lat": 51.432913,
+   "lon": -0.019331,
+   "zone": "3",
+   "id": "910GBELNGHM"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Waddon",
+  "modes": "NR",
+  "annual": 604552,
+  "lat": 51.367334,
+  "lng": -0.117435,
+  "osm_name": "Waddon",
+  "nlc": "5392",
+  "tlc": "WDO",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Waddon Rail Station",
+   "lat": 51.367398,
+   "lon": -0.117336,
+   "zone": "5",
+   "id": "910GWADDON"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Chelsfield",
+  "modes": "NR",
+  "annual": 593350,
+  "lat": 51.356611,
+  "lng": 0.108328,
+  "osm_name": "Chelsfield",
+  "nlc": "5098",
+  "tlc": "CLD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Chelsfield Rail Station",
+   "lat": 51.356256,
+   "lon": 0.10907,
+   "zone": "6",
+   "id": "910GCHLSFLD"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Tolworth",
+  "modes": "NR",
+  "annual": 575870,
+  "lat": 51.376875,
+  "lng": -0.279442,
+  "osm_name": "Tolworth",
+  "nlc": "5573",
+  "tlc": "TOL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Tolworth Rail Station",
+   "lat": 51.37686,
+   "lon": -0.279461,
+   "zone": "5",
+   "id": "910GTOLWTH"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Eden Park",
+  "modes": "NR",
+  "annual": 558530,
+  "lat": 51.39018,
+  "lng": -0.026369,
+  "osm_name": "Eden Park",
+  "nlc": "5056",
+  "tlc": "EDN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Eden Park Rail Station",
+   "lat": 51.390091,
+   "lon": -0.026355,
+   "zone": "5",
+   "id": "910GEDPK"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "North Ealing",
+  "modes": "LU",
+  "annual": 517546,
+  "lat": 51.517488,
+  "lng": -0.288752,
+  "osm_name": "North Ealing",
+  "src": "AC2025",
+  "tfl": {
+   "name": "North Ealing Underground Station",
+   "lat": 51.517505,
+   "lon": -0.288868,
+   "zone": "3",
+   "id": "940GZZLUNEN"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "Meridian Water",
+  "modes": "NR",
+  "annual": 494354,
+  "lat": 51.610003,
+  "lng": -0.050085,
+  "osm_name": "Meridian Water",
+  "nlc": "6599",
+  "tlc": "MRW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Meridian Water Rail Station",
+   "lat": 51.610102,
+   "lon": -0.050898,
+   "zone": "4",
+   "id": "910GMWRWSTN"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Grange Park",
+  "modes": "NR",
+  "annual": 493126,
+  "lat": 51.643329,
+  "lng": -0.096939,
+  "osm_name": "Grange Park",
+  "nlc": "6029",
+  "tlc": "GPK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Grange Park Rail Station",
+   "lat": 51.642607,
+   "lon": -0.097358,
+   "zone": "5",
+   "id": "910GGRPK"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Chessington North",
+  "modes": "NR",
+  "annual": 488812,
+  "lat": 51.363982,
+  "lng": -0.300732,
+  "osm_name": "Chessington North",
+  "nlc": "5582",
+  "tlc": "CSN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Chessington North Rail Station",
+   "lat": 51.364041,
+   "lon": -0.300699,
+   "zone": "6",
+   "id": "910GCHSSN"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Malden Manor",
+  "modes": "NR",
+  "annual": 484006,
+  "lat": 51.384725,
+  "lng": -0.261245,
+  "osm_name": "Malden Manor",
+  "nlc": "5599",
+  "tlc": "MAL",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Malden Manor Rail Station",
+   "lat": 51.38473,
+   "lon": -0.261274,
+   "zone": "4",
+   "id": "910GMALDENM"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Purley Oaks",
+  "modes": "NR",
+  "annual": 480890,
+  "lat": 51.347035,
+  "lng": -0.098711,
+  "osm_name": "Purley Oaks",
+  "nlc": "5430",
+  "tlc": "PUO",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Purley Oaks Rail Station",
+   "lat": 51.347046,
+   "lon": -0.098856,
+   "zone": "6",
+   "id": "910GPURLEYO"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Fulwell",
+  "modes": "NR",
+  "annual": 437388,
+  "lat": 51.433906,
+  "lng": -0.349057,
+  "osm_name": "Fulwell",
+  "nlc": "5587",
+  "tlc": "FLW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Fulwell Rail Station",
+   "lat": 51.433935,
+   "lon": -0.349468,
+   "zone": "6",
+   "id": "910GFULWELL"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Beckton Park",
+  "modes": "DLR",
+  "annual": 426102,
+  "lat": 51.50876,
+  "lng": 0.054943,
+  "osm_name": "Beckton Park",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Beckton Park DLR Station",
+   "lat": 51.508793,
+   "lon": 0.054932,
+   "zone": "3",
+   "id": "940GZZDLBPK"
+  },
+  "borough": "Newham"
+ },
+ {
+  "station": "Dagenham Dock",
+  "modes": "NR",
+  "annual": 424946,
+  "lat": 51.526193,
+  "lng": 0.145432,
+  "osm_name": "Dagenham Dock",
+  "nlc": "7440",
+  "tlc": "DDK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Dagenham Dock Rail Station",
+   "lat": 51.526156,
+   "lon": 0.145904,
+   "zone": "5",
+   "id": "910GDGNHMDC"
+  },
+  "borough": "Barking and Dagenham"
+ },
+ {
+  "station": "Mitcham Junction",
+  "modes": "NR",
+  "annual": 408018,
+  "lat": 51.392945,
+  "lng": -0.157777,
+  "osm_name": "Mitcham Junction",
+  "nlc": "5427",
+  "tlc": "MIJ",
+  "src": "ORR2024-25",
+  "tfl": {
+   "zone": "4",
+   "name": "Mitcham Junction"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Beckenham Hill",
+  "modes": "NR",
+  "annual": 378666,
+  "lat": 51.424522,
+  "lng": -0.01591,
+  "osm_name": "Beckenham Hill",
+  "nlc": "5076",
+  "tlc": "BEC",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Beckenham Hill Rail Station",
+   "lat": 51.424583,
+   "lon": -0.015951,
+   "zone": "4",
+   "id": "910GBCKNHMH"
+  },
+  "borough": "Lewisham"
+ },
+ {
+  "station": "Grange Hill",
+  "modes": "LU",
+  "annual": 372479,
+  "lat": 51.613134,
+  "lng": 0.092503,
+  "osm_name": "Grange Hill",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Grange Hill Underground Station",
+   "lat": 51.613378,
+   "lon": 0.092066,
+   "zone": "4",
+   "id": "940GZZLUGGH"
+  },
+  "borough": "Redbridge"
+ },
+ {
+  "station": "Berrylands",
+  "modes": "NR",
+  "annual": 363954,
+  "lat": 51.399008,
+  "lng": -0.280911,
+  "osm_name": "Berrylands",
+  "nlc": "5581",
+  "tlc": "BRS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Berrylands Rail Station",
+   "lat": 51.399045,
+   "lon": -0.280714,
+   "zone": "5",
+   "id": "910GBRLANDS"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "Hadley Wood",
+  "modes": "NR",
+  "annual": 362264,
+  "lat": 51.668629,
+  "lng": -0.176138,
+  "osm_name": "Hadley Wood",
+  "nlc": "6075",
+  "tlc": "HDW",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Hadley Wood Rail Station",
+   "lat": 51.668497,
+   "lon": -0.176172,
+   "zone": "6",
+   "id": "910GHADLYWD"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Chessington South",
+  "modes": "NR",
+  "annual": 344218,
+  "lat": 51.35675,
+  "lng": -0.308097,
+  "osm_name": "Chessington South",
+  "nlc": "5554",
+  "tlc": "CSS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Chessington South Rail Station",
+   "lat": 51.35655,
+   "lon": -0.308157,
+   "zone": "6",
+   "id": "910GCHSSS"
+  },
+  "borough": "Kingston upon Thames"
+ },
+ {
+  "station": "North Sheen",
+  "modes": "NR",
+  "annual": 342020,
+  "lat": 51.465325,
+  "lng": -0.286582,
+  "osm_name": "North Sheen",
+  "nlc": "5601",
+  "tlc": "NSH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "North Sheen Rail Station",
+   "lat": 51.465155,
+   "lon": -0.287876,
+   "zone": "3",
+   "id": "910GNSHEEN"
+  },
+  "borough": "Richmond upon Thames"
+ },
+ {
+  "station": "Haydons Road",
+  "modes": "NR",
+  "annual": 322800,
+  "lat": 51.425363,
+  "lng": -0.188342,
+  "osm_name": "Haydons Road",
+  "nlc": "5289",
+  "tlc": "HYR",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Haydons Road Rail Station",
+   "lat": 51.425448,
+   "lon": -0.188815,
+   "zone": "3",
+   "id": "910GHYDNSRD"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Woolwich Dockyard",
+  "modes": "NR",
+  "annual": 315464,
+  "lat": 51.491092,
+  "lng": 0.054882,
+  "osm_name": "Woolwich Dockyard",
+  "nlc": "5153",
+  "tlc": "WWD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Woolwich Dockyard Rail Station",
+   "lat": 51.491127,
+   "lon": 0.054642,
+   "zone": "3",
+   "id": "910GWOLWCDY"
+  },
+  "borough": "Greenwich"
+ },
+ {
+  "station": "Chigwell",
+  "modes": "LU",
+  "annual": 308690,
+  "lat": 51.617916,
+  "lng": 0.075041,
+  "src": "AC2025",
+  "tfl": {
+   "name": "Chigwell Underground Station",
+   "lat": 51.617916,
+   "lon": 0.075041,
+   "zone": "4",
+   "id": "940GZZLUCWL"
+  },
+  "borough": "Epping Forest"
+ },
+ {
+  "station": "Emerson Park",
+  "modes": "LO",
+  "annual": 299152,
+  "lat": 51.568601,
+  "lng": 0.220238,
+  "osm_name": "Emerson Park",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Emerson Park Rail Station",
+   "lat": 51.568642,
+   "lon": 0.220113,
+   "zone": "6",
+   "id": "910GEMRSPKH"
+  },
+  "borough": "Havering"
+ },
+ {
+  "station": "Riddlesdown",
+  "modes": "NR",
+  "annual": 287038,
+  "lat": 51.332935,
+  "lng": -0.099704,
+  "osm_name": "Riddlesdown",
+  "nlc": "5432",
+  "tlc": "RDD",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Riddlesdown Rail Station",
+   "lat": 51.332486,
+   "lon": -0.099387,
+   "zone": "6",
+   "id": "910GRDLSDWN"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Wimbledon Chase",
+  "modes": "NR",
+  "annual": 271590,
+  "lat": 51.410247,
+  "lng": -0.214788,
+  "osm_name": "Wimbledon Chase",
+  "nlc": "5612",
+  "tlc": "WBO",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Wimbledon Chase Rail Station",
+   "lat": 51.409558,
+   "lon": -0.214031,
+   "zone": "3",
+   "id": "910GWIMLCHS"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Kenley",
+  "modes": "NR",
+  "annual": 268508,
+  "lat": 51.324776,
+  "lng": -0.100844,
+  "osm_name": "Kenley",
+  "nlc": "5419",
+  "tlc": "KLY",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Kenley Rail Station",
+   "lat": 51.324777,
+   "lon": -0.100925,
+   "zone": "6",
+   "id": "910GKNLY"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "West Sutton",
+  "modes": "NR",
+  "annual": 265900,
+  "lat": 51.366261,
+  "lng": -0.204484,
+  "osm_name": "West Sutton",
+  "nlc": "5293",
+  "tlc": "WSU",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "West Sutton Rail Station",
+   "lat": 51.365854,
+   "lon": -0.205173,
+   "zone": "5",
+   "id": "910GWSUTTON"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Sutton Common",
+  "modes": "NR",
+  "annual": 265722,
+  "lat": 51.375431,
+  "lng": -0.196105,
+  "osm_name": "Sutton Common",
+  "nlc": "5436",
+  "tlc": "SUC",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Sutton Common Rail Station",
+   "lat": 51.374891,
+   "lon": -0.196343,
+   "zone": "4",
+   "id": "910GSUTTONC"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Ravensbourne",
+  "modes": "NR",
+  "annual": 235210,
+  "lat": 51.414313,
+  "lng": -0.007629,
+  "osm_name": "Ravensbourne",
+  "nlc": "5083",
+  "tlc": "RVB",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Ravensbourne Rail Station",
+   "lat": 51.414188,
+   "lon": -0.007557,
+   "zone": "4",
+   "id": "910GRBRN"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Bromley North",
+  "modes": "NR",
+  "annual": 226164,
+  "lat": 51.409198,
+  "lng": 0.017798,
+  "osm_name": "Bromley North",
+  "nlc": "5096",
+  "tlc": "BMN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Bromley North Rail Station",
+   "lat": 51.408328,
+   "lon": 0.016993,
+   "zone": "4",
+   "id": "910GBROMLYN"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Roding Valley",
+  "modes": "LU",
+  "annual": 204505,
+  "lat": 51.617081,
+  "lng": 0.043755,
+  "osm_name": "Roding Valley",
+  "src": "AC2025",
+  "tfl": {
+   "name": "Roding Valley Underground Station",
+   "lat": 51.617199,
+   "lon": 0.043647,
+   "zone": "4",
+   "id": "940GZZLURVY"
+  },
+  "borough": "Redbridge"
+ },
+ {
+  "station": "Belmont",
+  "modes": "NR",
+  "annual": 200356,
+  "lat": 51.343896,
+  "lng": -0.198785,
+  "osm_name": "Belmont",
+  "nlc": "5350",
+  "tlc": "BLM",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Belmont Rail Station",
+   "lat": 51.343815,
+   "lon": -0.198855,
+   "zone": "5",
+   "id": "910GBELM"
+  },
+  "borough": "Sutton"
+ },
+ {
+  "station": "Sundridge Park",
+  "modes": "NR",
+  "annual": 193024,
+  "lat": 51.413957,
+  "lng": 0.021475,
+  "osm_name": "Sundridge Park",
+  "nlc": "5155",
+  "tlc": "SUP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Sundridge Park Rail Station",
+   "lat": 51.413782,
+   "lon": 0.021446,
+   "zone": "4",
+   "id": "910GSNDP"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Knockholt",
+  "modes": "NR",
+  "annual": 188588,
+  "lat": 51.345769,
+  "lng": 0.130829,
+  "osm_name": "Knockholt",
+  "nlc": "5109",
+  "tlc": "KCK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Knockholt Rail Station",
+   "lat": 51.34579,
+   "lon": 0.130847,
+   "zone": "6",
+   "id": "910GKNCKHLT"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Northolt Park",
+  "modes": "NR",
+  "annual": 176218,
+  "lat": 51.557478,
+  "lng": -0.359418,
+  "osm_name": "Northolt Park",
+  "nlc": "1478",
+  "tlc": "NLT",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Northolt Park Rail Station",
+   "lat": 51.55754,
+   "lon": -0.359466,
+   "zone": "5",
+   "id": "910GNTHOLTP"
+  },
+  "borough": "Harrow"
+ },
+ {
+  "station": "St Helier (London)",
+  "modes": "NR",
+  "annual": 156764,
+  "lat": 51.389451,
+  "lng": -0.19886,
+  "nlc": "5290",
+  "tlc": "SIH",
+  "src": "ORR2024-25",
+  "osm_name": "St. Helier",
+  "tfl": {
+   "name": "St Helier (London) Rail Station",
+   "lat": 51.389901,
+   "lon": -0.198771,
+   "zone": "4",
+   "id": "910GSHLIER"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Woodmansterne",
+  "modes": "NR",
+  "annual": 126744,
+  "lat": 51.319051,
+  "lng": -0.153882,
+  "osm_name": "Woodmansterne",
+  "nlc": "5441",
+  "tlc": "WME",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Woodmansterne Rail Station",
+   "lat": 51.31902,
+   "lon": -0.154262,
+   "zone": "6",
+   "id": "910GWDMNSTR"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "South Merton",
+  "modes": "NR",
+  "annual": 125436,
+  "lat": 51.403326,
+  "lng": -0.205518,
+  "osm_name": "South Merton",
+  "nlc": "5292",
+  "tlc": "SMO",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "South Merton Rail Station",
+   "lat": 51.402993,
+   "lon": -0.205157,
+   "zone": "4",
+   "id": "910GSMERTON"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "Crews Hill",
+  "modes": "NR",
+  "annual": 119492,
+  "lat": 51.684755,
+  "lng": -0.107221,
+  "osm_name": "Crews Hill",
+  "nlc": "6007",
+  "tlc": "CWH",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Crews Hill Rail Station",
+   "lat": 51.684486,
+   "lon": -0.106887,
+   "zone": "6",
+   "id": "910GCRHL"
+  },
+  "borough": "Enfield"
+ },
+ {
+  "station": "Castle Bar Park",
+  "modes": "NR",
+  "annual": 112884,
+  "lat": 51.522867,
+  "lng": -0.331502,
+  "osm_name": "Castle Bar Park",
+  "nlc": "3098",
+  "tlc": "CBP",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Castle Bar Park Rail Station",
+   "lat": 51.522931,
+   "lon": -0.331549,
+   "zone": "4",
+   "id": "910GCBARPAR"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "Reedham (London)",
+  "modes": "NR",
+  "annual": 105708,
+  "lat": 51.331129,
+  "lng": -0.123421,
+  "nlc": "5431",
+  "tlc": "RHM",
+  "src": "ORR2024-25",
+  "osm_name": "Reedham",
+  "tfl": {
+   "name": "Reedham (Surrey) Rail Station",
+   "lat": 51.33112,
+   "lon": -0.123416,
+   "zone": "6",
+   "id": "910GREEDHMS"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Birkbeck",
+  "modes": "NR",
+  "annual": 105178,
+  "lat": 51.403456,
+  "lng": -0.056539,
+  "osm_name": "Birkbeck",
+  "nlc": "5401",
+  "tlc": "BIK",
+  "src": "ORR2024-25",
+  "tfl": {
+   "zone": "4",
+   "name": "Birkbeck"
+  },
+  "borough": "Bromley"
+ },
+ {
+  "station": "Coulsdon Town",
+  "modes": "NR",
+  "annual": 97562,
+  "lat": 51.322064,
+  "lng": -0.134245,
+  "osm_name": "Coulsdon Town",
+  "nlc": "5382",
+  "tlc": "CDN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Coulsdon Town Rail Station",
+   "lat": 51.322043,
+   "lon": -0.134464,
+   "zone": "6",
+   "id": "910GCOLSTWN"
+  },
+  "borough": "Croydon"
+ },
+ {
+  "station": "Morden South",
+  "modes": "NR",
+  "annual": 75948,
+  "lat": 51.395678,
+  "lng": -0.19924,
+  "osm_name": "Morden South",
+  "nlc": "5291",
+  "tlc": "MDS",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Morden South Rail Station",
+   "lat": 51.396116,
+   "lon": -0.199461,
+   "zone": "4",
+   "id": "910GMORDENS"
+  },
+  "borough": "Merton"
+ },
+ {
+  "station": "South Greenford",
+  "modes": "NR",
+  "annual": 52212,
+  "lat": 51.533203,
+  "lng": -0.336438,
+  "osm_name": "South Greenford",
+  "nlc": "3138",
+  "tlc": "SGN",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "South Greenford Rail Station",
+   "lat": 51.533749,
+   "lon": -0.336704,
+   "zone": "4",
+   "id": "910GSGFORD"
+  },
+  "borough": "Ealing"
+ },
+ {
+  "station": "Drayton Green",
+  "modes": "NR",
+  "annual": 23270,
+  "lat": 51.516385,
+  "lng": -0.330194,
+  "osm_name": "Drayton Green",
+  "nlc": "3099",
+  "tlc": "DRG",
+  "src": "ORR2024-25",
+  "tfl": {
+   "name": "Drayton Green Rail Station",
+   "lat": 51.516617,
+   "lon": -0.330194,
+   "zone": "4",
+   "id": "910GDRAYGRN"
+  },
+  "borough": "Ealing"
+ }
+]

@@ -91,6 +91,96 @@ const PRESETS=[
  {id:"kebab",name:"Kebab & late-night grill",cat:"fast_food",ticket:10,seats:18,floorspace:70,takeaway:70,delivery:20,alcohol:false,terrace:false,franchise:false,
   audience:{office:1,residents:3,young:3,students:3,tourists:1,nightlife:5,families:0,intl:2},rent:450,
   windows:[{days:[0,1,2,3,4,5,6],from:1020,to:1560}]},
+ {id:"taqueria",name:"Mexican taqueria",cat:"fast_food",ticket:13,seats:26,floorspace:75,takeaway:55,delivery:25,alcohol:true,terrace:false,franchise:false,
+  audience:{office:3,residents:3,young:5,students:3,tourists:2,nightlife:3,families:1,intl:3},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1380}]},
+ {id:"curry-house",name:"Indian curry house",cat:"restaurant",ticket:21,seats:55,floorspace:120,takeaway:30,delivery:25,alcohol:true,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:3,students:2,tourists:1,nightlife:2,families:3,intl:4},rent:450,
+  windows:[{days:[0,1,2,3,4,5,6],from:1050,to:1380}]},
+ {id:"hotpot",name:"Chinese hotpot",cat:"restaurant",ticket:32,seats:60,floorspace:160,takeaway:0,delivery:0,alcohol:true,terrace:false,franchise:false,
+  audience:{office:2,residents:3,young:4,students:4,tourists:2,nightlife:2,families:2,intl:5},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1410}]},
+ {id:"korean-bbq",name:"Korean BBQ",cat:"restaurant",ticket:34,seats:54,floorspace:150,takeaway:0,delivery:0,alcohol:true,terrace:false,franchise:false,
+  audience:{office:2,residents:3,young:5,students:4,tourists:3,nightlife:3,families:1,intl:4},rent:600,
+  windows:[{days:[0,1,2,3,4,5,6],from:1050,to:1410}]},
+ {id:"pho",name:"Vietnamese pho & banh mi",cat:"restaurant",ticket:15,seats:36,floorspace:85,takeaway:35,delivery:15,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:3,young:4,students:3,tourists:2,nightlife:1,families:1,intl:4},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:690,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1320}]},
+ {id:"thai-street",name:"Thai street food",cat:"fast_food",ticket:14,seats:22,floorspace:70,takeaway:55,delivery:25,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:3,young:4,students:3,tourists:2,nightlife:2,families:1,intl:3},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:690,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1350}]},
+ {id:"sushi",name:"Sushi & Japanese kitchen",cat:"restaurant",ticket:26,seats:32,floorspace:90,takeaway:40,delivery:20,alcohol:true,terrace:false,franchise:false,
+  audience:{office:4,residents:3,young:4,students:2,tourists:2,nightlife:1,families:1,intl:4},rent:650,
+  windows:[{days:[0,1,2,3,4,5],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1350}]},
+ {id:"souvlaki",name:"Greek souvlaki & gyros",cat:"fast_food",ticket:11,seats:18,floorspace:60,takeaway:65,delivery:25,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:4,young:4,students:3,tourists:2,nightlife:3,families:2,intl:3},rent:450,
+  windows:[{days:[0,1,2,3,4,5,6],from:690,to:900},{days:[2,3,4,5],from:1050,to:1500}]},
+ {id:"trattoria",name:"Italian trattoria",cat:"restaurant",ticket:29,seats:50,floorspace:120,takeaway:10,delivery:10,alcohol:true,terrace:true,franchise:false,
+  audience:{office:2,residents:5,young:3,students:1,tourists:3,nightlife:2,families:4,intl:2},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1080,to:1380}]},
+ {id:"ocakbasi",name:"Turkish ocakbasi grill",cat:"restaurant",ticket:20,seats:48,floorspace:110,takeaway:30,delivery:15,alcohol:true,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:3,students:2,tourists:1,nightlife:3,families:3,intl:4},rent:450,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1440}]},
+ {id:"mezze",name:"Lebanese mezze & grill",cat:"restaurant",ticket:23,seats:40,floorspace:100,takeaway:25,delivery:15,alcohol:true,terrace:true,franchise:false,
+  audience:{office:2,residents:4,young:4,students:2,tourists:2,nightlife:3,families:2,intl:4},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1380}]},
+ {id:"jerk",name:"Caribbean jerk & patties",cat:"fast_food",ticket:12,seats:16,floorspace:60,takeaway:70,delivery:20,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:4,students:3,tourists:1,nightlife:3,families:2,intl:4},rent:400,
+  windows:[{days:[0,1,2,3,4,5,6],from:690,to:900},{days:[3,4,5],from:1050,to:1500}]},
+ {id:"fish-chips",name:"Fish & chips",cat:"fast_food",ticket:12,seats:28,floorspace:80,takeaway:75,delivery:15,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:2,students:2,tourists:3,nightlife:2,families:4,intl:1},rent:400,
+  windows:[{days:[0,1,2,3,4,5,6],from:690,to:900},{days:[0,1,2,3,4,5,6],from:1020,to:1290}]},
+ {id:"sandwich-bar",name:"Sandwich & salad bar",cat:"fast_food",ticket:9,seats:14,floorspace:55,takeaway:85,delivery:15,alcohol:false,terrace:false,franchise:false,
+  audience:{office:5,residents:2,young:3,students:2,tourists:1,nightlife:0,families:0,intl:1},rent:650,
+  windows:[{days:[0,1,2,3,4],from:450,to:900}]},
+ {id:"bagel-deli",name:"Bagel & salt beef deli",cat:"fast_food",ticket:11,seats:18,floorspace:60,takeaway:70,delivery:15,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:4,young:4,students:2,tourists:2,nightlife:2,families:2,intl:3},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:480,to:1080},{days:[4,5],from:1080,to:1500}]},
+ {id:"juice-bar",name:"Juice & smoothie bar",cat:"cafe",ticket:8,seats:8,floorspace:40,takeaway:90,delivery:10,alcohol:false,terrace:false,franchise:false,
+  audience:{office:4,residents:3,young:5,students:3,tourists:2,nightlife:0,families:1,intl:1},rent:600,
+  windows:[{days:[0,1,2,3,4,5,6],from:450,to:1080}]},
+ {id:"churros",name:"Churros & hot chocolate",cat:"cafe",ticket:8,seats:22,floorspace:60,takeaway:60,delivery:10,alcohol:false,terrace:false,franchise:false,family:true,
+  audience:{office:1,residents:4,young:4,students:3,tourists:4,nightlife:3,families:4,intl:3},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:660,to:900},{days:[0,1,2,3,4,5,6],from:1080,to:1380}]},
+ {id:"sports-bar",name:"Sports bar",cat:"pub_bar",ticket:19,seats:80,floorspace:200,takeaway:0,delivery:0,alcohol:true,terrace:true,franchise:false,
+  audience:{office:3,residents:4,young:4,students:2,tourists:1,nightlife:5,families:0,intl:1},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:1440}]},
+ {id:"board-game-cafe",name:"Board game cafe",cat:"cafe",ticket:14,seats:45,floorspace:120,takeaway:10,delivery:0,alcohol:true,terrace:false,franchise:false,family:true,
+  audience:{office:1,residents:4,young:5,students:3,tourists:1,nightlife:3,families:3,intl:2},rent:400,
+  windows:[{days:[1,2,3,4,5,6],from:720,to:1380},{days:[6],from:660,to:1080}]},
+ {id:"vegan",name:"Vegan & plant-based restaurant",cat:"restaurant",ticket:22,seats:42,floorspace:100,takeaway:20,delivery:15,alcohol:true,terrace:false,franchise:false,
+  audience:{office:3,residents:4,young:5,students:3,tourists:2,nightlife:1,families:1,intl:2},rent:550,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1350}]},
+ {id:"butcher",name:"Butcher & charcuterie",cat:"grocery",ticket:18,seats:0,floorspace:80,takeaway:100,delivery:5,alcohol:false,terrace:false,franchise:false,
+  audience:{office:1,residents:5,young:2,students:0,tourists:0,nightlife:0,families:5,intl:1},rent:400,
+  windows:[{days:[0,1,2,3,4,5],from:480,to:1080},{days:[6],from:540,to:840}]},
+ {id:"fishmonger",name:"Fishmonger & seafood bar",cat:"grocery",ticket:24,seats:12,floorspace:80,takeaway:80,delivery:5,alcohol:true,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:3,students:0,tourists:2,nightlife:1,families:3,intl:2},rent:500,
+  windows:[{days:[1,2,3,4,5,6],from:540,to:1200}]},
+ {id:"cheese-shop",name:"Cheese shop & affineur",cat:"grocery",ticket:20,seats:0,floorspace:55,takeaway:95,delivery:5,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:3,students:0,tourists:2,nightlife:0,families:3,intl:2},rent:450,
+  windows:[{days:[1,2,3,4,5,6],from:540,to:1140}]},
+ {id:"creperie",name:"Creperie & waffles",cat:"cafe",ticket:10,seats:28,floorspace:70,takeaway:40,delivery:10,alcohol:false,terrace:false,franchise:false,family:true,
+  audience:{office:2,residents:4,young:4,students:3,tourists:4,nightlife:1,families:4,intl:2},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:600,to:1140}]},
+ {id:"neapolitan-pizza",name:"Neapolitan pizzeria",cat:"restaurant",ticket:19,seats:55,floorspace:120,takeaway:20,delivery:20,alcohol:true,terrace:true,franchise:false,
+  audience:{office:2,residents:5,young:4,students:2,tourists:2,nightlife:2,families:4,intl:2},rent:500,
+  windows:[{days:[0,1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1050,to:1380}]},
+ {id:"steakhouse",name:"Steakhouse & grill",cat:"restaurant",ticket:45,seats:60,floorspace:160,takeaway:0,delivery:0,alcohol:true,terrace:false,franchise:false,
+  audience:{office:3,residents:4,young:2,students:0,tourists:3,nightlife:2,families:2,intl:2},rent:700,
+  windows:[{days:[1,2,3,4,5,6],from:1050,to:1410}]},
+ {id:"seafood-restaurant",name:"Seafood restaurant",cat:"restaurant",ticket:42,seats:48,floorspace:130,takeaway:0,delivery:0,alcohol:true,terrace:true,franchise:false,
+  audience:{office:3,residents:4,young:2,students:0,tourists:4,nightlife:1,families:2,intl:2},rent:650,
+  windows:[{days:[1,2,3,4,5,6],from:720,to:900},{days:[0,1,2,3,4,5,6],from:1080,to:1380}]},
+ {id:"matcha",name:"Matcha & tea house",cat:"cafe",ticket:9,seats:20,floorspace:55,takeaway:50,delivery:5,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:3,young:5,students:4,tourists:3,nightlife:0,families:0,intl:3},rent:650,
+  windows:[{days:[0,1,2,3,4,5,6],from:540,to:1080}]},
+ {id:"climbing",name:"Bouldering & climbing gym",cat:"fitness",ticket:22,seats:0,floorspace:600,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:4,young:5,students:4,tourists:0,nightlife:0,families:1,intl:1},rent:300,
+  windows:[{days:[0,1,2,3,4,5,6],from:390,to:540},{days:[0,1,2,3,4,5,6],from:1050,to:1320}]},
+ {id:"boxing",name:"Boxing & martial arts gym",cat:"fitness",ticket:23,seats:0,floorspace:300,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:4,students:3,tourists:0,nightlife:0,families:1,intl:2},rent:350,
+  windows:[{days:[0,1,2,3,4,5],from:390,to:540},{days:[0,1,2,3,4,5],from:1050,to:1260},{days:[6],from:540,to:780}]},
 ];
 
 /* neutral starting point for "start from scratch" - fully manual concept */
@@ -301,14 +391,22 @@ function chipFor(how){
   return how==="obs"?' <span class="chip obs">OBSERVED</span>':how==="ctx"?' <span class="chip ctx">AREA CONTEXT</span>':how==="cur"?' <span class="chip cur">CURATED</span>':' <span class="chip mod">MODELLED</span>';
 }
 
+const PRESETS_VISIBLE=9; /* two rows of five incl. Start from scratch; the rest behind the toggle */
+let presetsExpanded=false;
 function renderPresets(){
-  $("preset-row").innerHTML=PRESETS.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
-    +`<button class="preset scratch ${activePreset==='scratch'?'active':''}" data-p="scratch">Start from scratch - no template</button>`;
+  const sel=PRESETS.find(p=>p.id===activePreset);
+  let visible=presetsExpanded?PRESETS.slice():PRESETS.slice(0,PRESETS_VISIBLE);
+  if(sel&&!visible.some(p=>p.id===sel.id)) visible.push(sel); /* keep the active preset on screen */
+  $("preset-row").innerHTML=visible.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
+    +`<button class="preset scratch ${activePreset==='scratch'?'active':''}" data-p="scratch">Start from scratch - no template</button>`
+    +`<button class="preset more" data-p="__more">${presetsExpanded?'See fewer concepts':'See more concepts ('+(PRESETS.length-PRESETS_VISIBLE)+' more)'}</button>`;
   document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{
+    if(b.dataset.p==="__more"){presetsExpanded=!presetsExpanded;renderPresets();return;}
     activePreset=b.dataset.p;
     concept=normalizeConcept(JSON.parse(JSON.stringify(activePreset==="scratch"?SCRATCH:PRESETS.find(p=>p.id===activePreset))));
     renderPresets(); renderConcept(); update();
   });
+});
 }
 
 function sliderField(label,key,min,max,step,fmtf){
@@ -533,7 +631,7 @@ function selectSegment(id,scroll){
     <div class="bar"><i class="${cr.score<0.4?'neg':''}" style="width:${Math.round(cr.score*100)}%"></i></div>
     <div class="cw">${Math.round(cr.score*100)} · w ${(cr.w*100).toFixed(0)}%</div></div>`).join("");
 
-  const anchors=s.anchors.map(a=>`<div class="ev-line"><span class="lv">${a.station} (${a.mode})</span><span class="rv">${fmt(a.annual)}/yr</span></div>`).join("");
+  const anchors=s.anchors.map(a=>`<div class="ev-line"><span class="lv">${a.station} (${a.mode}${a.src==="ORR"?" · ORR":""})</span><span class="rv">${fmt(a.annual)}/yr</span></div>`).join("");
   const stn=s.transport.names.slice(0,6).map(n=>`<div class="ev-line"><span class="lv">${n}</span></div>`).join("");
   const topEth=s.lsoa.top_eth.map(([g,p])=>`<div class="ev-line"><span class="lv">${g}</span><span class="rv">${p}%</span></div>`).join("");
 
@@ -558,7 +656,7 @@ function selectSegment(id,scroll){
   <div class="dp-cols">
     <div class="ev-card"><h4>Movement at named stations${chipFor("obs")}</h4>
       ${anchors}
-      <div class="ev-line"><span class="lv">Combined typical-day entries + exits (TfL NUMBAT 2024)</span></div>
+      <div class="ev-line"><span class="lv">Combined typical-day entries + exits (TfL Annual Station Counts 2025; NR stations: ORR 2024-25)</span></div>
       <div class="dayflow">${dayBars}</div>
       <div class="ev-line"><span class="lv">Weekend share of weekly flow</span><span class="rv">${Math.round(fl.weekend_share*100)}%</span></div>
       <div class="ev-line"><span class="lv">Stations within 900 m (OSM)</span><span class="rv">${s.transport.stations_900m}</span></div>
@@ -642,7 +740,7 @@ function selectSegment(id,scroll){
 function renderMethod(){
   $("method-grid").innerHTML=`
   <div class="m-card"><h4>Movement &amp; transport${chipFor("obs")}</h4>
-    <p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL NUMBAT 2024 annual station counts, summed over the stations named for each segment. Stations within 900 m from OpenStreetMap.</p>
+    <p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL Annual Station Counts 2025, summed over the stations named for each segment. National Rail stations without TfL counts use ORR Estimates of Station Usage 2024-25 (annual entries + exits, marked NR · ORR); their day-of-week split is modelled on the median London Overground profile, since ORR publishes annual totals only. Stations within 900 m from OpenStreetMap.</p>
     <p><a href="https://crowding.data.tfl.gov.uk/Annual%20Station%20Counts/2024/AC2024_AnnualisedEntryExit_Public.xlsx">crowding.data.tfl.gov.uk - AC2024 Annualised Entry/Exit</a></p>
     <p>Resolution: named station, not the pavement. A station 400 m away on a desire line matters more than one across a railway.</p></div>
   <div class="m-card"><h4>Street offer &amp; competition${chipFor("obs")}</h4>
@@ -671,8 +769,7 @@ function renderMethod(){
     <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records inside the covered segments (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
     <p>Resolution: real buildings and coordinates; the revenue colour is modelled. A coloured unit is not a vacant unit - check availability with agents.</p></div>
   <div class="m-card"><h4>Coverage</h4>
-    <p>${SEGS.length} segments covering all of London: ${SEGS.filter(s=>s.stype!=="transport_hub"||!s.name.endsWith("station area")).length} curated commercial pitches plus ${SEGS.filter(s=>s.stype==="transport_hub"&&s.name.endsWith("station area")).length} station catchments - every Greater London TfL station with 1.5M+ annual entries/exits (Zones 1-9) - plus ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded inside them. Town centres served only by National Rail (no TfL station) are not covered yet: there is no public flow series for them.</p>
-    <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>`;
+    <p>${SEGS.length} segments covering all of London: ${SEGS.filter(s=>s.stype!=="transport_hub"||!s.name.endsWith("station area")).length} curated commercial pitches plus ${SEGS.filter(s=>s.stype==="transport_hub"&&s.name.endsWith("station area")).length} station catchments - every station on the TfL network (Annual Station Counts 2025, no minimum flow) and every Greater London National Rail station (ORR 2024-25), including National-Rail-only town centres such as Kingston, Sutton, Bromley and Croydon - plus ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded inside them. Where TfL and ORR both count a station, TfL counts are used. A handful of TfL-network termini beyond the London billing authorities (Amersham, Chesham, Slough-side Elizabeth line stops) stay out because the borough rent evidence does not reach them.</p>    <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>`;
 }
 
 /* ---------- main loop ---------- */

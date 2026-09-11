@@ -1,0 +1,1602 @@
+[
+ {
+  "station": "East Croydon",
+  "modes": "NR",
+  "annual": 20592106,
+  "lat": 51.375845,
+  "lng": -0.092732,
+  "osm_name": "East Croydon",
+  "nlc": "5355",
+  "tlc": "ECR"
+ },
+ {
+  "station": "City Thameslink",
+  "modes": "NR",
+  "annual": 7635634,
+  "lat": 51.515126,
+  "lng": -0.103564,
+  "osm_name": "City Thameslink",
+  "nlc": "5121",
+  "tlc": "CTK"
+ },
+ {
+  "station": "Surbiton",
+  "modes": "NR",
+  "annual": 7589564,
+  "lat": 51.392411,
+  "lng": -0.303999,
+  "osm_name": "Surbiton",
+  "nlc": "5571",
+  "tlc": "SUR"
+ },
+ {
+  "station": "Bromley South",
+  "modes": "NR",
+  "annual": 6193798,
+  "lat": 51.400041,
+  "lng": 0.018277,
+  "osm_name": "Bromley South",
+  "nlc": "5064",
+  "tlc": "BMS"
+ },
+ {
+  "station": "Putney",
+  "modes": "NR",
+  "annual": 5645484,
+  "lat": 51.460934,
+  "lng": -0.215348,
+  "osm_name": "Putney",
+  "nlc": "5603",
+  "tlc": "PUT"
+ },
+ {
+  "station": "Earlsfield",
+  "modes": "NR",
+  "annual": 5569216,
+  "lat": 51.442403,
+  "lng": -0.187694,
+  "osm_name": "Earlsfield",
+  "nlc": "5584",
+  "tlc": "EAD"
+ },
+ {
+  "station": "Orpington",
+  "modes": "NR",
+  "annual": 4989622,
+  "lat": 51.373604,
+  "lng": 0.08872,
+  "osm_name": "Orpington",
+  "nlc": "5122",
+  "tlc": "ORP"
+ },
+ {
+  "station": "Twickenham",
+  "modes": "NR",
+  "annual": 4972204,
+  "lat": 51.450579,
+  "lng": -0.32884,
+  "osm_name": "Twickenham",
+  "nlc": "5574",
+  "tlc": "TWI"
+ },
+ {
+  "station": "Kingston",
+  "modes": "NR",
+  "annual": 4360664,
+  "lat": 51.412933,
+  "lng": -0.30182,
+  "osm_name": "Kingston",
+  "nlc": "5565",
+  "tlc": "KNG"
+ },
+ {
+  "station": "Wandsworth Town",
+  "modes": "NR",
+  "annual": 3786146,
+  "lat": 51.460963,
+  "lng": -0.188251,
+  "osm_name": "Wandsworth Town",
+  "nlc": "5576",
+  "tlc": "WNT"
+ },
+ {
+  "station": "Feltham",
+  "modes": "NR",
+  "annual": 3626102,
+  "lat": 51.447838,
+  "lng": -0.410283,
+  "osm_name": "Feltham",
+  "nlc": "5559",
+  "tlc": "FEL"
+ },
+ {
+  "station": "Raynes Park",
+  "modes": "NR",
+  "annual": 3497682,
+  "lat": 51.408966,
+  "lng": -0.23054,
+  "osm_name": "Raynes Park",
+  "nlc": "5569",
+  "tlc": "RAY"
+ },
+ {
+  "station": "New Malden",
+  "modes": "NR",
+  "annual": 3077144,
+  "lat": 51.403962,
+  "lng": -0.255759,
+  "osm_name": "New Malden",
+  "nlc": "5567",
+  "tlc": "NEM"
+ },
+ {
+  "station": "Hither Green",
+  "modes": "NR",
+  "annual": 2899052,
+  "lat": 51.451587,
+  "lng": -0.000647,
+  "osm_name": "Hither Green",
+  "nlc": "5107",
+  "tlc": "HGR"
+ },
+ {
+  "station": "Purley",
+  "modes": "NR",
+  "annual": 2777102,
+  "lat": 51.33748,
+  "lng": -0.113913,
+  "osm_name": "Purley",
+  "nlc": "5379",
+  "tlc": "PUR"
+ },
+ {
+  "station": "Streatham Common",
+  "modes": "NR",
+  "annual": 2765402,
+  "lat": 51.418566,
+  "lng": -0.135926,
+  "osm_name": "Streatham Common",
+  "nlc": "5384",
+  "tlc": "SRC"
+ },
+ {
+  "station": "Sidcup",
+  "modes": "NR",
+  "annual": 2614930,
+  "lat": 51.434021,
+  "lng": 0.10343,
+  "osm_name": "Sidcup",
+  "nlc": "5125",
+  "tlc": "SID"
+ },
+ {
+  "station": "Catford Bridge",
+  "modes": "NR",
+  "annual": 2512134,
+  "lat": 51.444591,
+  "lng": -0.024923,
+  "osm_name": "Catford Bridge",
+  "nlc": "5047",
+  "tlc": "CFB"
+ },
+ {
+  "station": "Herne Hill",
+  "modes": "NR",
+  "annual": 2434224,
+  "lat": 51.453469,
+  "lng": -0.102283,
+  "osm_name": "Herne Hill",
+  "nlc": "5066",
+  "tlc": "HNH"
+ },
+ {
+  "station": "Thornton Heath",
+  "modes": "NR",
+  "annual": 2432008,
+  "lat": 51.398944,
+  "lng": -0.100516,
+  "osm_name": "Thornton Heath",
+  "nlc": "5388",
+  "tlc": "TTH"
+ },
+ {
+  "station": "Norbury",
+  "modes": "NR",
+  "annual": 2348766,
+  "lat": 51.41137,
+  "lng": -0.121802,
+  "osm_name": "Norbury",
+  "nlc": "5428",
+  "tlc": "NRB"
+ },
+ {
+  "station": "Grove Park",
+  "modes": "NR",
+  "annual": 2296634,
+  "lat": 51.430765,
+  "lng": 0.022024,
+  "osm_name": "Grove Park",
+  "nlc": "5139",
+  "tlc": "GRP"
+ },
+ {
+  "station": "Blackheath",
+  "modes": "NR",
+  "annual": 2278510,
+  "lat": 51.465799,
+  "lng": 0.008922,
+  "osm_name": "Blackheath",
+  "nlc": "5095",
+  "tlc": "BKH"
+ },
+ {
+  "station": "Norbiton",
+  "modes": "NR",
+  "annual": 2269820,
+  "lat": 51.412311,
+  "lng": -0.284084,
+  "osm_name": "Norbiton",
+  "nlc": "5568",
+  "tlc": "NBT"
+ },
+ {
+  "station": "Barnes",
+  "modes": "NR",
+  "annual": 2251810,
+  "lat": 51.466783,
+  "lng": -0.241182,
+  "osm_name": "Barnes",
+  "nlc": "5551",
+  "tlc": "BNS"
+ },
+ {
+  "station": "Battersea Park",
+  "modes": "NR",
+  "annual": 2183506,
+  "lat": 51.47761,
+  "lng": -0.147585,
+  "osm_name": "Battersea Park",
+  "nlc": "5420",
+  "tlc": "BAK"
+ },
+ {
+  "station": "Tulse Hill",
+  "modes": "NR",
+  "annual": 2181520,
+  "lat": 51.439927,
+  "lng": -0.104847,
+  "osm_name": "Tulse Hill",
+  "nlc": "5390",
+  "tlc": "TUH"
+ },
+ {
+  "station": "New Eltham",
+  "modes": "NR",
+  "annual": 2038220,
+  "lat": 51.438014,
+  "lng": 0.070947,
+  "osm_name": "New Eltham",
+  "nlc": "5119",
+  "tlc": "NEH"
+ },
+ {
+  "station": "Coulsdon South",
+  "modes": "NR",
+  "annual": 1959570,
+  "lat": 51.315543,
+  "lng": -0.137974,
+  "osm_name": "Coulsdon South",
+  "nlc": "5408",
+  "tlc": "CDS"
+ },
+ {
+  "station": "Mill Hill Broadway",
+  "modes": "NR",
+  "annual": 1874860,
+  "lat": 51.612669,
+  "lng": -0.2488,
+  "osm_name": "Mill Hill Broadway",
+  "nlc": "1527",
+  "tlc": "MIL"
+ },
+ {
+  "station": "Alexandra Palace",
+  "modes": "NR",
+  "annual": 1855806,
+  "lat": 51.598202,
+  "lng": -0.120663,
+  "osm_name": "Alexandra Palace",
+  "nlc": "6025",
+  "tlc": "AAP"
+ },
+ {
+  "station": "Streatham Hill",
+  "modes": "NR",
+  "annual": 1824266,
+  "lat": 51.438328,
+  "lng": -0.127785,
+  "osm_name": "Streatham Hill",
+  "nlc": "5435",
+  "tlc": "SRH"
+ },
+ {
+  "station": "Eltham",
+  "modes": "NR",
+  "annual": 1758352,
+  "lat": 51.455594,
+  "lng": 0.052269,
+  "osm_name": "Eltham",
+  "nlc": "5103",
+  "tlc": "ELW"
+ },
+ {
+  "station": "Teddington",
+  "modes": "NR",
+  "annual": 1717082,
+  "lat": 51.424466,
+  "lng": -0.332573,
+  "osm_name": "Teddington",
+  "nlc": "5572",
+  "tlc": "TED"
+ },
+ {
+  "station": "Petts Wood",
+  "modes": "NR",
+  "annual": 1707602,
+  "lat": 51.388626,
+  "lng": 0.074561,
+  "osm_name": "Petts Wood",
+  "nlc": "5123",
+  "tlc": "PET"
+ },
+ {
+  "station": "Beckenham Junction",
+  "modes": "NR",
+  "annual": 1694068,
+  "lat": 51.411062,
+  "lng": -0.025987,
+  "osm_name": "Beckenham Junction",
+  "nlc": "5046",
+  "tlc": "BKJ"
+ },
+ {
+  "station": "Hornsey",
+  "modes": "NR",
+  "annual": 1664926,
+  "lat": 51.586321,
+  "lng": -0.111683,
+  "osm_name": "Hornsey",
+  "nlc": "6015",
+  "tlc": "HRN"
+ },
+ {
+  "station": "Deptford",
+  "modes": "NR",
+  "annual": 1643802,
+  "lat": 51.478982,
+  "lng": -0.026635,
+  "osm_name": "Deptford",
+  "nlc": "5145",
+  "tlc": "DEP"
+ },
+ {
+  "station": "Kidbrooke",
+  "modes": "NR",
+  "annual": 1620822,
+  "lat": 51.462032,
+  "lng": 0.0279,
+  "osm_name": "Kidbrooke",
+  "nlc": "5108",
+  "tlc": "KDB"
+ },
+ {
+  "station": "Wallington",
+  "modes": "NR",
+  "annual": 1609134,
+  "lat": 51.360235,
+  "lng": -0.15059,
+  "osm_name": "Wallington",
+  "nlc": "5394",
+  "tlc": "WLT"
+ },
+ {
+  "station": "Palmers Green",
+  "modes": "NR",
+  "annual": 1557022,
+  "lat": 51.618661,
+  "lng": -0.110169,
+  "osm_name": "Palmers Green",
+  "nlc": "6021",
+  "tlc": "PAL"
+ },
+ {
+  "station": "Mortlake",
+  "modes": "NR",
+  "annual": 1546638,
+  "lat": 51.468064,
+  "lng": -0.267371,
+  "osm_name": "Mortlake",
+  "nlc": "5600",
+  "tlc": "MTL"
+ },
+ {
+  "station": "Welling",
+  "modes": "NR",
+  "annual": 1527888,
+  "lat": 51.464821,
+  "lng": 0.101629,
+  "osm_name": "Welling",
+  "nlc": "5128",
+  "tlc": "WLI"
+ },
+ {
+  "station": "West Norwood",
+  "modes": "NR",
+  "annual": 1507342,
+  "lat": 51.431627,
+  "lng": -0.103491,
+  "osm_name": "West Norwood",
+  "nlc": "5438",
+  "tlc": "WNW"
+ },
+ {
+  "station": "Bexleyheath",
+  "modes": "NR",
+  "annual": 1475374,
+  "lat": 51.463565,
+  "lng": 0.132945,
+  "osm_name": "Bexleyheath",
+  "nlc": "5094",
+  "tlc": "BXH"
+ },
+ {
+  "station": "Enfield Lock",
+  "modes": "NR",
+  "annual": 1459366,
+  "lat": 51.670611,
+  "lng": -0.028569,
+  "osm_name": "Enfield Lock",
+  "nlc": "6815",
+  "tlc": "ENL"
+ },
+ {
+  "station": "Worcester Park",
+  "modes": "NR",
+  "annual": 1422222,
+  "lat": 51.381427,
+  "lng": -0.244964,
+  "osm_name": "Worcester Park",
+  "nlc": "5579",
+  "tlc": "WCP"
+ },
+ {
+  "station": "Winchmore Hill",
+  "modes": "NR",
+  "annual": 1408426,
+  "lat": 51.634068,
+  "lng": -0.100941,
+  "osm_name": "Winchmore Hill",
+  "nlc": "6024",
+  "tlc": "WIH"
+ },
+ {
+  "station": "Gipsy Hill",
+  "modes": "NR",
+  "annual": 1401264,
+  "lat": 51.424533,
+  "lng": -0.084042,
+  "osm_name": "Gipsy Hill",
+  "nlc": "5363",
+  "tlc": "GIP"
+ },
+ {
+  "station": "Maze Hill",
+  "modes": "NR",
+  "annual": 1397904,
+  "lat": 51.482648,
+  "lng": 0.00375,
+  "osm_name": "Maze Hill",
+  "nlc": "5149",
+  "tlc": "MZH"
+ },
+ {
+  "station": "Mottingham",
+  "modes": "NR",
+  "annual": 1374680,
+  "lat": 51.440252,
+  "lng": 0.049962,
+  "osm_name": "Mottingham",
+  "nlc": "5118",
+  "tlc": "MTG"
+ },
+ {
+  "station": "East Dulwich",
+  "modes": "NR",
+  "annual": 1335792,
+  "lat": 51.461037,
+  "lng": -0.080798,
+  "osm_name": "East Dulwich",
+  "nlc": "5358",
+  "tlc": "EDW"
+ },
+ {
+  "station": "St Mary Cray",
+  "modes": "NR",
+  "annual": 1334744,
+  "lat": 51.394738,
+  "lng": 0.105719,
+  "osm_name": "St Mary Cray",
+  "nlc": "5073",
+  "tlc": "SMY"
+ },
+ {
+  "station": "Mitcham Eastfields",
+  "modes": "NR",
+  "annual": 1318094,
+  "lat": 51.407395,
+  "lng": -0.154872,
+  "osm_name": "Mitcham Eastfields",
+  "nlc": "5069",
+  "tlc": "MTC"
+ },
+ {
+  "station": "New Barnet",
+  "modes": "NR",
+  "annual": 1272760,
+  "lat": 51.648278,
+  "lng": -0.172624,
+  "osm_name": "New Barnet",
+  "nlc": "6018",
+  "tlc": "NBA"
+ },
+ {
+  "station": "Charlton",
+  "modes": "NR",
+  "annual": 1269452,
+  "lat": 51.48676,
+  "lng": 0.030809,
+  "osm_name": "Charlton",
+  "nlc": "5144",
+  "tlc": "CTN"
+ },
+ {
+  "station": "Ladywell",
+  "modes": "NR",
+  "annual": 1254886,
+  "lat": 51.456026,
+  "lng": -0.019192,
+  "osm_name": "Ladywell",
+  "nlc": "5057",
+  "tlc": "LAD"
+ },
+ {
+  "station": "Penge East",
+  "modes": "NR",
+  "annual": 1235544,
+  "lat": 51.419315,
+  "lng": -0.054136,
+  "osm_name": "Penge East",
+  "nlc": "5072",
+  "tlc": "PNE"
+ },
+ {
+  "station": "Loughborough Junction",
+  "modes": "NR",
+  "annual": 1233640,
+  "lat": 51.466255,
+  "lng": -0.102161,
+  "osm_name": "Loughborough Junction",
+  "nlc": "5082",
+  "tlc": "LGJ"
+ },
+ {
+  "station": "Selhurst",
+  "modes": "NR",
+  "annual": 1217928,
+  "lat": 51.392214,
+  "lng": -0.088654,
+  "osm_name": "Selhurst",
+  "nlc": "5434",
+  "tlc": "SRS"
+ },
+ {
+  "station": "Enfield Chase",
+  "modes": "NR",
+  "annual": 1166152,
+  "lat": 51.652638,
+  "lng": -0.090864,
+  "osm_name": "Enfield Chase",
+  "nlc": "6010",
+  "tlc": "ENC"
+ },
+ {
+  "station": "Kew Bridge",
+  "modes": "NR",
+  "annual": 1162156,
+  "lat": 51.489502,
+  "lng": -0.287225,
+  "osm_name": "Kew Bridge",
+  "nlc": "5593",
+  "tlc": "KWB"
+ },
+ {
+  "station": "Gordon Hill",
+  "modes": "NR",
+  "annual": 1152836,
+  "lat": 51.662951,
+  "lng": -0.09422,
+  "osm_name": "Gordon Hill",
+  "nlc": "6028",
+  "tlc": "GDH"
+ },
+ {
+  "station": "Harringay",
+  "modes": "NR",
+  "annual": 1140210,
+  "lat": 51.577558,
+  "lng": -0.10527,
+  "osm_name": "Harringay",
+  "nlc": "6012",
+  "tlc": "HGY"
+ },
+ {
+  "station": "Carshalton",
+  "modes": "NR",
+  "annual": 1139060,
+  "lat": 51.368577,
+  "lng": -0.166381,
+  "osm_name": "Carshalton",
+  "nlc": "5405",
+  "tlc": "CSH"
+ },
+ {
+  "station": "Brimsdown",
+  "modes": "NR",
+  "annual": 1135474,
+  "lat": 51.655571,
+  "lng": -0.030791,
+  "osm_name": "Brimsdown",
+  "nlc": "6810",
+  "tlc": "BMD"
+ },
+ {
+  "station": "Shortlands",
+  "modes": "NR",
+  "annual": 1128652,
+  "lat": 51.405905,
+  "lng": 0.002168,
+  "osm_name": "Shortlands",
+  "nlc": "5084",
+  "tlc": "SRT"
+ },
+ {
+  "station": "Slade Green",
+  "modes": "NR",
+  "annual": 1103814,
+  "lat": 51.467673,
+  "lng": 0.19031,
+  "osm_name": "Slade Green",
+  "nlc": "5154",
+  "tlc": "SGR"
+ },
+ {
+  "station": "Bexley",
+  "modes": "NR",
+  "annual": 1096808,
+  "lat": 51.440238,
+  "lng": 0.147949,
+  "osm_name": "Bexley",
+  "nlc": "5093",
+  "tlc": "BXY"
+ },
+ {
+  "station": "South Croydon",
+  "modes": "NR",
+  "annual": 1088648,
+  "lat": 51.362917,
+  "lng": -0.093356,
+  "osm_name": "South Croydon",
+  "nlc": "5410",
+  "tlc": "SCY"
+ },
+ {
+  "station": "Crayford",
+  "modes": "NR",
+  "annual": 1086958,
+  "lat": 51.448177,
+  "lng": 0.178389,
+  "osm_name": "Crayford",
+  "nlc": "5100",
+  "tlc": "CRY"
+ },
+ {
+  "station": "Clock House",
+  "modes": "NR",
+  "annual": 1067284,
+  "lat": 51.408345,
+  "lng": -0.040818,
+  "osm_name": "Clock House",
+  "nlc": "5048",
+  "tlc": "CLK"
+ },
+ {
+  "station": "Northumberland Park",
+  "modes": "NR",
+  "annual": 1052358,
+  "lat": 51.601908,
+  "lng": -0.053865,
+  "osm_name": "Northumberland Park",
+  "nlc": "6971",
+  "tlc": "NUM"
+ },
+ {
+  "station": "Hendon",
+  "modes": "NR",
+  "annual": 1027036,
+  "lat": 51.580217,
+  "lng": -0.23888,
+  "osm_name": "Hendon",
+  "nlc": "1522",
+  "tlc": "HEN"
+ },
+ {
+  "station": "Chislehurst",
+  "modes": "NR",
+  "annual": 1012880,
+  "lat": 51.405163,
+  "lng": 0.057867,
+  "osm_name": "Chislehurst",
+  "nlc": "5099",
+  "tlc": "CIT"
+ },
+ {
+  "station": "Nunhead",
+  "modes": "NR",
+  "annual": 997310,
+  "lat": 51.466835,
+  "lng": -0.052375,
+  "osm_name": "Nunhead",
+  "nlc": "5068",
+  "tlc": "NHD"
+ },
+ {
+  "station": "Brentford",
+  "modes": "NR",
+  "annual": 976928,
+  "lat": 51.487657,
+  "lng": -0.309683,
+  "osm_name": "Brentford",
+  "nlc": "5552",
+  "tlc": "BFD"
+ },
+ {
+  "station": "Wandsworth Common",
+  "modes": "NR",
+  "annual": 961536,
+  "lat": 51.446124,
+  "lng": -0.163517,
+  "osm_name": "Wandsworth Common",
+  "nlc": "5395",
+  "tlc": "WSW"
+ },
+ {
+  "station": "Isleworth",
+  "modes": "NR",
+  "annual": 956838,
+  "lat": 51.474882,
+  "lng": -0.336895,
+  "osm_name": "Isleworth",
+  "nlc": "5592",
+  "tlc": "ISL"
+ },
+ {
+  "station": "Barnehurst",
+  "modes": "NR",
+  "annual": 955890,
+  "lat": 51.465021,
+  "lng": 0.159647,
+  "osm_name": "Barnehurst",
+  "nlc": "5089",
+  "tlc": "BNH"
+ },
+ {
+  "station": "Cheam",
+  "modes": "NR",
+  "annual": 932574,
+  "lat": 51.355661,
+  "lng": -0.214513,
+  "osm_name": "Cheam",
+  "nlc": "5352",
+  "tlc": "CHE"
+ },
+ {
+  "station": "Westcombe Park",
+  "modes": "NR",
+  "annual": 931670,
+  "lat": 51.48424,
+  "lng": 0.01862,
+  "osm_name": "Westcombe Park",
+  "nlc": "5151",
+  "tlc": "WCB"
+ },
+ {
+  "station": "Elmstead Woods",
+  "modes": "NR",
+  "annual": 927220,
+  "lat": 51.416798,
+  "lng": 0.044657,
+  "osm_name": "Elmstead Woods",
+  "nlc": "5135",
+  "tlc": "ESD"
+ },
+ {
+  "station": "Oakleigh Park",
+  "modes": "NR",
+  "annual": 924194,
+  "lat": 51.637667,
+  "lng": -0.166225,
+  "osm_name": "Oakleigh Park",
+  "nlc": "6020",
+  "tlc": "OKL"
+ },
+ {
+  "station": "Plumstead",
+  "modes": "NR",
+  "annual": 923038,
+  "lat": 51.489768,
+  "lng": 0.084018,
+  "osm_name": "Plumstead",
+  "nlc": "5208",
+  "tlc": "PLU"
+ },
+ {
+  "station": "New Southgate",
+  "modes": "NR",
+  "annual": 920392,
+  "lat": 51.613804,
+  "lng": -0.142809,
+  "osm_name": "New Southgate",
+  "nlc": "6019",
+  "tlc": "NSG"
+ },
+ {
+  "station": "Hackbridge",
+  "modes": "NR",
+  "annual": 911110,
+  "lat": 51.378028,
+  "lng": -0.15372,
+  "osm_name": "Hackbridge",
+  "nlc": "5364",
+  "tlc": "HCB"
+ },
+ {
+  "station": "Wembley Stadium",
+  "modes": "NR",
+  "annual": 884860,
+  "lat": 51.554249,
+  "lng": -0.284766,
+  "osm_name": "Wembley Stadium",
+  "nlc": "1509",
+  "tlc": "WCX"
+ },
+ {
+  "station": "Ponders End",
+  "modes": "NR",
+  "annual": 884028,
+  "lat": 51.642847,
+  "lng": -0.034786,
+  "osm_name": "Ponders End",
+  "nlc": "6819",
+  "tlc": "PON"
+ },
+ {
+  "station": "Lea Bridge",
+  "modes": "NR",
+  "annual": 877314,
+  "lat": 51.566751,
+  "lng": -0.037122,
+  "osm_name": "Lea Bridge",
+  "nlc": "6927",
+  "tlc": "LEB"
+ },
+ {
+  "station": "Barnes Bridge",
+  "modes": "NR",
+  "annual": 872264,
+  "lat": 51.472012,
+  "lng": -0.252633,
+  "osm_name": "Barnes Bridge",
+  "nlc": "5580",
+  "tlc": "BNI"
+ },
+ {
+  "station": "Syon Lane",
+  "modes": "NR",
+  "annual": 868730,
+  "lat": 51.481815,
+  "lng": -0.32478,
+  "osm_name": "Syon Lane",
+  "nlc": "5609",
+  "tlc": "SYL"
+ },
+ {
+  "station": "West Dulwich",
+  "modes": "NR",
+  "annual": 864428,
+  "lat": 51.440285,
+  "lng": -0.090891,
+  "osm_name": "West Dulwich",
+  "nlc": "5086",
+  "tlc": "WDU"
+ },
+ {
+  "station": "Cricklewood",
+  "modes": "NR",
+  "annual": 859464,
+  "lat": 51.558755,
+  "lng": -0.212975,
+  "osm_name": "Cricklewood",
+  "nlc": "1519",
+  "tlc": "CRI"
+ },
+ {
+  "station": "Hounslow",
+  "modes": "NR",
+  "annual": 850306,
+  "lat": 51.462097,
+  "lng": -0.361729,
+  "osm_name": "Hounslow",
+  "nlc": "5563",
+  "tlc": "HOU"
+ },
+ {
+  "station": "Sanderstead",
+  "modes": "NR",
+  "annual": 844182,
+  "lat": 51.348394,
+  "lng": -0.093459,
+  "osm_name": "Sanderstead",
+  "nlc": "5433",
+  "tlc": "SNR"
+ },
+ {
+  "station": "Falconwood",
+  "modes": "NR",
+  "annual": 823276,
+  "lat": 51.45923,
+  "lng": 0.079304,
+  "osm_name": "Falconwood",
+  "nlc": "5137",
+  "tlc": "FCN"
+ },
+ {
+  "station": "Motspur Park",
+  "modes": "NR",
+  "annual": 822372,
+  "lat": 51.394875,
+  "lng": -0.239608,
+  "osm_name": "Motspur Park",
+  "nlc": "5645",
+  "tlc": "MOT"
+ },
+ {
+  "station": "Kent House",
+  "modes": "NR",
+  "annual": 814336,
+  "lat": 51.412275,
+  "lng": -0.045213,
+  "osm_name": "Kent House",
+  "nlc": "5080",
+  "tlc": "KTH"
+ },
+ {
+  "station": "Hampton Wick",
+  "modes": "NR",
+  "annual": 810634,
+  "lat": 51.414558,
+  "lng": -0.31235,
+  "osm_name": "Hampton Wick",
+  "nlc": "5589",
+  "tlc": "HMW"
+ },
+ {
+  "station": "Tooting",
+  "modes": "NR",
+  "annual": 803666,
+  "lat": 51.419846,
+  "lng": -0.161323,
+  "osm_name": "Tooting",
+  "nlc": "5389",
+  "tlc": "TOO"
+ },
+ {
+  "station": "Elmers End",
+  "modes": "NR",
+  "annual": 802120,
+  "lat": 51.398012,
+  "lng": -0.049702,
+  "osm_name": "Elmers End",
+  "nlc": "5049",
+  "tlc": "ELE"
+ },
+ {
+  "station": "West Wickham",
+  "modes": "NR",
+  "annual": 792638,
+  "lat": 51.381514,
+  "lng": -0.014733,
+  "osm_name": "West Wickham",
+  "nlc": "5054",
+  "tlc": "WWI"
+ },
+ {
+  "station": "Carshalton Beeches",
+  "modes": "NR",
+  "annual": 786788,
+  "lat": 51.357196,
+  "lng": -0.169351,
+  "osm_name": "Carshalton Beeches",
+  "nlc": "5406",
+  "tlc": "CSB"
+ },
+ {
+  "station": "Lower Sydenham",
+  "modes": "NR",
+  "annual": 786602,
+  "lat": 51.424745,
+  "lng": -0.0333,
+  "osm_name": "Lower Sydenham",
+  "nlc": "5053",
+  "tlc": "LSY"
+ },
+ {
+  "station": "Catford",
+  "modes": "NR",
+  "annual": 777398,
+  "lat": 51.44447,
+  "lng": -0.026152,
+  "osm_name": "Catford",
+  "nlc": "5077",
+  "tlc": "CTF"
+ },
+ {
+  "station": "Albany Park",
+  "modes": "NR",
+  "annual": 775024,
+  "lat": 51.435384,
+  "lng": 0.125965,
+  "osm_name": "Albany Park",
+  "nlc": "5132",
+  "tlc": "AYP"
+ },
+ {
+  "station": "Erith",
+  "modes": "NR",
+  "annual": 740404,
+  "lat": 51.481578,
+  "lng": 0.175195,
+  "osm_name": "Erith",
+  "nlc": "5104",
+  "tlc": "ERH"
+ },
+ {
+  "station": "Bickley",
+  "modes": "NR",
+  "annual": 738246,
+  "lat": 51.400064,
+  "lng": 0.044337,
+  "osm_name": "Bickley",
+  "nlc": "5063",
+  "tlc": "BKL"
+ },
+ {
+  "station": "North Dulwich",
+  "modes": "NR",
+  "annual": 730666,
+  "lat": 51.454178,
+  "lng": -0.088329,
+  "osm_name": "North Dulwich",
+  "nlc": "5429",
+  "tlc": "NDL"
+ },
+ {
+  "station": "Drayton Park",
+  "modes": "NR",
+  "annual": 728922,
+  "lat": 51.553106,
+  "lng": -0.10577,
+  "osm_name": "Drayton Park",
+  "nlc": "6000",
+  "tlc": "DYP"
+ },
+ {
+  "station": "New Beckenham",
+  "modes": "NR",
+  "annual": 721184,
+  "lat": 51.416939,
+  "lng": -0.035207,
+  "osm_name": "New Beckenham",
+  "nlc": "5058",
+  "tlc": "NBC"
+ },
+ {
+  "station": "Chiswick",
+  "modes": "NR",
+  "annual": 707048,
+  "lat": 51.481147,
+  "lng": -0.268175,
+  "osm_name": "Chiswick",
+  "nlc": "5583",
+  "tlc": "CHK"
+ },
+ {
+  "station": "Crofton Park",
+  "modes": "NR",
+  "annual": 699392,
+  "lat": 51.455215,
+  "lng": -0.03663,
+  "osm_name": "Crofton Park",
+  "nlc": "5078",
+  "tlc": "CFT"
+ },
+ {
+  "station": "Essex Road",
+  "modes": "NR",
+  "annual": 697932,
+  "lat": 51.540733,
+  "lng": -0.096186,
+  "osm_name": "Essex Road",
+  "nlc": "6004",
+  "tlc": "EXR"
+ },
+ {
+  "station": "Belvedere",
+  "modes": "NR",
+  "annual": 696406,
+  "lat": 51.492227,
+  "lng": 0.153367,
+  "osm_name": "Belvedere",
+  "nlc": "5092",
+  "tlc": "BVD"
+ },
+ {
+  "station": "Sydenham Hill",
+  "modes": "NR",
+  "annual": 694346,
+  "lat": 51.43261,
+  "lng": -0.08015,
+  "osm_name": "Sydenham Hill",
+  "nlc": "5085",
+  "tlc": "SYH"
+ },
+ {
+  "station": "Strawberry Hill",
+  "modes": "NR",
+  "annual": 687594,
+  "lat": 51.439192,
+  "lng": -0.339331,
+  "osm_name": "Strawberry Hill",
+  "nlc": "5607",
+  "tlc": "STW"
+ },
+ {
+  "station": "Brent Cross West",
+  "modes": "NR",
+  "annual": 675392,
+  "lat": 51.568819,
+  "lng": -0.226544,
+  "osm_name": "Brent Cross West",
+  "nlc": "7777",
+  "tlc": "BCZ"
+ },
+ {
+  "station": "South Bermondsey",
+  "modes": "NR",
+  "annual": 632694,
+  "lat": 51.487951,
+  "lng": -0.054456,
+  "osm_name": "South Bermondsey",
+  "nlc": "5425",
+  "tlc": "SBM"
+ },
+ {
+  "station": "Bellingham",
+  "modes": "NR",
+  "annual": 623114,
+  "lat": 51.432831,
+  "lng": -0.019519,
+  "osm_name": "Bellingham",
+  "nlc": "5062",
+  "tlc": "BGM"
+ },
+ {
+  "station": "Waddon",
+  "modes": "NR",
+  "annual": 604552,
+  "lat": 51.367334,
+  "lng": -0.117435,
+  "osm_name": "Waddon",
+  "nlc": "5392",
+  "tlc": "WDO"
+ },
+ {
+  "station": "Chelsfield",
+  "modes": "NR",
+  "annual": 593350,
+  "lat": 51.356611,
+  "lng": 0.108328,
+  "osm_name": "Chelsfield",
+  "nlc": "5098",
+  "tlc": "CLD"
+ },
+ {
+  "station": "Tolworth",
+  "modes": "NR",
+  "annual": 575870,
+  "lat": 51.376875,
+  "lng": -0.279442,
+  "osm_name": "Tolworth",
+  "nlc": "5573",
+  "tlc": "TOL"
+ },
+ {
+  "station": "Eden Park",
+  "modes": "NR",
+  "annual": 558530,
+  "lat": 51.39018,
+  "lng": -0.026369,
+  "osm_name": "Eden Park",
+  "nlc": "5056",
+  "tlc": "EDN"
+ },
+ {
+  "station": "Meridian Water",
+  "modes": "NR",
+  "annual": 494354,
+  "lat": 51.610003,
+  "lng": -0.050085,
+  "osm_name": "Meridian Water",
+  "nlc": "6599",
+  "tlc": "MRW"
+ },
+ {
+  "station": "Grange Park",
+  "modes": "NR",
+  "annual": 493126,
+  "lat": 51.643329,
+  "lng": -0.096939,
+  "osm_name": "Grange Park",
+  "nlc": "6029",
+  "tlc": "GPK"
+ },
+ {
+  "station": "Chessington North",
+  "modes": "NR",
+  "annual": 488812,
+  "lat": 51.363982,
+  "lng": -0.300732,
+  "osm_name": "Chessington North",
+  "nlc": "5582",
+  "tlc": "CSN"
+ },
+ {
+  "station": "Malden Manor",
+  "modes": "NR",
+  "annual": 484006,
+  "lat": 51.384725,
+  "lng": -0.261245,
+  "osm_name": "Malden Manor",
+  "nlc": "5599",
+  "tlc": "MAL"
+ },
+ {
+  "station": "Purley Oaks",
+  "modes": "NR",
+  "annual": 480890,
+  "lat": 51.347035,
+  "lng": -0.098711,
+  "osm_name": "Purley Oaks",
+  "nlc": "5430",
+  "tlc": "PUO"
+ },
+ {
+  "station": "Fulwell",
+  "modes": "NR",
+  "annual": 437388,
+  "lat": 51.433906,
+  "lng": -0.349057,
+  "osm_name": "Fulwell",
+  "nlc": "5587",
+  "tlc": "FLW"
+ },
+ {
+  "station": "Dagenham Dock",
+  "modes": "NR",
+  "annual": 424946,
+  "lat": 51.526193,
+  "lng": 0.145432,
+  "osm_name": "Dagenham Dock",
+  "nlc": "7440",
+  "tlc": "DDK"
+ },
+ {
+  "station": "Mitcham Junction",
+  "modes": "NR",
+  "annual": 408018,
+  "lat": 51.392945,
+  "lng": -0.157777,
+  "osm_name": "Mitcham Junction",
+  "nlc": "5427",
+  "tlc": "MIJ"
+ },
+ {
+  "station": "Beckenham Hill",
+  "modes": "NR",
+  "annual": 378666,
+  "lat": 51.424522,
+  "lng": -0.01591,
+  "osm_name": "Beckenham Hill",
+  "nlc": "5076",
+  "tlc": "BEC"
+ },
+ {
+  "station": "Berrylands",
+  "modes": "NR",
+  "annual": 363954,
+  "lat": 51.399008,
+  "lng": -0.280911,
+  "osm_name": "Berrylands",
+  "nlc": "5581",
+  "tlc": "BRS"
+ },
+ {
+  "station": "Hadley Wood",
+  "modes": "NR",
+  "annual": 362264,
+  "lat": 51.668629,
+  "lng": -0.176138,
+  "osm_name": "Hadley Wood",
+  "nlc": "6075",
+  "tlc": "HDW"
+ },
+ {
+  "station": "Chessington South",
+  "modes": "NR",
+  "annual": 344218,
+  "lat": 51.35675,
+  "lng": -0.308097,
+  "osm_name": "Chessington South",
+  "nlc": "5554",
+  "tlc": "CSS"
+ },
+ {
+  "station": "North Sheen",
+  "modes": "NR",
+  "annual": 342020,
+  "lat": 51.465325,
+  "lng": -0.286582,
+  "osm_name": "North Sheen",
+  "nlc": "5601",
+  "tlc": "NSH"
+ },
+ {
+  "station": "Haydons Road",
+  "modes": "NR",
+  "annual": 322800,
+  "lat": 51.425363,
+  "lng": -0.188342,
+  "osm_name": "Haydons Road",
+  "nlc": "5289",
+  "tlc": "HYR"
+ },
+ {
+  "station": "Woolwich Dockyard",
+  "modes": "NR",
+  "annual": 315464,
+  "lat": 51.491092,
+  "lng": 0.054882,
+  "osm_name": "Woolwich Dockyard",
+  "nlc": "5153",
+  "tlc": "WWD"
+ },
+ {
+  "station": "Riddlesdown",
+  "modes": "NR",
+  "annual": 287038,
+  "lat": 51.332935,
+  "lng": -0.099704,
+  "osm_name": "Riddlesdown",
+  "nlc": "5432",
+  "tlc": "RDD"
+ },
+ {
+  "station": "Wimbledon Chase",
+  "modes": "NR",
+  "annual": 271590,
+  "lat": 51.410247,
+  "lng": -0.214788,
+  "osm_name": "Wimbledon Chase",
+  "nlc": "5612",
+  "tlc": "WBO"
+ },
+ {
+  "station": "Kenley",
+  "modes": "NR",
+  "annual": 268508,
+  "lat": 51.324776,
+  "lng": -0.100844,
+  "osm_name": "Kenley",
+  "nlc": "5419",
+  "tlc": "KLY"
+ },
+ {
+  "station": "West Sutton",
+  "modes": "NR",
+  "annual": 265900,
+  "lat": 51.366261,
+  "lng": -0.204484,
+  "osm_name": "West Sutton",
+  "nlc": "5293",
+  "tlc": "WSU"
+ },
+ {
+  "station": "Sutton Common",
+  "modes": "NR",
+  "annual": 265722,
+  "lat": 51.375431,
+  "lng": -0.196105,
+  "osm_name": "Sutton Common",
+  "nlc": "5436",
+  "tlc": "SUC"
+ },
+ {
+  "station": "Ravensbourne",
+  "modes": "NR",
+  "annual": 235210,
+  "lat": 51.414313,
+  "lng": -0.007629,
+  "osm_name": "Ravensbourne",
+  "nlc": "5083",
+  "tlc": "RVB"
+ },
+ {
+  "station": "Bromley North",
+  "modes": "NR",
+  "annual": 226164,
+  "lat": 51.409198,
+  "lng": 0.017798,
+  "osm_name": "Bromley North",
+  "nlc": "5096",
+  "tlc": "BMN"
+ },
+ {
+  "station": "Belmont",
+  "modes": "NR",
+  "annual": 200356,
+  "lat": 51.343896,
+  "lng": -0.198785,
+  "osm_name": "Belmont",
+  "nlc": "5350",
+  "tlc": "BLM"
+ },
+ {
+  "station": "Sundridge Park",
+  "modes": "NR",
+  "annual": 193024,
+  "lat": 51.413957,
+  "lng": 0.021475,
+  "osm_name": "Sundridge Park",
+  "nlc": "5155",
+  "tlc": "SUP"
+ },
+ {
+  "station": "Knockholt",
+  "modes": "NR",
+  "annual": 188588,
+  "lat": 51.345769,
+  "lng": 0.130829,
+  "osm_name": "Knockholt",
+  "nlc": "5109",
+  "tlc": "KCK"
+ },
+ {
+  "station": "Northolt Park",
+  "modes": "NR",
+  "annual": 176218,
+  "lat": 51.557478,
+  "lng": -0.359418,
+  "osm_name": "Northolt Park",
+  "nlc": "1478",
+  "tlc": "NLT"
+ },
+ {
+  "station": "Woodmansterne",
+  "modes": "NR",
+  "annual": 126744,
+  "lat": 51.319051,
+  "lng": -0.153882,
+  "osm_name": "Woodmansterne",
+  "nlc": "5441",
+  "tlc": "WME"
+ },
+ {
+  "station": "South Merton",
+  "modes": "NR",
+  "annual": 125436,
+  "lat": 51.403326,
+  "lng": -0.205518,
+  "osm_name": "South Merton",
+  "nlc": "5292",
+  "tlc": "SMO"
+ },
+ {
+  "station": "Crews Hill",
+  "modes": "NR",
+  "annual": 119492,
+  "lat": 51.684755,
+  "lng": -0.107221,
+  "osm_name": "Crews Hill",
+  "nlc": "6007",
+  "tlc": "CWH"
+ },
+ {
+  "station": "Castle Bar Park",
+  "modes": "NR",
+  "annual": 112884,
+  "lat": 51.522867,
+  "lng": -0.331502,
+  "osm_name": "Castle Bar Park",
+  "nlc": "3098",
+  "tlc": "CBP"
+ },
+ {
+  "station": "Birkbeck",
+  "modes": "NR",
+  "annual": 105178,
+  "lat": 51.403456,
+  "lng": -0.056539,
+  "osm_name": "Birkbeck",
+  "nlc": "5401",
+  "tlc": "BIK"
+ },
+ {
+  "station": "Coulsdon Town",
+  "modes": "NR",
+  "annual": 97562,
+  "lat": 51.322064,
+  "lng": -0.134245,
+  "osm_name": "Coulsdon Town",
+  "nlc": "5382",
+  "tlc": "CDN"
+ },
+ {
+  "station": "Morden South",
+  "modes": "NR",
+  "annual": 75948,
+  "lat": 51.395678,
+  "lng": -0.19924,
+  "osm_name": "Morden South",
+  "nlc": "5291",
+  "tlc": "MDS"
+ },
+ {
+  "station": "South Greenford",
+  "modes": "NR",
+  "annual": 52212,
+  "lat": 51.533203,
+  "lng": -0.336438,
+  "osm_name": "South Greenford",
+  "nlc": "3138",
+  "tlc": "SGN"
+ },
+ {
+  "station": "Drayton Green",
+  "modes": "NR",
+  "annual": 23270,
+  "lat": 51.516385,
+  "lng": -0.330194,
+  "osm_name": "Drayton Green",
+  "nlc": "3099",
+  "tlc": "DRG"
+ }
+]

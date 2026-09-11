@@ -26,7 +26,7 @@ for si,s in enumerate(segs):
         cc[cat]=[[u['name'][:44],(u.get('cuisine') or '')[:26],u['chain'],d] for d,u in us[:12]]
     if cc: COMPS[s['id']]=cc
 today=datetime.date.today().strftime('%-d %b %Y')
-META={"built":today,"osm_date":today,"crime_window":"Aug 2025 - Jul 2026","census":"Census 2021","numbat":"TfL NUMBAT 2024","sources":{}}
+META={"built":today,"osm_date":today,"crime_window":"Aug 2025 - Jul 2026","census":"Census 2021","numbat":"TfL Annual Station Counts 2025; National Rail: ORR Estimates of Station Usage 2024-25","sources":{}}
 for s in segs: s.pop('_units',None)
 with open('/tmp/lens/segments.js','w') as f:
     f.write("const SEGMENTS="+json.dumps(segs,separators=(',',':'))+";\nconst META="+json.dumps(META,separators=(',',':'))+";\n")

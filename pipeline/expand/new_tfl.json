@@ -1,0 +1,626 @@
+[
+ {
+  "station": "Moorgate",
+  "modes": "LU",
+  "annual": 27148108,
+  "lat": 51.518252,
+  "lng": -0.089063,
+  "osm_name": "Moorgate"
+ },
+ {
+  "station": "Westminster",
+  "modes": "LU",
+  "annual": 18559654,
+  "lat": 51.501356,
+  "lng": -0.12493,
+  "osm_name": "Westminster"
+ },
+ {
+  "station": "Warren Street",
+  "modes": "LU",
+  "annual": 13853666,
+  "lat": 51.524718,
+  "lng": -0.13853,
+  "osm_name": "Warren Street"
+ },
+ {
+  "station": "Gloucester Road",
+  "modes": "LU",
+  "annual": 11504721,
+  "lat": 51.494527,
+  "lng": -0.18377,
+  "osm_name": "Gloucester Road"
+ },
+ {
+  "station": "Marylebone LU",
+  "modes": "LU",
+  "annual": 8332429,
+  "lat": 51.522236,
+  "lng": -0.163505,
+  "osm_name": "Marylebone"
+ },
+ {
+  "station": "Pimlico",
+  "modes": "LU",
+  "annual": 7641420,
+  "lat": 51.489158,
+  "lng": -0.135331,
+  "osm_name": "Pimlico"
+ },
+ {
+  "station": "Great Portland Street",
+  "modes": "LU",
+  "annual": 5681467,
+  "lat": 51.523815,
+  "lng": -0.143705,
+  "osm_name": "Great Portland Street"
+ },
+ {
+  "station": "Swiss Cottage",
+  "modes": "LU",
+  "annual": 5429725,
+  "lat": 51.543722,
+  "lng": -0.174982,
+  "osm_name": "Swiss Cottage"
+ },
+ {
+  "station": "Colindale",
+  "modes": "LU",
+  "annual": 5409247,
+  "lat": 51.595409,
+  "lng": -0.24993,
+  "osm_name": "Colindale"
+ },
+ {
+  "station": "West Brompton",
+  "modes": "LU",
+  "annual": 5263230,
+  "lat": 51.486976,
+  "lng": -0.195185,
+  "osm_name": "West Brompton"
+ },
+ {
+  "station": "West Ham",
+  "modes": "LU",
+  "annual": 5215465,
+  "lat": 51.528097,
+  "lng": 0.004568,
+  "osm_name": "West Ham"
+ },
+ {
+  "station": "Putney Bridge",
+  "modes": "LU",
+  "annual": 4551722,
+  "lat": 51.4683,
+  "lng": -0.208795,
+  "osm_name": "Putney Bridge"
+ },
+ {
+  "station": "Cannon Street LU",
+  "modes": "LU",
+  "annual": 4387491,
+  "lat": 51.511381,
+  "lng": -0.090363,
+  "osm_name": "Cannon Street"
+ },
+ {
+  "station": "Maryland",
+  "modes": "EZL",
+  "annual": 4157832,
+  "lat": 51.546124,
+  "lng": 0.006378,
+  "osm_name": "Maryland"
+ },
+ {
+  "station": "Caledonian Road",
+  "modes": "LU",
+  "annual": 4008167,
+  "lat": 51.548482,
+  "lng": -0.118359,
+  "osm_name": "Caledonian Road"
+ },
+ {
+  "station": "Westferry",
+  "modes": "DLR",
+  "annual": 3984906,
+  "lat": 51.509403,
+  "lng": -0.026644,
+  "osm_name": "Westferry"
+ },
+ {
+  "station": "South Quay",
+  "modes": "DLR",
+  "annual": 3852456,
+  "lat": 51.500036,
+  "lng": -0.016252,
+  "osm_name": "South Quay"
+ },
+ {
+  "station": "Stratford International DLR",
+  "modes": "DLR",
+  "annual": 3739316,
+  "lat": 51.5452515,
+  "lng": -0.009054,
+  "osm_name": "Stratford International DLR"
+ },
+ {
+  "station": "Hampstead Heath",
+  "modes": "LO",
+  "annual": 3480963,
+  "lat": 51.55524,
+  "lng": -0.165391,
+  "osm_name": "Hampstead Heath"
+ },
+ {
+  "station": "Hyde Park Corner",
+  "modes": "LU",
+  "annual": 3152357,
+  "lat": 51.502726,
+  "lng": -0.154325,
+  "osm_name": "Hyde Park Corner"
+ },
+ {
+  "station": "Lancaster Gate",
+  "modes": "LU",
+  "annual": 2839456,
+  "lat": 51.511843,
+  "lng": -0.175381,
+  "osm_name": "Lancaster Gate"
+ },
+ {
+  "station": "Gospel Oak",
+  "modes": "LO",
+  "annual": 2617543,
+  "lat": 51.555487,
+  "lng": -0.151577,
+  "osm_name": "Gospel Oak"
+ },
+ {
+  "station": "Kensington (Olympia)",
+  "modes": "LO",
+  "annual": 2426096,
+  "lat": 51.497437,
+  "lng": -0.209495,
+  "osm_name": "Kensington (Olympia)"
+ },
+ {
+  "station": "Island Gardens",
+  "modes": "DLR",
+  "annual": 2378396,
+  "lat": 51.488068,
+  "lng": -0.010505,
+  "osm_name": "Island Gardens"
+ },
+ {
+  "station": "Finchley Road & Frognal",
+  "modes": "LO",
+  "annual": 2262724,
+  "lat": 51.550113,
+  "lng": -0.183584,
+  "osm_name": "Finchley Road & Frognal"
+ },
+ {
+  "station": "Devons Road",
+  "modes": "DLR",
+  "annual": 2235584,
+  "lat": 51.522208,
+  "lng": -0.017273,
+  "osm_name": "Devons Road"
+ },
+ {
+  "station": "Royal Oak",
+  "modes": "LU",
+  "annual": 2183636,
+  "lat": 51.519022,
+  "lng": -0.187444,
+  "osm_name": "Royal Oak"
+ },
+ {
+  "station": "Regent's Park",
+  "modes": "LU",
+  "annual": 2176048,
+  "lat": 51.523628,
+  "lng": -0.146636,
+  "osm_name": "Regent's Park"
+ },
+ {
+  "station": "Latimer Road",
+  "modes": "LU",
+  "annual": 2103833,
+  "lat": 51.513475,
+  "lng": -0.217787,
+  "osm_name": "Latimer Road"
+ },
+ {
+  "station": "Royal Victoria",
+  "modes": "DLR",
+  "annual": 2098750,
+  "lat": 51.509117,
+  "lng": 0.017591,
+  "osm_name": "Royal Victoria"
+ },
+ {
+  "station": "Arsenal",
+  "modes": "LU",
+  "annual": 2094155,
+  "lat": 51.558384,
+  "lng": -0.107487,
+  "osm_name": "Arsenal"
+ },
+ {
+  "station": "South Ealing",
+  "modes": "LU",
+  "annual": 2085840,
+  "lat": 51.500862,
+  "lng": -0.307681,
+  "osm_name": "South Ealing"
+ },
+ {
+  "station": "Bruce Grove",
+  "modes": "LO",
+  "annual": 2009181,
+  "lat": 51.593711,
+  "lng": -0.070005,
+  "osm_name": "Bruce Grove"
+ },
+ {
+  "station": "Kenton",
+  "modes": "LU",
+  "annual": 1683642,
+  "lat": 51.581525,
+  "lng": -0.316638,
+  "osm_name": "Kenton"
+ },
+ {
+  "station": "St James Street",
+  "modes": "LO",
+  "annual": 1663120,
+  "lat": 51.581172,
+  "lng": -0.032205,
+  "osm_name": "St James Street"
+ },
+ {
+  "station": "Gallions Reach",
+  "modes": "DLR",
+  "annual": 1652784,
+  "lat": 51.508962,
+  "lng": 0.071794,
+  "osm_name": "Gallions Reach"
+ },
+ {
+  "station": "Mudchute",
+  "modes": "DLR",
+  "annual": 1549170,
+  "lat": 51.491519,
+  "lng": -0.014913,
+  "osm_name": "Mudchute"
+ },
+ {
+  "station": "King George V",
+  "modes": "DLR",
+  "annual": 1527226,
+  "lat": 51.502006,
+  "lng": 0.062353,
+  "osm_name": "King George V"
+ },
+ {
+  "station": "Rotherhithe",
+  "modes": "LO",
+  "annual": 1519098,
+  "lat": 51.500824,
+  "lng": -0.051967,
+  "osm_name": "Rotherhithe"
+ },
+ {
+  "station": "North Harrow",
+  "modes": "LU",
+  "annual": 1478822,
+  "lat": 51.585162,
+  "lng": -0.363176,
+  "osm_name": "North Harrow"
+ },
+ {
+  "station": "Northwood Hills",
+  "modes": "LU",
+  "annual": 1465915,
+  "lat": 51.600153,
+  "lng": -0.408457,
+  "osm_name": "Northwood Hills"
+ },
+ {
+  "station": "Leytonstone High Road",
+  "modes": "LO",
+  "annual": 1444733,
+  "lat": 51.563682,
+  "lng": 0.008201,
+  "osm_name": "Leytonstone High Road"
+ },
+ {
+  "station": "Cockfosters",
+  "modes": "LU",
+  "annual": 1420222,
+  "lat": 51.651366,
+  "lng": -0.148515,
+  "osm_name": "Cockfosters"
+ },
+ {
+  "station": "West Ruislip",
+  "modes": "LU",
+  "annual": 1407748,
+  "lat": 51.569505,
+  "lng": -0.437045,
+  "osm_name": "West Ruislip"
+ },
+ {
+  "station": "North Wembley",
+  "modes": "LU",
+  "annual": 1384166,
+  "lat": 51.562402,
+  "lng": -0.30387,
+  "osm_name": "North Wembley"
+ },
+ {
+  "station": "Ruislip",
+  "modes": "LU",
+  "annual": 1365346,
+  "lat": 51.571403,
+  "lng": -0.421337,
+  "osm_name": "Ruislip"
+ },
+ {
+  "station": "Ruislip Manor",
+  "modes": "LU",
+  "annual": 1349876,
+  "lat": 51.573397,
+  "lng": -0.4118,
+  "osm_name": "Ruislip Manor"
+ },
+ {
+  "station": "West Finchley",
+  "modes": "LU",
+  "annual": 1336354,
+  "lat": 51.60943,
+  "lng": -0.188331,
+  "osm_name": "West Finchley"
+ },
+ {
+  "station": "Hillingdon",
+  "modes": "LU",
+  "annual": 1319482,
+  "lat": 51.553603,
+  "lng": -0.450464,
+  "osm_name": "Hillingdon"
+ },
+ {
+  "station": "Blackwall",
+  "modes": "DLR",
+  "annual": 1299338,
+  "lat": 51.507938,
+  "lng": -0.007184,
+  "osm_name": "Blackwall"
+ },
+ {
+  "station": "Brondesbury Park",
+  "modes": "LO",
+  "annual": 1291263,
+  "lat": 51.540514,
+  "lng": -0.210336,
+  "osm_name": "Brondesbury Park"
+ },
+ {
+  "station": "Boston Manor",
+  "modes": "LU",
+  "annual": 1279016,
+  "lat": 51.495339,
+  "lng": -0.32544,
+  "osm_name": "Boston Manor"
+ },
+ {
+  "station": "Elverson Road",
+  "modes": "DLR",
+  "annual": 1252134,
+  "lat": 51.468523,
+  "lng": -0.016207,
+  "osm_name": "Elverson Road"
+ },
+ {
+  "station": "Royal Albert",
+  "modes": "DLR",
+  "annual": 1227791,
+  "lat": 51.508395,
+  "lng": 0.045884,
+  "osm_name": "Royal Albert"
+ },
+ {
+  "station": "Anerley",
+  "modes": "LO",
+  "annual": 1203540,
+  "lat": 51.412577,
+  "lng": -0.065494,
+  "osm_name": "Anerley"
+ },
+ {
+  "station": "West Harrow",
+  "modes": "LU",
+  "annual": 1200932,
+  "lat": 51.579599,
+  "lng": -0.353136,
+  "osm_name": "West Harrow"
+ },
+ {
+  "station": "Turkey Street",
+  "modes": "LO",
+  "annual": 1160545,
+  "lat": 51.673233,
+  "lng": -0.046969,
+  "osm_name": "Turkey Street"
+ },
+ {
+  "station": "Barkingside",
+  "modes": "LU",
+  "annual": 1152026,
+  "lat": 51.585818,
+  "lng": 0.088624,
+  "osm_name": "Barkingside"
+ },
+ {
+  "station": "Southbury",
+  "modes": "LO",
+  "annual": 1121182,
+  "lat": 51.648031,
+  "lng": -0.05263,
+  "osm_name": "Southbury"
+ },
+ {
+  "station": "Woodgrange Park",
+  "modes": "LO",
+  "annual": 1114494,
+  "lat": 51.549168,
+  "lng": 0.044728,
+  "osm_name": "Woodgrange Park"
+ },
+ {
+  "station": "Barking Riverside",
+  "modes": "LO",
+  "annual": 1103076,
+  "lat": 51.519558,
+  "lng": 0.116013,
+  "osm_name": "Barking Riverside"
+ },
+ {
+  "station": "West Acton",
+  "modes": "LU",
+  "annual": 1079495,
+  "lat": 51.518352,
+  "lng": -0.280413,
+  "osm_name": "West Acton"
+ },
+ {
+  "station": "Stratford High Street",
+  "modes": "DLR",
+  "annual": 1063870,
+  "lat": 51.537647,
+  "lng": -0.000129,
+  "osm_name": "Stratford High Street"
+ },
+ {
+  "station": "South Acton",
+  "modes": "LO",
+  "annual": 1025488,
+  "lat": 51.499722,
+  "lng": -0.269898,
+  "osm_name": "South Acton"
+ },
+ {
+  "station": "South Kenton",
+  "modes": "LU",
+  "annual": 901280,
+  "lat": 51.57008,
+  "lng": -0.308367,
+  "osm_name": "South Kenton"
+ },
+ {
+  "station": "Fairlop",
+  "modes": "LU",
+  "annual": 899449,
+  "lat": 51.595948,
+  "lng": 0.09113,
+  "osm_name": "Fairlop"
+ },
+ {
+  "station": "Upminster Bridge",
+  "modes": "LU",
+  "annual": 825358,
+  "lat": 51.558265,
+  "lng": 0.234769,
+  "osm_name": "Upminster Bridge"
+ },
+ {
+  "station": "Ruislip Gardens",
+  "modes": "LU",
+  "annual": 825357,
+  "lat": 51.560657,
+  "lng": -0.410461,
+  "osm_name": "Ruislip Gardens"
+ },
+ {
+  "station": "Ickenham",
+  "modes": "LU",
+  "annual": 816974,
+  "lat": 51.56157,
+  "lng": -0.442351,
+  "osm_name": "Ickenham"
+ },
+ {
+  "station": "Penge West",
+  "modes": "LO",
+  "annual": 810098,
+  "lat": 51.417503,
+  "lng": -0.060661,
+  "osm_name": "Penge West"
+ },
+ {
+  "station": "Hatch End",
+  "modes": "LO",
+  "annual": 804997,
+  "lat": 51.609578,
+  "lng": -0.368784,
+  "osm_name": "Hatch End"
+ },
+ {
+  "station": "Headstone Lane",
+  "modes": "LO",
+  "annual": 727319,
+  "lat": 51.602553,
+  "lng": -0.356952,
+  "osm_name": "Headstone Lane"
+ },
+ {
+  "station": "South Hampstead",
+  "modes": "LO",
+  "annual": 639290,
+  "lat": 51.541434,
+  "lng": -0.178801,
+  "osm_name": "South Hampstead"
+ },
+ {
+  "station": "North Ealing",
+  "modes": "LU",
+  "annual": 517546,
+  "lat": 51.517488,
+  "lng": -0.288752,
+  "osm_name": "North Ealing"
+ },
+ {
+  "station": "Beckton Park",
+  "modes": "DLR",
+  "annual": 426102,
+  "lat": 51.50876,
+  "lng": 0.054943,
+  "osm_name": "Beckton Park"
+ },
+ {
+  "station": "Grange Hill",
+  "modes": "LU",
+  "annual": 372479,
+  "lat": 51.613134,
+  "lng": 0.092503,
+  "osm_name": "Grange Hill"
+ },
+ {
+  "station": "Emerson Park",
+  "modes": "LO",
+  "annual": 299152,
+  "lat": 51.568601,
+  "lng": 0.220238,
+  "osm_name": "Emerson Park"
+ },
+ {
+  "station": "Roding Valley",
+  "modes": "LU",
+  "annual": 204505,
+  "lat": 51.617081,
+  "lng": 0.043755,
+  "osm_name": "Roding Valley"
+ }
+]

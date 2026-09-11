@@ -28,6 +28,11 @@ for _,r in raw.iterrows():
         if ev is not None and num2 is not None: e['days'][k]+=ev+num2
     e['annual']+=an
 print(f"NUMBAT: {len(STATIONS)} stations")
+NRANCH={}
+_nrf=f'{P}/expand/nr_anchors.json'
+if os.path.exists(_nrf):
+    NRANCH=json.load(open(_nrf))
+    print(f"ORR NR anchors: {len(NRANCH)} stations")
 
 # ---------- Census ----------
 def load(fname):
@@ -155,13 +160,17 @@ for s in old:
     OLDANCH[s['id']+'_lsoa']=(s['lsoa']['code'],s['lsoa']['name'])
 
 def anchors_for(sid):
-    names=NEWANCH[sid] if sid in NEWIDS else [(n,None) for n in OLDANCH[sid]]
-    names=[n for n,_ in names]
+    pairs=NEWANCH[sid] if sid in NEWIDS else [(n,None) for n in OLDANCH[sid]]
     out=[]
-    for n in names:
+    for n,tag in pairs:
+        if tag=='ORR':
+            if n not in NRANCH: print('WARN missing NR station',n,'for',sid); continue
+            e=NRANCH[n]
+            out.append({'station':n,'mode':'NR','annual':round(e['annual']),'_days':e['days'],'src':'ORR'})
+            continue
         if n not in STATIONS: print('WARN missing station',n,'for',sid); continue
         e=STATIONS[n]
-        out.append({'station':n,'mode':'/'.join(sorted(e['modes'])),'annual':round(e['annual']),'_days':e['days']})
+        out.append({'station':n,'mode':'/'.join(sorted(e['modes'])),'annual':round(e['annual']),'_days':e['days'],'src':'TfL'})
     return out
 
 segs=[]
@@ -192,7 +201,7 @@ for sd in SEGDEFS:
     voa=VOA.get(sd['borough'])
     if not voa: print('WARN no VOA for',sd['borough'])
     s={'id':sid,'name':sd['name'],'borough':sd['borough'],'zone':sd['zone'],'lat':sd['lat'],'lng':sd['lng'],'stype':sd['stype'],
-       'anchors':[{'station':a['station'],'mode':a['mode'],'annual':a['annual']} for a in anch],
+       'anchors':[{'station':a['station'],'mode':a['mode'],'annual':a['annual'],'src':a.get('src','TfL')} for a in anch],
        'flow':{'annual_total':annual,'days':days,'weekend_share':round(ws,3),'weekend_ratio_norm':0,'fri_sat_norm':0,'day_rel':{k:round(v,3) for k,v in day_rel.items()}},
        'transport':{'stations_900m':len(osm['_stations']),'names':osm['_stations'][:8]},
        'osm':{k:v for k,v in osm.items() if not k.startswith('_')},

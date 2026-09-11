@@ -1,0 +1,46 @@
+{
+ "Manchester": {
+  "retail_rv_m2": 147.0,
+  "office_rv_m2": 184.0
+ },
+ "Salford": {
+  "retail_rv_m2": 110.0,
+  "office_rv_m2": 153.0
+ },
+ "Trafford": {
+  "retail_rv_m2": 187.0,
+  "office_rv_m2": 119.0
+ },
+ "Stockport": {
+  "retail_rv_m2": 120.0,
+  "office_rv_m2": 120.0
+ },
+ "Tameside": {
+  "retail_rv_m2": 109.0,
+  "office_rv_m2": 86.0
+ },
+ "Bolton": {
+  "retail_rv_m2": 109.0,
+  "office_rv_m2": 99.0
+ },
+ "Bury": {
+  "retail_rv_m2": 113.0,
+  "office_rv_m2": 104.0
+ },
+ "Oldham": {
+  "retail_rv_m2": 102.0,
+  "office_rv_m2": 96.0
+ },
+ "Rochdale": {
+  "retail_rv_m2": 100.0,
+  "office_rv_m2": 89.0
+ },
+ "Wigan": {
+  "retail_rv_m2": 100.0,
+  "office_rv_m2": 87.0
+ },
+ "_default": {
+  "retail_rv_m2": 147.0,
+  "office_rv_m2": 184.0
+ }
+}

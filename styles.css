@@ -383,3 +383,10 @@ main.art{max-width:880px;margin:0 auto;padding:34px 20px 50px}
 .art-cta .action{text-decoration:none;padding:10px 14px;font-size:13px;display:inline-block}
 .art-cta .action.primary{background:var(--lime);color:var(--ink);border-color:var(--lime)}
 .art-cta .action:not(.primary){background:transparent;color:#fff;border-color:#5a6d65}
+
+/* city switcher */
+.citynav{display:flex;align-items:center;gap:2px;margin-top:6px;font-size:13px}
+.citynav .cn-label{color:#999;margin-right:6px;text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+.citynav a{color:#ccc;text-decoration:none;padding:2px 10px;border-radius:999px;border:1px solid #444}
+.citynav a.on{color:#111;background:#fff;border-color:#fff}
+.citynav a:hover{color:#fff;border-color:#888}

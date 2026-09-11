@@ -13,6 +13,7 @@
 <header class="top">
   <div class="top-row">
     <div class="brand">London <span>Location Lens</span></div>
+    <nav class="citynav" id="citynav" aria-label="Cities"></nav>
     <nav class="tabs" id="tabbar" aria-label="Sections">
       <a href="#concept" data-tab="concept" class="on">Concept</a>
       <a href="#detail" data-tab="detail">Street</a>
@@ -43,7 +44,7 @@
   <div class="section-head">
     <div class="eyebrow">Step 1 · Start here</div>
     <h2>Define your concept</h2>
-    <p>Pick one of the 55 presets or start from scratch, then change anything. The map and the top-20 table update live with every answer.</p>
+    <p>Pick one of the <span id="preset-count">68</span> presets or start from scratch, then change anything. The map and the top-20 table update live with every answer.</p>
   </div>
   <div class="preset-row" id="preset-row"></div>
   <div class="concept-grid" id="concept-grid"></div>
@@ -234,6 +235,7 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="cities.js?v=1"></script>
 <script src="segments.js?v=13"></script>
 <script src="units.js?v=13"></script>
 <script src="competitors.js?v=13"></script>

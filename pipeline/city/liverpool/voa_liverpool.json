@@ -1,0 +1,30 @@
+{
+ "Liverpool": {
+  "retail_rv_m2": 124.0,
+  "office_rv_m2": 110.0
+ },
+ "Sefton": {
+  "retail_rv_m2": 105.0,
+  "office_rv_m2": 79.0
+ },
+ "Wirral": {
+  "retail_rv_m2": 101.0,
+  "office_rv_m2": 81.0
+ },
+ "Knowsley": {
+  "retail_rv_m2": 112.0,
+  "office_rv_m2": 76.0
+ },
+ "St. Helens": {
+  "retail_rv_m2": 95.0,
+  "office_rv_m2": 81.0
+ },
+ "Halton": {
+  "retail_rv_m2": 98.0,
+  "office_rv_m2": 92.0
+ },
+ "_default": {
+  "retail_rv_m2": 124.0,
+  "office_rv_m2": 110.0
+ }
+}

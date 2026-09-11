@@ -1,4 +1,5 @@
-/* London Location Lens - concept builder, scoring engine, rendering */
+/* Location Lens - concept builder, scoring engine, rendering (city-aware; London defaults) */
+const CITY=window.CITY||{id:"london",name:"London",region:"Greater London",mapCenter:[51.515,-0.11],mapZoom:12,texts:{}};
 "use strict";
 
 const DAYNAMES=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
@@ -181,6 +182,45 @@ const PRESETS=[
  {id:"boxing",name:"Boxing & martial arts gym",cat:"fitness",ticket:23,seats:0,floorspace:300,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
   audience:{office:2,residents:5,young:4,students:3,tourists:0,nightlife:0,families:1,intl:2},rent:350,
   windows:[{days:[0,1,2,3,4,5],from:390,to:540},{days:[0,1,2,3,4,5],from:1050,to:1260},{days:[6],from:540,to:780}]},
+ {id:"estate-agency",name:"Real estate & letting agency",cat:"agents",ticket:1400,seats:0,floorspace:80,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:5,young:2,students:0,tourists:0,nightlife:0,families:4,intl:2},rent:700,
+  windows:[{days:[0,1,2,3,4],from:540,to:1080},{days:[5],from:600,to:960}]},
+ {id:"laundrette",name:"Laundrette & dry cleaning",cat:"services",ticket:12,seats:0,floorspace:60,takeaway:0,delivery:15,alcohol:false,terrace:false,franchise:false,
+  audience:{office:1,residents:5,young:3,students:4,tourists:0,nightlife:0,families:3,intl:2},rent:350,
+  windows:[{days:[0,1,2,3,4,5,6],from:480,to:1200}]},
+ {id:"hair-barber",name:"Hairdresser & barber",cat:"services",ticket:32,seats:4,floorspace:60,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:4,students:2,tourists:0,nightlife:1,families:3,intl:1},rent:500,
+  windows:[{days:[1,2,3,4,5],from:540,to:1140}]},
+ {id:"beauty-nails",name:"Beauty & nail salon",cat:"services",ticket:35,seats:4,floorspace:70,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:4,young:4,students:2,tourists:0,nightlife:1,families:2,intl:1},rent:500,
+  windows:[{days:[0,1,2,3,4,5],from:540,to:1200}]},
+ {id:"florist",name:"Florist",cat:"services",ticket:28,seats:0,floorspace:45,takeaway:60,delivery:20,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:4,young:3,students:0,tourists:2,nightlife:0,families:3,intl:1},rent:450,
+  windows:[{days:[0,1,2,3,4,5],from:480,to:1080}]},
+ {id:"optician",name:"Optician & eyewear",cat:"services",ticket:120,seats:0,floorspace:90,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:true,
+  audience:{office:2,residents:5,young:2,students:1,tourists:0,nightlife:0,families:4,intl:1},rent:550,
+  windows:[{days:[0,1,2,3,4,5],from:540,to:1080}]},
+ {id:"phone-repair",name:"Phone & laptop repair",cat:"services",ticket:55,seats:0,floorspace:35,takeaway:100,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:3,residents:4,young:4,students:3,tourists:1,nightlife:0,families:1,intl:2},rent:450,
+  windows:[{days:[0,1,2,3,4,5,6],from:540,to:1200}]},
+ {id:"tattoo",name:"Tattoo & piercing studio",cat:"services",ticket:150,seats:2,floorspace:80,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:1,residents:3,young:5,students:3,tourists:1,nightlife:2,families:0,intl:2},rent:450,
+  windows:[{days:[1,2,3,4,5],from:660,to:1200}]},
+ {id:"bookshop",name:"Bookshop",cat:"services",ticket:14,seats:0,floorspace:90,takeaway:100,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:2,residents:5,young:3,students:3,tourists:2,nightlife:0,families:3,intl:2},rent:450,
+  windows:[{days:[0,1,2,3,4,5,6],from:540,to:1140}]},
+ {id:"pet-shop",name:"Pet shop & supplies",cat:"services",ticket:22,seats:0,floorspace:100,takeaway:90,delivery:10,alcohol:false,terrace:false,franchise:false,
+  audience:{office:0,residents:5,young:2,students:0,tourists:0,nightlife:0,families:5,intl:1},rent:400,
+  windows:[{days:[0,1,2,3,4,5,6],from:540,to:1140}]},
+ {id:"charity-shop",name:"Charity & second-hand shop",cat:"services",ticket:7,seats:0,floorspace:110,takeaway:100,delivery:0,alcohol:false,terrace:false,franchise:true,
+  audience:{office:0,residents:5,young:3,students:3,tourists:0,nightlife:0,families:3,intl:2},rent:250,
+  windows:[{days:[0,1,2,3,4,5],from:540,to:1080}]},
+ {id:"pharmacy",name:"Pharmacy & chemist",cat:"pharmacy",ticket:12,seats:0,floorspace:120,takeaway:100,delivery:5,alcohol:false,terrace:false,franchise:true,
+  audience:{office:2,residents:5,young:1,students:0,tourists:1,nightlife:0,families:4,intl:1},rent:550,
+  windows:[{days:[0,1,2,3,4],from:480,to:1140},{days:[5],from:540,to:1080}]},
+ {id:"vet",name:"Vet practice",cat:"vets",ticket:65,seats:2,floorspace:150,takeaway:0,delivery:0,alcohol:false,terrace:false,franchise:false,
+  audience:{office:0,residents:5,young:2,students:0,tourists:0,nightlife:0,families:4,intl:1},rent:400,
+  windows:[{days:[0,1,2,3,4],from:480,to:1140},{days:[5],from:540,to:900}]},
 ];
 
 /* neutral starting point for "start from scratch" - fully manual concept */
@@ -235,7 +275,7 @@ const nNonUKV=norm(SEGS.map(s=>s.lsoa.pct_nonuk));const nNonUK=s=>nNonUKV(s.lsoa
 const nSpendV=norm(SEGS.map(s=>s.model.spend_est));const nSpend=s=>nSpendV(s.model.spend_est);
 const nCrimeV=norm(SEGS.map(s=>s.crime.per1000));const nCrime=s=>nCrimeV(s.crime.per1000);
 const CATNORM={};
-["cafe","restaurant","fast_food","pub_bar","grocery","fitness","cowork"].forEach(c=>{
+["cafe","restaurant","fast_food","pub_bar","grocery","fitness","cowork","services","agents","pharmacy","vets"].forEach(c=>{
   CATNORM[c]=norm(SEGS.map(s=>Math.log10(1+(s.osm[c]||0))));
 });
 const catN=(c,v)=>CATNORM[c]?CATNORM[c](Math.log10(1+(v||0))):0.5;
@@ -334,6 +374,10 @@ const REV={
   grocery:{capture:0.030,dil:0.15,prop:0.80,turns:0,thru:25},
   fitness:{capture:0,dil:0.25,prop:0},
   cowork:{capture:0,dil:0.30,prop:0},
+  services:{capture:0.002,dil:0.15,prop:0.02,turns:12,thru:2},
+  agents:{capture:0.00005,dil:0.20,prop:0.002,turns:0,thru:0},
+  pharmacy:{capture:0.020,dil:0.20,prop:0.50,turns:0,thru:30},
+  vets:{capture:0.001,dil:0.25,prop:0.02,turns:6,thru:1},
 };
 const DAYREL7=s=>DAYTYPE.reduce((a,k)=>a+s.flow.day_rel[k],0);
 function weeklyFlowAbs(s){const d=s.flow.days;return d.mon+3*d.mid+d.fri+d.sat+d.sun;}
@@ -502,7 +546,7 @@ let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false
 function scoreColor(v){const hue=v*1.2;return `hsl(${hue},70%,72%)`;}
 function revColor(v){return `hsl(${205-v*150},72%,${68-v*22}%)`;} // low: light blue, high: deep red
 function initMap(){
-  map=L.map("leaflet-map",{maxZoom:19,zoomSnap:0.5,zoomControl:false}).setView([51.515,-0.11],12);
+  map=L.map("leaflet-map",{maxZoom:19,zoomSnap:0.5,zoomControl:false}).setView(CITY.mapCenter,CITY.mapZoom);
   L.control.zoom({position:"topright"}).addTo(map);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:19}).addTo(map);
   map.on("zoomend",()=>{
@@ -663,7 +707,7 @@ function selectSegment(id,scroll){
     <div class="ev-card"><h4>Movement at named stations${chipFor(s.weak?"mod":"obs")}</h4>
       ${s.weak?`<div class="ev-line"><span class="lv">${s.flow.modelled_from?`Street pitch - no count taken on this street itself. Flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${s.flow.modelled_from} catchment, whose stations are listed below.`:`No station count within 900 m of this street - it has no flow anchor. Offer, audience, rents and crime below still use observed data.`}</span></div>`:''}
       ${anchors}
-      <div class="ev-line"><span class="lv">Combined typical-day entries + exits (TfL Annual Station Counts 2025; NR stations: ORR 2024-25)</span></div>
+      <div class="ev-line"><span class="lv">Combined typical-day entries + exits (${CITY.texts.flowCredit||"TfL Annual Station Counts 2025; NR stations: ORR 2024-25"})</span></div>
       <div class="dayflow">${dayBars}</div>
       <div class="ev-line"><span class="lv">Weekend share of weekly flow</span><span class="rv">${Math.round(fl.weekend_share*100)}%</span></div>
       <div class="ev-line"><span class="lv">Stations within 900 m (OSM)</span><span class="rv">${s.transport.stations_900m}</span></div>
@@ -679,6 +723,10 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Gyms &amp; fitness</span><span class="rv">${s.osm.fitness}</span></div>
       <div class="ev-line"><span class="lv">Coworking spaces</span><span class="rv">${s.osm.cowork}</span></div>
       <div class="ev-line"><span class="lv">All other shops</span><span class="rv">${s.osm.shops}</span></div>
+      ${s.osm.services!=null?`<div class="ev-line"><span class="lv">Everyday services (hair, beauty, laundry, repair)</span><span class="rv">${s.osm.services}</span></div>`:""}
+      ${s.osm.agents!=null?`<div class="ev-line"><span class="lv">Estate &amp; letting agents</span><span class="rv">${s.osm.agents}</span></div>`:""}
+      ${s.osm.pharmacy!=null?`<div class="ev-line"><span class="lv">Pharmacies</span><span class="rv">${s.osm.pharmacy}</span></div>`:""}
+      ${s.osm.vets!=null?`<div class="ev-line"><span class="lv">Vets</span><span class="rv">${s.osm.vets}</span></div>`:""}
       <div class="ev-line"><span class="lv">Culture &amp; attractions</span><span class="rv">${s.osm.culture}</span></div>
       <div class="ev-line"><span class="lv">Food venues with outdoor seating</span><span class="rv">${Math.round(s.osm.terrace_share*100)}%</span></div>
       <div class="ev-line"><span class="lv">Competing “${concept.cat}” venues</span><span class="rv">${catCount} (${catChain} chain)</span></div>
@@ -702,16 +750,16 @@ function selectSegment(id,scroll){
       ${topEth}
       <div class="ev-line"><span class="lv">LSOA ≈ 1,500 residents. It describes residents, not the people walking this street.</span></div>
     </div>
-    <div class="ev-card"><h4>Business crime, Sep 2025 - Aug 2026${chipFor("ctx")}</h4>
+    <div class="ev-card"><h4>Business crime, ${META.crime_window}${chipFor("ctx")}</h4>
       <div class="ev-line"><span class="lv">Shoplifting</span><span class="rv">${s.crime.shoplifting}</span></div>
       <div class="ev-line"><span class="lv">Theft from the person</span><span class="rv">${s.crime.theft_person}</span></div>
       <div class="ev-line"><span class="lv">Business robbery</span><span class="rv">${s.crime.robbery_biz}</span></div>
       <div class="ev-line"><span class="lv">Business burglary</span><span class="rv">${s.crime.burglary_biz}</span></div>
       <div class="ev-line"><span class="lv">Relevant offences per 1,000 residents</span><span class="rv">${s.crime.per1000.toFixed(1)}</span></div>
-      <div class="ev-line"><span class="lv">Source: Met Police LSOA totals (London Datastore). LSOA level, not street level.</span></div>
+      <div class="ev-line"><span class="lv">${CITY.texts.crimeNote||"Source: Metropolitan Police recorded offences around the anchor, via data.police.uk. A relative signal between areas, not an absolute risk figure."}</span></div>
     </div>
     <div class="ev-card"><h4>Occupancy cost · ${s.borough}${chipFor("ctx")}</h4>
-      <div class="ev-line"><span class="lv">Retail rateable value / m² (VOA, Mar 2023)</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
+      <div class="ev-line"><span class="lv">Retail rateable value / m² (VOA, ${CITY.texts.voaYear||"Mar 2023"})</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
       <div class="ev-line"><span class="lv">Office rateable value / m²</span><span class="rv">${money(s.rent.office_rv_m2)}</span></div>
       <div class="ev-line"><span class="lv">Estimated passing rent / m² (2026)${chipFor("mod")}</span><span class="rv">${money(s.rent.est_rent_m2)}</span></div>
       <div class="ev-line"><span class="lv">Est. rent for your ${concept.floorspace} m² unit${chipFor("mod")}</span><span class="rv">${money(s.rent.est_rent_m2*concept.floorspace/12)}/mo</span></div>
@@ -747,7 +795,7 @@ function selectSegment(id,scroll){
 function renderMethod(){
   $("method-grid").innerHTML=`
   <div class="m-card"><h4>Movement &amp; transport${chipFor("obs")}</h4>
-    <p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL Annual Station Counts 2025, summed over the stations named for each segment. National Rail stations without TfL counts use ORR Estimates of Station Usage 2024-25 (annual entries + exits, marked NR · ORR); their day-of-week split is modelled on the median London Overground profile, since ORR publishes annual totals only. Stations within 900 m from OpenStreetMap. Street-level pitches inherit their parent catchment's counts scaled to the street's share of recorded commercial units (marked MODELLED); streets beyond 900 m of any station show no flow at all.</p>
+    ${CITY.texts.movement||`<p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL Annual Station Counts 2025, summed over the stations named for each segment. National Rail stations without TfL counts use ORR Estimates of Station Usage 2024-25 (annual entries + exits, marked NR · ORR); their day-of-week split is modelled on the median London Overground profile, since ORR publishes annual totals only. Stations within 900 m from OpenStreetMap. Street-level pitches inherit their parent catchment's counts scaled to the street's share of recorded commercial units (marked MODELLED); streets beyond 900 m of any station show no flow at all.</p>`}
     <p><a href="https://crowding.data.tfl.gov.uk/Annual%20Station%20Counts/2024/AC2024_AnnualisedEntryExit_Public.xlsx">crowding.data.tfl.gov.uk - AC2024 Annualised Entry/Exit</a></p>
     <p>Resolution: named station, not the pavement. A station 400 m away on a desire line matters more than one across a railway.</p></div>
   <div class="m-card"><h4>Street offer &amp; competition${chipFor("obs")}</h4>
@@ -759,11 +807,11 @@ function renderMethod(){
     <p><a href="https://www.nomisweb.co.uk/sources/census_2021_bulk">nomisweb.co.uk - Census 2021 bulk downloads</a></p>
     <p>Resolution: LSOA (~1,500 residents). These are people who <i>live</i> here, not workers or visitors. The tool never claims street-level demographics.</p></div>
   <div class="m-card"><h4>Business crime${chipFor("ctx")}</h4>
-    <p>Metropolitan Police recorded street-level offences within ~450 m of each segment anchor, 12 months to July 2026: shoplifting, theft from the person, robbery and burglary, via data.police.uk. Rates are normalised per 1,000 residents.</p>
+    ${CITY.texts.crimeMethod||`<p>Metropolitan Police recorded street-level offences within ~450 m of each segment anchor, 12 months to July 2026: shoplifting, theft from the person, robbery and burglary, via data.police.uk. Rates are normalised per 1,000 residents.</p>`}
     <p><a href="https://data.police.uk/data/">data.police.uk - street-level crime (Met Police)</a></p>
     <p>Resolution: street level around the anchor. Under-reporting is common; use as a relative signal between areas, not an absolute risk figure.</p></div>
   <div class="m-card"><h4>Occupancy cost${chipFor("ctx")}</h4>
-    <p>Rateable value per m² for retail and office stock by billing authority, Valuation Office Agency business floorspace statistics, 31 March 2023.</p>
+    ${CITY.texts.voaMethod||`<p>Rateable value per m² for retail and office stock by billing authority, Valuation Office Agency business floorspace statistics, 31 March 2023.</p>`}
     <p><a href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-including-business-floorspace-2023">gov.uk - NDR business floorspace 2023</a></p>
     <p>The estimated passing rent per m² is MODELLED: borough retail rateable value x a segment-type factor (prime/managed retail 1.35-1.45, high street 1.15, side street 0.95, market 1.0) x a footfall factor (up to +30% for the busiest flows) x 1.08 uplift to 2026. Business rates proxy: unit rateable value x the 49.9p small-business multiplier, with 100% relief under £12,000 RV tapering to £15,000. Always get agent quotes.</p></div>
   <div class="m-card"><h4>Modelled layers${chipFor("mod")}</h4>
@@ -776,9 +824,9 @@ function renderMethod(){
     <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records across all covered streets and areas (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
     <p>Resolution: real buildings and coordinates; the revenue colour is modelled. A coloured unit is not a vacant unit - check availability with agents.</p></div>
   <div class="m-card"><h4>Coverage</h4>
-    <p>${SEGS.length.toLocaleString("en-GB")} segments covering all of London at street level: ${SEGS.filter(s=>s.lvl!=="street").length} area pitches (curated commercial areas plus every TfL station catchment and every Greater London National Rail station catchment - TfL Annual Station Counts 2025, no minimum flow; National Rail: ORR Estimates of Station Usage 2024-25) and ${SEGS.filter(s=>s.lvl==="street").length.toLocaleString("en-GB")} street pitches - every named retail street and parade with 8 or more recorded commercial units, long streets split into roughly 400 m stretches. ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded across them. A street pitch inside a station catchment carries that catchment's flow MODELLED down to the street's share of recorded units; a street more than 900 m from any station has no flow anchor and says so on its panel. Where TfL and ORR both count a station, TfL counts are used. A handful of TfL-network termini beyond the London billing authorities (Amersham, Chesham, Slough-side Elizabeth line stops) stay out because the borough rent evidence does not reach them.</p>    <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>
+    ${CITY.texts.coverage?CITY.texts.coverage(SEGS,UNITS):`<p>${SEGS.length.toLocaleString("en-GB")} segments covering all of London at street level: ${SEGS.filter(s=>s.lvl!=="street").length} area pitches (curated commercial areas plus every TfL station catchment and every Greater London National Rail station catchment - TfL Annual Station Counts 2025, no minimum flow; National Rail: ORR Estimates of Station Usage 2024-25) and ${SEGS.filter(s=>s.lvl==="street").length.toLocaleString("en-GB")} street pitches - every named retail street and parade with 8 or more recorded commercial units, long streets split into roughly 400 m stretches. ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded across them. A street pitch inside a station catchment carries that catchment's flow MODELLED down to the street's share of recorded units; a street more than 900 m from any station has no flow anchor and says so on its panel. Where TfL and ORR both count a station, TfL counts are used. A handful of TfL-network termini beyond the London billing authorities (Amersham, Chesham, Slough-side Elizabeth line stops) stay out because the borough rent evidence does not reach them.</p>`}    <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>
   <div class="m-card"><h4>Concept trends${chipFor("obs")}${chipFor("mod")}</h4>
-    <p>The Trends section pairs two independent signals per concept. Venue counts: every recorded venue in the concept's category (all cafés, all restaurants, all fast food, pubs/bars/nightclubs, grocery and food shops, gyms, coworking) inside the same Greater London bounding box this map uses, counted at 1 January each year 2017-2026 from the OpenStreetMap full-history extract via the ohsome API (HeiGIT). OBSERVED, with one caveat printed on the section: mapper coverage improves over time, so part of the rise is better mapping. Search interest: Google Trends yearly mean index for a keyword matching each concept, United Kingdom, rescaled across batches against a shared anchor ("restaurant"). ESTIMATED attention, not shops or sales.</p>
+    <p>The Trends section pairs two independent signals per concept. Venue counts: every recorded venue in the concept's category (all cafés, all restaurants, all fast food, pubs/bars/nightclubs, grocery and food shops, gyms, coworking) inside the same ${CITY.region} bounding box this map uses, counted at 1 January each year 2017-2026 from the OpenStreetMap full-history extract via the ohsome API (HeiGIT). OBSERVED, with one caveat printed on the section: mapper coverage improves over time, so part of the rise is better mapping. Search interest: Google Trends yearly mean index for a keyword matching each concept, United Kingdom, rescaled across batches against a shared anchor ("restaurant"). ESTIMATED attention, not shops or sales.</p>
     <p><a href="https://ohsome.org">ohsome.org (HeiGIT)</a> · <a href="https://www.openstreetmap.org/copyright">openstreetmap.org (ODbL)</a> · <a href="https://trends.google.com">trends.google.com</a></p>
     <p>Concept-level historical shop counts are not published by any open source at this granularity; rows say "no series" rather than estimate one.</p></div>`;
 }
@@ -814,6 +862,7 @@ function renderMapControls(){
 /* deep link: ?concept=<preset-id> preselects a concept (used by the rankings articles) */
 (function(){try{const q=new URLSearchParams(location.search);const cid=q.get("concept");if(cid&&PRESETS.some(p=>p.id===cid)){activePreset=cid;concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===cid))));}}catch(e){}})();
 $("seg-count").textContent=SEGS.length;
+  if($("preset-count"))$("preset-count").textContent=PRESETS.length;
 renderPresets(); renderConcept(); renderMethod(); initMap(); renderMapControls(); update();
 
 /* ---------- shortlist, comparison, reports and on-visit change alerts ---------- */

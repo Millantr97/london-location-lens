@@ -1,0 +1,22 @@
+{
+ "Bristol, City of": {
+  "retail_rv_m2": 134.0,
+  "office_rv_m2": 167.0
+ },
+ "South Gloucestershire": {
+  "retail_rv_m2": 160.0,
+  "office_rv_m2": 147.0
+ },
+ "North Somerset": {
+  "retail_rv_m2": 121.0,
+  "office_rv_m2": 113.0
+ },
+ "Bath and North East Somerset": {
+  "retail_rv_m2": 178.0,
+  "office_rv_m2": 159.0
+ },
+ "_default": {
+  "retail_rv_m2": 134.0,
+  "office_rv_m2": 167.0
+ }
+}

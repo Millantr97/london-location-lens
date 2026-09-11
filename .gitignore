@@ -1,2 +1,3 @@
 pipeline/gl.osm.pbf
 pipeline/__pycache__/
+pipeline/city/*/cache/

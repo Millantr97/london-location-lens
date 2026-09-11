@@ -1,0 +1,30 @@
+{
+ "Sheffield": {
+  "retail_rv_m2": 137.0,
+  "office_rv_m2": 103.0
+ },
+ "Rotherham": {
+  "retail_rv_m2": 111.0,
+  "office_rv_m2": 64.0
+ },
+ "Barnsley": {
+  "retail_rv_m2": 93.0,
+  "office_rv_m2": 88.0
+ },
+ "Doncaster": {
+  "retail_rv_m2": 94.0,
+  "office_rv_m2": 78.0
+ },
+ "Chesterfield": {
+  "retail_rv_m2": 105.0,
+  "office_rv_m2": 83.0
+ },
+ "North East Derbyshire": {
+  "retail_rv_m2": 104.0,
+  "office_rv_m2": 72.0
+ },
+ "_default": {
+  "retail_rv_m2": 137.0,
+  "office_rv_m2": 103.0
+ }
+}

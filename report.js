@@ -9,7 +9,7 @@ const bar=(l,pct,t,extra)=>`<div class="rbar-row"><div class="rbar-l">${l}${t?ch
 const slide=(n,total,kicker,title,body)=>`<section class="rslide"><div class="rslide-in">
   <div class="rslide-top"><span class="rkick">${kicker}</span><span class="rpage">${n} / ${total}</span></div>
   <h3 class="rtitle">${title}</h3>${body}
-  <div class="rfoot"><span>London <b>Location Lens</b></span><span class="rfoot-d"></span></div>
+  <div class="rfoot"><span>${CITY.name} <b>Location Lens</b></span><span class="rfoot-d"></span></div>
 </div></section>`;
 
 function buildReport(id){
@@ -29,7 +29,7 @@ function buildReport(id){
 
   /* S1 cover */
   const s1=`<section class="rslide rcover"><div class="rslide-in">
-    <div class="rcover-brand">London <b>Location Lens</b></div>
+    <div class="rcover-brand">${CITY.name} <b>Location Lens</b></div>
     <div class="rcover-kick">STREET REPORT · ${today.toUpperCase()}</div>
     <h1>${esc(s.name)}</h1>
     <div class="rcover-sub">${esc(s.zone)} · ${esc(s.borough)} · ${s.stype.replace(/_/g," ")} ${chip("cur")}</div>
@@ -39,7 +39,7 @@ function buildReport(id){
       <div class="rcfig"><div class="rcfig-v">${money(rev.month)}</div><div class="rcfig-l">est. monthly revenue ${chip("mod")}</div></div>
       <div class="rcfig"><div class="rcfig-v">${fmt(Math.round(weeklyFlowAbs(s)))}</div><div class="rcfig-l">weekly station flow ${chip(s.weak?"mod":"obs")}</div></div>
     </div>
-    <div class="rcover-src">Dataset built ${META.built} · OpenStreetMap ${META.osm_date} · TfL Annual Station Counts 2025 · ORR 2024-25 · Census 2021 · Met Police ${META.crime_window} · VOA 2023</div>
+    <div class="rcover-src">Dataset built ${META.built} · OpenStreetMap ${META.osm_date} · ${META.numbat} · Census 2021 · ${CITY.texts.police||"Police"} ${META.crime_window} · VOA 2023</div>
   </div></section>`;
 
   /* S2 verdict */
@@ -97,10 +97,10 @@ function buildReport(id){
       ${anchors||'<div class="rkv"><span class="rl">None recorded</span></div>'}
       ${kv("Stations within 900 m (OSM)",s.transport.stations_900m)}
       <div class="rmini">${esc(stnNames)}</div>
-      <div class="rmini">TfL Annual Station Counts 2025; National Rail: ORR Estimates of Station Usage 2024-25. Station counts are demand anchors, not footfall on this pavement.</div>
+      <div class="rmini">${META.numbat}. Station counts are demand anchors, not footfall on this pavement.</div>
     </div>
   </div>
-  <div class="rnote">Demand-at-hours score for this street: <b>${pct(r.crit.demand.score)}</b> ${chip("mod")} - your trading windows mapped onto the day-type flows above, normalised across all ${SEGS.length.toLocaleString("en-GB")} London segments.</div>`;
+  <div class="rnote">Demand-at-hours score for this street: <b>${pct(r.crit.demand.score)}</b> ${chip("mod")} - your trading windows mapped onto the day-type flows above, normalised across all ${SEGS.length.toLocaleString("en-GB")} ${CITY.name} segments.</div>`;
 
   /* S5 audience */
   const audSupplyBars=Object.keys(AUDL).map(k=>{const w=aw[k]||0;return `<div class="rbar-row ${w===0?"dim":""}"><div class="rbar-l">${AUDL[k]}${w?` <span class="ryou">you ${w}/10</span>`:""}</div><div class="rbar"><i style="width:${Math.max(1,Math.round(sup[k]*100))}%"></i></div><div class="rbar-v">${Math.round(sup[k]*100)}</div></div>`;}).join("");
@@ -207,7 +207,7 @@ function buildReport(id){
       <div class="rmini">Capture rates: grocery 3.0%, café 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2% of passers-by in trading windows. Dilution 1/(1+k x rivals within 250 m). Audience factor x0.5-x1.5. Revenue range x0.55-x1.6. Capacity: seats x weekly covers + floorspace x throughput per m², with soft absorption beyond.</div>
     </div>
     <div class="rcard"><div class="rsub">Sources</div>
-      ${kv("Station flows","TfL Annual Station Counts 2025 · ORR 2024-25","obs")}
+      ${kv("Station flows",META.numbat,"obs")}
       ${kv("Venues, units, stations","OpenStreetMap (ODbL), "+META.osm_date,"obs")}
       ${kv("Residents","Census 2021 LSOA via Nomis","ctx")}
       ${kv("Business crime","Met Police, "+META.crime_window,"ctx")}
@@ -219,7 +219,7 @@ function buildReport(id){
 
   /* S11 closing */
   const s11=`<section class="rslide rclose"><div class="rslide-in">
-    <div class="rcover-brand">London <b>Location Lens</b></div>
+    <div class="rcover-brand">${CITY.name} <b>Location Lens</b></div>
     <h3 class="rtitle">Next steps before you commit</h3>
     <div class="rsteps">
       <div class="rstep"><b>1 · Count it yourself.</b> Stand on ${esc(s.name)} during your exact trading windows (${esc(windowsTxt)}) and count passers-by. Override the modelled layers with your numbers.</div>

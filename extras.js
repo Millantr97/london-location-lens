@@ -1,5 +1,5 @@
 /* ---------- concept trends + premium tools ---------- */
-const XCAT={cafe:"Cafés",restaurant:"Restaurants",fast_food:"Fast food",pub_bar:"Pubs & bars",grocery:"Grocery & food shops",fitness:"Gyms & fitness",cowork:"Coworking"};
+const XCAT={cafe:"Cafés",restaurant:"Restaurants",fast_food:"Fast food",pub_bar:"Pubs & bars",grocery:"Grocery & food shops",fitness:"Gyms & fitness",cowork:"Coworking",services:"Everyday services",agents:"Estate & letting agents",pharmacy:"Pharmacies",vets:"Vets"};
 
 /* ----- trends: 3x3 paginated card grid with search ----- */
 let trendSort="growth", trendQuery="", trendPage=1;
@@ -49,7 +49,7 @@ function renderTrends(){
     return `<div class="trend-card">
       <div class="tc-head"><div><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat}</span></div><button class="mini tc-try" data-try="${r.p.id}">Try it →</button></div>
       <div class="tc-cell">
-        <div class="tc-label"><span>Recorded venues, London ${chipFor("obs")}</span><span>${fmtChg(r.osmChg)} <span class="tr-per">4y</span></span></div>
+        <div class="tc-label"><span>Recorded venues, ${CITY.name} ${chipFor("obs")}</span><span>${fmtChg(r.osmChg)} <span class="tr-per">4y</span></span></div>
         <div class="tc-chart">${sparkline(r.osm,years,240,40)}</div>
         <div class="tc-nums">${osmNums}</div>
       </div>
@@ -113,7 +113,7 @@ function runGapFinder(){
     }).sort((a,b)=>b.gap-a.gap).slice(0,8);
     out.innerHTML=`<div class="gap-head">Most underserved concepts on <b>${s.name}</b> - high modelled demand at the concept's hours, low recorded supply ${chipFor("mod")}</div>`+
       rows.map((r,i)=>`<div class="gap-row"><span class="gap-n">${i+1}</span><div class="gap-main"><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat} · ${r.count} recorded within 250 m</span></div><div class="rbar gapbar"><i style="width:${Math.round(r.gap*100)}%"></i></div><span class="gap-v">${Math.round(r.gap*100)}</span><button class="mini" data-gaptry="${r.p.id}">Score it here</button></div>`).join("")+
-      `<div class="prem-note">Gap = demand at the concept's trading hours (normalised across London) tempered by how saturated the category already is within 250 m. Demand anchors are station flows; supply is OpenStreetMap. A gap is an hypothesis to walk and count, not a guarantee.</div>`;
+      `<div class="prem-note">Gap = demand at the concept's trading hours (normalised across ${CITY.name}) tempered by how saturated the category already is within 250 m. Demand anchors are station flows; supply is OpenStreetMap. A gap is an hypothesis to walk and count, not a guarantee.</div>`;
     out.querySelectorAll("[data-gaptry]").forEach(b=>b.onclick=()=>{
       activePreset=b.dataset.gaptry;
       concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===activePreset))));

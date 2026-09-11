@@ -1,0 +1,26 @@
+{
+ "Leeds": {
+  "retail_rv_m2": 147.0,
+  "office_rv_m2": 142.0
+ },
+ "Bradford": {
+  "retail_rv_m2": 97.0,
+  "office_rv_m2": 57.0
+ },
+ "Wakefield": {
+  "retail_rv_m2": 98.0,
+  "office_rv_m2": 71.0
+ },
+ "Kirklees": {
+  "retail_rv_m2": 99.0,
+  "office_rv_m2": 77.0
+ },
+ "Calderdale": {
+  "retail_rv_m2": 95.0,
+  "office_rv_m2": 77.0
+ },
+ "_default": {
+  "retail_rv_m2": 147.0,
+  "office_rv_m2": 142.0
+ }
+}

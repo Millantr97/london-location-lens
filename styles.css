@@ -272,3 +272,4 @@ h1,h2,h3{letter-spacing:-.03em}
 .stress-table th,.stress-table td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right}
 .stress-table th:first-child,.stress-table td:first-child{text-align:left}
 @media(max-width:900px){.premium-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.rtoolbar{font-size:11px}.rtool-r .action{font-size:11px;padding:5px 7px}}

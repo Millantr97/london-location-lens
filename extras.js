@@ -26,7 +26,9 @@ function renderTrends(){
   const rows=PRESETS.map(p=>{
     const osm=TRENDS.osm[p.cat]||null;
     const gt=(TRENDS.gt&&TRENDS.gt.series)?TRENDS.gt.series[p.id]:null;
-    return {p,osm,gt,osmChg:trendChange(osm,years,4),gtChg:trendChange(gt,gtyears,1),gtChg4:trendChange(gt,gtyears,4)};
+    const gtMax=gt?Math.max(...Object.values(gt)):0;
+    const lowVol=gt&&gtMax<3;
+    return {p,osm,gt,osmChg:trendChange(osm,years,4),gtChg:lowVol?null:trendChange(gt,gtyears,1),gtChg4:lowVol?null:trendChange(gt,gtyears,4),lowVol};
   });
   if(trendSort==="growth")rows.sort((a,b)=>((b.gtChg??-999))-((a.gtChg??-999)));
   else if(trendSort==="osm")rows.sort((a,b)=>((b.osmChg??-999))-((a.osmChg??-999)));
@@ -39,7 +41,7 @@ function renderTrends(){
         <div class="tr-cell-c">${fmtChg(r.osmChg)} <span class="tr-per">4 yrs</span></div></div>
       <div class="tr-cell"><div class="tr-cell-h">Search interest, "${(TRENDS.gt&&TRENDS.gt.kw&&TRENDS.gt.kw[r.p.id])||r.p.name}" ${chipFor("mod")}<span class="tr-catlvl">Google Trends index, ${TRENDS.gt?TRENDS.gt.geo:""} - estimated, not shops</span></div>
         <div class="tr-cell-b">${sparkline(r.gt,gtyears,150,34)}<span class="tr-nums">${r.gt?Math.round(r.gt[gtyears[0]])+" → "+Math.round(r.gt[gtyears[gtyears.length-1]]):"no series"}</span></div>
-        <div class="tr-cell-c">${fmtChg(r.gtChg)} <span class="tr-per">1 yr</span> · ${fmtChg(r.gtChg4)} <span class="tr-per">4 yrs</span></div></div>
+        <div class="tr-cell-c">${r.lowVol?'<span class="tr-nodata">low search volume - index too small to read</span>':`${fmtChg(r.gtChg)} <span class="tr-per">1 yr</span> · ${fmtChg(r.gtChg4)} <span class="tr-per">4 yrs</span>`}</div></div>
       <div class="tr-go"><button class="mini" data-try="${r.p.id}">Try this concept</button></div>
     </div>`).join("");
   box.querySelectorAll("[data-try]").forEach(b=>b.onclick=()=>{

@@ -1,6 +1,6 @@
 /* ---------- tab navigation ---------- */
 (function(){
-  const NAMES=["concept","detail","trends","premium","shortlist","expert","method"];
+  const NAMES=["concept","detail","trends","premium","shortlist","expert"];
   let current="concept";
   window.activateTab=function(name,opts){
     if(NAMES.indexOf(name)<0)name="concept";

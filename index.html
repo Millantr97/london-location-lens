@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=20">
+<link rel="stylesheet" href="styles.css?v=21">
 </head>
 <body>
 <header class="top">
@@ -18,9 +18,8 @@
       <a href="#detail" data-tab="detail">Street</a>
       <a href="#trends" data-tab="trends">Trends</a>
       <a href="#premium" data-tab="premium">Premium</a>
-      <a href="#shortlist" data-tab="shortlist">Shortlist</a>
+      <a href="#shortlist" data-tab="shortlist">Workspace &amp; Method</a>
       <a href="#expert" data-tab="expert" class="expert-tab">Expert help</a>
-      <a href="#method" data-tab="method">Method</a>
     </nav>
   </div>
 </header>
@@ -92,15 +91,23 @@
     <div class="tool-card"><h3>Change alerts</h3><p class="tool-copy">Favourites are checked against the latest published dataset whenever you return. If a competitor count, flow anchor or modelled score changes, you will see exactly what changed here.</p><div id="alert-list" class="saved-list"></div><p class="micro">ON-VISIT CHECK · A server is required for email or push alerts while this page is closed.</p></div>
   </div>
   <div id="compare-panel" class="compare-panel" hidden></div>
+  <div class="workspace-divider"><span>How the model works</span></div>
+  <div class="section-head method-head">
+    <div class="eyebrow">Sources &amp; transparency</div>
+    <h2>Method, sources and limits</h2>
+    <p>Ten clear evidence notes, arranged for easy side-by-side reading.</p>
+  </div>
+  <div class="method-grid" id="method-grid"></div>
 </section>
 
 
 
 <section class="tools-wrap tab-panel" data-panel="trends" id="trends">
-  <div class="section-head">
+  <div class="section-head feature-head trend-feature-head">
+    <div class="feature-number">01</div><div>
     <div class="eyebrow">Concept trends</div>
     <h2>Is your concept rising or fading?</h2>
-    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers, or search for a concept.</p>
+    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers, or search for a concept.</p></div>
   </div>
   <div class="trend-controls">
     <div class="tc-searchwrap"><input id="trend-search" type="search" placeholder="Search a concept - e.g. matcha, ramen, Pilates..." aria-label="Search concepts"></div>
@@ -112,11 +119,12 @@
 </section>
 
 <section class="tools-wrap tab-panel" data-panel="premium" id="premium">
-  <div class="section-head">
+  <div class="section-head feature-head premium-feature-head">
+    <div class="feature-number">02</div><div>
     <div class="eyebrow">Premium tools</div>
     <h2>The decision toolkit <span class="premium-pill">PREMIUM</span></h2>
     <p>Built for subscribers - free to preview while the subscription goes live. Three tools that turn the map into a decision.</p>
-    <div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div>
+    <div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div></div>
   </div>
   <div class="premium-grid">
     <div class="tool-card prem-card"><h3>What's missing here <span class="premium-pill">PREMIUM</span></h3>
@@ -172,13 +180,7 @@
   </div>
 </section>
 
-<section class="method tab-panel" data-panel="method" id="method">
-  <div class="section-head">
-    <div class="eyebrow">Step 4</div>
-    <h2>Method, sources and limits</h2>
-  </div>
-  <div class="method-grid" id="method-grid"></div>
-</section>
+
 </main>
 
 <footer class="foot">
@@ -189,11 +191,11 @@
 <script src="segments.js?v=13"></script>
 <script src="units.js?v=13"></script>
 <script src="competitors.js?v=13"></script>
-<script src="app.js?v=19"></script>
+<script src="app.js?v=21"></script>
 <script src="report.js?v=19"></script>
 <script src="trends.js?v=18"></script>
 <script src="extras.js?v=19"></script>
-<script src="tabs.js?v=20"></script>
+<script src="tabs.js?v=21"></script>
 <script src="leads.js?v=19"></script>
 </body>
 </html>

@@ -793,6 +793,7 @@ function update(){
   paintMarkers(ranked);
   renderRankings(ranked);
   if(selected)selectSegment(selected,false);
+  else if(ranked[0])selectSegment(ranked[0].seg.id,false);
 }
 
 /* map controls: metric toggle + units layer toggle */

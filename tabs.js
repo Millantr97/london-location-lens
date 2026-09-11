@@ -1,6 +1,6 @@
 /* ---------- tab navigation ---------- */
 (function(){
-  const NAMES=["concept","map","rankings","detail","trends","premium","shortlist","method"];
+  const NAMES=["concept","map","rankings","detail","trends","premium","shortlist","expert","method"];
   let current="concept";
   window.activateTab=function(name,opts){
     if(NAMES.indexOf(name)<0)name="concept";

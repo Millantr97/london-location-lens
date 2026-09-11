@@ -656,6 +656,7 @@ function selectSegment(id,scroll){
   dp.innerHTML=`
   <div class="dp-head"><div><h2>${s.name}</h2><div class="zone">${s.zone} · ${s.borough} · segment type: ${s.stype.replace(/_/g," ")}${chipFor("cur")}</div></div>
   <div class="dp-score">${Math.round(r.score)}</div></div>
+  <div class="model-cta detail-model-cta"><b>Need investment-grade analysis?</b><span>These results are estimates from a simple model and public data. Get better data, a deeper report and hands-on geomarketing.</span><a href="#expert" data-expert>Tell us about your project →</a></div>
   <p class="dp-why"><b>For “${concept.name}”</b> trading ${windowsTxt}: strongest on ${strengths.map(x=>x.label.toLowerCase()).join(" and ")} (${strengths.map(x=>pct(x.score)).join(" / ")}); weakest on ${weak.map(x=>x.label.toLowerCase()).join(" and ")} (${weak.map(x=>pct(x.score)).join(" / ")}).</p>
   <div class="crit">${critRows}</div>
   <div class="dp-cols">

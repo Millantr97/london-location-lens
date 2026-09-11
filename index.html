@@ -7,7 +7,7 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=18">
+<link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
 <header class="top">
@@ -21,6 +21,7 @@
       <a href="#trends" data-tab="trends">Trends</a>
       <a href="#premium" data-tab="premium">Premium</a>
       <a href="#shortlist" data-tab="shortlist">Shortlist</a>
+      <a href="#expert" data-tab="expert" class="expert-tab">Expert help</a>
       <a href="#method" data-tab="method">Method</a>
     </nav>
   </div>
@@ -117,6 +118,7 @@
     <div class="eyebrow">Premium tools</div>
     <h2>The decision toolkit <span class="premium-pill">PREMIUM</span></h2>
     <p>Built for subscribers - free to preview while the subscription goes live. Three tools that turn the map into a decision.</p>
+    <div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div>
   </div>
   <div class="premium-grid">
     <div class="tool-card prem-card"><h3>What's missing here <span class="premium-pill">PREMIUM</span></h3>
@@ -143,6 +145,35 @@
   </div>
 </section>
 
+<section class="expert-wrap tab-panel" data-panel="expert" id="expert">
+  <div class="expert-shell">
+    <div class="expert-intro">
+      <div class="eyebrow">Go beyond the public model</div>
+      <h2>Bring in a geomarketing specialist</h2>
+      <p>Location Lens is a fast first screen built from public data and a simple, transparent model. For a higher-stakes investment, tell us what you are planning and we will match your brief with a specialist geomarketing agency.</p>
+      <div class="expert-points"><span>Better commercial datasets</span><span>Deeper investment report</span><span>Hands-on site selection</span><span>Advanced geomarketing</span></div>
+      <p class="expert-commercial">If you ask for an introduction and a partner takes on your project, Location Lens may receive a referral fee. This does not change the fee you agree with the agency.</p>
+    </div>
+    <form class="lead-form" id="lead-form" action="https://formsubmit.co/amazonmillan9@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Qualified Location Lens geomarketing lead">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="source" value="London Location Lens expert brief">
+      <div class="form-head"><span class="form-step">Your brief</span><b>Usually 2 minutes</b></div>
+      <label>Full name<input required autocomplete="name" name="name" placeholder="Your name"></label>
+      <div class="form-two"><label>Email<input required type="email" autocomplete="email" name="email" placeholder="you@company.com"></label><label>Phone<input required type="tel" autocomplete="tel" name="phone" placeholder="+44..."></label></div>
+      <label>Business concept<input required name="concept" placeholder="e.g. premium Pilates studio"></label>
+      <label>Areas of interest<textarea required name="areas" rows="3" placeholder="Neighbourhoods, streets or boroughs you are considering"></textarea></label>
+      <div class="form-two"><label>Investment budget<select required name="investment_budget"><option value="">Choose a range</option><option>Under £50,000</option><option>£50,000-£100,000</option><option>£100,000-£250,000</option><option>£250,000-£500,000</option><option>£500,000+</option><option>Prefer not to say yet</option></select></label><label>Timeline<select required name="timeline"><option value="">Choose timing</option><option>Ready now</option><option>Within 3 months</option><option>3-6 months</option><option>6-12 months</option><option>Early research</option></select></label></div>
+      <label class="consent-row"><input required type="checkbox" name="partner_consent" value="yes"><span>I agree that Location Lens may use my details to assess this brief and share them with suitable geomarketing agencies so they can contact me. I understand Location Lens may earn a referral fee.</span></label>
+      <label class="consent-row optional"><input type="checkbox" name="updates_opt_in" value="yes"><span>Send me occasional Location Lens product and market updates. Optional.</span></label>
+      <button class="action primary lead-submit" type="submit">Request a specialist match →</button>
+      <p class="form-legal">By submitting, you confirm you have read the <a href="privacy.html">Privacy Notice</a>. Your details are handled by our form provider and sent to Location Lens by email.</p>
+      <div class="form-status" id="lead-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
 <section class="method tab-panel" data-panel="method" id="method">
   <div class="section-head">
     <div class="eyebrow">Step 4</div>
@@ -153,17 +184,18 @@
 </main>
 
 <footer class="foot">
-  <div>London Location Lens · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div>
+  <div>London Location Lens · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="#expert" data-expert>Expert geomarketing</a><a href="privacy.html">Privacy Notice</a></div>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="segments.js?v=13"></script>
 <script src="units.js?v=13"></script>
 <script src="competitors.js?v=13"></script>
-<script src="app.js?v=18"></script>
-<script src="report.js?v=18"></script>
+<script src="app.js?v=19"></script>
+<script src="report.js?v=19"></script>
 <script src="trends.js?v=18"></script>
-<script src="extras.js?v=18"></script>
-<script src="tabs.js?v=18"></script>
+<script src="extras.js?v=19"></script>
+<script src="tabs.js?v=19"></script>
+<script src="leads.js?v=19"></script>
 </body>
 </html>

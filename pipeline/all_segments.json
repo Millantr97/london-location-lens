@@ -1,0 +1,920 @@
+[
+ {
+  "id": "old-compton",
+  "name": "Old Compton Street, Soho",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5133,
+  "lng": -0.1317,
+  "stype": "side_street"
+ },
+ {
+  "id": "seven-dials",
+  "name": "Seven Dials, Covent Garden",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.5138,
+  "lng": -0.1266,
+  "stype": "side_street"
+ },
+ {
+  "id": "charlotte-street",
+  "name": "Charlotte Street, Fitzrovia",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.521,
+  "lng": -0.1354,
+  "stype": "high_street"
+ },
+ {
+  "id": "marylebone-high",
+  "name": "Marylebone High Street",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5202,
+  "lng": -0.1513,
+  "stype": "high_street"
+ },
+ {
+  "id": "oxford-east",
+  "name": "Oxford Street East",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5154,
+  "lng": -0.131,
+  "stype": "major_retail"
+ },
+ {
+  "id": "carnaby",
+  "name": "Carnaby Street",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.513,
+  "lng": -0.1388,
+  "stype": "side_street"
+ },
+ {
+  "id": "chinatown",
+  "name": "Gerrard Street, Chinatown",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5118,
+  "lng": -0.1308,
+  "stype": "side_street"
+ },
+ {
+  "id": "borough-high",
+  "name": "Borough High Street",
+  "borough": "Southwark",
+  "zone": "Zone 1",
+  "lat": 51.5037,
+  "lng": -0.0927,
+  "stype": "high_street"
+ },
+ {
+  "id": "bermondsey-street",
+  "name": "Bermondsey Street",
+  "borough": "Southwark",
+  "zone": "Zone 1",
+  "lat": 51.4972,
+  "lng": -0.0807,
+  "stype": "side_street"
+ },
+ {
+  "id": "lower-marsh",
+  "name": "Lower Marsh, Waterloo",
+  "borough": "Lambeth",
+  "zone": "Zone 1",
+  "lat": 51.4997,
+  "lng": -0.1102,
+  "stype": "market"
+ },
+ {
+  "id": "the-cut",
+  "name": "The Cut, Southwark",
+  "borough": "Southwark",
+  "zone": "Zone 1",
+  "lat": 51.5032,
+  "lng": -0.1078,
+  "stype": "high_street"
+ },
+ {
+  "id": "wilton-road",
+  "name": "Wilton Road, Victoria",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.4947,
+  "lng": -0.1434,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "strutton-ground",
+  "name": "Strutton Ground, Victoria",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.4962,
+  "lng": -0.1327,
+  "stype": "market"
+ },
+ {
+  "id": "cheapside",
+  "name": "Cheapside, City of London",
+  "borough": "City of London",
+  "zone": "Zone 1",
+  "lat": 51.5136,
+  "lng": -0.0969,
+  "stype": "high_street"
+ },
+ {
+  "id": "leadenhall",
+  "name": "Leadenhall, City of London",
+  "borough": "City of London",
+  "zone": "Zone 1",
+  "lat": 51.5129,
+  "lng": -0.0833,
+  "stype": "market"
+ },
+ {
+  "id": "broadgate",
+  "name": "Liverpool Street / Broadgate",
+  "borough": "City of London",
+  "zone": "Zone 1",
+  "lat": 51.5173,
+  "lng": -0.0826,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "exmouth-market",
+  "name": "Exmouth Market, Clerkenwell",
+  "borough": "Islington",
+  "zone": "Zone 1",
+  "lat": 51.5265,
+  "lng": -0.1012,
+  "stype": "market"
+ },
+ {
+  "id": "cowcross",
+  "name": "Cowcross Street, Farringdon",
+  "borough": "Islington",
+  "zone": "Zone 1",
+  "lat": 51.5205,
+  "lng": -0.1019,
+  "stype": "side_street"
+ },
+ {
+  "id": "boxpark",
+  "name": "Bethnal Green Road, Shoreditch",
+  "borough": "Hackney",
+  "zone": "Zones 1/2",
+  "lat": 51.5237,
+  "lng": -0.0763,
+  "stype": "high_street"
+ },
+ {
+  "id": "hoxton-square",
+  "name": "Hoxton Square",
+  "borough": "Hackney",
+  "zone": "Zones 1/2",
+  "lat": 51.5277,
+  "lng": -0.0818,
+  "stype": "side_street"
+ },
+ {
+  "id": "old-street-east",
+  "name": "Old Street East",
+  "borough": "Islington",
+  "zone": "Zone 1",
+  "lat": 51.5257,
+  "lng": -0.0835,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "brushfield",
+  "name": "Brushfield Street, Spitalfields",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 1",
+  "lat": 51.5194,
+  "lng": -0.0753,
+  "stype": "market"
+ },
+ {
+  "id": "brick-lane",
+  "name": "Brick Lane",
+  "borough": "Tower Hamlets",
+  "zone": "Zones 1/2",
+  "lat": 51.5219,
+  "lng": -0.0716,
+  "stype": "market"
+ },
+ {
+  "id": "coal-drops",
+  "name": "Coal Drops Yard, King's Cross",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.5359,
+  "lng": -0.1264,
+  "stype": "managed_estate"
+ },
+ {
+  "id": "drummond-street",
+  "name": "Drummond Street, Euston",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.5278,
+  "lng": -0.1365,
+  "stype": "side_street"
+ },
+ {
+  "id": "praed-street",
+  "name": "Praed Street, Paddington",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.516,
+  "lng": -0.1747,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "queensway",
+  "name": "Queensway, Bayswater",
+  "borough": "Westminster",
+  "zone": "Zone 1",
+  "lat": 51.5112,
+  "lng": -0.1874,
+  "stype": "high_street"
+ },
+ {
+  "id": "portobello",
+  "name": "Portobello Road",
+  "borough": "Kensington and Chelsea",
+  "zone": "Zones 1/2",
+  "lat": 51.517,
+  "lng": -0.2053,
+  "stype": "market"
+ },
+ {
+  "id": "south-kensington",
+  "name": "South Kensington station area",
+  "borough": "Kensington and Chelsea",
+  "zone": "Zone 1",
+  "lat": 51.4941,
+  "lng": -0.1738,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "knightsbridge",
+  "name": "Brompton Road, Knightsbridge",
+  "borough": "Kensington and Chelsea",
+  "zone": "Zone 1",
+  "lat": 51.5002,
+  "lng": -0.1632,
+  "stype": "major_retail"
+ },
+ {
+  "id": "kings-road",
+  "name": "King's Road, Sloane Square",
+  "borough": "Kensington and Chelsea",
+  "zone": "Zone 1",
+  "lat": 51.4925,
+  "lng": -0.1567,
+  "stype": "high_street"
+ },
+ {
+  "id": "battersea-power",
+  "name": "Battersea Power Station",
+  "borough": "Wandsworth",
+  "zone": "Zone 1",
+  "lat": 51.4817,
+  "lng": -0.1445,
+  "stype": "managed_estate"
+ },
+ {
+  "id": "walworth-road",
+  "name": "Walworth Road, Elephant & Castle",
+  "borough": "Southwark",
+  "zone": "Zones 1/2",
+  "lat": 51.4928,
+  "lng": -0.1014,
+  "stype": "high_street"
+ },
+ {
+  "id": "camden-high",
+  "name": "Camden High Street",
+  "borough": "Camden",
+  "zone": "Zone 2",
+  "lat": 51.5347,
+  "lng": -0.1417,
+  "stype": "high_street"
+ },
+ {
+  "id": "kentish-town",
+  "name": "Kentish Town Road",
+  "borough": "Camden",
+  "zone": "Zone 2",
+  "lat": 51.5503,
+  "lng": -0.1409,
+  "stype": "high_street"
+ },
+ {
+  "id": "upper-street",
+  "name": "Upper Street, Angel",
+  "borough": "Islington",
+  "zone": "Zone 1",
+  "lat": 51.5349,
+  "lng": -0.1034,
+  "stype": "high_street"
+ },
+ {
+  "id": "dalston",
+  "name": "Kingsland High Street, Dalston",
+  "borough": "Hackney",
+  "zone": "Zone 2",
+  "lat": 51.5482,
+  "lng": -0.0753,
+  "stype": "high_street"
+ },
+ {
+  "id": "hackney-central",
+  "name": "Mare Street, Hackney Central",
+  "borough": "Hackney",
+  "zone": "Zone 2",
+  "lat": 51.5448,
+  "lng": -0.0556,
+  "stype": "high_street"
+ },
+ {
+  "id": "bethnal-green",
+  "name": "Bethnal Green Road East",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 2",
+  "lat": 51.527,
+  "lng": -0.055,
+  "stype": "high_street"
+ },
+ {
+  "id": "whitechapel",
+  "name": "Whitechapel Road",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 2",
+  "lat": 51.519,
+  "lng": -0.0597,
+  "stype": "high_street"
+ },
+ {
+  "id": "canary-wharf",
+  "name": "Canada Square, Canary Wharf",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 2",
+  "lat": 51.5049,
+  "lng": -0.0195,
+  "stype": "managed_estate"
+ },
+ {
+  "id": "greenwich",
+  "name": "Greenwich Church Street",
+  "borough": "Greenwich",
+  "zone": "Zones 2/3",
+  "lat": 51.4819,
+  "lng": -0.0095,
+  "stype": "high_street"
+ },
+ {
+  "id": "rye-lane",
+  "name": "Rye Lane, Peckham",
+  "borough": "Southwark",
+  "zone": "Zone 2",
+  "lat": 51.4706,
+  "lng": -0.0693,
+  "stype": "high_street"
+ },
+ {
+  "id": "camberwell",
+  "name": "Camberwell Church Street",
+  "borough": "Southwark",
+  "zone": "Zone 2",
+  "lat": 51.4744,
+  "lng": -0.0911,
+  "stype": "high_street"
+ },
+ {
+  "id": "brixton",
+  "name": "Electric Avenue, Brixton",
+  "borough": "Lambeth",
+  "zone": "Zone 2",
+  "lat": 51.4626,
+  "lng": -0.113,
+  "stype": "market"
+ },
+ {
+  "id": "clapham-high",
+  "name": "Clapham High Street",
+  "borough": "Lambeth",
+  "zone": "Zone 2",
+  "lat": 51.4624,
+  "lng": -0.135,
+  "stype": "high_street"
+ },
+ {
+  "id": "northcote-road",
+  "name": "Northcote Road, Battersea",
+  "borough": "Wandsworth",
+  "zone": "Zone 2",
+  "lat": 51.4528,
+  "lng": -0.1766,
+  "stype": "market"
+ },
+ {
+  "id": "fulham-broadway",
+  "name": "Fulham Broadway",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.4806,
+  "lng": -0.1948,
+  "stype": "high_street"
+ },
+ {
+  "id": "hammersmith",
+  "name": "King Street, Hammersmith",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.4929,
+  "lng": -0.2247,
+  "stype": "high_street"
+ },
+ {
+  "id": "shepherds-bush",
+  "name": "Shepherd's Bush / Westfield",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.5054,
+  "lng": -0.2214,
+  "stype": "major_retail"
+ },
+ {
+  "id": "kilburn",
+  "name": "Kilburn High Road",
+  "borough": "Brent",
+  "zone": "Zone 2",
+  "lat": 51.5365,
+  "lng": -0.192,
+  "stype": "high_street"
+ },
+ {
+  "id": "stroud-green",
+  "name": "Stroud Green Road, Finsbury Park",
+  "borough": "Islington",
+  "zone": "Zone 2",
+  "lat": 51.5642,
+  "lng": -0.1067,
+  "stype": "high_street"
+ },
+ {
+  "id": "nags-head",
+  "name": "Holloway Road, Nag's Head",
+  "borough": "Islington",
+  "zone": "Zone 2",
+  "lat": 51.553,
+  "lng": -0.1118,
+  "stype": "high_street"
+ },
+ {
+  "id": "tooting",
+  "name": "Tooting Broadway",
+  "borough": "Wandsworth",
+  "zone": "Zone 3",
+  "lat": 51.4275,
+  "lng": -0.1684,
+  "stype": "market"
+ },
+ {
+  "id": "balham",
+  "name": "Balham High Road",
+  "borough": "Wandsworth",
+  "zone": "Zone 3",
+  "lat": 51.4435,
+  "lng": -0.1529,
+  "stype": "high_street"
+ },
+ {
+  "id": "ealing",
+  "name": "Ealing Broadway",
+  "borough": "Ealing",
+  "zone": "Zone 3",
+  "lat": 51.515,
+  "lng": -0.3009,
+  "stype": "high_street"
+ },
+ {
+  "id": "chiswick",
+  "name": "Chiswick High Road",
+  "borough": "Hounslow",
+  "zone": "Zones 2/3",
+  "lat": 51.4924,
+  "lng": -0.2594,
+  "stype": "high_street"
+ },
+ {
+  "id": "wood-green",
+  "name": "Wood Green High Road",
+  "borough": "Haringey",
+  "zone": "Zone 3",
+  "lat": 51.5978,
+  "lng": -0.1098,
+  "stype": "major_retail"
+ },
+ {
+  "id": "crouch-end",
+  "name": "Crouch End Broadway",
+  "borough": "Haringey",
+  "zone": "Zone 3",
+  "lat": 51.5793,
+  "lng": -0.1194,
+  "stype": "high_street"
+ },
+ {
+  "id": "walthamstow",
+  "name": "Walthamstow High Street",
+  "borough": "Waltham Forest",
+  "zone": "Zone 3",
+  "lat": 51.5822,
+  "lng": -0.0237,
+  "stype": "market"
+ },
+ {
+  "id": "stratford",
+  "name": "The Broadway, Stratford",
+  "borough": "Newham",
+  "zone": "Zones 2/3",
+  "lat": 51.5418,
+  "lng": -0.0018,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "old-york-road",
+  "name": "Old York Road, Wandsworth",
+  "borough": "Wandsworth",
+  "zone": "Zone 2",
+  "lat": 51.4574,
+  "lng": -0.1915,
+  "stype": "side_street"
+ },
+ {
+  "id": "wimbledon",
+  "name": "Wimbledon Broadway",
+  "borough": "Merton",
+  "zone": "Zone 3",
+  "lat": 51.4218,
+  "lng": -0.2063,
+  "stype": "high_street"
+ },
+ {
+  "id": "lewisham",
+  "name": "Lewisham High Street",
+  "borough": "Lewisham",
+  "zone": "Zones 2/3",
+  "lat": 51.4617,
+  "lng": -0.011,
+  "stype": "high_street"
+ },
+ {
+  "id": "leather-lane",
+  "name": "Leather Lane, Holborn",
+  "borough": "Camden",
+  "zone": "Zone 1",
+  "lat": 51.5186,
+  "lng": -0.11,
+  "stype": "side_street"
+ },
+ {
+  "id": "maltby-street",
+  "name": "Maltby Street, Bermondsey",
+  "borough": "Southwark",
+  "zone": "Zones 1/2",
+  "lat": 51.4986,
+  "lng": -0.0738,
+  "stype": "side_street"
+ },
+ {
+  "id": "vauxhall",
+  "name": "Vauxhall Cross",
+  "borough": "Lambeth",
+  "zone": "Zones 1/2",
+  "lat": 51.486,
+  "lng": -0.124,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "westbourne-grove",
+  "name": "Westbourne Grove, Notting Hill",
+  "borough": "Westminster",
+  "zone": "Zone 2",
+  "lat": 51.5152,
+  "lng": -0.1976,
+  "stype": "high_street"
+ },
+ {
+  "id": "fulham-road",
+  "name": "Fulham Road, Chelsea",
+  "borough": "Kensington and Chelsea",
+  "zone": "Zone 2",
+  "lat": 51.482,
+  "lng": -0.1945,
+  "stype": "high_street"
+ },
+ {
+  "id": "columbia-road",
+  "name": "Columbia Road, Bethnal Green",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 2",
+  "lat": 51.5275,
+  "lng": -0.0695,
+  "stype": "side_street"
+ },
+ {
+  "id": "broadway-market",
+  "name": "Broadway Market, London Fields",
+  "borough": "Hackney",
+  "zone": "Zone 2",
+  "lat": 51.5359,
+  "lng": -0.0617,
+  "stype": "high_street"
+ },
+ {
+  "id": "stoke-newington",
+  "name": "Stoke Newington Church Street",
+  "borough": "Hackney",
+  "zone": "Zone 2",
+  "lat": 51.5613,
+  "lng": -0.0763,
+  "stype": "high_street"
+ },
+ {
+  "id": "bellenden-road",
+  "name": "Bellenden Road, Peckham",
+  "borough": "Southwark",
+  "zone": "Zone 2",
+  "lat": 51.4616,
+  "lng": -0.0716,
+  "stype": "side_street"
+ },
+ {
+  "id": "deptford",
+  "name": "Deptford High Street",
+  "borough": "Lewisham",
+  "zone": "Zone 2",
+  "lat": 51.4734,
+  "lng": -0.0266,
+  "stype": "high_street"
+ },
+ {
+  "id": "new-cross",
+  "name": "New Cross Road",
+  "borough": "Lewisham",
+  "zone": "Zone 2",
+  "lat": 51.4755,
+  "lng": -0.0398,
+  "stype": "high_street"
+ },
+ {
+  "id": "clapham-old-town",
+  "name": "The Pavement, Clapham Old Town",
+  "borough": "Lambeth",
+  "zone": "Zone 2",
+  "lat": 51.4622,
+  "lng": -0.1398,
+  "stype": "high_street"
+ },
+ {
+  "id": "battersea-park-road",
+  "name": "Battersea Park Road",
+  "borough": "Wandsworth",
+  "zone": "Zone 2",
+  "lat": 51.475,
+  "lng": -0.153,
+  "stype": "high_street"
+ },
+ {
+  "id": "parsons-green",
+  "name": "Parsons Green",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.4738,
+  "lng": -0.2012,
+  "stype": "side_street"
+ },
+ {
+  "id": "west-hampstead",
+  "name": "West End Lane, West Hampstead",
+  "borough": "Camden",
+  "zone": "Zone 2",
+  "lat": 51.5467,
+  "lng": -0.1912,
+  "stype": "high_street"
+ },
+ {
+  "id": "salusbury-road",
+  "name": "Salusbury Road, Queen's Park",
+  "borough": "Brent",
+  "zone": "Zone 2",
+  "lat": 51.5348,
+  "lng": -0.2047,
+  "stype": "high_street"
+ },
+ {
+  "id": "st-johns-wood",
+  "name": "St John's Wood High Street",
+  "borough": "Westminster",
+  "zone": "Zone 2",
+  "lat": 51.534,
+  "lng": -0.1723,
+  "stype": "high_street"
+ },
+ {
+  "id": "primrose-hill",
+  "name": "Regent's Park Road, Primrose Hill",
+  "borough": "Camden",
+  "zone": "Zone 2",
+  "lat": 51.5397,
+  "lng": -0.1568,
+  "stype": "side_street"
+ },
+ {
+  "id": "white-city",
+  "name": "Wood Lane, White City",
+  "borough": "Hammersmith and Fulham",
+  "zone": "Zone 2",
+  "lat": 51.5118,
+  "lng": -0.224,
+  "stype": "major_retail"
+ },
+ {
+  "id": "finsbury-park",
+  "name": "Seven Sisters Road, Finsbury Park",
+  "borough": "Islington",
+  "zone": "Zone 2",
+  "lat": 51.5645,
+  "lng": -0.1063,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "highbury-barn",
+  "name": "Highbury Barn",
+  "borough": "Islington",
+  "zone": "Zone 2",
+  "lat": 51.552,
+  "lng": -0.0976,
+  "stype": "side_street"
+ },
+ {
+  "id": "tufnell-park",
+  "name": "Fortess Road, Tufnell Park",
+  "borough": "Islington",
+  "zone": "Zone 2",
+  "lat": 51.5567,
+  "lng": -0.1377,
+  "stype": "high_street"
+ },
+ {
+  "id": "mile-end",
+  "name": "Mile End Road",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 2",
+  "lat": 51.5225,
+  "lng": -0.0392,
+  "stype": "high_street"
+ },
+ {
+  "id": "hackney-wick",
+  "name": "White Post Lane, Hackney Wick",
+  "borough": "Hackney",
+  "zone": "Zone 2",
+  "lat": 51.5432,
+  "lng": -0.0237,
+  "stype": "side_street"
+ },
+ {
+  "id": "surrey-quays",
+  "name": "Surrey Quays",
+  "borough": "Southwark",
+  "zone": "Zone 2",
+  "lat": 51.4943,
+  "lng": -0.0474,
+  "stype": "major_retail"
+ },
+ {
+  "id": "chrisp-street",
+  "name": "Chrisp Street Market, Poplar",
+  "borough": "Tower Hamlets",
+  "zone": "Zone 2",
+  "lat": 51.5126,
+  "lng": -0.0133,
+  "stype": "market"
+ },
+ {
+  "id": "roman-road",
+  "name": "Roman Road, Bow",
+  "borough": "Tower Hamlets",
+  "zone": "Zones 2/3",
+  "lat": 51.5279,
+  "lng": -0.0245,
+  "stype": "market"
+ },
+ {
+  "id": "chatsworth-road",
+  "name": "Chatsworth Road, Homerton",
+  "borough": "Hackney",
+  "zone": "Zones 2/3",
+  "lat": 51.5495,
+  "lng": -0.042,
+  "stype": "high_street"
+ },
+ {
+  "id": "archway",
+  "name": "Junction Road, Archway",
+  "borough": "Islington",
+  "zone": "Zones 2/3",
+  "lat": 51.5655,
+  "lng": -0.1347,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "acton",
+  "name": "Acton High Street",
+  "borough": "Ealing",
+  "zone": "Zone 3",
+  "lat": 51.5075,
+  "lng": -0.2705,
+  "stype": "high_street"
+ },
+ {
+  "id": "seven-sisters",
+  "name": "Seven Sisters Road, Tottenham",
+  "borough": "Haringey",
+  "zone": "Zones 2/3",
+  "lat": 51.5825,
+  "lng": -0.0725,
+  "stype": "high_street"
+ },
+ {
+  "id": "leyton",
+  "name": "Leyton High Road",
+  "borough": "Waltham Forest",
+  "zone": "Zone 3",
+  "lat": 51.558,
+  "lng": -0.006,
+  "stype": "high_street"
+ },
+ {
+  "id": "upton-park",
+  "name": "Green Street, Upton Park",
+  "borough": "Newham",
+  "zone": "Zone 3",
+  "lat": 51.535,
+  "lng": 0.033,
+  "stype": "high_street"
+ },
+ {
+  "id": "canning-town",
+  "name": "Barking Road, Canning Town",
+  "borough": "Newham",
+  "zone": "Zones 2/3",
+  "lat": 51.514,
+  "lng": 0.013,
+  "stype": "high_street"
+ },
+ {
+  "id": "harringay",
+  "name": "Green Lanes, Harringay",
+  "borough": "Haringey",
+  "zone": "Zone 3",
+  "lat": 51.5772,
+  "lng": -0.098,
+  "stype": "high_street"
+ },
+ {
+  "id": "highgate",
+  "name": "Highgate High Street",
+  "borough": "Haringey",
+  "zone": "Zone 3",
+  "lat": 51.5715,
+  "lng": -0.145,
+  "stype": "side_street"
+ },
+ {
+  "id": "denmark-hill",
+  "name": "Denmark Hill, Camberwell",
+  "borough": "Southwark",
+  "zone": "Zone 2",
+  "lat": 51.4695,
+  "lng": -0.089,
+  "stype": "transport_hub"
+ },
+ {
+  "id": "forest-hill",
+  "name": "Dartmouth Road, Forest Hill",
+  "borough": "Lewisham",
+  "zone": "Zone 3",
+  "lat": 51.4395,
+  "lng": -0.053,
+  "stype": "high_street"
+ }
+]

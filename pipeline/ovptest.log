@@ -1,0 +1,7 @@
+https://overpass.private.coffee/api/interpreter 200 34s {
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_os
+https://overpass.kumi.systems/api/interpreter ERR HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=100)
+https://overpass-api.de/api/interpreter ERR HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpret

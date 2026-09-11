@@ -1,0 +1,28 @@
+41 tiles for 102 segments
+230 tile queries
+tile2.s: 309
+tile0.s: 574
+tile3.c overpass.private.coffee HTTP 504
+tile3.s overpass.private.coffee HTTP 504
+tile3.s: 57
+tile3.s overpass.private.coffee HTTP 504
+tile2.s: 199
+tile4.v: 692
+tile3.s overpass.private.coffee HTTP 504
+tile3.s overpass.private.coffee HTTP 504
+tile3.s overpass.kumi.systems HTTP 504
+tile3.s overpass-api.de HTTPSConnectionPool(host='overpass-api.de', port=443): Max r
+tile3.c overpass.kumi.systems HTTP 504
+tile4.c overpass.private.coffee HTTP 504
+tile3.c overpass-api.de HTTPSConnectionPool(host='overpass-api.de', port=443): Max r
+tile3.s: 0
+tile3.c: 0
+tile3.s overpass.kumi.systems HTTP 504
+tile3.s overpass-api.de HTTPSConnectionPool(host='overpass-api.de', port=443): Max r
+tile4.c overpass.kumi.systems HTTP 504
+tile4.c overpass-api.de HTTPSConnectionPool(host='overpass-api.de', port=443): Max r
+tile3.s: 0
+tile4.c: 0
+tile3.s: 88
+tile4.s: 431
+tile5.v overpass.private.coffee HTTP 504

@@ -68,6 +68,12 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+"m":n>=1e3?Math.round(n/1e3)+"k":Math.round(n);
 const money=n=>"£"+Math.round(n).toLocaleString("en-GB");
 const mm=v=>{let h=Math.floor(v/60)%24,m=v%60;return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")};
+function estRates(s,c){ // business rates proxy: unit RV ~ est rent; SBRR 2025-26
+  const rvUnit=s.rent.est_rent_m2*c.floorspace;
+  if(rvUnit<12000)return 0;
+  const relief=rvUnit<15000?1-(rvUnit-12000)/3000:0;
+  return rvUnit*0.499*(1-relief);
+}
 
 /* ---------- concept state ---------- */
 let concept=JSON.parse(JSON.stringify(PRESETS[0]));
@@ -172,6 +178,46 @@ function scoreSegment(s,c){
   return crit;
 }
 
+/* ---------- revenue engine (MODELLED) ---------- */
+const REV={
+  cafe:{capture:0.020,dil:0.12,prop:0.30,turns:20,thru:6},
+  restaurant:{capture:0.012,dil:0.10,prop:0.12,turns:12,thru:2},
+  fast_food:{capture:0.018,dil:0.12,prop:0.18,turns:25,thru:12},
+  pub_bar:{capture:0.015,dil:0.06,prop:0.15,turns:12,thru:1.5},
+  grocery:{capture:0.030,dil:0.15,prop:0.80,turns:0,thru:25},
+  fitness:{capture:0,dil:0.25,prop:0},
+  cowork:{capture:0,dil:0.30,prop:0},
+};
+const DAYREL7=s=>DAYTYPE.reduce((a,k)=>a+s.flow.day_rel[k],0);
+function weeklyFlowAbs(s){const d=s.flow.days;return d.mon+3*d.mid+d.fri+d.sat+d.sun;}
+function revenueFor(s,c){
+  const R=REV[c.cat]||REV.cafe;
+  const cover=clamp(windowDemand(s,c)/DAYREL7(s),0,1);
+  const people=weeklyFlowAbs(s)*cover;
+  const comp=1/(1+R.dil*(s.osm[c.cat]||0));
+  const sup=audienceSupply(s);
+  const aw=c.audience,awSum=Object.values(aw).reduce((a,b)=>a+b,0);
+  const audFit=awSum?Object.keys(aw).reduce((acc,k)=>acc+aw[k]*sup[k],0)/awSum:0.5;
+  const aud=0.5+audFit;
+  let month,weekTrans,members,capped=false;
+  if(c.cat==="fitness"){
+    members=(s.lsoa.residents*0.06+people*0.0015)*comp*aud;
+    const joined=Math.min(c.seats*10,members);
+    month=joined*c.ticket*2.6; weekTrans=0;
+  }else if(c.cat==="cowork"){
+    const demand=(s.lsoa.residents*0.02+people*0.0008)*comp*aud;
+    const desks=Math.min(c.seats,demand);
+    month=desks*c.ticket*9; weekTrans=0; members=desks;
+  }else{
+    const raw=people*R.capture*comp*aud + s.lsoa.residents*R.prop*comp*aud;
+    const cap=c.seats*R.turns + c.floorspace*R.thru; // weekly throughput the unit can physically serve
+    capped=cap>0&&raw>cap;
+    weekTrans=capped?cap*Math.pow(raw/cap,0.4):raw; // soft capacity: queues and faster turns absorb some excess, with diminishing returns
+    month=weekTrans*c.ticket*4.33;
+  }
+  return {month,low:month*0.55,high:month*1.6,weekTrans,people,cover,comp,aud,members,capped};
+}
+
 /* second pass needs demand normalization across segments */
 function computeAll(c){
   const raws=SEGS.map(s=>windowDemand(s,c));
@@ -184,7 +230,7 @@ function computeAll(c){
     crit.opportunity.score=clamp(nDem(raws[i])*(1-0.65*compN)+0.15*(1-compN),0,1);
     let wsum=0,acc=0;
     for(const k in crit){acc+=crit[k].score*crit[k].w;wsum+=crit[k].w;}
-    return {seg:s,crit,score:100*acc/wsum};
+    return {seg:s,crit,score:100*acc/wsum,rev:revenueFor(s,c)};
   });
   out.sort((a,b)=>b.score-a.score);
   return out;
@@ -199,7 +245,7 @@ function renderPresets(){
   $("preset-row").innerHTML=PRESETS.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("");
   document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{
     activePreset=b.dataset.p; concept=JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===activePreset)));
-    renderConcept(); update();
+    renderPresets(); renderConcept(); update();
   });
 }
 
@@ -270,8 +316,9 @@ function renderWindows(){
 }
 
 /* ---------- map ---------- */
-let map,markers={};
+let map,markers={},mapMetric="fit",revScale=v=>0.5,unitsLayer=null,unitsOn=false;
 function scoreColor(v){const hue=v*1.2;return `hsl(${hue},70%,72%)`;}
+function revColor(v){return `hsl(${205-v*150},72%,${68-v*22}%)`;} // low: light blue, high: deep red
 function initMap(){
   map=L.map("leaflet-map").setView([51.515,-0.11],12);
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:'Tiles &copy; Esri - Esri, DeLorme, NAVTEQ · Data &copy; OpenStreetMap contributors',maxZoom:16}).addTo(map);
@@ -282,13 +329,77 @@ function initMap(){
   });
 }
 function paintMarkers(ranked){
-  const byId={}; ranked.forEach(r=>byId[r.seg.id]=r.score);
+  const byId={},byRev={}; ranked.forEach(r=>{byId[r.seg.id]=r.score;byRev[r.seg.id]=r.rev.month;});
+  const lv=ranked.map(r=>Math.log10(1+r.rev.month));
+  const lo=Math.min(...lv),hi=Math.max(...lv);
+  revScale=v=>hi>lo?(Math.log10(1+v)-lo)/(hi-lo):0.5;
   SEGS.forEach(s=>{
-    const v=byId[s.id];
-    markers[s.id].setIcon(L.divIcon({className:"leaflet-div-icon",
-      html:`<div class="pin" style="background:${scoreColor(v/100)}"><span>${Math.round(v)}</span></div>`,iconSize:[26,26],iconAnchor:[13,26]}));
-    markers[s.id].setZIndexOffset(Math.round(v*10));
+    if(mapMetric==="fit"){
+      const v=byId[s.id];
+      markers[s.id].setIcon(L.divIcon({className:"leaflet-div-icon",
+        html:`<div class="pin" style="background:${scoreColor(v/100)}"><span>${Math.round(v)}</span></div>`,iconSize:[26,26],iconAnchor:[13,26]}));
+      markers[s.id].setZIndexOffset(Math.round(v*10));
+    }else{
+      const rv=byRev[s.id],t=revScale(rv);
+      markers[s.id].setIcon(L.divIcon({className:"leaflet-div-icon",
+        html:`<div class="pin" style="background:${revColor(t)}"><span>${fmt(rv)}</span></div>`,iconSize:[26,26],iconAnchor:[13,26]}));
+      markers[s.id].setZIndexOffset(Math.round(t*1000));
+    }
   });
+  if(unitsOn){clearTimeout(window._uT);window._rk=ranked;window._uT=setTimeout(()=>paintUnits(window._rk),450);}
+}
+
+/* every real commercial unit, coloured by estimated monthly revenue for the active concept */
+let unitGrid=null;
+function buildUnitGrid(){
+  const g={}; const key=(la,ln)=>Math.round(la*450)+":"+Math.round(ln*450);
+  UNITS.forEach((u,i)=>{(g[key(u[0],u[1])]??=[]).push(i);});
+  unitGrid={g,key};
+}
+function comp150(u,catIdx){
+  if(!unitGrid)buildUnitGrid();
+  const ck=unitGrid.key(u[0],u[1]); let n=0;
+  for(let da=-1;da<=1;da++)for(let db=-1;db<=1;db++){
+    const cell=unitGrid.g[(Math.round(u[0]*450)+da)+":"+(Math.round(u[1]*450)+db)];
+    if(!cell)continue;
+    for(const i of cell){
+      const v=UNITS[i];
+      if(v[2]!==catIdx)continue;
+      const dlat=(v[0]-u[0])*111000, dlng=(v[1]-u[1])*111000*Math.cos(u[0]*Math.PI/180);
+      if(dlat*dlat+dlng*dlng<=150*150)n++;
+    }
+  }
+  return n;
+}
+function unitRevenue(u,ranked){
+  const r=ranked.find(x=>x.seg.id===SEGMENTS[u[4]].id);
+  if(!r)return 0;
+  const base=r.rev.month;
+  const distF=Math.exp(-(u[5]||0)/450);
+  const c150=comp150(u,UNITCATS.indexOf(concept.cat));
+  const compF=c150<=2?1.15:c150>=8?0.75:1.0;
+  return base*distF*compF;
+}
+function paintUnits(ranked){
+  if(unitsLayer){map.removeLayer(unitsLayer);unitsLayer=null;}
+  if(!unitsOn||!ranked)return;
+  unitsLayer=L.layerGroup();
+  const canvasRenderer=L.canvas({padding:0.4});
+  const rvs=UNITS.map(u=>unitRevenue(u,ranked));
+  const lv=rvs.map(v=>Math.log10(1+v)),lo=Math.min(...lv),hi=Math.max(...lv);
+  const t=v=>hi>lo?(Math.log10(1+v)-lo)/(hi-lo):0.5;
+  UNITS.forEach((u,i)=>{
+    const rv=rvs[i];
+    const m=L.circleMarker([u[0],u[1]],{renderer:canvasRenderer,radius:3.5,weight:0,fillColor:revColor(t(rv)),fillOpacity:0.55});
+    m.on("click",()=>{
+      const catName=UNITCATS[u[2]].replace("_"," ");
+      L.popup().setLatLng([u[0],u[1]]).setContent( // eslint ok
+        `<b>${u[6]||catName}</b><br>${catName}${u[3]?" · chain":""}<br>Est. revenue for “${concept.name}” here: <b>${money(rv)}/mo</b> <span class="chip mod">MODELLED</span><br><span style="font-size:11px;color:#777">Segment base ${money(rankedCache.find(x=>x.seg.id===SEGMENTS[u[4]].id)?.rev.month||0)}/mo x distance and hyperlocal competition factors. Planning estimate only.</span>`
+      ).openOn(map);
+    });
+    unitsLayer.addLayer(m);
+  });
+  unitsLayer.addTo(map);
 }
 
 /* ---------- ranking list ---------- */
@@ -301,7 +412,8 @@ function renderRankings(ranked){
       <div class="rank-num">${i+1}</div>
       <div class="rank-name">${s.name}<span class="sub">${s.zone} · ${s.borough}</span></div>
       <div class="cell"><span class="scorepill">${Math.round(r.score)}</span></div>
-      <div class="cell"><span class="v">${Math.round(r.crit.demand.score*100)}</span><span class="k">Demand@hours</span></div>
+      <div class="cell"><span class="v rev">${money(r.rev.month)}/mo</span><span class="k">Est. revenue</span></div>
+      <div class="cell opt"><span class="v">${Math.round(r.crit.demand.score*100)}</span><span class="k">Demand@hours</span></div>
       <div class="cell opt"><span class="v">${Math.round(r.crit.opportunity.score*100)}</span><span class="k">Opportunity</span></div>
       <div class="cell opt"><span class="v">${Math.round(r.crit.rent.score*100)}</span><span class="k">Rent fit</span></div>
       <div class="cell opt"><span class="v">${Math.round(r.crit.access.score*100)}</span><span class="k">Access</span></div>
@@ -388,8 +500,20 @@ function selectSegment(id,scroll){
     <div class="ev-card"><h4>Occupancy cost · ${s.borough}${chipFor("ctx")}</h4>
       <div class="ev-line"><span class="lv">Retail rateable value / m² (VOA, Mar 2023)</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
       <div class="ev-line"><span class="lv">Office rateable value / m²</span><span class="rv">${money(s.rent.office_rv_m2)}</span></div>
-      <div class="ev-line"><span class="lv">Your tolerance</span><span class="rv">${money(concept.rent)}</span></div>
-      <div class="ev-line"><span class="lv">Borough average across all retail stock; prime pitches on this street can be several times higher.</span></div>
+      <div class="ev-line"><span class="lv">Estimated passing rent / m² (2026)${chipFor("mod")}</span><span class="rv">${money(s.rent.est_rent_m2)}</span></div>
+      <div class="ev-line"><span class="lv">Est. rent for your ${concept.floorspace} m² unit${chipFor("mod")}</span><span class="rv">${money(s.rent.est_rent_m2*concept.floorspace/12)}/mo</span></div>
+      <div class="ev-line"><span class="lv">Est. business rates after small-biz relief${chipFor("mod")}</span><span class="rv">${money(estRates(s,concept)/12)}/mo</span></div>
+      <div class="ev-line"><span class="lv">Rule: borough rateable value x segment-type factor x footfall factor, uplifted to 2026. Rates = unit RV proxy x 49.9p multiplier with Small Business Rate Relief below £15k RV. Get agent quotes before committing.</span></div>
+    </div>
+    <div class="ev-card"><h4>Revenue potential for this concept${chipFor("mod")}</h4>
+      <div class="ev-line"><span class="lv"><b>Estimated monthly revenue</b></span><span class="rv"><b>${money(r.rev.month)}</b></span></div>
+      <div class="ev-line"><span class="lv">Plausible range (capture-rate uncertainty)</span><span class="rv">${money(r.rev.low)} - ${money(r.rev.high)}</span></div>
+      ${r.rev.weekTrans?`<div class="ev-line"><span class="lv">Modelled transactions / week</span><span class="rv">${fmt(Math.round(r.rev.weekTrans))}</span></div>`:`<div class="ev-line"><span class="lv">Modelled members/desks</span><span class="rv">${fmt(Math.round(r.rev.members||0))}</span></div>`}
+      <div class="ev-line"><span class="lv">People passing in your trading windows / week</span><span class="rv">${fmt(Math.round(r.rev.people))}</span></div>
+      <div class="ev-line"><span class="lv">Competition dilution factor (${s.osm[concept.cat]||0} rivals within 250 m)</span><span class="rv">x${r.rev.comp.toFixed(2)}</span></div>
+      <div class="ev-line"><span class="lv">Audience factor</span><span class="rv">x${r.rev.aud.toFixed(2)}</span></div>
+      ${r.rev.capped?`<div class="ev-line"><span class="lv">Capped by unit throughput (seats x weekly covers + m² x throughput)</span><span class="rv">yes</span></div>`:""}
+      <div class="ev-line"><span class="lv">Rule: weekly station flow in your hours x category capture rate x dilution x audience fit + resident spend, x your £${concept.ticket} ticket. All constants in Method. This is a planning estimate, not a valuation.</span></div>
     </div>
     <div class="ev-card"><h4>Modelled for this concept${chipFor("mod")}</h4>
       <div class="ev-line"><span class="lv">Estimated typical spend / person nearby</span><span class="rv">${money(s.model.spend_est)}</span></div>
@@ -417,18 +541,24 @@ function renderMethod(){
     <p><a href="https://www.nomisweb.co.uk/sources/census_2021_bulk">nomisweb.co.uk - Census 2021 bulk downloads</a></p>
     <p>Resolution: LSOA (~1,500 residents). These are people who <i>live</i> here, not workers or visitors. The tool never claims street-level demographics.</p></div>
   <div class="m-card"><h4>Business crime${chipFor("ctx")}</h4>
-    <p>Metropolitan Police recorded offences by LSOA, 12 months to August 2026: shoplifting, theft from the person, business robbery and business burglary, via the London Datastore MPS geographic breakdown.</p>
-    <p><a href="https://data.london.gov.uk/dataset/mps-recorded-crime-geographic-breakdown">data.london.gov.uk - MPS recorded crime</a></p>
-    <p>Resolution: LSOA. Under-reporting is common; use as a relative signal between areas, not an absolute risk figure.</p></div>
+    <p>Metropolitan Police recorded street-level offences within ~450 m of each segment anchor, 12 months to July 2026: shoplifting, theft from the person, robbery and burglary, via data.police.uk. Rates are normalised per 1,000 residents.</p>
+    <p><a href="https://data.police.uk/data/">data.police.uk - street-level crime (Met Police)</a></p>
+    <p>Resolution: street level around the anchor. Under-reporting is common; use as a relative signal between areas, not an absolute risk figure.</p></div>
   <div class="m-card"><h4>Occupancy cost${chipFor("ctx")}</h4>
     <p>Rateable value per m² for retail and office stock by billing authority, Valuation Office Agency business floorspace statistics, 31 March 2023.</p>
     <p><a href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-including-business-floorspace-2023">gov.uk - NDR business floorspace 2023</a></p>
-    <p>Resolution: borough average. Prime frontage on a specific street can cost several times the borough mean. Always get agent quotes.</p></div>
+    <p>The estimated passing rent per m² is MODELLED: borough retail rateable value x a segment-type factor (prime/managed retail 1.35-1.45, high street 1.15, side street 0.95, market 1.0) x a footfall factor (up to +30% for the busiest flows) x 1.08 uplift to 2026. Business rates proxy: unit rateable value x the 49.9p small-business multiplier, with 100% relief under £12,000 RV tapering to £15,000. Always get agent quotes.</p></div>
   <div class="m-card"><h4>Modelled layers${chipFor("mod")}</h4>
     <p>Three estimates the tool computes and labels: (1) typical spend per person - from resident occupation mix, borough retail rateable value and chain presence; (2) office-worker skew - from coworking density and weekday-weighted station flows; (3) intraday rhythm - station day-type flows spread across five dayparts using the local offer mix (food, retail, nightlife, culture). Rules are fixed and shown so you can argue with them.</p>
     <p>These are the layers to override with your own counts before committing money.</p></div>
+  <div class="m-card"><h4>Revenue model${chipFor("mod")}</h4>
+    <p>Estimated monthly revenue for your concept, per segment and per unit. Weekly station entries+exits passing in your exact trading windows are multiplied by a category capture rate (share of passers-by who transact: grocery 3.0%, cafe 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2%), a competition dilution factor 1/(1 + k x rivals within 250 m), and an audience-fit factor (x0.5 to x1.5). Resident spend nearby is added from LSOA population x weekly purchase propensity. Monthly revenue = transactions x your average ticket x 4.33. A unit can only serve what fits through it: seats x weekly covers plus floorspace x weekly throughput per m² caps transactions, with soft absorption (queues, faster turns) beyond it. Fitness and coworking use membership models: residents and flow convert to members at fixed rates, capped by capacity, priced at ~2.6x day ticket (fitness) or ~9x day desk rate (coworking).</p>
+    <p>The shown range is x0.55 to x1.6 of the central estimate - capture-rate uncertainty dominates. These are transparent planning assumptions you can argue with, not observed takings. No source publishes real per-street revenue; where a chain unit's accounts exist they are for the company, not the site.</p></div>
+  <div class="m-card"><h4>Every commercial unit${chipFor("obs")}</h4>
+    <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records inside the covered segments (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
+    <p>Resolution: real buildings and coordinates; the revenue colour is modelled. A coloured unit is not a vacant unit - check availability with agents.</p></div>
   <div class="m-card"><h4>Coverage</h4>
-    <p>${SEGS.length} named street segments across TfL Zones 1-3, chosen as recognisable commercial pitches. It is not yet every street: the data pipeline (station flows, POI counts, LSOA joins) scales to more segments as they are added.</p>
+    <p>${SEGS.length} named street segments across TfL Zones 1-3, chosen as recognisable commercial pitches, plus ${UNITS.length.toLocaleString("en-GB")} individual commercial units recorded inside them. It is not yet every street in London: the data pipeline (station flows, POI counts, census LSOA joins, street-level crime) scales to more segments as they are added.</p>
     <p>Built ${META.built}. Prototype for shortlisting, not a valuation.</p></div>`;
 }
 
@@ -440,4 +570,17 @@ function update(){
   if(selected)selectSegment(selected,false);
 }
 
-renderPresets(); renderConcept(); renderMethod(); initMap(); update();
+/* map controls: metric toggle + units layer toggle */
+function renderMapControls(){
+  const box=$("map-controls");
+  box.innerHTML=`
+    <span class="mc-label">Colour by:</span>
+    <button class="mc ${mapMetric==='fit'?'on':''}" id="mc-fit">Fit score</button>
+    <button class="mc ${mapMetric==='rev'?'on':''}" id="mc-rev">Est. revenue</button>
+    <button class="mc ${unitsOn?'on':''}" id="mc-units" title="Every real commercial unit from OpenStreetMap inside the covered segments, coloured by estimated monthly revenue for your concept">Every unit (${UNITS.length.toLocaleString("en-GB")})</button>`;
+  $("mc-fit").onclick=()=>{mapMetric="fit";renderMapControls();update();};
+  $("mc-rev").onclick=()=>{mapMetric="rev";renderMapControls();update();};
+  $("mc-units").onclick=()=>{unitsOn=!unitsOn;renderMapControls();update();};
+}
+
+renderPresets(); renderConcept(); renderMethod(); initMap(); renderMapControls(); update();

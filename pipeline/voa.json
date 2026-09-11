@@ -1,0 +1,82 @@
+{
+ "Westminster": {
+  "retail_rv_m2": 791.0,
+  "office_rv_m2": 536.0
+ },
+ "Camden": {
+  "retail_rv_m2": 403.0,
+  "office_rv_m2": 416.0
+ },
+ "Southwark": {
+  "retail_rv_m2": 230.0,
+  "office_rv_m2": 340.0
+ },
+ "Lambeth": {
+  "retail_rv_m2": 221.0,
+  "office_rv_m2": 283.0
+ },
+ "City of London": {
+  "retail_rv_m2": 553.0,
+  "office_rv_m2": 423.0
+ },
+ "Islington": {
+  "retail_rv_m2": 261.0,
+  "office_rv_m2": 345.0
+ },
+ "Hackney": {
+  "retail_rv_m2": 208.0,
+  "office_rv_m2": 286.0
+ },
+ "Tower Hamlets": {
+  "retail_rv_m2": 314.0,
+  "office_rv_m2": 264.0
+ },
+ "Kensington and Chelsea": {
+  "retail_rv_m2": 514.0,
+  "office_rv_m2": 401.0
+ },
+ "Wandsworth": {
+  "retail_rv_m2": 229.0,
+  "office_rv_m2": 208.0
+ },
+ "Greenwich": {
+  "retail_rv_m2": 172.0,
+  "office_rv_m2": 130.0
+ },
+ "Hammersmith and Fulham": {
+  "retail_rv_m2": 421.0,
+  "office_rv_m2": 281.0
+ },
+ "Brent": {
+  "retail_rv_m2": 168.0,
+  "office_rv_m2": 166.0
+ },
+ "Ealing": {
+  "retail_rv_m2": 202.0,
+  "office_rv_m2": 177.0
+ },
+ "Hounslow": {
+  "retail_rv_m2": 202.0,
+  "office_rv_m2": 258.0
+ },
+ "Haringey": {
+  "retail_rv_m2": 213.0,
+  "office_rv_m2": 127.0
+ },
+ "Waltham Forest": {
+  "retail_rv_m2": 174.0,
+  "office_rv_m2": 136.0
+ },
+ "Newham": {
+  "retail_rv_m2": 264.0,
+  "office_rv_m2": 185.0
+ },
+ "Merton": {
+  "retail_rv_m2": 206.0,
+  "office_rv_m2": 197.0
+ },
+ "Lewisham": {
+  "retail_rv_m2": 167.0,
+  "office_rv_m2": 110.0
+ }
+}

@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>London Location Lens - Street-level site selection for Zones 1-3</title>
-<meta name="description" content="Compare London street segments for your exact business concept: real station flows, competition, residents, crime and rents across TfL Zones 1-3.">
+<title>London Location Lens - Street-level revenue and site selection for London</title>
+<meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <header class="top">
@@ -23,8 +23,8 @@
 <section class="hero">
   <div>
     <div class="eyebrow">Street-level site selection · TfL Zones 1-3</div>
-    <h1>Where should your business open?</h1>
-    <p>Define the concept you actually want to run - ticket, format, hours, audience - and score <span id="seg-count">64</span> London street segments against it. Every figure is labelled: observed at that street, area context, or modelled.</p>
+    <h1>Where should your business open - and what could it make?</h1>
+    <p>Define the concept you actually want to run - ticket, format, hours, audience - and score <span id="seg-count">102</span> London street segments plus every recorded commercial unit against it, with an estimated monthly revenue for each. Every figure is labelled: observed at that street, area context, or modelled.</p>
   </div>
   <aside class="truth">
     <strong>Read the labels, not just the score</strong>
@@ -34,7 +34,8 @@
 
 <section class="map-first" id="map">
   <div class="mapbox"><div id="leaflet-map"></div>
-    <div class="map-note" id="map-note">Markers are street segments. Colour = fit for the concept below. Click one for the full evidence panel.</div>
+    <div id="map-controls"></div>
+    <div class="map-note" id="map-note">Markers are street segments. Colour = fit or estimated revenue for the concept below. Click one for the full evidence panel; toggle "Every unit" to see individual commercial premises.</div>
   </div>
 </section>
 
@@ -75,7 +76,8 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="segments.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="segments.js?v=5"></script>
+<script src="units.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

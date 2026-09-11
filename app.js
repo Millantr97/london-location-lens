@@ -927,7 +927,7 @@ selectSegment=function(id,scroll){
   head.parentNode.insertBefore(actions,head.nextSibling);
   $("dp-fav").onclick=()=>toggleFavourite(id);$("dp-compare").onclick=()=>toggleCompare(id);$("dp-report").onclick=()=>openSlideReport(id);
   if(r){
-    const vt=verdictText(r),shareTxt="Check the conclusion of my investment in https://millantr97.github.io/london-location-lens/#expert";
+    const vt=verdictText(r),shareTxt="The best location for my new business is: https://millantr97.github.io/london-location-lens/#expert";
     const v=document.createElement("div");v.className="verdict-line";
     v.innerHTML=`<div class="vt">"${vt}"</div><div class="vbtns"><a class="vbtn" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(shareTxt)}">WhatsApp</a><a class="vbtn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTxt)}">Post on X</a></div>`;
     const why=dp.querySelector(".dp-why");

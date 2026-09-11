@@ -401,7 +401,7 @@ function paintUnits(ranked){
     m.on("click",()=>{
       const catName=UNITCATS[u[2]].replace("_"," ");
       L.popup().setLatLng([u[0],u[1]]).setContent( // eslint ok
-        `<b>${u[6]||catName}</b><br>${catName}${u[3]?" · chain":""}<br>Est. revenue for “${concept.name}” here: <b>${money(rv)}/mo</b> <span class="chip mod">MODELLED</span><br><span style="font-size:11px;color:#777">Segment base ${money(rankedCache.find(x=>x.seg.id===SEGMENTS[u[4]].id)?.rev.month||0)}/mo x distance and hyperlocal competition factors. Planning estimate only.</span>`
+        `<b>${u[6]||catName}</b><br>${catName}${u[8]?" · "+u[8]:""}${u[3]?" · chain":""}${u[7]?"<br>"+u[7]:""}<br>Est. revenue for “${concept.name}” here: <b>${money(rv)}/mo</b> <span class="chip mod">MODELLED</span><br><span style="font-size:11px;color:#777">Segment base ${money(rankedCache.find(x=>x.seg.id===SEGMENTS[u[4]].id)?.rev.month||0)}/mo x distance and hyperlocal competition factors. Planning estimate only.</span>`
       ).openOn(map);
     });
     unitsLayer.addLayer(m);
@@ -453,6 +453,14 @@ function selectSegment(id,scroll){
   const stn=s.transport.names.slice(0,6).map(n=>`<div class="ev-line"><span class="lv">${n}</span></div>`).join("");
   const topEth=s.lsoa.top_eth.map(([g,p])=>`<div class="ev-line"><span class="lv">${g}</span><span class="rv">${p}%</span></div>`).join("");
 
+  const compList=((typeof COMPETITORS!=="undefined"?COMPETITORS[s.id]:null)||{})[concept.cat]||[];
+  const compRows=compList.map(c=>`<div class="ev-line"><span class="lv">${c[0]}${c[1]?` <span class="cui">${c[1]}</span>`:""}</span><span class="rv">${c[2]?'<span class="chainb">chain</span> ':""}${c[3]} m</span></div>`).join("");
+  const segIdx=SEGMENTS.indexOf(s), byStreet={};
+  UNITS.forEach(u=>{if(u[4]===segIdx&&u[7]){(byStreet[u[7]]??=[]).push(u);}});
+  const streetRows=Object.entries(byStreet).map(([st,us])=>{
+    const avg=us.reduce((a,u)=>a+unitRevenue(u,rankedCache),0)/us.length;
+    return {st,n:us.length,avg,clat:us.reduce((a,u)=>a+u[0],0)/us.length,clng:us.reduce((a,u)=>a+u[1],0)/us.length};
+  }).sort((a,b)=>b.avg-a.avg).slice(0,8);
   const strengths=Object.values(r.crit).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,2);
   const weak=Object.values(r.crit).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,2);
   const pct=x=>Math.round(x*100);
@@ -486,6 +494,14 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Food venues with outdoor seating</span><span class="rv">${Math.round(s.osm.terrace_share*100)}%</span></div>
       <div class="ev-line"><span class="lv">Competing “${concept.cat}” venues</span><span class="rv">${catCount} (${catChain} chain)</span></div>
       <div class="ev-line"><span class="lv">Source: OpenStreetMap extract ${META.osm_date}. Counts depend on mapper coverage.</span></div>
+    </div>
+    <div class="ev-card"><h4>Named competitors · ${concept.cat.replace(/_/g," ")}${chipFor("obs")}</h4>
+      ${compRows||'<div class="ev-line"><span class="lv">No named venues of this category recorded within 250 m of the anchor.</span></div>'}
+      <div class="ev-line"><span class="lv">${catCount} recorded in total; the ${compList.length} nearest named are shown. Names, cuisine and distance from OpenStreetMap, ${META.osm_date}. A listed competitor is a real trading venue, not a vacancy.</span></div>
+    </div>
+    <div class="ev-card"><h4>Best streets inside this segment${chipFor("mod")}</h4>
+      ${streetRows.length?streetRows.map((t,i)=>`<div class="ev-line street" data-la="${t.clat}" data-ln="${t.clng}"><span class="lv">${i+1}. ${t.st} <span class="cui">${t.n} unit${t.n>1?"s":""}</span></span><span class="rv">${money(t.avg)}/mo</span></div>`).join(""):'<div class="ev-line"><span class="lv">Street-name coverage is thin here in OSM. Zoom past 15 on the map to browse every unit directly.</span></div>'}
+      <div class="ev-line"><span class="lv">Ranked by mean MODELLED revenue per recorded unit for "${concept.name}" - the drill-down from this segment to its strongest streets. Click a street to fly the map to it and reveal its units.</span></div>
     </div>
     <div class="ev-card"><h4>Who lives around it · ${s.lsoa.name}${chipFor("ctx")}</h4>
       <div class="ev-line"><span class="lv">Usual residents (Census 2021)</span><span class="rv">${Math.round(s.lsoa.residents).toLocaleString("en-GB")}</span></div>
@@ -530,6 +546,11 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Rule: spend estimated from occupation mix, borough retail values and chain presence; rhythm from station day-flows plus the local offer mix. Rules are in Method.</span></div>
     </div>
   </div>`;
+  dp.querySelectorAll(".street").forEach(el=>el.onclick=()=>{
+    if(!unitsOn){unitsOn=true;unitsAuto=true;renderMapControls();}
+    paintUnits(rankedCache);
+    map.flyTo([+el.dataset.la,+el.dataset.ln],16.5,{duration:0.9});
+  });
   if(scroll)dp.scrollIntoView({behavior:"smooth",block:"start"});
 }
 

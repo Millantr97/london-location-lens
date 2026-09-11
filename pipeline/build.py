@@ -101,7 +101,9 @@ def coord(el):
     if el['type']=='node': return el['lat'],el['lon']
     c=el.get('center',{}); return c.get('lat'),c.get('lon')
 
-def osm_for(sid):
+def osm_for(sid,anchor):
+    global ANCHOR
+    ANCHOR=anchor
     el=json.load(open(f'{P}/cache/osm/{sid}.json'))
     seen=set(); counts={c:0 for c in ['cafe','restaurant','fast_food','pub_bar','grocery','shops','fitness','cowork','culture']}
     chain={c:0 for c in FOOD}; parks=set(); stations={}; units=[]; food_tot=0; food_ter=0
@@ -126,7 +128,10 @@ def osm_for(sid):
             if is_chain(t): chain[cat]+=1
         if cat in ('grocery','shops','fitness','cowork') and is_chain(t): chain.setdefault(cat,0)
         if la and cat in tuple(FOOD)+('grocery','shops','fitness','cowork'):
-            units.append({'lat':round(la,5),'lng':round(lo,5),'cat':cat,'chain':1 if is_chain(t) else 0,'name':t.get('name','')})
+            dist=hav(ANCHOR[0],ANCHOR[1],la,lo)
+            units.append({'lat':round(la,5),'lng':round(lo,5),'cat':cat,'chain':1 if is_chain(t) else 0,
+                          'name':t.get('name',''),'street':t.get('addr:street',''),'cuisine':(t.get('cuisine','') or t.get('shop','')).split(';')[0],
+                          'dist':round(dist)})
     out={'cafe':counts['cafe'],'cafe_chain':chain['cafe'],'restaurant':counts['restaurant'],'restaurant_chain':chain['restaurant'],
          'fast_food':counts['fast_food'],'fast_food_chain':chain['fast_food'],'pub_bar':counts['pub_bar'],'grocery':counts['grocery'],
          'grocery_chain':0,'fitness':counts['fitness'],'fitness_chain':0,'cowork':counts['cowork'],'shops':counts['shops'],
@@ -178,7 +183,7 @@ for sd in SEGDEFS:
     per1000=(sum(crime.values())/lsoa['residents']*1000) if lsoa['residents'] else 0
     cachef=f'{P}/cache/osm/{sid}.json'
     if os.path.exists(cachef):
-        osm=osm_for(sid)
+        osm=osm_for(sid,(sd['lat'],sd['lng']))
     elif sid not in NEWIDS:
         old_s=next(x for x in old if x['id']==sid)
         osm=dict(old_s['osm']); osm['_stations']=old_s['transport']['names']; osm['_units']=[]

@@ -78,5 +78,21 @@
  "Lewisham": {
   "retail_rv_m2": 167.0,
   "office_rv_m2": 110.0
+ },
+ "Barnet": {
+  "retail_rv_m2": 240.0,
+  "office_rv_m2": 169.0
+ },
+ "Bromley": {
+  "retail_rv_m2": 188.0,
+  "office_rv_m2": 147.0
+ },
+ "Redbridge": {
+  "retail_rv_m2": 164.0,
+  "office_rv_m2": 127.0
+ },
+ "Richmond upon Thames": {
+  "retail_rv_m2": 263.0,
+  "office_rv_m2": 223.0
  }
 }

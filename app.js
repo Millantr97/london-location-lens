@@ -406,7 +406,6 @@ function renderPresets(){
     concept=normalizeConcept(JSON.parse(JSON.stringify(activePreset==="scratch"?SCRATCH:PRESETS.find(p=>p.id===activePreset))));
     renderPresets(); renderConcept(); update();
   });
-});
 }
 
 function sliderField(label,key,min,max,step,fmtf){

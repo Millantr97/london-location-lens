@@ -7,28 +7,32 @@
 <meta name="description" content="Compare London street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=16">
+<link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
 <header class="top">
-  <div class="brand">London <span>Location Lens</span></div>
-  <nav>
-    <a href="#concept">Concept</a>
-    <a href="#map">Map</a>
-    <a href="#rankings">Top 20</a>
-    <a href="#shortlist">Shortlist</a>
-    <a href="#trends">Trends</a>
-    <a href="#premium">Premium</a>
-    <a href="#method">Method</a>
-  </nav>
+  <div class="top-row">
+    <div class="brand">London <span>Location Lens</span></div>
+    <nav class="tabs" id="tabbar" aria-label="Sections">
+      <a href="#concept" data-tab="concept" class="on">Concept</a>
+      <a href="#map" data-tab="map">Map</a>
+      <a href="#rankings" data-tab="rankings">Top 20</a>
+      <a href="#detail" data-tab="detail">Street</a>
+      <a href="#trends" data-tab="trends">Trends</a>
+      <a href="#premium" data-tab="premium">Premium</a>
+      <a href="#shortlist" data-tab="shortlist">Shortlist</a>
+      <a href="#method" data-tab="method">Method</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
+<main id="panels">
+<section class="hero tab-panel on" data-panel="concept">
   <div>
     <div class="eyebrow">Street-level site selection · all of London</div>
     <h1>Where should your business open?</h1>
     <p>Answer the questionnaire below first: ticket, format, hours, audience. The map and the top-20 table update live as you answer, scoring <span id="seg-count">2,480</span> London street segments plus every recorded commercial unit against your concept, with an estimated monthly revenue for each. Every figure is labelled: observed at that street, area context, or modelled.</p>
-    <a class="hero-cta" href="#concept">Start with your concept ↓</a>
+    <a class="hero-cta" href="#concept" id="hero-cta">Start with your concept ↓</a>
   </div>
   <aside class="truth">
     <strong>Read the labels, not just the score</strong>
@@ -36,21 +40,21 @@
   </aside>
 </section>
 
-<section class="concept-wrap" id="concept">
+<section class="concept-wrap tab-panel on" data-panel="concept" id="concept">
   <div class="section-head">
     <div class="eyebrow">Step 1 · Start here</div>
     <h2>Define your concept</h2>
-    <p>Pick one of the 55 presets or start from scratch, then change anything. The map and the top-20 table below update live with every answer.</p>
+    <p>Pick one of the 55 presets or start from scratch, then change anything. The map and the top-20 table update live with every answer.</p>
   </div>
   <div class="preset-row" id="preset-row"></div>
   <div class="concept-grid" id="concept-grid"></div>
 </section>
 
-<section class="map-first" id="map">
+<section class="map-first tab-panel" data-panel="map" id="map">
   <div class="section-head">
     <div class="eyebrow">Step 2</div>
     <h2>The map answers back</h2>
-    <p>Every answer above repaints the map. Zoom right in - past zoom 15 the map shows every individual commercial unit on record, with its own modelled revenue on click.</p>
+    <p>Every answer in the Concept tab repaints the map. Zoom right in - past zoom 15 the map shows every individual commercial unit on record, with its own modelled revenue on click.</p>
   </div>
   <div class="mapbox"><div id="leaflet-map"></div>
     <div id="map-controls"></div>
@@ -58,7 +62,7 @@
   </div>
 </section>
 
-<section class="rankings-wrap" id="rankings">
+<section class="rankings-wrap tab-panel" data-panel="rankings" id="rankings">
   <div class="section-head">
     <div class="eyebrow">Step 3</div>
     <h2>Top 20 streets for your concept</h2>
@@ -67,13 +71,17 @@
   <div class="rank-list" id="rank-list"></div>
 </section>
 
-<section class="detail-wrap" id="detail">
-  <div class="detail-empty" id="detail-empty">Select a segment on the map or the top-20 table to open its full evidence panel.</div>
+<section class="detail-wrap tab-panel" data-panel="detail" id="detail">
+  <div class="detail-empty" id="detail-empty">
+    <div class="de-title">No street open yet</div>
+    <p>Select a segment on the map or in the top-20 table to open its full evidence panel: demand at your hours, named competitors, rent context, crime, revenue range and the slide report.</p>
+    <div class="de-btns"><button class="action primary" data-goto="map">Open the map</button><button class="action" data-goto="rankings">See the top 20</button></div>
+  </div>
   <div class="detail-panel" id="detail-panel" hidden></div>
 </section>
 
 
-<section class="tools-wrap" id="shortlist">
+<section class="tools-wrap tab-panel" data-panel="shortlist" id="shortlist">
   <div class="section-head">
     <div class="eyebrow">Decision workspace</div>
     <h2>Your shortlist</h2>
@@ -89,18 +97,22 @@
 
 
 
-<section class="tools-wrap" id="trends">
+<section class="tools-wrap tab-panel" data-panel="trends" id="trends">
   <div class="section-head">
     <div class="eyebrow">Concept trends</div>
     <h2>Is your concept rising or fading?</h2>
-    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers.</p>
+    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers, or search for a concept.</p>
   </div>
-  <div class="trend-controls"><label>Sort: <select id="trend-sort"><option value="growth">Fastest rising search interest</option><option value="osm">Most venues added</option><option value="az">A-Z</option></select></label></div>
-  <div id="trend-list" class="trend-list"></div>
+  <div class="trend-controls">
+    <div class="tc-searchwrap"><input id="trend-search" type="search" placeholder="Search a concept - e.g. matcha, ramen, Pilates..." aria-label="Search concepts"></div>
+    <label>Sort: <select id="trend-sort"><option value="growth">Fastest rising search interest</option><option value="osm">Most venues added</option><option value="az">A-Z</option></select></label>
+  </div>
+  <div id="trend-list" class="trend-grid"></div>
+  <div class="trend-pages" id="trend-pages"></div>
   <div class="trend-note">Honest labels: the venue series counts <b>every recorded venue in the concept's category</b> (all cafés, all restaurants...) in the OpenStreetMap extract history - mapper coverage grows over time, so some of the rise is better mapping, not just more openings; it is OBSERVED data with that caveat. The search series is Google Trends interest for a matching keyword, an ESTIMATED index of attention, not shops or sales. Concept-level shop counts per year are not published by any open source at this granularity - where a figure is not available, the row says so instead of guessing.</div>
 </section>
 
-<section class="tools-wrap" id="premium">
+<section class="tools-wrap tab-panel" data-panel="premium" id="premium">
   <div class="section-head">
     <div class="eyebrow">Premium tools</div>
     <h2>The decision toolkit <span class="premium-pill">PREMIUM</span></h2>
@@ -131,13 +143,14 @@
   </div>
 </section>
 
-<section class="method" id="method">
+<section class="method tab-panel" data-panel="method" id="method">
   <div class="section-head">
     <div class="eyebrow">Step 4</div>
     <h2>Method, sources and limits</h2>
   </div>
   <div class="method-grid" id="method-grid"></div>
 </section>
+</main>
 
 <footer class="foot">
   <div>London Location Lens · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div>
@@ -147,9 +160,10 @@
 <script src="segments.js?v=13"></script>
 <script src="units.js?v=13"></script>
 <script src="competitors.js?v=13"></script>
-<script src="app.js?v=16"></script>
-<script src="report.js?v=16"></script>
-<script src="trends.js?v=16"></script>
-<script src="extras.js?v=16"></script>
+<script src="app.js?v=17"></script>
+<script src="report.js?v=17"></script>
+<script src="trends.js?v=17"></script>
+<script src="extras.js?v=17"></script>
+<script src="tabs.js?v=17"></script>
 </body>
 </html>

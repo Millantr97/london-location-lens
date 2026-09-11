@@ -1,8 +1,9 @@
 /* ---------- concept trends + premium tools ---------- */
 const XCAT={cafe:"Cafés",restaurant:"Restaurants",fast_food:"Fast food",pub_bar:"Pubs & bars",grocery:"Grocery & food shops",fitness:"Gyms & fitness",cowork:"Coworking"};
 
-/* ----- trends ----- */
-let trendSort="growth";
+/* ----- trends: 3x3 paginated card grid with search ----- */
+let trendSort="growth", trendQuery="", trendPage=1;
+const TREND_PAGE=9;
 function sparkline(series,years,w,h){
   const vals=years.map(y=>series?series[y]:null);
   const nums=vals.filter(v=>v!=null);
@@ -23,32 +24,66 @@ function renderTrends(){
   const box=$("trend-list");if(!box)return;
   if(typeof TRENDS==="undefined"||!TRENDS.osm){box.innerHTML='<div class="saved-empty">Trend series are being assembled from the sources below. Check back shortly.</div>';return;}
   const years=TRENDS.years, gtyears=TRENDS.gt_years;
-  const rows=PRESETS.map(p=>{
+  let rows=PRESETS.map(p=>{
     const osm=TRENDS.osm[p.cat]||null;
     const gt=(TRENDS.gt&&TRENDS.gt.series)?TRENDS.gt.series[p.id]:null;
     const gtMax=gt?Math.max(...Object.values(gt)):0;
     const lowVol=gt&&gtMax<3;
     return {p,osm,gt,osmChg:trendChange(osm,years,4),gtChg:lowVol?null:trendChange(gt,gtyears,1),gtChg4:lowVol?null:trendChange(gt,gtyears,4),lowVol};
   });
+  const q=trendQuery.trim().toLowerCase();
+  if(q)rows=rows.filter(r=>r.p.name.toLowerCase().includes(q)
+    ||(XCAT[r.p.cat]||"").toLowerCase().includes(q)
+    ||(((TRENDS.gt&&TRENDS.gt.kw&&TRENDS.gt.kw[r.p.id])||"").toLowerCase().includes(q)));
   if(trendSort==="growth")rows.sort((a,b)=>((b.gtChg??-999))-((a.gtChg??-999)));
   else if(trendSort==="osm")rows.sort((a,b)=>((b.osmChg??-999))-((a.osmChg??-999)));
   else rows.sort((a,b)=>a.p.name.localeCompare(b.p.name));
-  box.innerHTML=rows.map(r=>`
-    <div class="trend-row">
-      <div class="tr-name"><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat}</span></div>
-      <div class="tr-cell"><div class="tr-cell-h">Recorded venues in London ${chipFor("obs")}<span class="tr-catlvl">category level - all ${(XCAT[r.p.cat]||"").toLowerCase()}</span></div>
-        <div class="tr-cell-b">${sparkline(r.osm,years,150,34)}<span class="tr-nums">${r.osm?fmt(Math.round(r.osm[years[0]]))+" → "+fmt(Math.round(r.osm[years[years.length-1]])):""}</span></div>
-        <div class="tr-cell-c">${fmtChg(r.osmChg)} <span class="tr-per">4 yrs</span></div></div>
-      <div class="tr-cell"><div class="tr-cell-h">Search interest, "${(TRENDS.gt&&TRENDS.gt.kw&&TRENDS.gt.kw[r.p.id])||r.p.name}" ${chipFor("mod")}<span class="tr-catlvl">Google Trends index, ${TRENDS.gt?TRENDS.gt.geo:""} - estimated, not shops</span></div>
-        <div class="tr-cell-b">${sparkline(r.gt,gtyears,150,34)}<span class="tr-nums">${r.gt?Math.round(r.gt[gtyears[0]])+" → "+Math.round(r.gt[gtyears[gtyears.length-1]]):"no series"}</span></div>
-        <div class="tr-cell-c">${r.lowVol?'<span class="tr-nodata">low search volume - index too small to read</span>':`${fmtChg(r.gtChg)} <span class="tr-per">1 yr</span> · ${fmtChg(r.gtChg4)} <span class="tr-per">4 yrs</span>`}</div></div>
-      <div class="tr-go"><button class="mini" data-try="${r.p.id}">Try this concept</button></div>
-    </div>`).join("");
+  const total=rows.length, pages=Math.max(1,Math.ceil(total/TREND_PAGE));
+  if(trendPage>pages)trendPage=pages; if(trendPage<1)trendPage=1;
+  const slice=rows.slice((trendPage-1)*TREND_PAGE, trendPage*TREND_PAGE);
+  box.innerHTML=slice.map(r=>{
+    const kw=(TRENDS.gt&&TRENDS.gt.kw&&TRENDS.gt.kw[r.p.id])||r.p.name;
+    const osmNums=r.osm?`<b>${fmt(Math.round(r.osm[years[0]]))}</b> → <b>${fmt(Math.round(r.osm[years[years.length-1]]))}</b> venues · all ${(XCAT[r.p.cat]||"").toLowerCase()} (category level)`:"no venue series for this category";
+    const gtNums=r.gt?`index <b>${Math.round(r.gt[gtyears[0]])}</b> → <b>${Math.round(r.gt[gtyears[gtyears.length-1]])}</b> · Google Trends, ${TRENDS.gt.geo} - estimated attention`:"no search series";
+    const gtState=r.lowVol?'<span class="tr-nodata">low search volume</span>':`${fmtChg(r.gtChg)} <span class="tr-per">1y</span>`;
+    return `<div class="trend-card">
+      <div class="tc-head"><div><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat}</span></div><button class="mini tc-try" data-try="${r.p.id}">Try it →</button></div>
+      <div class="tc-cell">
+        <div class="tc-label"><span>Recorded venues, London ${chipFor("obs")}</span><span>${fmtChg(r.osmChg)} <span class="tr-per">4y</span></span></div>
+        <div class="tc-chart">${sparkline(r.osm,years,240,40)}</div>
+        <div class="tc-nums">${osmNums}</div>
+      </div>
+      <div class="tc-cell">
+        <div class="tc-label"><span>Searches, "${kw}" ${chipFor("mod")}</span><span>${gtState}</span></div>
+        <div class="tc-chart">${sparkline(r.gt,gtyears,240,40)}</div>
+        <div class="tc-nums">${r.lowVol?gtNums+" · low search volume - index too small to read":gtNums}</div>
+      </div>
+    </div>`;
+  }).join("")||'<div class="saved-empty" style="grid-column:1/-1">No concept matches that search. Try another word.</div>';
+  const pg=$("trend-pages");
+  if(pg){
+    if(total<=TREND_PAGE){pg.innerHTML=total?`<span class="tp-info">${total} concepts</span>`:"";}
+    else{
+      pg.innerHTML=`<button class="tp-btn" data-tp="prev" ${trendPage===1?"disabled":""}>← Prev</button>`+
+        Array.from({length:pages},(_,i)=>i+1).map(i=>`<button class="tp-btn ${i===trendPage?"on":""}" data-tp="${i}">${i}</button>`).join("")+
+        `<button class="tp-btn" data-tp="next" ${trendPage===pages?"disabled":""}>Next →</button>`+
+        `<span class="tp-info">${total} concepts · page ${trendPage} of ${pages}</span>`;
+      pg.querySelectorAll("[data-tp]").forEach(b=>b.onclick=()=>{
+        const v=b.dataset.tp;
+        if(v==="prev")trendPage=Math.max(1,trendPage-1);
+        else if(v==="next")trendPage=Math.min(pages,trendPage+1);
+        else trendPage=+v;
+        renderTrends();
+        const t=document.getElementById("trends");if(t)t.scrollIntoView({behavior:"smooth",block:"start"});
+      });
+    }
+  }
   box.querySelectorAll("[data-try]").forEach(b=>b.onclick=()=>{
     activePreset=b.dataset.try;
     concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===activePreset))));
     renderPresets();renderConcept();update();
-    document.getElementById("concept").scrollIntoView({behavior:"smooth"});
+    if(typeof activateTab==="function")activateTab("concept",{scroll:false});
+    const c=document.getElementById("concept");if(c)c.scrollIntoView({behavior:"smooth"});
   });
 }
 
@@ -160,7 +195,8 @@ function runStress(){
 
 /* ----- wire up ----- */
 (function initExtras(){
-  const ts=$("trend-sort");if(ts)ts.onchange=()=>{trendSort=ts.value;renderTrends();};
+  const ts=$("trend-sort");if(ts)ts.onchange=()=>{trendSort=ts.value;trendPage=1;renderTrends();};
+  const tq=$("trend-search");if(tq)tq.oninput=()=>{trendQuery=tq.value;trendPage=1;renderTrends();};
   renderTrends();
   const gs=$("gap-seg");if(gs){gs.innerHTML=segOptions();$("gap-run").onclick=runGapFinder;}
   const is_=$("inv-seg");if(is_){is_.innerHTML=segOptions();$("inv-run").onclick=runInverse;}

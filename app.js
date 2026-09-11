@@ -838,13 +838,55 @@ function toggleFavourite(id){const on=workspace.favourites.includes(id);workspac
 function toggleCompare(id){const on=workspace.compare.includes(id);if(on)workspace.compare=workspace.compare.filter(x=>x!==id);else if(workspace.compare.length<3)workspace.compare.push(id);else{alert("Compare up to three streets. Remove one first.");return;}saveWorkspace();renderWorkspace();selectSegment(id,false);}
 function showComparison(){const rows=workspace.compare.map(rowFor).filter(Boolean);if(rows.length<2)return;const metrics=rows.map(comparisonMetrics),labels=metrics[0].map(x=>x[0]);
  $("compare-panel").hidden=false;$("compare-panel").innerHTML=`<div class="compare-head"><h3>Side-by-side for “${concept.name}”</h3><button class="mini" id="close-compare">Close</button></div><table class="compare-table"><thead><tr><th>Evidence</th>${rows.map(r=>`<th>${r.seg.name}<br><small>${r.seg.borough}</small></th>`).join("")}</tr></thead><tbody>${labels.map((l,i)=>`<tr><td>${l}${chipFor(metrics[0][i][2])}</td>${rows.map((r,j)=>`<td>${metrics[j][i][1]}</td>`).join("")}</tr>`).join("")}</tbody></table>`;$("close-compare").onclick=()=>$("compare-panel").hidden=true;$("compare-panel").scrollIntoView({behavior:"smooth",block:"start"});}
-function downloadStreetPDF(id){const r=rowFor(id);if(!r)return;const s=r.seg,jsPDF=window.jspdf&&window.jspdf.jsPDF;if(!jsPDF){alert("The PDF library did not load. Try again online.");return;}const doc=new jsPDF({unit:"mm",format:"a4"});let y=18;const line=(label,value,tag)=>{if(y>278){doc.addPage();y=18;}doc.setFont("helvetica","bold");doc.text(label,16,y);doc.setFont("helvetica","normal");doc.text(String(value),194,y,{align:"right"});if(tag){doc.setFontSize(7);doc.text(tag,16,y+4);doc.setFontSize(10);}y+=10;};
- doc.setTextColor(16,37,31);doc.setFontSize(19);doc.setFont("helvetica","bold");doc.text("London Location Lens",16,y);y+=9;doc.setFontSize(16);doc.text(s.name,16,y);y+=7;doc.setFontSize(9);doc.setFont("helvetica","normal");doc.text(`${s.zone} · ${s.borough} · ${s.stype.replace(/_/g," ")}`,16,y);y+=12;
- line("Fit score",Math.round(r.score)+" / 100","MODELLED");line("Estimated monthly revenue",money(r.rev.month),"MODELLED");line("Plausible revenue range",money(r.rev.low)+" - "+money(r.rev.high),"MODELLED");line("Weekly station flow anchor",fmt(Math.round(weeklyFlowAbs(s))),s.weak?"MODELLED":"OBSERVED");line("People in your trading hours",fmt(Math.round(r.rev.people)),"MODELLED");line("Competing "+concept.cat.replace(/_/g," "),s.osm[concept.cat]||0,"OBSERVED · within 250 m");line("Nearby typical spend",money(s.model.spend_est),"MODELLED");line("Estimated rent / m²",money(s.rent.est_rent_m2),"MODELLED from VOA area context");line("Residents",fmt(Math.round(s.lsoa.residents)),"AREA CONTEXT · Census 2021 LSOA");line("Business crime / 1,000",s.crime.per1000.toFixed(1),"AREA CONTEXT");
- y+=3;doc.setFont("helvetica","bold");doc.text("Concept",16,y);y+=7;doc.setFont("helvetica","normal");doc.text(`${concept.name} · ${concept.cat.replace(/_/g," ")} · ${money(concept.ticket)} ticket · ${concept.floorspace} m²`,16,y,{maxWidth:178});y+=14;doc.setFontSize(8);doc.setTextColor(95,111,105);doc.text("Evidence labels matter: OBSERVED is measured at a named source; AREA CONTEXT describes the surrounding statistical area; MODELLED is a transparent planning estimate. Verify a shortlist with on-street counts, agent particulars and licensing checks before signing a lease.",16,y,{maxWidth:178});y+=20;doc.text(`Dataset ${META.built} · OSM ${META.osm_date} · Generated ${new Date().toLocaleDateString("en-GB")}`,16,y);
- doc.save(`location-lens-${s.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}.pdf`);
+/* ---------- shareable verdict + comparables ---------- */
+function verdictText(r){
+  const s=r.seg,rev=r.rev,catN_=s.osm[concept.cat]||0;
+  const strengths=Object.values(r.crit).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,1);
+  const weak=Object.values(r.crit).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,1);
+  return `${s.name} scores ${Math.round(r.score)}/100 for "${concept.name}": ~${money(rev.month)}/mo estimated revenue (range ${money(rev.low)}-${money(rev.high)}), ${fmt(Math.round(weeklyFlowAbs(s)))} weekly station flow, ${catN_} rival ${concept.cat.replace(/_/g," ")} within 250 m. Strongest: ${strengths[0].label.toLowerCase()}. Watch: ${weak[0].label.toLowerCase()}.`;
+}
+function comparablesFor(r){
+  const s=r.seg,myFlow=weeklyFlowAbs(s)||1;
+  let pool=rankedCache.filter(x=>x.seg.id!==s.id&&x.seg.stype===s.stype);
+  const inBand=(x,a,b)=>{const f=weeklyFlowAbs(x.seg)/myFlow;return f>=a&&f<=b;};
+  let band=pool.filter(x=>inBand(x,0.5,2));
+  if(band.length<5)band=pool.filter(x=>inBand(x,0.33,3));
+  if(band.length<5)band=pool;
+  const vals=band.map(x=>x.rev.month).sort((a,b)=>a-b);
+  if(!vals.length)return null;
+  const q=p=>vals[Math.min(vals.length-1,Math.floor(p*vals.length))];
+  const median=q(0.5),p25=q(0.25),p75=q(0.75);
+  const nearest=band.sort((a,b)=>Math.abs(Math.log(weeklyFlowAbs(a.seg)/myFlow))-Math.abs(Math.log(weeklyFlowAbs(b.seg)/myFlow))).slice(0,4);
+  return {n:band.length,median,p25,p75,nearest,stypeLabel:s.stype.replace(/_/g," ")};
 }
 const _selectSegment=selectSegment;
-selectSegment=function(id,scroll){_selectSegment(id,scroll);const dp=$("detail-panel"),head=dp&&dp.querySelector(".dp-head");if(!head)return;const actions=document.createElement("div");actions.className="dp-actions";actions.innerHTML=`<button class="action ${workspace.favourites.includes(id)?"on":""}" id="dp-fav">${workspace.favourites.includes(id)?"Saved favourite":"Save favourite"}</button><button class="action ${workspace.compare.includes(id)?"on":""}" id="dp-compare">${workspace.compare.includes(id)?"Added to compare":"Add to compare"}</button><button class="action primary" id="dp-pdf">Download PDF report</button>`;head.parentNode.insertBefore(actions,head.nextSibling);$("dp-fav").onclick=()=>toggleFavourite(id);$("dp-compare").onclick=()=>toggleCompare(id);$("dp-pdf").onclick=()=>downloadStreetPDF(id);};
+selectSegment=function(id,scroll){
+  _selectSegment(id,scroll);
+  const dp=$("detail-panel"),head=dp&&dp.querySelector(".dp-head");if(!head)return;
+  const r=rowFor(id);
+  const actions=document.createElement("div");actions.className="dp-actions";
+  actions.innerHTML=`<button class="action ${workspace.favourites.includes(id)?"on":""}" id="dp-fav">${workspace.favourites.includes(id)?"Saved favourite":"Save favourite"}</button><button class="action ${workspace.compare.includes(id)?"on":""}" id="dp-compare">${workspace.compare.includes(id)?"Added to compare":"Add to compare"}</button><button class="action primary" id="dp-report">Slide report</button>`;
+  head.parentNode.insertBefore(actions,head.nextSibling);
+  $("dp-fav").onclick=()=>toggleFavourite(id);$("dp-compare").onclick=()=>toggleCompare(id);$("dp-report").onclick=()=>openSlideReport(id);
+  if(r){
+    const vt=verdictText(r),shareTxt=vt+" - London Location Lens: https://millantr97.github.io/london-location-lens/";
+    const v=document.createElement("div");v.className="verdict-line";
+    v.innerHTML=`<div class="vt">"${vt}"</div><div class="vbtns"><button class="vbtn" id="v-copy">Copy verdict</button><a class="vbtn" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(shareTxt)}">WhatsApp</a><a class="vbtn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTxt)}">Post on X</a></div>`;
+    const why=dp.querySelector(".dp-why");
+    if(why)why.parentNode.insertBefore(v,why.nextSibling);else actions.parentNode.insertBefore(v,actions.nextSibling);
+    $("v-copy").onclick=()=>{const done=()=>{const b=$("v-copy");b.textContent="Copied";b.classList.add("vcopied");setTimeout(()=>{b.textContent="Copy verdict";b.classList.remove("vcopied");},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(shareTxt).then(done,done);else done();};
+    const cmp=comparablesFor(r);
+    if(cmp){
+      const card=document.createElement("div");card.className="ev-card";
+      card.innerHTML=`<h4>Comparable streets for this concept${chipFor("mod")}</h4>
+      <div class="ev-line"><span class="lv"><b>"${concept.name}" on ${cmp.n} similar ${cmp.stypeLabel} streets</b></span><span class="rv"><b>${money(cmp.median)}/mo median</b></span></div>
+      <div class="ev-line"><span class="lv">Typical band across comparables (25th-75th)</span><span class="rv">${money(cmp.p25)} - ${money(cmp.p75)}/mo</span></div>
+      <table class="comp-table-mini">${cmp.nearest.map(x=>`<tr><td>${x.seg.name} <span style="color:var(--muted);font-size:11px">${x.seg.borough}</span></td><td>${money(x.rev.month)}/mo</td></tr>`).join("")}</table>
+      <div class="ev-line"><span class="lv">Honest label: no source publishes real per-street takings. These are the same transparent MODELLED estimates for streets of the same type with a similar flow anchor (0.5x-2x this street's weekly flow) - planning comparables, not observed turnover.</span></div>`;
+      const cols=dp.querySelector(".dp-cols");if(cols)cols.appendChild(card);
+    }
+  }
+};
 $("open-compare").onclick=showComparison;
 renderWorkspace();

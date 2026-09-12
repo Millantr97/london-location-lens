@@ -35,14 +35,16 @@ s=s.replace('Street-level site selection · all of London',f'Street-level site s
 s=s.replace('<span id="seg-count">2,480</span> London street segments',f'<span id="seg-count">{nseg:,}</span> {C["name"]} street segments')
 s=s.replace('<h2>London, ranked by the model</h2>',f'<h2>{C["name"]}, ranked by the model</h2>')
 s=re.sub(r'<div class="article-grid" id="article-grid">.*?</div>\s*<div class="trend-note">',
-         f'<div class="article-grid" id="article-grid"></div>\n  <div class="trend-note">',s,flags=re.S)
+         f'<div class="article-grid" id="article-grid"></div>\n  <p style="color:var(--muted);font-size:13px;margin:4px 0 14px">City-specific rankings for {C["name"]} are being prepared - <a href="../#rankings">London&apos;s rankings</a> show the format.</p>\n  <div class="trend-note">',s,flags=re.S)
+if C.get('no_crime'):
+    s=s.replace('residents, rents and crime are AREA CONTEXT','residents and rents are AREA CONTEXT')
 s=s.replace('Each ranking is one fixed concept run through the published model over 2,480 London street segments.',
             f'Each ranking is one fixed concept run through the published model over {nseg:,} {C["name"]} street segments.')
 s=s.replace('<div>London Location Potential ·',f'<div>{C["name"]} Location Potential ·')
 s=s.replace('href="privacy.html"','href="../privacy.html"')
 s=s.replace('value="London Location Potential expert brief"',f'value="{C["name"]} Location Potential expert brief"')
 s=re.sub(r'<script src="cities\.js\?v=\d+"></script>\s*<script src="segments\.js\?v=\d+"></script>\s*<script src="units\.js\?v=\d+"></script>\s*<script src="competitors\.js\?v=\d+"></script>\s*<script src="app\.js\?v=\d+"></script>\s*<script src="report\.js\?v=\d+"></script>\s*<script src="trends\.js\?v=\d+"></script>',
- '<script src="../cities.js?v=1"></script>\n<script src="city.js?v=1"></script>\n<script src="data/segments.js?v=1"></script>\n<script src="data/units.js?v=1"></script>\n<script src="data/competitors.js?v=1"></script>\n<script src="../app.js?v=22"></script>\n<script src="../report.js?v=19"></script>\n<script src="data/trends.js?v=1"></script>',s)
+ '<script src="../cities.js?v=1"></script>\n<script src="city.js?v=1"></script>\n<script src="data/segments.js?v=1"></script>\n<script src="data/units.js?v=1"></script>\n<script src="data/competitors.js?v=1"></script>\n<script src="../app.js?v=23"></script>\n<script src="../report.js?v=19"></script>\n<script src="data/trends.js?v=1"></script>',s)
 s=s.replace('<script src="extras.js?v=20"></script>','<script src="../extras.js?v=20"></script>')
 s=s.replace('<script src="tabs.js?v=22"></script>','<script src="../tabs.js?v=22"></script>')
 s=s.replace('<script src="leads.js?v=20"></script>','<script src="../leads.js?v=20"></script>')

@@ -106,13 +106,13 @@ function runGapFinder(){
     const rows=PRESETS.map(p=>{
       const nDem=normDemandFor(p);
       const d=nDem(windowDemand(s,p));
-      const comp=catN(p.cat,s.osm[p.cat]);
+      const comp=catN(p.cat,compCount(s,p.cat));
       const gap=clamp(d*(1-0.65*comp)+0.15*(1-comp),0,1);
-      return {p,gap,d,comp,count:s.osm[p.cat]||0};
+      return {p,gap,d,comp,count:compCount(s,p.cat)};
     }).sort((a,b)=>b.gap-a.gap).slice(0,8);
     out.innerHTML=`<div class="gap-head">Most underserved concepts on <b>${s.name}</b> - high modelled demand at the concept's hours, low recorded supply ${chipFor("mod")}</div>`+
-      rows.map((r,i)=>`<div class="gap-row"><span class="gap-n">${i+1}</span><div class="gap-main"><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat} · ${r.count} recorded within 250 m</span></div><div class="rbar gapbar"><i style="width:${Math.round(r.gap*100)}%"></i></div><span class="gap-v">${Math.round(r.gap*100)}</span><button class="mini" data-gaptry="${r.p.id}">Score it here</button></div>`).join("")+
-      `<div class="prem-note">Gap = demand at the concept's trading hours (normalised across ${CITY.name}) tempered by how saturated the category already is within 250 m. Demand anchors are station flows; supply is OpenStreetMap. A gap is an hypothesis to walk and count, not a guarantee.</div>`;
+      rows.map((r,i)=>`<div class="gap-row"><span class="gap-n">${i+1}</span><div class="gap-main"><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat} · ${r.count} recorded within ${COMPR[r.p.cat]} m</span></div><div class="rbar gapbar"><i style="width:${Math.round(r.gap*100)}%"></i></div><span class="gap-v">${Math.round(r.gap*100)}</span><button class="mini" data-gaptry="${r.p.id}">Score it here</button></div>`).join("")+
+      `<div class="prem-note">Gap = demand at the concept's trading hours (normalised across ${CITY.name}) tempered by how saturated the category already is within the concept's competition radius (400 m to 1 km by type). Demand anchors are station flows; supply is OpenStreetMap. A gap is an hypothesis to walk and count, not a guarantee.</div>`;
     out.querySelectorAll("[data-gaptry]").forEach(b=>b.onclick=()=>{
       activePreset=b.dataset.gaptry;
       concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===activePreset))));
@@ -189,7 +189,7 @@ function runStress(){
     <table class="stress-table"><thead><tr><th>Scenario</th><th>Est. monthly revenue</th><th>Range</th><th>vs today</th></tr></thead><tbody>
     ${rows.map(([l,r])=>`<tr><td>${l}</td><td><b>${money(r.month)}</b></td><td>${money(r.low)} - ${money(r.high)}</td><td class="chg ${r.month>=base?"up":"down"}">${r.month>=base?"+":""}${((r.month-base)/base*100).toFixed(0)}%</td></tr>`).join("")}
     </tbody></table>
-    <div class="prem-note">Assumptions: the 20% shock scales the station-flow anchor in every day type; a strong competitor is one extra same-category venue inside 250 m in the dilution term; capture rate, audience fit, ticket and capacity are unchanged. MODELLED sensitivity, not a forecast.</div>`;
+    <div class="prem-note">Assumptions: the 20% shock scales the station-flow anchor in every day type; a strong competitor is one extra same-category venue inside the concept's competition radius in the dilution term; capture rate, audience fit, ticket and capacity are unchanged. MODELLED sensitivity, not a forecast.</div>`;
 }
 
 /* ----- wire up ----- */

@@ -17,7 +17,7 @@ const ARTICLES=[
   format:'A specialty coffee and brunch format: \u00a312 average ticket, 32 seats, weekday mornings and weekend daytime trading.',
   card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
  {slug:'cocktail-bar',preset:'cocktail-bar',kick:'Bars',noun:'a cocktail bar',comp:'cocktail bars',
-  stand:'Late-night demand is concentrated and competition is fierce, so the ranking leans on Friday and Saturday station flows, nightlife context and recorded bars within 250 m. These ten streets come out on top.',
+  stand:'Late-night demand is concentrated and competition is fierce, so the ranking leans on Friday and Saturday station flows, nightlife context and recorded bars within 600 m. These ten streets come out on top.',
   format:'A cocktail and natural wine bar: \u00a330 average ticket, 36 seats, trading Wednesday to Saturday nights.',
   card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
  {slug:'bakery',preset:'bakery',kick:'Bakery',noun:'a bakery',comp:'bakeries',
@@ -29,7 +29,7 @@ const ARTICLES=[
   format:'A boutique fitness studio: \u00a325 per class, 20 spots, peak classes before work and after work on weekdays.',
   card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
  {slug:'restaurant',preset:'casual-dining',kick:'Restaurants',noun:'a restaurant',comp:'restaurants',
-  stand:'The model scores lunchtime and evening demand, recorded restaurants within 250 m, local spend levels and rent context. These ten streets scored highest.',
+  stand:'The model scores lunchtime and evening demand, recorded restaurants within 800 m, local spend levels and rent context. These ten streets scored highest.',
   format:'A casual dining restaurant: \u00a324 average ticket, 60 covers, lunch and dinner seven days a week.',
   card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
  {slug:'hairdresser-barber',preset:'hair-barber',kick:'Hair & beauty',noun:'a hairdresser or barber shop',comp:'hairdressers and barbers',
@@ -114,12 +114,12 @@ for(const a of ARTICLES){
   const c=M.normalizeConcept(JSON.parse(JSON.stringify(p)));
   const ranked=M.computeAll(c);
   const top=ranked.slice(0,10);
-  const cat=c.cat, compN=s=>(s.osm[cat]||0), compChain=s=>(s.osm[cat+'_chain']||0);
+  const cat=c.cat, compN=s=>(s.osm['comp_'+cat]??s.osm[cat])||0, compChain=s=>(s.osm['comp_'+cat+'_chain']??s.osm[cat+'_chain'])||0;
   const title='The 10 best streets to open '+a.noun+' in London (2026 data)';
   const items=top.map((r,i)=>{
     const s=r.seg, fl=Math.round(M.weeklyFlowAbs(s)), rev=r.rev;
     const sub=[s.borough,s.zone,STYPE[s.stype]||s.stype].filter(Boolean).join(' · ');
-    const why=fmt(fl)+' weekly station entries and exits (entries + exits at named stations) pass the pitch, with '+compN(s)+' recorded '+a.comp+' competing within 250 m. Typical spend nearby is '+money(s.model.spend_est)+' per person and modelled rent is '+money(s.rent.est_rent_m2)+' per m&sup2;.';
+    const why=fmt(fl)+' weekly station entries and exits (entries + exits at named stations) pass the pitch, with '+compN(s)+' recorded '+a.comp+' competing within '+window.COMPR[cat]+' m. Typical spend nearby is '+money(s.model.spend_est)+' per person and modelled rent is '+money(s.rent.est_rent_m2)+' per m&sup2;.';
     return `<li class="art-item">
   <div class="ai-rank">${i+1}</div>
   <div class="ai-main">
@@ -130,7 +130,7 @@ for(const a of ARTICLES){
       <span class="ai-fig">Fit score <b>${Math.round(r.score)}/100</b><span class="chip mod">MODELLED</span></span>
       <span class="ai-fig">Est. revenue <b>${money(rev.month)}/mo</b> (range ${money(rev.low)}-${money(rev.high)})<span class="chip mod">MODELLED</span></span>
       <span class="ai-fig">Weekly station flow <b>${fmt(fl)}</b><span class="chip obs">OBSERVED</span></span>
-      <span class="ai-fig">Competitors within 250 m <b>${compN(s)}</b> (${compChain(s)} chain)<span class="chip obs">OBSERVED</span></span>
+      <span class="ai-fig">Competitors within ${window.COMPR[cat]} m <b>${compN(s)}</b> (${compChain(s)} chain)<span class="chip obs">OBSERVED</span></span>
       <span class="ai-fig">Est. rent <b>${money(s.rent.est_rent_m2)}/m&sup2;/yr</b><span class="chip mod">MODELLED</span></span>
       <span class="ai-fig">Residents nearby <b>${fmt(s.lsoa.residents)}</b><span class="chip ctx">AREA CONTEXT</span></span>
     </div>
@@ -158,7 +158,7 @@ for(const a of ARTICLES){
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "${esc(title)}", "itemListElement": [${ldItems}]}</script>
 </head>
 <body>
-<header class="top"><div class="top-row"><a class="brand art-brand" href="../">Location <span>Potential</span></a>
+<header class="top"><div class="top-row"><a class="brand art-brand" href="../">Location <span>Potential</span><i class="brand-city">- London</i></a>
 <nav class="tabs" aria-label="Sections"><a href="../#rankings">All rankings</a><a href="../">Open the tool</a></nav></div></header>
 <main class="art">
 <article>
@@ -174,7 +174,7 @@ ${items}
 </ol>
 <div class="art-method">
 <h2 class="art-h2">How this ranking works</h2>
-<p>One fixed concept is scored against every one of the ${M.SEGS.length.toLocaleString('en-GB')} London street segments in the Location Potential dataset: station entries and exits from TfL Annual Station Counts 2025 (National Rail: ORR 2024-25), recorded venues within 250 m from OpenStreetMap, Census 2021 residents for the local LSOA, business crime from data.police.uk, and rent context from Valuation Office Agency rateable values. Scores and revenue figures are MODELLED planning estimates with fixed, published rules, not observed takings. The full method, sources and limits are on the <a href="../#method">Method page</a>.</p>
+<p>One fixed concept is scored against every one of the ${M.SEGS.length.toLocaleString('en-GB')} London street segments in the Location Potential dataset: station entries and exits from TfL Annual Station Counts 2025 (National Rail: ORR 2024-25), recorded venues within the concept's competition radius (400 m to 1 km by type) from OpenStreetMap, Census 2021 residents for the local LSOA, business crime from data.police.uk, and rent context from Valuation Office Agency rateable values. Scores and revenue figures are MODELLED planning estimates with fixed, published rules, not observed takings. The full method, sources and limits are on the <a href="../#method">Method page</a>.</p>
 <p>Use this ranking to shortlist, then verify with on-street counts, agent enquiries and a licensing check before signing anything. A specialist can help you.</p>
 </div>
 <div class="art-cta">

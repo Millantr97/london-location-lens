@@ -274,9 +274,14 @@ const nDivV=norm(SEGS.map(s=>s.lsoa.diversity));const nDiv=s=>nDivV(s.lsoa.diver
 const nNonUKV=norm(SEGS.map(s=>s.lsoa.pct_nonuk));const nNonUK=s=>nNonUKV(s.lsoa.pct_nonuk);
 const nSpendV=norm(SEGS.map(s=>s.model.spend_est));const nSpend=s=>nSpendV(s.model.spend_est);
 const HAS_CRIME=SEGS.some(s=>s.crime);const nCrimeV=norm(SEGS.map(s=>s.crime?s.crime.per1000:0));const nCrime=s=>s.crime?nCrimeV(s.crime.per1000):0.5;
+/* competition radius per category: impulse concepts compete over a short walk, destination/membership concepts over a long one */
+const COMPR={"cafe":400,"fast_food":400,"services":500,"grocery":600,"pharmacy":600,"pub_bar":600,"restaurant":800,"shops":800,"vets":800,"fitness":1000,"cowork":1000,"agents":1000};
+window.COMPR=COMPR;
+const compCount=(s,c)=>(s.osm["comp_"+c]??s.osm[c])||0;
+const compChain=(s,c)=>(s.osm["comp_"+c+"_chain"]??s.osm[c+"_chain"])||0;
 const CATNORM={};
 ["cafe","restaurant","fast_food","pub_bar","grocery","fitness","cowork","services","agents","pharmacy","vets"].forEach(c=>{
-  CATNORM[c]=norm(SEGS.map(s=>Math.log10(1+(s.osm[c]||0))));
+  CATNORM[c]=norm(SEGS.map(s=>Math.log10(1+compCount(s,c))));
 });
 const catN=(c,v)=>CATNORM[c]?CATNORM[c](Math.log10(1+(v||0))):0.5;
 
@@ -317,8 +322,8 @@ function scoreSegment(s,c){
   const audFit=awSum?Object.keys(aw).reduce((acc,k)=>acc+aw[k]*sup[k],0)/awSum:0.5;
 
   const demandRaw=allDemand(s);
-  const compN=catN(c.cat,s.osm[c.cat]);
-  const chainShare=s.osm[c.cat]? (s.osm[c.cat+"_chain"]||0)/s.osm[c.cat]:0;
+  const compN=catN(c.cat,compCount(s,c.cat));
+  const chainShare=compCount(s,c.cat)? compChain(s,c.cat)/compCount(s,c.cat):0;
 
   const rv=s.rent.retail_rv_m2;
   const rentFit=rv?clamp(c.rent/rv,0,1):0.5;
@@ -386,7 +391,7 @@ function revenueFor(s,c){
   const R=REV[c.cat]||REV.cafe;
   const cover=clamp(windowDemand(s,c)/DAYREL7(s),0,1);
   const people=weeklyFlowAbs(s)*cover;
-  const comp=1/(1+R.dil*(s.osm[c.cat]||0));
+  const comp=1/(1+R.dil*compCount(s,c.cat));
   const sup=audienceSupply(s);
   const aw={...c.audience}; if(c.family)aw.families=Math.min(10,(aw.families||0)+3);
   const awSum=Object.values(aw).reduce((a,b)=>a+b,0);
@@ -421,7 +426,7 @@ function computeAll(c){
     const dem=nDem(raws[i])*nFlowAnnual(s);
     crit.demand.score=dem;
     // opportunity: demand tempered by saturation
-    const compN=catN(c.cat,s.osm[c.cat]);
+    const compN=catN(c.cat,compCount(s,c.cat));
     const stance=(c.compStance||0)/100; // 0 = avoid rivals, 1 = proven clusters attract you
     const pen=0.65-0.85*stance; // penalty on saturated areas flips to a mild cluster bonus
     crit.opportunity.score=clamp(dem*(1-pen*compN)+0.15*(1-stance)*(1-compN),0,1);
@@ -680,7 +685,7 @@ function selectSegment(id,scroll){
   const dayBars=[["Mon","mon"],["Tue-Thu","mid"],["Fri","fri"],["Sat","sat"],["Sun","sun"]].map(([l,k])=>
     `<div class="col"><div class="b" style="height:${Math.max(2,80*fl.days[k]/maxDay)}px"></div><div class="t">${l}</div></div>`).join("");
   const windowsTxt=concept.windows.map(w=>`${w.days.map(d=>DAYNAMES[d]).join(" ")} ${mm(w.from)}-${mm(w.to%1560)}`).join(" · ")||"no windows set";
-  const catCount=s.osm[concept.cat]||0, catChain=s.osm[concept.cat+"_chain"]||0;
+  const catCount=compCount(s,concept.cat), catChain=compChain(s,concept.cat);
 
   const critRows=Object.values(r.crit).sort((a,b)=>b.w-a.w).map(cr=>`
     <div class="crit-row"><div>${cr.label}${chipFor(cr.how==="obs"?"obs":cr.how==="ctx"?"ctx":"mod")}</div>
@@ -740,7 +745,7 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Source: OpenStreetMap extract ${META.osm_date}. Counts depend on mapper coverage.</span></div>
     </div>
     <div class="ev-card"><h4>Named competitors · ${concept.cat.replace(/_/g," ")}${chipFor("obs")}</h4>
-      ${compRows||'<div class="ev-line"><span class="lv">No named venues of this category recorded within 250 m of the anchor.</span></div>'}
+      ${compRows||`<div class="ev-line"><span class="lv">No named venues of this category recorded within ${COMPR[concept.cat]} m of the anchor.</span></div>`}
       <div class="ev-line"><span class="lv">${catCount} recorded in total; the ${compList.length} nearest named are shown. Names, cuisine and distance from OpenStreetMap, ${META.osm_date}. A listed competitor is a real trading venue, not a vacancy.</span></div>
     </div>
     <div class="ev-card"><h4>Best streets inside this segment${chipFor("mod")}</h4>
@@ -782,7 +787,7 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Plausible range (capture-rate uncertainty)</span><span class="rv">${money(r.rev.low)} - ${money(r.rev.high)}</span></div>
       ${r.rev.weekTrans?`<div class="ev-line"><span class="lv">Modelled transactions / week</span><span class="rv">${fmt(Math.round(r.rev.weekTrans))}</span></div>`:`<div class="ev-line"><span class="lv">Modelled members/desks</span><span class="rv">${fmt(Math.round(r.rev.members||0))}</span></div>`}
       <div class="ev-line"><span class="lv">People passing in your trading windows / week</span><span class="rv">${fmt(Math.round(r.rev.people))}</span></div>
-      <div class="ev-line"><span class="lv">Competition dilution factor (${s.osm[concept.cat]||0} rivals within 250 m)</span><span class="rv">x${r.rev.comp.toFixed(2)}</span></div>
+      <div class="ev-line"><span class="lv">Competition dilution factor (${compCount(s,concept.cat)} rivals within ${COMPR[concept.cat]} m)</span><span class="rv">x${r.rev.comp.toFixed(2)}</span></div>
       <div class="ev-line"><span class="lv">Audience factor</span><span class="rv">x${r.rev.aud.toFixed(2)}</span></div>
       ${r.rev.capped?`<div class="ev-line"><span class="lv">Capped by unit throughput (seats x weekly covers + m² x throughput)</span><span class="rv">yes</span></div>`:""}
       <div class="ev-line"><span class="lv">Rule: weekly station flow in your hours x category capture rate x dilution x audience fit + resident spend, x your £${concept.ticket} ticket. All constants in Method. This is a planning estimate, not a valuation.</span></div>
@@ -831,7 +836,7 @@ function renderMethod(){
     <p>Three estimates the tool computes and labels: (1) typical spend per person - from resident occupation mix, borough retail rateable value and chain presence; (2) office-worker skew - from coworking density and weekday-weighted station flows; (3) intraday rhythm - station day-type flows spread across five dayparts using the local offer mix (food, retail, nightlife, culture). Rules are fixed and shown so you can argue with them.</p>
     <p>These are the layers to override with your own counts before committing money.</p></div>
   <div class="m-card"><h4>Revenue model${chipFor("mod")}</h4>
-    <p>Estimated monthly revenue for your concept, per segment and per unit. Weekly station entries+exits passing in your exact trading windows are multiplied by a category capture rate (share of passers-by who transact: grocery 3.0%, cafe 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2%), a competition dilution factor 1/(1 + k x rivals within 250 m), and an audience-fit factor (x0.5 to x1.5). Resident spend nearby is added from LSOA population x weekly purchase propensity. Monthly revenue = transactions x your average ticket x 4.33. A unit can only serve what fits through it: seats x weekly covers plus floorspace x weekly throughput per m² caps transactions, with soft absorption (queues, faster turns) beyond it. Fitness and coworking use membership models: residents and flow convert to members at fixed rates, capped by capacity, priced at ~2.6x day ticket (fitness) or ~9x day desk rate (coworking).</p>
+    <p>Estimated monthly revenue for your concept, per segment and per unit. Weekly station entries+exits passing in your exact trading windows are multiplied by a category capture rate (share of passers-by who transact: grocery 3.0%, cafe 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2%), a competition dilution factor 1/(1 + k x rivals within the concept's competition radius), and an audience-fit factor (x0.5 to x1.5). Competition radius by concept type (how far away a rival still takes your customers): cafés and food-to-go 400 m; convenience services (hair, beauty, laundry, repair, florist, optician) 500 m; grocery, pharmacy, pubs and bars 600 m; restaurants, retail and vets 800 m; gyms, coworking and estate agents 1 km. Resident spend nearby is added from LSOA population x weekly purchase propensity. Monthly revenue = transactions x your average ticket x 4.33. A unit can only serve what fits through it: seats x weekly covers plus floorspace x weekly throughput per m² caps transactions, with soft absorption (queues, faster turns) beyond it. Fitness and coworking use membership models: residents and flow convert to members at fixed rates, capped by capacity, priced at ~2.6x day ticket (fitness) or ~9x day desk rate (coworking).</p>
     <p>The shown range is x0.55 to x1.6 of the central estimate - capture-rate uncertainty dominates. These are transparent planning assumptions you can argue with, not observed takings. No source publishes real per-street revenue; where a chain unit's accounts exist they are for the company, not the site.</p></div>
   <div class="m-card"><h4>Every commercial unit${chipFor("obs")}</h4>
     <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records across all covered streets and areas (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
@@ -924,7 +929,7 @@ function verdictText(r){
   const s=r.seg,rev=r.rev,catN_=s.osm[concept.cat]||0;
   const strengths=Object.values(r.crit).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,1);
   const weak=Object.values(r.crit).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,1);
-  return `${s.name} scores ${Math.round(r.score)}/100 for "${concept.name}": ~${money(rev.month)}/mo estimated revenue (range ${money(rev.low)}-${money(rev.high)}), ${fmt(Math.round(weeklyFlowAbs(s)))} weekly station flow, ${catN_} rival ${concept.cat.replace(/_/g," ")} within 250 m. Strongest: ${strengths[0].label.toLowerCase()}. Watch: ${weak[0].label.toLowerCase()}.`;
+  return `${s.name} scores ${Math.round(r.score)}/100 for "${concept.name}": ~${money(rev.month)}/mo estimated revenue (range ${money(rev.low)}-${money(rev.high)}), ${fmt(Math.round(weeklyFlowAbs(s)))} weekly station flow, ${catN_} rival ${concept.cat.replace(/_/g," ")} within ${COMPR[concept.cat]} m. Strongest: ${strengths[0].label.toLowerCase()}. Watch: ${weak[0].label.toLowerCase()}.`;
 }
 function comparablesFor(r){
   const s=r.seg,myFlow=weeklyFlowAbs(s)||1;

@@ -18,7 +18,7 @@ function buildReport(id){
   const today=new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
   const sup=audienceSupply(s);
   const aw={...c.audience}; if(c.family)aw.families=Math.min(10,(aw.families||0)+3);
-  const catCount=s.osm[c.cat]||0, catChain=s.osm[c.cat+"_chain"]||0;
+  const catCount=compCount(s,c.cat), catChain=compChain(s,c.cat);
   const compList=((typeof COMPETITORS!=="undefined"?COMPETITORS[s.id]:null)||{})[c.cat]||[];
   const R=REV[c.cat]||REV.cafe;
   const windowsTxt=c.windows.map(w=>`${w.days.map(d=>DAYNAMES[d]).join(" ")} ${mm(w.from)}-${mm(w.to%1560)}`).join(" · ")||"no windows set";
@@ -142,7 +142,7 @@ function buildReport(id){
       <div class="rmini">OpenStreetMap extract ${META.osm_date}. Counts depend on mapper coverage - treat as lower bounds.</div>
     </div>
     <div class="rcard"><div class="rsub">Nearest named competitors · ${c.cat.replace(/_/g," ")} ${chip("obs")}</div>
-      ${compRows||'<div class="rkv"><span class="rl">No named venues of this category recorded within 250 m of the anchor.</span></div>'}
+      ${compRows||`<div class="rkv"><span class="rl">No named venues of this category recorded within ${COMPR[c.cat]} m of the anchor.</span></div>`}
       ${kv("Competing venues in total",catCount,"obs")}
       ${kv("Of which chain venues",catChain,"obs")}
       ${kv("Independent venues",catCount-catChain,"obs")}
@@ -216,7 +216,7 @@ function buildReport(id){
       <div class="rleg">${chip("ctx")} describes the surrounding statistical area - Census LSOA, Met Police, VOA borough.</div>
       <div class="rleg">${chip("mod")} a transparent estimate the model computes - the rule is always shown.</div>
       <div class="rsub" style="margin-top:10px">Key model constants</div>
-      <div class="rmini">Capture rates: grocery 3.0%, café 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2% of passers-by in trading windows. Dilution 1/(1+k x rivals within 250 m). Audience factor x0.5-x1.5. Revenue range x0.55-x1.6. Capacity: seats x weekly covers + floorspace x throughput per m², with soft absorption beyond.</div>
+      <div class="rmini">Capture rates: grocery 3.0%, café 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2% of passers-by in trading windows. Dilution 1/(1+k x rivals within ${COMPR[c.cat]} m). Audience factor x0.5-x1.5. Revenue range x0.55-x1.6. Capacity: seats x weekly covers + floorspace x throughput per m², with soft absorption beyond.</div>
     </div>
     <div class="rcard"><div class="rsub">Sources</div>
       <div class="rkv2"><span class="rl">Station flows ${chip("obs")}</span><span class="rv">${META.numbat}</span></div>
@@ -238,11 +238,11 @@ function buildReport(id){
       <div class="rcfig"><div class="rcfig-v">${Math.round(r.score)}</div><div class="rcfig-l">fit score / 100</div></div>
       <div class="rcfig"><div class="rcfig-v">${money(rev.month)}</div><div class="rcfig-l">est. monthly revenue</div></div>
       <div class="rcfig"><div class="rcfig-v">${fmt(Math.round(weeklyFlowAbs(s)))}</div><div class="rcfig-l">weekly station flow</div></div>
-      <div class="rcfig"><div class="rcfig-v">${catCount}</div><div class="rcfig-l">rivals within 250 m</div></div>
+      <div class="rcfig"><div class="rcfig-v">${catCount}</div><div class="rcfig-l">rivals within ${COMPR[c.cat]} m</div></div>
     </div>
     <div class="rsteps">
       <div class="rstep"><b>1 · Count it yourself.</b> Stand on ${esc(s.name)} during your exact trading windows (${esc(windowsTxt)}) and count passers-by. Override the modelled layers with your numbers.</div>
-      <div class="rstep"><b>2 · Walk the competition.</b> Visit the ${catCount} ${c.cat.replace(/_/g," ")} venues within 250 m at peak time. Queue length beats any model.</div>
+      <div class="rstep"><b>2 · Walk the competition.</b> Visit the ${catCount} ${c.cat.replace(/_/g," ")} venues within ${COMPR[c.cat]} m at peak time. Queue length beats any model.</div>
       <div class="rstep"><b>3 · Get real quotes.</b> Ask agents for live availability and quoting rents around this street - the ${money(s.rent.est_rent_m2)}/m² here is a modelled borough estimate, not an asking rent.</div>
       <div class="rstep"><b>4 · Check licensing and planning.</b> ${c.alcohol?"Alcohol licence, late-night refreshment and ":""}Use-class, extraction and terrace permissions with ${esc(s.borough)} council.</div>
       <div class="rstep"><b>5 · Compare your finalists.</b> Shortlist up to three streets in Location Potential and compare them side by side before deciding.</div>
@@ -258,7 +258,7 @@ function buildReport(id){
     slide(++n,T,"Model inputs","Your concept, as scored",s3body),
     slide(++n,T,"Demand","Demand at your hours",s4body),
     slide(++n,T,"Audience","Audience match",s5body),
-    slide(++n,T,"Competition","Competition within 250 m",s6body),
+    slide(++n,T,"Competition",`Competition within ${COMPR[c.cat]} m`,s6body),
     slide(++n,T,"Costs","Occupancy cost & ticket fit",s7body),
     slide(++n,T,"Revenue","Revenue estimate",s8body),
     slide(++n,T,"Scorecard","Every criterion, weighted",s9body),

@@ -801,14 +801,14 @@ function renderMethod(){
   $("method-grid").innerHTML=`
   <div class="m-card"><h4>Movement &amp; transport${chipFor("obs")}</h4>
     ${CITY.texts.movement||`<p>Typical-day station entries and exits by day type (Mon / Tue-Thu / Fri / Sat / Sun) and annualised totals from TfL Annual Station Counts 2025, summed over the stations named for each segment. National Rail stations without TfL counts use ORR Estimates of Station Usage 2024-25 (annual entries + exits, marked NR · ORR); their day-of-week split is modelled on the median London Overground profile, since ORR publishes annual totals only. Stations within 900 m from OpenStreetMap. Street-level pitches inherit their parent catchment's counts scaled to the street's share of recorded commercial units (marked MODELLED); streets beyond 900 m of any station show no flow at all.</p>`}
-    <p><a href="https://crowding.data.tfl.gov.uk/Annual%20Station%20Counts/2024/AC2024_AnnualisedEntryExit_Public.xlsx">crowding.data.tfl.gov.uk - AC2024 Annualised Entry/Exit</a></p>
+    ${CITY.texts.movement?`<p><a href="https://dataportal.orr.gov.uk/statistics/usage/estimates-of-station-usage">ORR dataportal - Estimates of Station Usage 2024-25</a></p>`:`<p><a href="https://crowding.data.tfl.gov.uk/Annual%20Station%20Counts/2024/AC2024_AnnualisedEntryExit_Public.xlsx">crowding.data.tfl.gov.uk - AC2024 Annualised Entry/Exit</a></p>`}
     <p>Resolution: named station, not the pavement. A station 400 m away on a desire line matters more than one across a railway.</p></div>
   <div class="m-card"><h4>Street offer &amp; competition${chipFor("obs")}</h4>
     <p>Counts of cafés, restaurants, fast food, pubs and bars, grocery and food shops, gyms, coworking spaces, other shops, culture venues and parks around each segment anchor (250 m for venues, 600 m parks, 900 m stations) from OpenStreetMap (${META.osm_date}). Chain flag from brand-name matching - approximate.</p>
     <p><a href="https://www.openstreetmap.org/copyright">openstreetmap.org (ODbL)</a> · <a href="https://overpass-api.de/">Overpass API</a></p>
     <p>Resolution: real points near the anchor, but coverage depends on mappers; treat counts as lower bounds.</p></div>
   <div class="m-card"><h4>Residents${chipFor("ctx")}</h4>
-    <p>Census 2021 lower-layer super output area (LSOA) statistics for the segment anchor: age bands (TS007A), ethnic group (TS021), country of birth (TS004), occupation (TS063), economic activity and students (TS066). Office of for National Statistics via Nomis bulk files.</p>
+    <p>Census 2021 lower-layer super output area (LSOA) statistics for the segment anchor: age bands (TS007A), ethnic group (TS021), country of birth (TS004), occupation (TS063), economic activity and students (TS066). Office for National Statistics via Nomis bulk files.</p>
     <p><a href="https://www.nomisweb.co.uk/sources/census_2021_bulk">nomisweb.co.uk - Census 2021 bulk downloads</a></p>
     <p>Resolution: LSOA (~1,500 residents). These are people who <i>live</i> here, not workers or visitors. The tool never claims street-level demographics.</p></div>
   ${HAS_CRIME?`<div class="m-card"><h4>Business crime${chipFor("ctx")}</h4>

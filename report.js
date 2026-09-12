@@ -28,36 +28,41 @@ function buildReport(id){
   const T=11; let n=0;
 
   /* S1 cover */
+  const rank=(typeof rankedCache!=="undefined"&&rankedCache.length)?rankedCache.indexOf(r)+1:0;
   const s1=`<section class="rslide rcover"><div class="rslide-in">
     <div class="rcover-brand">${CITY.name} <b>Location Potential</b></div>
-    <div class="rcover-kick">STREET REPORT · ${today.toUpperCase()}</div>
-    <h1>${esc(s.name)}</h1>
-    <div class="rcover-sub">${esc(s.zone)} · ${esc(s.borough)} · ${s.stype.replace(/_/g," ")} ${chip("cur")}</div>
-    <div class="rcover-concept">for the concept <b>“${esc(c.name)}”</b> · ${c.cat.replace(/_/g," ")} · ${money(c.ticket)} ticket · trading ${esc(windowsTxt)}</div>
+    <div class="rcover-mid">
+      <div class="rcover-kick">STREET REPORT · ${today.toUpperCase()}</div>
+      <h1>${esc(s.name)}</h1>
+      <div class="rcover-sub">${esc(s.zone)} · ${esc(s.borough)} · ${s.stype.replace(/_/g," ")} ${chip("cur")}</div>
+      <div class="rcover-concept">for the concept <b>“${esc(c.name)}”</b> · ${c.cat.replace(/_/g," ")} · ${money(c.ticket)} ticket · trading ${esc(windowsTxt)}</div>
+    </div>
     <div class="rcover-figs">
+      ${rank?`<div class="rcfig"><div class="rcfig-v">#${rank}</div><div class="rcfig-l">rank of ${SEGS.length.toLocaleString("en-GB")} ${CITY.name} streets ${chip("mod")}</div></div>`:""}
       <div class="rcfig"><div class="rcfig-v">${Math.round(r.score)}</div><div class="rcfig-l">fit score / 100 ${chip("mod")}</div></div>
       <div class="rcfig"><div class="rcfig-v">${money(rev.month)}</div><div class="rcfig-l">est. monthly revenue ${chip("mod")}</div></div>
       <div class="rcfig"><div class="rcfig-v">${fmt(Math.round(weeklyFlowAbs(s)))}</div><div class="rcfig-l">weekly station flow ${chip(s.weak?"mod":"obs")}</div></div>
     </div>
-    <div class="rcover-src">Dataset built ${META.built} · OpenStreetMap ${META.osm_date} · ${META.numbat} · Census 2021 ${HAS_CRIME?` · ${CITY.texts.police||"Police"} ${META.crime_window}`:""} · VOA 2023</div>
+    <div class="rcover-src">Dataset built ${META.built} · OpenStreetMap ${META.osm_date} · ${META.numbat} · ${META.census} ${HAS_CRIME?` · ${CITY.texts.police||"Police"} ${META.crime_window}`:""} · ${(CITY.id==="glasgow"||CITY.id==="edinburgh")?"Scottish Assessors valuation roll":"VOA "+(CITY.texts.voaYear||"2023")}</div>
   </div></section>`;
 
   /* S2 verdict */
   const s2body=`
   <div class="rcols2">
-    <div>
+    <div class="rcard">
       <div class="rbig">${Math.round(r.score)}<span class="rbig-of">/100</span></div>
       <div class="rbig-l">overall fit for “${esc(c.name)}” ${chip("mod")}</div>
       <div class="rrev-line"><b>${money(rev.month)}</b> est. monthly revenue ${chip("mod")}<br><span class="rmut">plausible range ${money(rev.low)} – ${money(rev.high)}</span></div>
     </div>
-    <div>
+    <div class="rcard">
       <div class="rsub">Strongest for this concept</div>
       ${strengths.map(x=>bar(x.label,pct(x.score),null,pct(x.score))).join("")}
       <div class="rsub" style="margin-top:10px">Watch-outs</div>
       ${weak.map(x=>bar(x.label,pct(x.score),null,pct(x.score))).join("")}
     </div>
   </div>
-  <div class="rnote">For “${esc(c.name)}” trading ${esc(windowsTxt)}: strongest on ${strengths.map(x=>x.label.toLowerCase()).join(" and ")} (${strengths.map(x=>pct(x.score)).join(" / ")}); weakest on ${weak.map(x=>x.label.toLowerCase()).join(" and ")} (${weak.map(x=>pct(x.score)).join(" / ")}). Every figure keeps its evidence label - read the labels, not just the score.</div>`;
+  <div class="rnote">For “${esc(c.name)}” trading ${esc(windowsTxt)}: strongest on ${strengths.map(x=>x.label.toLowerCase()).join(" and ")} (${strengths.map(x=>pct(x.score)).join(" / ")}); weakest on ${weak.map(x=>x.label.toLowerCase()).join(" and ")} (${weak.map(x=>pct(x.score)).join(" / ")}). Every figure keeps its evidence label - read the labels, not just the score.</div>
+  ${(()=>{const al=(typeof rankedCache!=="undefined"?rankedCache:[]).filter(x=>x.seg.id!==s.id).slice(0,3);if(!al.length)return "";return `<div class="rnote">Also shortlisted for “${esc(c.name)}”: ${al.map((x,i)=>`<b>#${(typeof rankedCache!=="undefined"?rankedCache.indexOf(x):i)+1} ${esc(x.seg.name)}</b> (${Math.round(x.score)})`).join(" · ")} - open them in the tool to compare side by side.</div>`;})()}`;
 
   /* S3 concept inputs */
   const audBars=Object.keys(AUDL).map(k=>bar(AUDL[k],(aw[k]||0)*10,null,(aw[k]||0)+"/10")).join("");
@@ -96,6 +101,7 @@ function buildReport(id){
       ${s.weak?`<div class="rwarn">${s.flow.modelled_from?`No count taken on this street itself - flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${esc(s.flow.modelled_from)} catchment below.`:`No station count within 900 m of this street - no flow anchor. Offer, audience, rents${HAS_CRIME?" and crime":""} elsewhere in this report still use observed data.`}</div>`:""}
       ${anchors||'<div class="rkv"><span class="rl">None recorded</span></div>'}
       ${kv("Stations within 900 m (OSM)",s.transport.stations_900m)}
+      ${(()=>{const dn={mon:"Monday",mid:"Tue-Thu (typical)",fri:"Friday",sat:"Saturday",sun:"Sunday"};const ent=Object.entries(fl.days);const mx=ent.reduce((a,b)=>b[1]>a[1]?b:a);const mn=ent.reduce((a,b)=>b[1]<a[1]?b:a);return kv("Busiest day",`${dn[mx[0]]} · ${fmt(Math.round(mx[1]))}`)+kv("Quietest day",`${dn[mn[0]]} · ${fmt(Math.round(mn[1]))}`)+kv("Weekend flow (Sat + Sun) / week",fmt(Math.round(fl.days.sat+fl.days.sun)));})()}
       <div class="rmini">${esc(stnNames)}</div>
       <div class="rmini">${META.numbat}. Station counts are demand anchors, not footfall on this pavement.</div>
     </div>
@@ -137,6 +143,9 @@ function buildReport(id){
     </div>
     <div class="rcard"><div class="rsub">Nearest named competitors · ${c.cat.replace(/_/g," ")} ${chip("obs")}</div>
       ${compRows||'<div class="rkv"><span class="rl">No named venues of this category recorded within 250 m of the anchor.</span></div>'}
+      ${kv("Competing venues in total",catCount,"obs")}
+      ${kv("Of which chain venues",catChain,"obs")}
+      ${kv("Independent venues",catCount-catChain,"obs")}
       <div class="rmini">${catCount} recorded in total; the ${Math.min(compList.length,9)} nearest named are shown. A listed competitor is a real trading venue, not a vacancy.</div>
     </div>
   </div>
@@ -188,6 +197,8 @@ function buildReport(id){
       ${trans}
       ${rev.capped?kv("Capped by unit throughput (seats x covers + m² x throughput)","yes"):""}
       ${kv("Monthly = weekly transactions x ticket x 4.33",money(mid))}
+      ${kv("Weekly equivalent (central)",money(mid/4.33),"mod")}
+      ${kv(`Monthly revenue per m² of your ${c.floorspace} m² unit`,money(mid/c.floorspace),"mod")}
     </div>
   </div>
   <div class="rnote">Rule: weekly station flow in your hours x category capture rate x dilution x audience fit + resident spend, x your ${money(c.ticket)} ticket. All constants are published on the Method section of the site - transparent assumptions you can argue with, not observed takings.</div>${cmpNote}`;
@@ -208,20 +219,27 @@ function buildReport(id){
       <div class="rmini">Capture rates: grocery 3.0%, café 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2% of passers-by in trading windows. Dilution 1/(1+k x rivals within 250 m). Audience factor x0.5-x1.5. Revenue range x0.55-x1.6. Capacity: seats x weekly covers + floorspace x throughput per m², with soft absorption beyond.</div>
     </div>
     <div class="rcard"><div class="rsub">Sources</div>
-      ${kv("Station flows",META.numbat,"obs")}
-      ${kv("Venues, units, stations","OpenStreetMap (ODbL), "+META.osm_date,"obs")}
-      ${kv("Residents","Census 2021 LSOA via Nomis","ctx")}
-      ${HAS_CRIME?kv("Business crime",(CITY.texts.police||"Police")+", "+META.crime_window,"ctx"):""}
-      ${kv("Rateable values","VOA business floorspace, Mar 2023","ctx")}
-      ${kv("Dataset built",META.built)}
+      <div class="rkv2"><span class="rl">Station flows ${chip("obs")}</span><span class="rv">${META.numbat}</span></div>
+      <div class="rkv2"><span class="rl">Venues, units, stations ${chip("obs")}</span><span class="rv">OpenStreetMap (ODbL), ${META.osm_date}</span></div>
+      <div class="rkv2"><span class="rl">Residents ${chip("ctx")}</span><span class="rv">Census 2021 LSOA via Nomis</span></div>
+      ${HAS_CRIME?`<div class="rkv2"><span class="rl">Business crime ${chip("ctx")}</span><span class="rv">${CITY.texts.police||"Police"}, ${META.crime_window}</span></div>`:""}
+      <div class="rkv2"><span class="rl">Rateable values ${chip("ctx")}</span><span class="rv">VOA business floorspace, Mar 2023</span></div>
+      <div class="rkv2"><span class="rl">Dataset built</span><span class="rv">${META.built}</span></div>
       <div class="rmini">Resolution honesty: station counts are not pavement footfall; LSOA describes residents not visitors; OSM counts are lower bounds; modelled layers are the ones to override with your own counts.</div>
     </div>
-  </div>`;
+  </div>
+  <div class="rnote">Challenge this model: every MODELLED figure above shows the rule it was computed with. If your own count, quote or survey disagrees, your figure wins - keep the structure, replace the inputs.</div>`;
 
   /* S11 closing */
   const s11=`<section class="rslide rclose"><div class="rslide-in">
     <div class="rcover-brand">${CITY.name} <b>Location Potential</b></div>
     <h3 class="rtitle">Next steps before you commit</h3>
+    <div class="rclose-recap">
+      <div class="rcfig"><div class="rcfig-v">${Math.round(r.score)}</div><div class="rcfig-l">fit score / 100</div></div>
+      <div class="rcfig"><div class="rcfig-v">${money(rev.month)}</div><div class="rcfig-l">est. monthly revenue</div></div>
+      <div class="rcfig"><div class="rcfig-v">${fmt(Math.round(weeklyFlowAbs(s)))}</div><div class="rcfig-l">weekly station flow</div></div>
+      <div class="rcfig"><div class="rcfig-v">${catCount}</div><div class="rcfig-l">rivals within 250 m</div></div>
+    </div>
     <div class="rsteps">
       <div class="rstep"><b>1 · Count it yourself.</b> Stand on ${esc(s.name)} during your exact trading windows (${esc(windowsTxt)}) and count passers-by. Override the modelled layers with your numbers.</div>
       <div class="rstep"><b>2 · Walk the competition.</b> Visit the ${catCount} ${c.cat.replace(/_/g," ")} venues within 250 m at peak time. Queue length beats any model.</div>

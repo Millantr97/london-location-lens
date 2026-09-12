@@ -85,7 +85,7 @@ for(const a of ARTICLES){
 <p class="art-stand">${esc(stand)}</p>
 <p class="art-meta">Format scored: ${esc(a.format)}</p>
 <p class="art-meta">Computed ${today} over ${N} ${esc(cn)} street segments. Every figure carries its label: OBSERVED, AREA CONTEXT or MODELLED.</p></header>
-<aside class="truth art-truth"><strong>Read the labels, not just the score</strong><p><b class="c-obs">OBSERVED</b> measured at the street or station. <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it. <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. Nothing is presented as more precise than its source.</p></aside>
+<aside class="truth art-truth"><strong>Read the labels, not just the score</strong><p><b class="c-obs">OBSERVED</b> measured at the street or station. <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it. <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. For more accurate models consult a specialist.</p></aside>
 <ol class="art-list">
 ${items}
 </ol>

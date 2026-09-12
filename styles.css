@@ -19,7 +19,7 @@ h1,h2,h3{letter-spacing:-.03em}
 .hero p{font-size:17px;max-width:720px;color:var(--muted);margin:0}
 .truth{display:block;background:var(--ink);color:#fff;border-radius:12px;padding:9px 16px;margin:16px 0 0}
 .truth strong{display:block;color:var(--lime);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
-.truth p{font-size:12px;color:#d8e0dc;margin:0;line-height:1.5}
+.truth p{font-size:12px;color:#d8e0dc;margin:0;line-height:1.5;max-width:none}
 .truth b{font-size:10.5px;letter-spacing:.05em}
 .c-obs{color:#7be3a8;font-weight:800}.c-ctx{color:#f0cf7a;font-weight:800}.c-mod{color:#9db4f5;font-weight:800}
 .map-first{max-width:1440px;margin:0 auto;padding:0 24px}
@@ -414,3 +414,6 @@ main.art{max-width:880px;margin:0 auto;padding:34px 20px 50px}
 .preset-filters{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 4px;width:100%}
 .preset-filters .pf-label{font-size:12px;color:var(--muted);margin-right:2px}
 .preset.filter{font-size:12px;padding:4px 10px}
+
+/* truth box must span full container width (overrides .hero p / .art p max-width) */
+.truth p{max-width:none}

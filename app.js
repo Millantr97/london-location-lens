@@ -463,7 +463,6 @@ function renderPresets(){
       +`</div>`:"";
   $("preset-row").innerHTML=filterRow+visible.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
     +`<button class="preset scratch ${activePreset==='scratch'?'active':''}" data-p="scratch">Start from scratch - no template</button>`
-    +`<button class="preset scratch ${activePreset==='other'?'active':''}" data-p="other">Other - my concept is not listed (competition not scored)</button>`
     +`<button class="preset more" data-p="__more">${presetsExpanded?'See fewer concepts':'See more concepts ('+(PRESETS.length-PRESETS_VISIBLE)+' more)'}</button>`;
   document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{
     if(b.dataset.f){presetFilter=b.dataset.f;renderPresets();return;}
@@ -492,7 +491,8 @@ function renderConcept(){
   $("concept-grid").innerHTML=`
   <div class="cg-card"><h3>Format &amp; offer</h3>
     <div class="field"><label>Concept name</label><input type="text" id="c-name" value="${(c.name||"").replace(/"/g,"&quot;")}" maxlength="60"></div>
-    <div class="field"><label>Category</label><select id="c-cat">${cats.map(([k,l])=>`<option value="${k}" ${c.cat===k?"selected":""}>${l}</option>`).join("")}</select></div>
+    <div class="field"><label>Category</label><select id="c-cat">${cats.map(([k,l])=>`<option value="${k}" ${c.cat===k?"selected":""}>${l}</option>`).join("")}<option value="other" ${c.cat==="other"?"selected":""}>Other - my concept is not listed (competition not scored)</option></select>
+    ${c.cat==="other"?'<p style="font-size:12px;color:var(--muted);margin:6px 0 0">A custom concept has no defined rival set, so competition does not enter the score and no dilution is applied to the revenue estimate.</p>':""}</div>
     ${sliderField("Average ticket (per person)","ticket",3,120,1,money)}
     ${sliderField("Seats / capacity","seats",0,200,2,v=>v)}
     ${sliderField("Floorspace (m²)","floorspace",15,400,5,v=>v+" m²")}
@@ -534,7 +534,7 @@ function renderConcept(){
     concept.priorities[el.dataset.pr]=+el.value; $("vp-"+el.dataset.pr).textContent=el.value; update();
   });
   $("c-name").oninput=e=>{concept.name=e.target.value; update();};
-  $("c-cat").onchange=e=>{concept.cat=e.target.value; update();};
+  $("c-cat").onchange=e=>{concept.cat=e.target.value; if(concept.cat==="other"){activePreset="other";}else if(activePreset==="other"){activePreset="scratch";} renderPresets(); renderConcept(); update();};
   document.querySelectorAll("[data-tog]").forEach(el=>el.onclick=()=>{
     concept[el.dataset.tog]=!concept[el.dataset.tog]; el.classList.toggle("on"); update();
   });

@@ -1,0 +1,795 @@
+[
+ {
+  "id": "st-acocks-green",
+  "name": "Acocks Green station area",
+  "lat": 52.44955,
+  "lng": -1.81922,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Acocks Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-adderley-park",
+  "name": "Adderley Park station area",
+  "lat": 52.48306,
+  "lng": -1.85542,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Adderley Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-aston",
+  "name": "Aston station area",
+  "lat": 52.50442,
+  "lng": -1.87204,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Aston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-berkswell",
+  "name": "Berkswell station area",
+  "lat": 52.39608,
+  "lng": -1.64179,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Berkswell",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bescot-stadium",
+  "name": "Bescot Stadium station area",
+  "lat": 52.56303,
+  "lng": -1.99108,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bescot Stadium",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birmingham-international",
+  "name": "Birmingham International station area",
+  "lat": 52.45078,
+  "lng": -1.72532,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birmingham International",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birmingham-moor-street",
+  "name": "Birmingham Moor Street station area",
+  "lat": 52.47894,
+  "lng": -1.89195,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birmingham Moor Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birmingham-new-street",
+  "name": "Birmingham New Street station area",
+  "lat": 52.47765,
+  "lng": -1.89869,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birmingham New Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birmingham-snow-hill",
+  "name": "Birmingham Snow Hill station area",
+  "lat": 52.4838,
+  "lng": -1.89966,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birmingham Snow Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-blake-street",
+  "name": "Blake Street station area",
+  "lat": 52.60438,
+  "lng": -1.84466,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Blake Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bloxwich",
+  "name": "Bloxwich station area",
+  "lat": 52.61842,
+  "lng": -2.01167,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bloxwich",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bloxwich-north",
+  "name": "Bloxwich North station area",
+  "lat": 52.62532,
+  "lng": -2.01754,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bloxwich North",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bordesley",
+  "name": "Bordesley station area",
+  "lat": 52.47221,
+  "lng": -1.87766,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bordesley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bournville",
+  "name": "Bournville station area",
+  "lat": 52.42739,
+  "lng": -1.92667,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bournville",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-butlers-lane",
+  "name": "Butlers Lane station area",
+  "lat": 52.59262,
+  "lng": -1.83839,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Butlers Lane",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-chester-road",
+  "name": "Chester Road station area",
+  "lat": 52.53595,
+  "lng": -1.83241,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Chester Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-coseley",
+  "name": "Coseley station area",
+  "lat": 52.54532,
+  "lng": -2.08581,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Coseley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cradley-heath",
+  "name": "Cradley Heath station area",
+  "lat": 52.46944,
+  "lng": -2.0907,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cradley Heath",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dorridge",
+  "name": "Dorridge station area",
+  "lat": 52.37185,
+  "lng": -1.75286,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dorridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-duddeston",
+  "name": "Duddeston station area",
+  "lat": 52.48849,
+  "lng": -1.87128,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Duddeston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dudley-port",
+  "name": "Dudley Port station area",
+  "lat": 52.52446,
+  "lng": -2.04925,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dudley Port",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-erdington",
+  "name": "Erdington station area",
+  "lat": 52.52838,
+  "lng": -1.83944,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Erdington",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-five-ways",
+  "name": "Five Ways station area",
+  "lat": 52.47109,
+  "lng": -1.91307,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Five Ways",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-four-oaks",
+  "name": "Four Oaks station area",
+  "lat": 52.57955,
+  "lng": -1.82803,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Four Oaks",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-gravelly-hill",
+  "name": "Gravelly Hill station area",
+  "lat": 52.51539,
+  "lng": -1.85274,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Gravelly Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hall-green",
+  "name": "Hall Green station area",
+  "lat": 52.43698,
+  "lng": -1.84557,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hall Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hampton-in-arden",
+  "name": "Hampton-In-Arden station area",
+  "lat": 52.42864,
+  "lng": -1.69972,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hampton-In-Arden",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-jewellery-quarter",
+  "name": "Jewellery Quarter station area",
+  "lat": 52.48967,
+  "lng": -1.91368,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Jewellery Quarter",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kings-norton",
+  "name": "Kings Norton station area",
+  "lat": 52.41424,
+  "lng": -1.93261,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kings Norton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-langley-green",
+  "name": "Langley Green station area",
+  "lat": 52.49349,
+  "lng": -2.00543,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Langley Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-lea-hall",
+  "name": "Lea Hall station area",
+  "lat": 52.48052,
+  "lng": -1.78603,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Lea Hall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-longbridge",
+  "name": "Longbridge station area",
+  "lat": 52.39701,
+  "lng": -1.98076,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Longbridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-marston-green",
+  "name": "Marston Green station area",
+  "lat": 52.46688,
+  "lng": -1.7551,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Marston Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-northfield",
+  "name": "Northfield station area",
+  "lat": 52.4083,
+  "lng": -1.96513,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Northfield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-old-hill",
+  "name": "Old Hill station area",
+  "lat": 52.47079,
+  "lng": -2.05618,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Old Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-olton",
+  "name": "Olton station area",
+  "lat": 52.43842,
+  "lng": -1.80438,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Olton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-perry-barr",
+  "name": "Perry Barr station area",
+  "lat": 52.51641,
+  "lng": -1.90235,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Perry Barr",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rowley-regis",
+  "name": "Rowley Regis station area",
+  "lat": 52.47742,
+  "lng": -2.03082,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rowley Regis",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-sandwell-and-dudley",
+  "name": "Sandwell and Dudley station area",
+  "lat": 52.50863,
+  "lng": -2.01177,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Sandwell and Dudley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-selly-oak",
+  "name": "Selly Oak station area",
+  "lat": 52.44186,
+  "lng": -1.93559,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Selly Oak",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-shirley",
+  "name": "Shirley station area",
+  "lat": 52.40357,
+  "lng": -1.8452,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Shirley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-small-heath",
+  "name": "Small Heath station area",
+  "lat": 52.46368,
+  "lng": -1.85932,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Small Heath",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-smethwick-galton-bridge",
+  "name": "Smethwick Galton Bridge station area",
+  "lat": 52.50212,
+  "lng": -1.98044,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Smethwick Galton Bridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-smethwick-rolfe-street",
+  "name": "Smethwick Rolfe Street station area",
+  "lat": 52.49627,
+  "lng": -1.96937,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Smethwick Rolfe Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-solihull",
+  "name": "Solihull station area",
+  "lat": 52.41463,
+  "lng": -1.78887,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Solihull",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-spring-road",
+  "name": "Spring Road station area",
+  "lat": 52.44426,
+  "lng": -1.83626,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Spring Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stechford",
+  "name": "Stechford station area",
+  "lat": 52.48516,
+  "lng": -1.81103,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stechford",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stourbridge-junction",
+  "name": "Stourbridge Junction station area",
+  "lat": 52.44762,
+  "lng": -2.13403,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stourbridge Junction",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stourbridge-town",
+  "name": "Stourbridge Town station area",
+  "lat": 52.45559,
+  "lng": -2.14189,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stourbridge Town",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-sutton-coldfield",
+  "name": "Sutton Coldfield station area",
+  "lat": 52.5648,
+  "lng": -1.82518,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Sutton Coldfield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-tame-bridge-parkway",
+  "name": "Tame Bridge Parkway station area",
+  "lat": 52.55228,
+  "lng": -1.97602,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Tame Bridge Parkway",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-the-hawthorns",
+  "name": "The Hawthorns station area",
+  "lat": 52.50567,
+  "lng": -1.96504,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "The Hawthorns",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-tile-hill",
+  "name": "Tile Hill station area",
+  "lat": 52.39519,
+  "lng": -1.59728,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Tile Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-tipton",
+  "name": "Tipton station area",
+  "lat": 52.53053,
+  "lng": -2.06573,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Tipton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-tyseley",
+  "name": "Tyseley station area",
+  "lat": 52.45392,
+  "lng": -1.83856,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Tyseley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-walsall",
+  "name": "Walsall station area",
+  "lat": 52.58414,
+  "lng": -1.98527,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Walsall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-whitlocks-end",
+  "name": "Whitlocks End station area",
+  "lat": 52.39191,
+  "lng": -1.85144,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Whitlocks End",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-widney-manor",
+  "name": "Widney Manor station area",
+  "lat": 52.39603,
+  "lng": -1.77424,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Widney Manor",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wolverhampton",
+  "name": "Wolverhampton station area",
+  "lat": 52.58799,
+  "lng": -2.12024,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wolverhampton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wylde-green",
+  "name": "Wylde Green station area",
+  "lat": 52.54564,
+  "lng": -1.83145,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wylde Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-yardley-wood",
+  "name": "Yardley Wood station area",
+  "lat": 52.42102,
+  "lng": -1.85456,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Yardley Wood",
+    "ORR"
+   ]
+  ]
+ }
+]

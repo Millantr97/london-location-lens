@@ -10,6 +10,14 @@ from cities import CITIES, CURATED
 
 cid=sys.argv[1]; C=CITIES[cid]
 NO_CRIME=bool(C.get('no_crime'))
+BULK=None
+_bf=f'/home/sandbox/london-location-lens/pipeline/city/{cid}/crime_bulk.csv'
+if os.path.exists(_bf) and not NO_CRIME:
+    import csv as _csv
+    BULK=[]
+    for _r in _csv.DictReader(open(_bf)):
+        BULK.append((float(_r['lat']),float(_r['lng']),_r['cat']))
+    print('crime bulk loaded:',len(BULK),'records',flush=True)
 ROOT='/home/sandbox/london-location-lens'
 P=f'{ROOT}/pipeline/city/{cid}'
 os.makedirs(f'{P}/cache',exist_ok=True)
@@ -201,6 +209,18 @@ def crime_one_month(lat,lng,month):
             time.sleep(3*(a+1))
         except Exception: time.sleep(3*(a+1))
     return None
+def crime_fetch_bulk(lat,lng):
+    # 450 m haversine over the police.uk bulk extract (same source, full coverage, no API)
+    import math as _m
+    agg={k:0 for k in KEEP.values()}
+    R=6371000; la1=_m.radians(lat)
+    dla=450/R; dln=450/(R*_m.cos(la1))
+    for a,o,k in BULK:
+        if abs(a-lat)>dla*57.2958 or abs(o-lng)>dln*57.2958: continue
+        d=2*R*_m.asin(_m.sqrt(_m.sin(_m.radians(a-lat)/2)**2+_m.cos(la1)*_m.cos(_m.radians(a))*_m.sin(_m.radians(o-lng)/2)**2))
+        if d<=450: agg[k]+=1
+    return agg
+
 def crime_fetch(lat,lng):
     # fail loudly, never silently zero-fill: a month that errors is retried, then the build aborts
     results={}
@@ -223,7 +243,8 @@ def crime_fetch(lat,lng):
 def crime_cached(key,la,lo):
     cf=f'{P}/cache/crime_{key}.json'
     if os.path.exists(cf): return json.load(open(cf))
-    agg=crime_fetch(la,lo); json.dump(agg,open(cf,'w'))
+    agg=crime_fetch_bulk(la,lo) if BULK is not None else crime_fetch(la,lo)
+    json.dump(agg,open(cf,'w'))
     print('crime',key,agg,flush=True)
     return agg
 

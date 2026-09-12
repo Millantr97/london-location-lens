@@ -1,0 +1,496 @@
+[
+ {
+  "id": "st-apperley-bridge",
+  "name": "Apperley Bridge station area",
+  "lat": 53.84204,
+  "lng": -1.70707,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Apperley Bridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-baildon",
+  "name": "Baildon station area",
+  "lat": 53.8502,
+  "lng": -1.7537,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Baildon",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-batley",
+  "name": "Batley station area",
+  "lat": 53.71021,
+  "lng": -1.62301,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Batley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ben-rhydding",
+  "name": "Ben Rhydding station area",
+  "lat": 53.92574,
+  "lng": -1.79747,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ben Rhydding",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bingley",
+  "name": "Bingley station area",
+  "lat": 53.84871,
+  "lng": -1.83716,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bingley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bradford-forster-square",
+  "name": "Bradford Forster Square station area",
+  "lat": 53.79747,
+  "lng": -1.75321,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bradford Forster Square",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bradford-interchange",
+  "name": "Bradford Interchange station area",
+  "lat": 53.79049,
+  "lng": -1.74913,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bradford Interchange",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-brighouse",
+  "name": "Brighouse station area",
+  "lat": 53.69817,
+  "lng": -1.77934,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Brighouse",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-burley-park",
+  "name": "Burley Park station area",
+  "lat": 53.81206,
+  "lng": -1.57785,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Burley Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-burley-in-wharfedale",
+  "name": "Burley-In-Wharfedale station area",
+  "lat": 53.90798,
+  "lng": -1.75319,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Burley-In-Wharfedale",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-castleford",
+  "name": "Castleford station area",
+  "lat": 53.72407,
+  "lng": -1.3551,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Castleford",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cottingley",
+  "name": "Cottingley station area",
+  "lat": 53.76803,
+  "lng": -1.58777,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cottingley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cross-gates",
+  "name": "Cross Gates station area",
+  "lat": 53.80506,
+  "lng": -1.45035,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cross Gates",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-crossflatts",
+  "name": "Crossflatts station area",
+  "lat": 53.8583,
+  "lng": -1.84448,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Crossflatts",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dewsbury",
+  "name": "Dewsbury station area",
+  "lat": 53.69202,
+  "lng": -1.63327,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dewsbury",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-east-garforth",
+  "name": "East Garforth station area",
+  "lat": 53.79224,
+  "lng": -1.37159,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "East Garforth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-frizinghall",
+  "name": "Frizinghall station area",
+  "lat": 53.82038,
+  "lng": -1.76885,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Frizinghall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-garforth",
+  "name": "Garforth station area",
+  "lat": 53.79657,
+  "lng": -1.38228,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Garforth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-glasshoughton",
+  "name": "Glasshoughton station area",
+  "lat": 53.70906,
+  "lng": -1.34205,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Glasshoughton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-guiseley",
+  "name": "Guiseley station area",
+  "lat": 53.87607,
+  "lng": -1.71512,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Guiseley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-headingley",
+  "name": "Headingley station area",
+  "lat": 53.81804,
+  "lng": -1.59448,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Headingley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-horsforth",
+  "name": "Horsforth station area",
+  "lat": 53.84775,
+  "lng": -1.63022,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Horsforth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ilkley",
+  "name": "Ilkley station area",
+  "lat": 53.92479,
+  "lng": -1.82129,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ilkley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kirkstall-forge",
+  "name": "Kirkstall Forge station area",
+  "lat": 53.8253,
+  "lng": -1.62708,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kirkstall Forge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-leeds",
+  "name": "Leeds station area",
+  "lat": 53.79441,
+  "lng": -1.54862,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Leeds",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-low-moor",
+  "name": "Low Moor station area",
+  "lat": 53.75014,
+  "lng": -1.75238,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Low Moor",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-menston",
+  "name": "Menston station area",
+  "lat": 53.89236,
+  "lng": -1.73545,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Menston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-micklefield",
+  "name": "Micklefield station area",
+  "lat": 53.78879,
+  "lng": -1.32612,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Micklefield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-morley",
+  "name": "Morley station area",
+  "lat": 53.75059,
+  "lng": -1.58916,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Morley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-new-pudsey",
+  "name": "New Pudsey station area",
+  "lat": 53.80467,
+  "lng": -1.68054,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "New Pudsey",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-normanton",
+  "name": "Normanton station area",
+  "lat": 53.7004,
+  "lng": -1.42351,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Normanton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-outwood",
+  "name": "Outwood station area",
+  "lat": 53.7153,
+  "lng": -1.51043,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Outwood",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pontefract-baghill",
+  "name": "Pontefract Baghill station area",
+  "lat": 53.69174,
+  "lng": -1.3034,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pontefract Baghill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pontefract-monkhill",
+  "name": "Pontefract Monkhill station area",
+  "lat": 53.6988,
+  "lng": -1.30414,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pontefract Monkhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pontefract-tanshelf",
+  "name": "Pontefract Tanshelf station area",
+  "lat": 53.694,
+  "lng": -1.3189,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pontefract Tanshelf",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-saltaire",
+  "name": "Saltaire station area",
+  "lat": 53.83856,
+  "lng": -1.7908,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Saltaire",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wakefield-westgate",
+  "name": "Wakefield Westgate station area",
+  "lat": 53.68221,
+  "lng": -1.50558,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wakefield Westgate",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-woodlesford",
+  "name": "Woodlesford station area",
+  "lat": 53.75706,
+  "lng": -1.44356,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Woodlesford",
+    "ORR"
+   ]
+  ]
+ }
+]

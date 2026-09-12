@@ -17,7 +17,7 @@ const AUDIENCES=[
 ];
 
 const PRESETS=[
- {id:"specialty-coffee",name:"Specialty coffee & brunch",cat:"cafe",ticket:12,seats:32,floorspace:70,takeaway:45,delivery:5,alcohol:false,terrace:true,franchise:false,
+ {id:"specialty-coffee",name:"Coffee & brunch",cat:"cafe",ticket:12,seats:32,floorspace:70,takeaway:45,delivery:5,alcohol:false,terrace:true,franchise:false,
   audience:{office:4,residents:4,young:5,students:2,tourists:2,nightlife:0,families:2},rent:700,
   windows:[{days:[0,1,2,3,4],from:420,to:660},{days:[5,6],from:540,to:900}]},
  {id:"coffee-kiosk",name:"Grab-and-go coffee kiosk",cat:"cafe",ticket:6,seats:0,floorspace:15,takeaway:100,delivery:0,alcohol:false,terrace:false,franchise:false,

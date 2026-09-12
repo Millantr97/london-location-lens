@@ -273,7 +273,7 @@ const nFamiliesV=norm(SEGS.map(s=>s.lsoa.pct_under20*0.6+s.osm.parks_600*8));con
 const nDivV=norm(SEGS.map(s=>s.lsoa.diversity));const nDiv=s=>nDivV(s.lsoa.diversity);
 const nNonUKV=norm(SEGS.map(s=>s.lsoa.pct_nonuk));const nNonUK=s=>nNonUKV(s.lsoa.pct_nonuk);
 const nSpendV=norm(SEGS.map(s=>s.model.spend_est));const nSpend=s=>nSpendV(s.model.spend_est);
-const nCrimeV=norm(SEGS.map(s=>s.crime.per1000));const nCrime=s=>nCrimeV(s.crime.per1000);
+const HAS_CRIME=SEGS.some(s=>s.crime);const nCrimeV=norm(SEGS.map(s=>s.crime?s.crime.per1000:0));const nCrime=s=>s.crime?nCrimeV(s.crime.per1000):0.5;
 const CATNORM={};
 ["cafe","restaurant","fast_food","pub_bar","grocery","fitness","cowork","services","agents","pharmacy","vets"].forEach(c=>{
   CATNORM[c]=norm(SEGS.map(s=>Math.log10(1+(s.osm[c]||0))));
@@ -337,7 +337,7 @@ function scoreSegment(s,c){
   const formatFit=ff.length?ff.reduce((a,b,i)=>a+b*ffw[i],0)/ffw.reduce((a,b)=>a+b,0):0.5;
 
   const access=clamp(0.5*nFlowAnnual(s)+0.5*nStations(s),0,1);
-  const safety=1-nCrime(s);
+  const safety=HAS_CRIME?1-nCrime(s):0.5;
   const green=nParks(s);
 
   const crit={
@@ -348,7 +348,7 @@ function scoreSegment(s,c){
     rent:{score:rentFit,w:0.12,label:"Rent fit",how:"ctx"},
     format:{score:formatFit,w:0.10,label:"Format fit",how:"obs+mod"},
     access:{score:access,w:0.07,label:"Transport access",how:"obs"},
-    safety:{score:safety,w:0.02,label:"Business crime (inverse)",how:"ctx"},
+    safety:{score:safety,w:HAS_CRIME?0.02:0,label:"Business crime (inverse)",how:"ctx"},
     green:{score:green,w:0.01,label:"Green space",how:"obs"},
     residential:{score:nResidents(s),w:0.05,label:"Residential base",how:"ctx"},
   };
@@ -362,6 +362,7 @@ function scoreSegment(s,c){
   crit.rent.w*=(pr.rent??3)/3; crit.access.w*=(pr.access??3)/3;
   crit.safety.w*=(pr.safety??3)/3; crit.green.w*=(pr.green??3)/3;
   crit.residential.w*=(pr.residential??3)/3;
+  if(!HAS_CRIME)crit.safety.w=0;
   return crit;
 }
 
@@ -498,7 +499,7 @@ function renderConcept(){
     ${sliderField("Competition stance: avoid rivals (0) - seek proven clusters (100)","compStance",0,100,5,v=>v)}
     ${prioField("Low rent matters","rent")}
     ${prioField("Transport access matters","access")}
-    ${prioField("Low business crime matters","safety")}
+    ${HAS_CRIME?prioField("Low business crime matters","safety"):""}
     ${prioField("Green space matters","green")}
     ${prioField("Strong residential base matters","residential")}
     <p style="font-size:12px;color:var(--muted)">These re-weight the criteria in the score. Stance flips existing rivals from a penalty into a cluster bonus - useful for categories that trade better next to competitors.</p>
@@ -709,7 +710,7 @@ function selectSegment(id,scroll){
   <div class="crit">${critRows}</div>
   <div class="dp-cols">
     <div class="ev-card"><h4>Movement at named stations${chipFor(s.weak?"mod":"obs")}</h4>
-      ${s.weak?`<div class="ev-line"><span class="lv">${s.flow.modelled_from?`Street pitch - no count taken on this street itself. Flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${s.flow.modelled_from} catchment, whose stations are listed below.`:`No station count within 900 m of this street - it has no flow anchor. Offer, audience, rents and crime below still use observed data.`}</span></div>`:''}
+      ${s.weak?`<div class="ev-line"><span class="lv">${s.flow.modelled_from?`Street pitch - no count taken on this street itself. Flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${s.flow.modelled_from} catchment, whose stations are listed below.`:`No station count within 900 m of this street - it has no flow anchor. Offer, audience, rents${HAS_CRIME?" and crime":""} below still use observed data.`}</span></div>`:''}
       ${anchors}
       <div class="ev-line"><span class="lv">Combined typical-day entries + exits (${CITY.texts.flowCredit||"TfL Annual Station Counts 2025; NR stations: ORR 2024-25"})</span></div>
       <div class="dayflow">${dayBars}</div>
@@ -754,14 +755,14 @@ function selectSegment(id,scroll){
       ${topEth}
       <div class="ev-line"><span class="lv">LSOA ≈ 1,500 residents. It describes residents, not the people walking this street.</span></div>
     </div>
-    <div class="ev-card"><h4>Business crime, ${META.crime_window}${chipFor("ctx")}</h4>
+    ${s.crime?`<div class="ev-card"><h4>Business crime, ${META.crime_window}${chipFor("ctx")}</h4>
       <div class="ev-line"><span class="lv">Shoplifting</span><span class="rv">${s.crime.shoplifting}</span></div>
       <div class="ev-line"><span class="lv">Theft from the person</span><span class="rv">${s.crime.theft_person}</span></div>
       <div class="ev-line"><span class="lv">Business robbery</span><span class="rv">${s.crime.robbery_biz}</span></div>
       <div class="ev-line"><span class="lv">Business burglary</span><span class="rv">${s.crime.burglary_biz}</span></div>
       <div class="ev-line"><span class="lv">Relevant offences per 1,000 residents</span><span class="rv">${s.crime.per1000.toFixed(1)}</span></div>
       <div class="ev-line"><span class="lv">${CITY.texts.crimeNote||"Source: Metropolitan Police recorded offences around the anchor, via data.police.uk. A relative signal between areas, not an absolute risk figure."}</span></div>
-    </div>
+    </div>`:''}
     <div class="ev-card"><h4>Occupancy cost · ${s.borough}${chipFor("ctx")}</h4>
       <div class="ev-line"><span class="lv">Retail rateable value / m² (VOA, ${CITY.texts.voaYear||"Mar 2023"})</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
       <div class="ev-line"><span class="lv">Office rateable value / m²</span><span class="rv">${money(s.rent.office_rv_m2)}</span></div>
@@ -810,10 +811,12 @@ function renderMethod(){
     <p>Census 2021 lower-layer super output area (LSOA) statistics for the segment anchor: age bands (TS007A), ethnic group (TS021), country of birth (TS004), occupation (TS063), economic activity and students (TS066). Office of for National Statistics via Nomis bulk files.</p>
     <p><a href="https://www.nomisweb.co.uk/sources/census_2021_bulk">nomisweb.co.uk - Census 2021 bulk downloads</a></p>
     <p>Resolution: LSOA (~1,500 residents). These are people who <i>live</i> here, not workers or visitors. The tool never claims street-level demographics.</p></div>
-  <div class="m-card"><h4>Business crime${chipFor("ctx")}</h4>
+  ${HAS_CRIME?`<div class="m-card"><h4>Business crime${chipFor("ctx")}</h4>
     ${CITY.texts.crimeMethod||`<p>Metropolitan Police recorded street-level offences within ~450 m of each segment anchor, 12 months to July 2026: shoplifting, theft from the person, robbery and burglary, via data.police.uk. Rates are normalised per 1,000 residents.</p>`}
-    <p><a href="https://data.police.uk/data/">data.police.uk - street-level crime (Met Police)</a></p>
-    <p>Resolution: street level around the anchor. Under-reporting is common; use as a relative signal between areas, not an absolute risk figure.</p></div>
+    <p><a href="https://data.police.uk/data/">data.police.uk - street-level crime</a></p>
+    <p>Resolution: street level around the anchor. Under-reporting is common; use as a relative signal between areas, not an absolute risk figure.</p></div>`
+  :`<div class="m-card"><h4>Business crime - not shown</h4>
+    <p>${CITY.texts.crimeDropped||"Street-level recorded crime is not published for this police force area via data.police.uk, so this site does not estimate it."}</p></div>`}
   <div class="m-card"><h4>Occupancy cost${chipFor("ctx")}</h4>
     ${CITY.texts.voaMethod||`<p>Rateable value per m² for retail and office stock by billing authority, Valuation Office Agency business floorspace statistics, 31 March 2023.</p>`}
     <p><a href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-including-business-floorspace-2023">gov.uk - NDR business floorspace 2023</a></p>
@@ -882,7 +885,7 @@ function snapshotFor(r){return r?{score:Math.round(r.score),flow:Math.round(week
 function comparisonMetrics(r){const s=r.seg;return [
  ["Fit score",Math.round(r.score),"mod"],["Est. monthly revenue",money(r.rev.month),"mod"],["Weekly station flow anchor",fmt(Math.round(weeklyFlowAbs(s))),s.weak?"mod":"obs"],
  ["People in your trading hours",fmt(Math.round(r.rev.people)),"mod"],["Competing "+concept.cat.replace(/_/g," "),s.osm[concept.cat]||0,"obs"],["Typical ticket nearby",money(s.model.spend_est),"mod"],
- ["Est. rent / m²",money(s.rent.est_rent_m2),"mod"],["Residents",fmt(Math.round(s.lsoa.residents)),"ctx"],["Business crime / 1,000",s.crime.per1000.toFixed(1),"ctx"]
+ ["Est. rent / m²",money(s.rent.est_rent_m2),"mod"],["Residents",fmt(Math.round(s.lsoa.residents)),"ctx"],["Business crime / 1,000",s.crime?s.crime.per1000.toFixed(1):"not published","ctx"]
 ];}
 function renderWorkspace(){
  const favs=workspace.favourites.map(rowFor).filter(Boolean),comps=workspace.compare.map(rowFor).filter(Boolean);

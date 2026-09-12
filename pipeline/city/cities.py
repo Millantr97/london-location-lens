@@ -9,6 +9,8 @@ CITIES = {
     band_far='15+ km from centre',
     country='EW',
     police='Greater Manchester Police',
+    no_crime=True,
+    crime_dropped='Greater Manchester Police does not currently publish street-level recorded crime to data.police.uk (a gap running since its records-system migration), so no crime figures are shown for Manchester anywhere on this page - we drop the field rather than estimate it. Every other data field is unaffected.',
  ),
  'birmingham': dict(
     id='birmingham', name='Birmingham', region='the West Midlands',

@@ -1,0 +1,1076 @@
+[
+ {
+  "id": "st-altrincham",
+  "name": "Altrincham station area",
+  "lat": 53.38766,
+  "lng": -2.34708,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Altrincham",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ardwick",
+  "name": "Ardwick station area",
+  "lat": 53.47116,
+  "lng": -2.21321,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ardwick",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ashburys",
+  "name": "Ashburys station area",
+  "lat": 53.47184,
+  "lng": -2.19523,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ashburys",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ashton-under-lyne",
+  "name": "Ashton-Under-Lyne station area",
+  "lat": 53.49122,
+  "lng": -2.0937,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ashton-Under-Lyne",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-atherton",
+  "name": "Atherton station area",
+  "lat": 53.52908,
+  "lng": -2.47783,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Atherton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-belle-vue",
+  "name": "Belle Vue station area",
+  "lat": 53.46147,
+  "lng": -2.18007,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Belle Vue",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-blackrod",
+  "name": "Blackrod station area",
+  "lat": 53.59121,
+  "lng": -2.56987,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Blackrod",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bolton",
+  "name": "Bolton station area",
+  "lat": 53.57352,
+  "lng": -2.42513,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bolton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bramhall",
+  "name": "Bramhall station area",
+  "lat": 53.36017,
+  "lng": -2.16231,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bramhall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bredbury",
+  "name": "Bredbury station area",
+  "lat": 53.42304,
+  "lng": -2.11049,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bredbury",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-brinnington",
+  "name": "Brinnington station area",
+  "lat": 53.43196,
+  "lng": -2.13412,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Brinnington",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-broadbottom",
+  "name": "Broadbottom station area",
+  "lat": 53.44079,
+  "lng": -2.016,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Broadbottom",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bryn",
+  "name": "Bryn station area",
+  "lat": 53.49972,
+  "lng": -2.64762,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bryn",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-burnage",
+  "name": "Burnage station area",
+  "lat": 53.42213,
+  "lng": -2.21516,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Burnage",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-chassen-road",
+  "name": "Chassen Road station area",
+  "lat": 53.44617,
+  "lng": -2.36783,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Chassen Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cheadle-hulme",
+  "name": "Cheadle Hulme station area",
+  "lat": 53.37603,
+  "lng": -2.18835,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cheadle Hulme",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-daisy-hill",
+  "name": "Daisy Hill station area",
+  "lat": 53.53936,
+  "lng": -2.51518,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Daisy Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-davenport",
+  "name": "Davenport station area",
+  "lat": 53.39073,
+  "lng": -2.15216,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Davenport",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-deansgate",
+  "name": "Deansgate station area",
+  "lat": 53.4741,
+  "lng": -2.25106,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Deansgate",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-denton",
+  "name": "Denton station area",
+  "lat": 53.4574,
+  "lng": -2.13094,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Denton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-east-didsbury",
+  "name": "East Didsbury station area",
+  "lat": 53.40931,
+  "lng": -2.222,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "East Didsbury",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-fairfield",
+  "name": "Fairfield station area",
+  "lat": 53.47132,
+  "lng": -2.14492,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Fairfield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-farnworth",
+  "name": "Farnworth station area",
+  "lat": 53.55046,
+  "lng": -2.38853,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Farnworth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-flixton",
+  "name": "Flixton station area",
+  "lat": 53.44371,
+  "lng": -2.38395,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Flixton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-flowery-field",
+  "name": "Flowery Field station area",
+  "lat": 53.46139,
+  "lng": -2.08011,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Flowery Field",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-gathurst",
+  "name": "Gathurst station area",
+  "lat": 53.55938,
+  "lng": -2.69381,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Gathurst",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-gatley",
+  "name": "Gatley station area",
+  "lat": 53.39324,
+  "lng": -2.23066,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Gatley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-godley",
+  "name": "Godley station area",
+  "lat": 53.45225,
+  "lng": -2.05564,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Godley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-gorton",
+  "name": "Gorton station area",
+  "lat": 53.46893,
+  "lng": -2.16775,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Gorton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-greenfield",
+  "name": "Greenfield station area",
+  "lat": 53.53875,
+  "lng": -2.01424,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Greenfield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-guide-bridge",
+  "name": "Guide Bridge station area",
+  "lat": 53.47456,
+  "lng": -2.11324,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Guide Bridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hag-fold",
+  "name": "Hag Fold station area",
+  "lat": 53.53353,
+  "lng": -2.49383,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hag Fold",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hattersley",
+  "name": "Hattersley station area",
+  "lat": 53.44494,
+  "lng": -2.03944,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hattersley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hazel-grove",
+  "name": "Hazel Grove station area",
+  "lat": 53.37747,
+  "lng": -2.12215,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hazel Grove",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-heald-green",
+  "name": "Heald Green station area",
+  "lat": 53.36941,
+  "lng": -2.23668,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Heald Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-heaton-chapel",
+  "name": "Heaton Chapel station area",
+  "lat": 53.42599,
+  "lng": -2.17929,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Heaton Chapel",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hindley",
+  "name": "Hindley station area",
+  "lat": 53.54245,
+  "lng": -2.57457,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hindley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-horwich-parkway",
+  "name": "Horwich Parkway station area",
+  "lat": 53.57798,
+  "lng": -2.53973,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Horwich Parkway",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-humphrey-park",
+  "name": "Humphrey Park station area",
+  "lat": 53.45233,
+  "lng": -2.32726,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Humphrey Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hyde-central",
+  "name": "Hyde Central station area",
+  "lat": 53.45134,
+  "lng": -2.08508,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hyde Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hyde-north",
+  "name": "Hyde North station area",
+  "lat": 53.46446,
+  "lng": -2.08503,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hyde North",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-irlam",
+  "name": "Irlam station area",
+  "lat": 53.4342,
+  "lng": -2.43284,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Irlam",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-levenshulme",
+  "name": "Levenshulme station area",
+  "lat": 53.4449,
+  "lng": -2.19296,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Levenshulme",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-littleborough",
+  "name": "Littleborough station area",
+  "lat": 53.64275,
+  "lng": -2.09501,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Littleborough",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-lostock",
+  "name": "Lostock station area",
+  "lat": 53.57279,
+  "lng": -2.49476,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Lostock",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-manchester-airport",
+  "name": "Manchester Airport station area",
+  "lat": 53.36518,
+  "lng": -2.27204,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Manchester Airport",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-manchester-oxford-road",
+  "name": "Manchester Oxford Road station area",
+  "lat": 53.47378,
+  "lng": -2.24228,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Manchester Oxford Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-manchester-piccadilly",
+  "name": "Manchester Piccadilly station area",
+  "lat": 53.47722,
+  "lng": -2.23014,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Manchester Piccadilly",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-manchester-victoria",
+  "name": "Manchester Victoria station area",
+  "lat": 53.48797,
+  "lng": -2.24248,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Manchester Victoria",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-marple",
+  "name": "Marple station area",
+  "lat": 53.40065,
+  "lng": -2.0572,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Marple",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-mauldeth-road",
+  "name": "Mauldeth Road station area",
+  "lat": 53.43366,
+  "lng": -2.20895,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Mauldeth Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-middlewood",
+  "name": "Middlewood station area",
+  "lat": 53.36006,
+  "lng": -2.08353,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Middlewood",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-moorside",
+  "name": "Moorside station area",
+  "lat": 53.51636,
+  "lng": -2.35275,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Moorside",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-moses-gate",
+  "name": "Moses Gate station area",
+  "lat": 53.55627,
+  "lng": -2.40156,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Moses Gate",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-moston",
+  "name": "Moston station area",
+  "lat": 53.52325,
+  "lng": -2.17103,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Moston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-navigation-road",
+  "name": "Navigation Road station area",
+  "lat": 53.39574,
+  "lng": -2.34327,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Navigation Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-newton-for-hyde",
+  "name": "Newton For Hyde station area",
+  "lat": 53.4567,
+  "lng": -2.06753,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Newton For Hyde",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-orrell",
+  "name": "Orrell station area",
+  "lat": 53.53016,
+  "lng": -2.70911,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Orrell",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-patricroft",
+  "name": "Patricroft station area",
+  "lat": 53.48482,
+  "lng": -2.35735,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Patricroft",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pemberton",
+  "name": "Pemberton station area",
+  "lat": 53.53053,
+  "lng": -2.66952,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pemberton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-reddish-north",
+  "name": "Reddish North station area",
+  "lat": 53.44974,
+  "lng": -2.15676,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Reddish North",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-reddish-south",
+  "name": "Reddish South station area",
+  "lat": 53.43596,
+  "lng": -2.15868,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Reddish South",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rochdale",
+  "name": "Rochdale station area",
+  "lat": 53.61057,
+  "lng": -2.15284,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rochdale",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-romiley",
+  "name": "Romiley station area",
+  "lat": 53.41401,
+  "lng": -2.08932,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Romiley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rose-hill-marple",
+  "name": "Rose Hill Marple station area",
+  "lat": 53.39604,
+  "lng": -2.07651,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rose Hill Marple",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ryder-brow",
+  "name": "Ryder Brow station area",
+  "lat": 53.45695,
+  "lng": -2.17395,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ryder Brow",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-salford-central",
+  "name": "Salford Central station area",
+  "lat": 53.48288,
+  "lng": -2.25552,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Salford Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-salford-crescent",
+  "name": "Salford Crescent station area",
+  "lat": 53.48623,
+  "lng": -2.27571,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Salford Crescent",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-smithy-bridge",
+  "name": "Smithy Bridge station area",
+  "lat": 53.63285,
+  "lng": -2.11406,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Smithy Bridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stalybridge",
+  "name": "Stalybridge station area",
+  "lat": 53.48414,
+  "lng": -2.06422,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stalybridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stockport",
+  "name": "Stockport station area",
+  "lat": 53.40545,
+  "lng": -2.16304,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stockport",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-strines",
+  "name": "Strines station area",
+  "lat": 53.37457,
+  "lng": -2.03331,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Strines",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-swinton-(manchester)",
+  "name": "Swinton (Manchester) station area",
+  "lat": 53.51481,
+  "lng": -2.337,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Swinton (Manchester)",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-trafford-park",
+  "name": "Trafford Park station area",
+  "lat": 53.45478,
+  "lng": -2.3117,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Trafford Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-urmston",
+  "name": "Urmston station area",
+  "lat": 53.44832,
+  "lng": -2.35366,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Urmston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-walkden",
+  "name": "Walkden station area",
+  "lat": 53.51979,
+  "lng": -2.39575,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Walkden",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-westhoughton",
+  "name": "Westhoughton station area",
+  "lat": 53.55589,
+  "lng": -2.52322,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Westhoughton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wigan-north-western",
+  "name": "Wigan North Western station area",
+  "lat": 53.5434,
+  "lng": -2.633,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wigan North Western",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wigan-wallgate",
+  "name": "Wigan Wallgate station area",
+  "lat": 53.54506,
+  "lng": -2.63423,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wigan Wallgate",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-woodley",
+  "name": "Woodley station area",
+  "lat": 53.4292,
+  "lng": -2.09287,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Woodley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-woodsmoor",
+  "name": "Woodsmoor station area",
+  "lat": 53.38614,
+  "lng": -2.14124,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Woodsmoor",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "trafford-centre",
+  "name": "Trafford Centre",
+  "lat": 53.466,
+  "lng": -2.3488,
+  "stype": "managed_estate",
+  "anchors": []
+ },
+ {
+  "id": "mediacityuk",
+  "name": "MediaCityUK, Salford Quays",
+  "lat": 53.4727,
+  "lng": -2.2972,
+  "stype": "managed_estate",
+  "anchors": [
+   [
+    "Salford Crescent",
+    "ORR"
+   ]
+  ]
+ }
+]

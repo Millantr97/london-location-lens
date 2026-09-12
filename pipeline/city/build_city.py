@@ -9,6 +9,7 @@ sys.path.insert(0,'/home/sandbox/london-location-lens/pipeline/city')
 from cities import CITIES, CURATED
 
 cid=sys.argv[1]; C=CITIES[cid]
+NO_CRIME=bool(C.get('no_crime'))
 ROOT='/home/sandbox/london-location-lens'
 P=f'{ROOT}/pipeline/city/{cid}'
 os.makedirs(f'{P}/cache',exist_ok=True)
@@ -158,6 +159,7 @@ def osm_counts(us):
     return {'cafe':counts['cafe'],'cafe_chain':chain['cafe'],'restaurant':counts['restaurant'],'restaurant_chain':chain['restaurant'],
             'fast_food':counts['fast_food'],'fast_food_chain':chain['fast_food'],'pub_bar':counts['pub_bar'],
             'grocery':counts['grocery'],'grocery_chain':0,'fitness':counts['fitness'],'fitness_chain':0,'cowork':counts['cowork'],
+            'services':counts['services'],'agents':counts['agents'],'pharmacy':counts['pharmacy'],'vets':counts['vets'],
             'shops':counts['shops'],'terrace_share':round(food_ter/food_tot,3) if food_tot else 0}
 
 # ---------- postcodes.io bulk reverse (areas + streets share one cache) ----------
@@ -198,14 +200,25 @@ def crime_one_month(lat,lng,month):
             if r.status_code==200: return r.json()
             time.sleep(3*(a+1))
         except Exception: time.sleep(3*(a+1))
-    return []
+    return None
 def crime_fetch(lat,lng):
-    agg={k:0 for k in KEEP.values()}
+    # fail loudly, never silently zero-fill: a month that errors is retried, then the build aborts
+    results={}
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for crimes in ex.map(lambda m: crime_one_month(lat,lng,m), MONTHS):
-            for c in crimes:
-                k=KEEP.get(c["category"])
-                if k: agg[k]+=1
+        for m,crimes in zip(MONTHS, ex.map(lambda m: crime_one_month(lat,lng,m), MONTHS)):
+            results[m]=crimes
+    for rnd in range(6):
+        missing=[m for m,v in results.items() if v is None]
+        if not missing: break
+        time.sleep(8*(rnd+1))
+        for m in missing: results[m]=crime_one_month(lat,lng,m)
+    missing=[m for m,v in results.items() if v is None]
+    if missing: raise RuntimeError(f"data.police.uk still failing for months {missing} - aborting rather than writing understated crime")
+    agg={k:0 for k in KEEP.values()}
+    for crimes in results.values():
+        for c in crimes:
+            k=KEEP.get(c["category"])
+            if k: agg[k]+=1
     return agg
 def crime_cached(key,la,lo):
     cf=f'{P}/cache/crime_{key}.json'
@@ -237,7 +250,7 @@ for s in areas:
         lsoa=census(lsoa_code); lsoa['name']=pc.get('lsoa') or lsoa_code
     else:
         print('WARN no lsoa for',sid); lsoa=None
-    crime=crime_cached(sid,s['lat'],s['lng'])
+    crime=None if NO_CRIME else crime_cached(sid,s['lat'],s['lng'])
     district=pc.get('admin_district') or ''
     voa=VOA.get(district)
     if not voa: print('WARN no VOA for',district,'(',sid,')'); voa=VOA.get('_default')
@@ -356,7 +369,7 @@ for i,st in enumerate(streets):
     osm=osm_counts(us)
     if sub:
         osm['culture']=par['osm']['culture']; osm['parks_600']=par['osm']['parks_600']
-        transport=dict(par['transport']); crime=dict(par['crime']); lsoa=dict(par['lsoa']) if par['lsoa'] else None
+        transport=dict(par['transport']); crime=None if NO_CRIME else dict(par['crime']); lsoa=dict(par['lsoa']) if par['lsoa'] else None
         anchors=[dict(a) for a in par['anchors']]
         within=sum(1 for u in us if hav(par['lat'],par['lng'],u['lat'],u['lng'])<=250)
         share=max(0.03,min(0.7, within/max(1,len(par['_units']))))
@@ -369,7 +382,8 @@ for i,st in enumerate(streets):
         osm['parks_600']=near_count(PARK_G,la,lo,0.01,600,1)
         near9=[x for x in near_stations(la,lo) if x[0]<=900]
         transport={'stations_900m':len(near9),'names':[x[1] for x in near9]}
-        if pdist<=1200 and par: crime=dict(par['crime'])
+        if NO_CRIME: crime=None
+        elif pdist<=1200 and par: crime=dict(par['crime'])
         else: crime=crime_cached(f"s-{round(la,4)}-{round(lo,4)}",la,lo)
         lsoa_code=(pc.get('codes') or {}).get('lsoa')
         if lsoa_code and lsoa_code in d7: lsoa=census(lsoa_code); lsoa['name']=pc.get('lsoa') or lsoa_code
@@ -423,8 +437,11 @@ for s in segs:
                    'pct_students':5.0,'pct_prof':40.0,'pct_nonuk':20.0,'diversity':0.5,'top_eth':[]}
         s['weak']=True
     cr=s['crime']
-    s['crime']={'shoplifting':cr['shoplifting'],'theft_person':cr['theft_person'],'robbery_biz':cr['robbery_biz'],'burglary_biz':cr['burglary_biz']}
-    s['crime']['per1000']=round(sum(cr.values())/s['lsoa']['residents']*1000,1) if s['lsoa'].get('residents') else 0
+    if cr is None:
+        s['crime']=None
+    else:
+        s['crime']={'shoplifting':cr['shoplifting'],'theft_person':cr['theft_person'],'robbery_biz':cr['robbery_biz'],'burglary_biz':cr['burglary_biz']}
+        s['crime']['per1000']=round(sum(cr.values())/s['lsoa']['residents']*1000,1) if s['lsoa'].get('residents') else 0
     f=s['flow']
     days=f['days']; weekly=days['mon']+3*days['mid']+days['fri']+days['sat']+days['sun']
     ws=(days['sat']+days['sun'])/weekly if weekly else 0

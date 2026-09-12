@@ -39,7 +39,7 @@ function buildReport(id){
       <div class="rcfig"><div class="rcfig-v">${money(rev.month)}</div><div class="rcfig-l">est. monthly revenue ${chip("mod")}</div></div>
       <div class="rcfig"><div class="rcfig-v">${fmt(Math.round(weeklyFlowAbs(s)))}</div><div class="rcfig-l">weekly station flow ${chip(s.weak?"mod":"obs")}</div></div>
     </div>
-    <div class="rcover-src">Dataset built ${META.built} · OpenStreetMap ${META.osm_date} · ${META.numbat} · Census 2021 · ${CITY.texts.police||"Police"} ${META.crime_window} · VOA 2023</div>
+    <div class="rcover-src">Dataset built ${META.built} · OpenStreetMap ${META.osm_date} · ${META.numbat} · Census 2021 ${HAS_CRIME?` · ${CITY.texts.police||"Police"} ${META.crime_window}`:""} · VOA 2023</div>
   </div></section>`;
 
   /* S2 verdict */
@@ -93,7 +93,7 @@ function buildReport(id){
       ${kv("Rhythm",fl.weekend_share>0.3?"weekend-leaning":"weekday-leaning")}
     </div>
     <div class="rcard"><div class="rsub">Named station anchors ${chip(s.weak?"mod":"obs")}</div>
-      ${s.weak?`<div class="rwarn">${s.flow.modelled_from?`No count taken on this street itself - flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${esc(s.flow.modelled_from)} catchment below.`:`No station count within 900 m of this street - no flow anchor. Offer, audience, rents and crime elsewhere in this report still use observed data.`}</div>`:""}
+      ${s.weak?`<div class="rwarn">${s.flow.modelled_from?`No count taken on this street itself - flow MODELLED as ~${Math.round((s.flow.share||0)*100)}% of the ${esc(s.flow.modelled_from)} catchment below.`:`No station count within 900 m of this street - no flow anchor. Offer, audience, rents${HAS_CRIME?" and crime":""} elsewhere in this report still use observed data.`}</div>`:""}
       ${anchors||'<div class="rkv"><span class="rl">None recorded</span></div>'}
       ${kv("Stations within 900 m (OSM)",s.transport.stations_900m)}
       <div class="rmini">${esc(stnNames)}</div>
@@ -210,7 +210,7 @@ function buildReport(id){
       ${kv("Station flows",META.numbat,"obs")}
       ${kv("Venues, units, stations","OpenStreetMap (ODbL), "+META.osm_date,"obs")}
       ${kv("Residents","Census 2021 LSOA via Nomis","ctx")}
-      ${kv("Business crime","Met Police, "+META.crime_window,"ctx")}
+      ${HAS_CRIME?kv("Business crime",(CITY.texts.police||"Police")+", "+META.crime_window,"ctx"):""}
       ${kv("Rateable values","VOA business floorspace, Mar 2023","ctx")}
       ${kv("Dataset built",META.built)}
       <div class="rmini">Resolution honesty: station counts are not pavement footfall; LSOA describes residents not visitors; OSM counts are lower bounds; modelled layers are the ones to override with your own counts.</div>

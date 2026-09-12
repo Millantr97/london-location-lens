@@ -1,7 +1,8 @@
 /* Location Potential - live city sections. One file to update when a city launches. */
 window.CITIES=[
  {id:"london",name:"London",url:"./"},
- /* new sections are added here as they go live, e.g. {id:"manchester",name:"Manchester",url:"./manchester/"} */
+ {id:"manchester",name:"Manchester",url:"./manchester/"},
+ /* new sections are added here as they go live */
 ];
 (function(){
  const cur=(window.CITY&&window.CITY.id)||"london";

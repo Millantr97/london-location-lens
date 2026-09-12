@@ -248,7 +248,7 @@ function buildReport(id){
       <div class="rstep"><b>5 · Compare your finalists.</b> Shortlist up to three streets in Location Potential and compare them side by side before deciding.</div>
     </div>
     <div class="rmodel-cta"><span><b>Need a stronger model?</b> These are estimates from a simple model and public data. Get better data, a detailed report and hands-on geomarketing.</span><a href="https://locationpotential.com/#expert">Request expert help →</a></div>
-    <div class="rclose-disc">This report is a decision-support prototype, not a valuation. OBSERVED figures are measured at named sources; AREA CONTEXT describes the surrounding area; MODELLED figures are transparent planning estimates. Verify any shortlist with on-street counts, agent particulars and a licensing check before signing a lease.</div>
+    <div class="rclose-disc">This report is a decision-support tool, not a valuation. OBSERVED figures are measured at named sources; AREA CONTEXT describes the surrounding area; MODELLED figures are transparent planning estimates. Verify any shortlist with on-street counts, agent particulars and a licensing check before signing anything. A specialist can help you.</div>
     <div class="rclose-url">locationpotential.com · generated ${today} · dataset ${META.built}</div>
   </div></section>`;
 

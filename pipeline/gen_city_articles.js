@@ -93,7 +93,7 @@ ${items}
 <div class="art-method">
 <h2 class="art-h2">How this ranking works</h2>
 <p>One fixed concept is scored against every one of the ${N} ${esc(cn)} street segments in the Location Potential dataset: station entries and exits (${esc(M.META.numbat)}), recorded venues within 250 m from OpenStreetMap, ${esc(M.META.census)} residents for the local ${geoUnit}${M.HAS_CRIME?', business crime from data.police.uk':''}, and rent context from ${rentSrc}. Scores and revenue figures are MODELLED planning estimates with fixed, published rules, not observed takings. The full method, sources and limits are on the <a href="../#method">Method page</a>.</p>
-<p>Use this ranking to shortlist, then verify with on-street counts, agent enquiries and a licensing check before signing a lease.</p>
+<p>Use this ranking to shortlist, then verify with on-street counts, agent enquiries and a licensing check before signing anything. A specialist can help you.</p>
 </div>
 <div class="art-cta">
 <b>This ranking is one fixed concept. Yours is different.</b>
@@ -102,7 +102,7 @@ ${items}
 </div>
 </article>
 </main>
-<footer class="foot"><div>Location Potential · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="../#rankings">Rankings &amp; guides</a><a href="../../privacy.html">Privacy Notice</a></div></footer>
+<footer class="foot"><div>Location Potential · a decision-support tool. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing anything. A specialist can help you.</div><div class="foot-links"><a href="../#rankings">Rankings &amp; guides</a><a href="../../privacy.html">Privacy Notice</a></div></footer>
 <script data-goatcounter="https://locationpotential.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>`;

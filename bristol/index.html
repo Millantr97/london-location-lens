@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bristol street-level revenue and site selection - Location Potential</title>
+<title>Location Potential - Bristol</title>
 <meta name="description" content="Where should your business open in Bristol? Compare street segments and commercial units for your exact concept: real station flows, recorded competition, residents, rents and estimated monthly revenue, honestly labelled.">
 <link rel="canonical" href="https://locationpotential.com/bristol/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Location Potential">
-<meta property="og:title" content="Bristol street-level site selection - Location Potential">
+<meta property="og:title" content="Location Potential - Bristol: where should your business open?">
 <meta property="og:description" content="Score every Bristol street segment for your exact business concept: real flows, competition, residents, rents and modelled monthly revenue.">
 <meta property="og:url" content="https://locationpotential.com/bristol/">
 <meta property="og:image" content="https://locationpotential.com/assets/og.png">
@@ -17,7 +17,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Location Potential - Bristol","url":"https://locationpotential.com/bristol/","isPartOf":{"@type":"WebSite","name":"Location Potential","url":"https://locationpotential.com/"}}</script>
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="../styles.css?v=24">
+<link rel="stylesheet" href="../styles.css?v=25">
 </head>
 <body>
 <header class="top">
@@ -46,7 +46,12 @@
   </div>
   <aside class="truth">
     <strong>Read the labels, not just the score</strong>
-    <p><b class="c-obs">OBSERVED</b> measured at the street or station. <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it. <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. Nothing is presented as more precise than its source.</p>
+    <div class="truth-rows">
+      <div class="truth-row"><b class="c-obs">OBSERVED</b><span>Measured at the street or station itself.</span></div>
+      <div class="truth-row"><b class="c-ctx">AREA CONTEXT</b><span>Residents or borough statistics around it.</span></div>
+      <div class="truth-row"><b class="c-mod">MODELLED</b><span>Transparent estimates we compute, with the rule shown.</span></div>
+    </div>
+    <p class="truth-foot">Nothing is presented as more precise than its source.</p>
   </aside>
 </section>
 
@@ -122,15 +127,15 @@
     <div class="feature-number">01</div><div>
     <div class="eyebrow">Concept trends</div>
     <h2>Is your concept rising or fading?</h2>
-    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers, or search for a concept.</p></div>
+    <p>Every concept, led by what people actually search for (Google Trends, UK, 2021-2026), with the venues recorded today as supply context (OpenStreetMap). Sort by rising interest to spot the risers, or search for a concept.</p></div>
   </div>
   <div class="trend-controls">
     <div class="tc-searchwrap"><input id="trend-search" type="search" placeholder="Search a concept - e.g. matcha, ramen, Pilates..." aria-label="Search concepts"></div>
-    <label>Sort: <select id="trend-sort"><option value="growth">Fastest rising search interest</option><option value="osm">Most venues added</option><option value="az">A-Z</option></select></label>
+    <label>Sort: <select id="trend-sort"><option value="growth">Fastest rising search interest</option><option value="az">A-Z</option></select></label>
   </div>
   <div id="trend-list" class="trend-grid"></div>
   <div class="trend-pages" id="trend-pages"></div>
-  <div class="trend-note">Honest labels: the venue series counts <b>every recorded venue in the concept's category</b> (all cafés, all restaurants...) in the OpenStreetMap extract history - mapper coverage grows over time, so some of the rise is better mapping, not just more openings; it is OBSERVED data with that caveat. The search series is Google Trends interest for a matching keyword, an ESTIMATED index of attention, not shops or sales. Concept-level shop counts per year are not published by any open source at this granularity - where a figure is not available, the row says so instead of guessing.</div>
+  <div class="trend-note">Honest labels: the search series is Google Trends interest for a matching keyword (United Kingdom, yearly mean), an ESTIMATED index of attention - not shops or sales. The supply figure counts every venue currently recorded in the concept's category in OpenStreetMap - OBSERVED, a snapshot of today. We deliberately show no venue history: mapped coverage grew several-fold over 2017-2026, faster than any real market, so year-by-year venue counts would measure mapping progress, not openings - and no open source publishes concept-level shop counts per year at this granularity.</div>
   <div class="cta-wrap"><div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div></div>
 </section>
 
@@ -329,7 +334,7 @@
 </main>
 
 <footer class="foot">
-  <div>Location Potential · Bristol · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="#rankings" data-goto="rankings">Rankings &amp; guides</a><a href="#expert" data-expert>Expert geomarketing</a><a href="../privacy.html">Privacy Notice</a></div>
+  <div>Location Potential · Bristol · a decision-support tool. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing anything. A specialist can help you.</div><div class="foot-links"><a href="#rankings" data-goto="rankings">Rankings &amp; guides</a><a href="#expert" data-expert>Expert geomarketing</a><a href="../privacy.html">Privacy Notice</a></div>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -338,10 +343,10 @@
 <script src="data/segments.js?v=2"></script>
 <script src="data/units.js?v=1"></script>
 <script src="data/competitors.js?v=1"></script>
-<script src="../app.js?v=25"></script>
-<script src="../report.js?v=20"></script>
+<script src="../app.js?v=26"></script>
+<script src="../report.js?v=21"></script>
 <script src="data/trends.js?v=1"></script>
-<script src="../extras.js?v=20"></script>
+<script src="../extras.js?v=21"></script>
 <script src="../tabs.js?v=22"></script>
 <script src="../leads.js?v=20"></script>
 <script data-goatcounter="https://locationpotential.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

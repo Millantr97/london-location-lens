@@ -29,34 +29,33 @@ function renderTrends(){
     const gt=(TRENDS.gt&&TRENDS.gt.series)?TRENDS.gt.series[p.id]:null;
     const gtMax=gt?Math.max(...Object.values(gt)):0;
     const lowVol=gt&&gtMax<3;
-    return {p,osm,gt,osmChg:trendChange(osm,years,4),gtChg:lowVol?null:trendChange(gt,gtyears,1),gtChg4:lowVol?null:trendChange(gt,gtyears,4),lowVol};
+    return {p,osm,gt,gtChg:lowVol?null:trendChange(gt,gtyears,1),lowVol};
   });
   const q=trendQuery.trim().toLowerCase();
   if(q)rows=rows.filter(r=>r.p.name.toLowerCase().includes(q)
     ||(XCAT[r.p.cat]||"").toLowerCase().includes(q)
     ||(((TRENDS.gt&&TRENDS.gt.kw&&TRENDS.gt.kw[r.p.id])||"").toLowerCase().includes(q)));
   if(trendSort==="growth")rows.sort((a,b)=>((b.gtChg??-999))-((a.gtChg??-999)));
-  else if(trendSort==="osm")rows.sort((a,b)=>((b.osmChg??-999))-((a.osmChg??-999)));
   else rows.sort((a,b)=>a.p.name.localeCompare(b.p.name));
   const total=rows.length, pages=Math.max(1,Math.ceil(total/TREND_PAGE));
   if(trendPage>pages)trendPage=pages; if(trendPage<1)trendPage=1;
   const slice=rows.slice((trendPage-1)*TREND_PAGE, trendPage*TREND_PAGE);
   box.innerHTML=slice.map(r=>{
     const kw=(TRENDS.gt&&TRENDS.gt.kw&&TRENDS.gt.kw[r.p.id])||r.p.name;
-    const osmNums=r.osm?`<b>${fmt(Math.round(r.osm[years[0]]))}</b> → <b>${fmt(Math.round(r.osm[years[years.length-1]]))}</b> venues · all ${(XCAT[r.p.cat]||"").toLowerCase()} (category level)`:"no venue series for this category";
+    const osmNow=r.osm?Math.round(r.osm[years[years.length-1]]):null;
     const gtNums=r.gt?`index <b>${Math.round(r.gt[gtyears[0]])}</b> → <b>${Math.round(r.gt[gtyears[gtyears.length-1]])}</b> · Google Trends, ${TRENDS.gt.geo} - estimated attention`:"no search series";
     const gtState=r.lowVol?'<span class="tr-nodata">low search volume</span>':`${fmtChg(r.gtChg)} <span class="tr-per">1y</span>`;
     return `<div class="trend-card">
       <div class="tc-head"><div><b>${r.p.name}</b><span class="tr-cat">${XCAT[r.p.cat]||r.p.cat}</span></div><button class="mini tc-try" data-try="${r.p.id}">Try it →</button></div>
       <div class="tc-cell">
-        <div class="tc-label"><span>Recorded venues, ${CITY.name} ${chipFor("obs")}</span><span>${fmtChg(r.osmChg)} <span class="tr-per">4y</span></span></div>
-        <div class="tc-chart">${sparkline(r.osm,years,240,40)}</div>
-        <div class="tc-nums">${osmNums}</div>
-      </div>
-      <div class="tc-cell">
-        <div class="tc-label"><span>Searches, "${kw}" ${chipFor("mod")}</span><span>${gtState}</span></div>
+        <div class="tc-label"><span>Search interest, "${kw}" ${chipFor("mod")}</span><span>${gtState}</span></div>
         <div class="tc-chart">${sparkline(r.gt,gtyears,240,40)}</div>
         <div class="tc-nums">${r.lowVol?gtNums+" · low search volume - index too small to read":gtNums}</div>
+      </div>
+      <div class="tc-cell">
+        <div class="tc-label"><span>Recorded supply today, ${CITY.name} ${chipFor("obs")}</span></div>
+        <div class="tc-nums">${osmNow!=null?`<b>${fmt(osmNow)}</b> venues recorded today · all ${(XCAT[r.p.cat]||"").toLowerCase()} (category level, OpenStreetMap)`:"no venue count for this category"}</div>
+        <div class="tc-nums tr-note">No venue history shown: mapped coverage grew faster than any real market, so old counts measured mapping, not openings.</div>
       </div>
     </div>`;
   }).join("")||'<div class="saved-empty" style="grid-column:1/-1">No concept matches that search. Try another word.</div>';

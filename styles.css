@@ -16,9 +16,13 @@ h1,h2,h3{letter-spacing:-.03em}
 .eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:850;color:#476057}
 .hero h1{font-size:clamp(38px,5.4vw,72px);line-height:.95;letter-spacing:-.06em;margin:12px 0 18px;max-width:900px}
 .hero p{font-size:17px;max-width:720px;color:var(--muted);margin:0}
-.truth{align-self:end;background:var(--ink);color:white;border-radius:18px;padding:20px}
-.truth strong{display:block;color:var(--lime);margin-bottom:8px}
+.truth{align-self:stretch;background:var(--ink);color:white;border-radius:18px;padding:20px;display:flex;flex-direction:column}
+.truth strong{display:block;color:var(--lime);margin-bottom:4px}
 .truth p{font-size:13px;color:#d8e0dc;margin:0}
+.truth-rows{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:4px;margin:8px 0}
+.truth-row{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:#d8e0dc;line-height:1.45}
+.truth-row b{flex:none;font-size:11px;letter-spacing:.06em}
+.truth-foot{font-size:12px;color:#9fb3aa;border-top:1px solid rgba(255,255,255,.16);padding-top:10px}
 .c-obs{color:#7be3a8;font-weight:800}.c-ctx{color:#f0cf7a;font-weight:800}.c-mod{color:#9db4f5;font-weight:800}
 .map-first{max-width:1440px;margin:0 auto;padding:0 24px}
 .mapbox{height:560px;border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;background:#dfe9df}
@@ -239,12 +243,12 @@ h1,h2,h3{letter-spacing:-.03em}
 }
 
 /* ---------- verdict + comparables (evidence panel) ---------- */
-.verdict-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--ink);color:var(--paper);border-radius:12px;padding:12px 14px;margin-top:12px}
-.verdict-line .vt{flex:1;min-width:220px;font-size:13.5px;font-weight:650;line-height:1.4}
-.verdict-line .vbtns{display:flex;gap:6px;flex-wrap:wrap}
-.verdict-line .vbtn{border:1px solid rgba(255,255,255,.25);background:none;color:var(--lime);border-radius:8px;padding:6px 10px;font:inherit;font-weight:750;font-size:12px;cursor:pointer;text-decoration:none;display:inline-block}
-.verdict-line .vbtn:hover{background:rgba(255,255,255,.08)}
-.verdict-line .vcopied{color:#7be3a8;font-size:12px;font-weight:750}
+.verdict-card{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--lime);border-radius:14px;padding:14px 16px;margin:14px 0 4px;box-shadow:0 5px 18px rgba(16,37,31,.05)}
+.verdict-card .vk{flex:0 0 100%;font-size:10.5px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.verdict-card .vt{flex:1;min-width:240px;font-size:14.5px;font-weight:650;line-height:1.5}
+.verdict-card .vbtns{display:flex;gap:6px;flex-wrap:wrap}
+.verdict-card .vbtn{border:1px solid var(--ink);background:none;color:var(--ink);border-radius:8px;padding:6px 10px;font:inherit;font-weight:750;font-size:12px;cursor:pointer;text-decoration:none;display:inline-block}
+.verdict-card .vbtn:hover{background:var(--ink);color:var(--lime)}
 .ev-card .comp-table-mini{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px}
 .ev-card .comp-table-mini td{padding:3px 0;border-bottom:1px dashed var(--line)}
 .ev-card .comp-table-mini td:last-child{text-align:right;font-weight:700}
@@ -268,6 +272,7 @@ h1,h2,h3{letter-spacing:-.03em}
 .tc-nums{font-size:11.5px;color:var(--muted);line-height:1.45}
 .tc-nums b{color:var(--ink)}
 .tr-nodata{font-size:12px;color:var(--muted)}
+.tr-note{font-size:10.5px;color:var(--muted);margin-top:5px;font-style:italic}
 .chg{font-weight:850;font-size:12px}.chg.up{color:var(--obs)}.chg.down{color:var(--red)}
 .tr-per{color:var(--muted);font-size:10.5px}
 .tc-try{align-self:flex-start;margin-top:auto}

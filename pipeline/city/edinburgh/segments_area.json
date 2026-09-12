@@ -1,0 +1,418 @@
+[
+ {
+  "id": "st-brunstane",
+  "name": "Brunstane station area",
+  "lat": 55.942,
+  "lng": -3.10087,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Brunstane",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-curriehill",
+  "name": "Curriehill station area",
+  "lat": 55.90063,
+  "lng": -3.31842,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Curriehill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dalgety-bay",
+  "name": "Dalgety Bay station area",
+  "lat": 56.04227,
+  "lng": -3.36725,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dalgety Bay",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dalmeny",
+  "name": "Dalmeny station area",
+  "lat": 55.98625,
+  "lng": -3.3815,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dalmeny",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-edinburgh-gateway",
+  "name": "Edinburgh Gateway station area",
+  "lat": 55.94094,
+  "lng": -3.32013,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Edinburgh Gateway",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-edinburgh-park",
+  "name": "Edinburgh Park station area",
+  "lat": 55.92758,
+  "lng": -3.30757,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Edinburgh Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-eskbank",
+  "name": "Eskbank station area",
+  "lat": 55.88121,
+  "lng": -3.08279,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Eskbank",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-haymarket",
+  "name": "Haymarket station area",
+  "lat": 55.94518,
+  "lng": -3.21937,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Haymarket",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-inverkeithing",
+  "name": "Inverkeithing station area",
+  "lat": 56.03524,
+  "lng": -3.39542,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Inverkeithing",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kingsknowe",
+  "name": "Kingsknowe station area",
+  "lat": 55.91891,
+  "lng": -3.26486,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kingsknowe",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kirknewton",
+  "name": "Kirknewton station area",
+  "lat": 55.88893,
+  "lng": -3.43352,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kirknewton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-linlithgow",
+  "name": "Linlithgow station area",
+  "lat": 55.97639,
+  "lng": -3.59579,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Linlithgow",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-livingston-north",
+  "name": "Livingston North station area",
+  "lat": 55.90151,
+  "lng": -3.54361,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Livingston North",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-livingston-south",
+  "name": "Livingston South station area",
+  "lat": 55.8716,
+  "lng": -3.50149,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Livingston South",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-musselburgh",
+  "name": "Musselburgh station area",
+  "lat": 55.93346,
+  "lng": -3.07249,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Musselburgh",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-newcraighall",
+  "name": "Newcraighall station area",
+  "lat": 55.93297,
+  "lng": -3.09067,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Newcraighall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-newtongrange",
+  "name": "Newtongrange station area",
+  "lat": 55.86467,
+  "lng": -3.06888,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Newtongrange",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-north-queensferry",
+  "name": "North Queensferry station area",
+  "lat": 56.01245,
+  "lng": -3.39466,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "North Queensferry",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-prestonpans",
+  "name": "Prestonpans station area",
+  "lat": 55.95278,
+  "lng": -2.97545,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Prestonpans",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rosyth",
+  "name": "Rosyth station area",
+  "lat": 56.04538,
+  "lng": -3.42633,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rosyth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-shawfair",
+  "name": "Shawfair station area",
+  "lat": 55.9177,
+  "lng": -3.09022,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Shawfair",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-slateford",
+  "name": "Slateford station area",
+  "lat": 55.92662,
+  "lng": -3.24375,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Slateford",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-south-gyle",
+  "name": "South Gyle station area",
+  "lat": 55.93651,
+  "lng": -3.29937,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "South Gyle",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-uphall",
+  "name": "Uphall station area",
+  "lat": 55.91904,
+  "lng": -3.5019,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Uphall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wallyford",
+  "name": "Wallyford station area",
+  "lat": 55.94046,
+  "lng": -3.01479,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wallyford",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-west-calder",
+  "name": "West Calder station area",
+  "lat": 55.85377,
+  "lng": -3.56682,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "West Calder",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wester-hailes",
+  "name": "Wester Hailes station area",
+  "lat": 55.91437,
+  "lng": -3.28382,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wester Hailes",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-james-quarter",
+  "name": "St James Quarter",
+  "lat": 55.9555,
+  "lng": -3.188,
+  "stype": "managed_estate",
+  "anchors": [
+   [
+    "Edinburgh",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "stockbridge",
+  "name": "Stockbridge",
+  "lat": 55.96,
+  "lng": -3.2085,
+  "stype": "high_street",
+  "anchors": [
+   [
+    "Haymarket",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "leith-walk",
+  "name": "Leith Walk",
+  "lat": 55.9645,
+  "lng": -3.177,
+  "stype": "high_street",
+  "anchors": [
+   [
+    "Edinburgh",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "bruntsfield",
+  "name": "Bruntsfield & Morningside",
+  "lat": 55.936,
+  "lng": -3.209,
+  "stype": "high_street",
+  "anchors": [
+   [
+    "Haymarket",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "gyle",
+  "name": "The Gyle",
+  "lat": 55.938,
+  "lng": -3.317,
+  "stype": "managed_estate",
+  "anchors": [
+   [
+    "South Gyle",
+    "ORR"
+   ]
+  ]
+ }
+]

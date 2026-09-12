@@ -6,11 +6,74 @@
   "saa_shop_avg_rv": 32878,
   "saa_office_avg_rv": 31555
  },
- "_default": {
-  "retail_rv_m2": 159,
-  "office_rv_m2": 223,
+ "North Lanarkshire": {
+  "retail_rv_m2": 130,
+  "office_rv_m2": 107,
   "basis": "SAA",
-  "saa_shop_avg_rv": 32878,
-  "saa_office_avg_rv": 31555
+  "saa_shop_avg_rv": 22920,
+  "saa_office_avg_rv": 12628
+ },
+ "South Lanarkshire": {
+  "retail_rv_m2": 136,
+  "office_rv_m2": 90,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 24959,
+  "saa_office_avg_rv": 9826
+ },
+ "East Renfrewshire": {
+  "retail_rv_m2": 139,
+  "office_rv_m2": 85,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 26264,
+  "saa_office_avg_rv": 9106
+ },
+ "Inverclyde": {
+  "retail_rv_m2": 125,
+  "office_rv_m2": 120,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 21315,
+  "saa_office_avg_rv": 14755
+ },
+ "Renfrewshire": {
+  "retail_rv_m2": 157,
+  "office_rv_m2": 90,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 32256,
+  "saa_office_avg_rv": 9972
+ },
+ "Argyll and Bute": {
+  "retail_rv_m2": 99,
+  "office_rv_m2": 94,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 12295,
+  "saa_office_avg_rv": 10474
+ },
+ "Argyll & Bute": {
+  "retail_rv_m2": 99,
+  "office_rv_m2": 94,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 12295,
+  "saa_office_avg_rv": 10474
+ },
+ "East Dunbartonshire": {
+  "retail_rv_m2": 155,
+  "office_rv_m2": 102,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 31649,
+  "saa_office_avg_rv": 11909
+ },
+ "West Dunbartonshire": {
+  "retail_rv_m2": 130,
+  "office_rv_m2": 118,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 22918,
+  "saa_office_avg_rv": 14530
+ },
+ "_default": {
+  "retail_rv_m2": 140,
+  "office_rv_m2": 170,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 26524,
+  "saa_office_avg_rv": 22981
  }
 }

@@ -1,16 +1,51 @@
 {
+ "City of Edinburgh": {
+  "retail_rv_m2": 183,
+  "office_rv_m2": 307,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 41373,
+  "saa_office_avg_rv": 45205
+ },
  "Edinburgh, City of": {
   "retail_rv_m2": 183,
   "office_rv_m2": 307,
   "basis": "SAA",
-  "saa_shop_avg_rv": 41372,
+  "saa_shop_avg_rv": 41373,
   "saa_office_avg_rv": 45205
  },
- "_default": {
-  "retail_rv_m2": 183,
-  "office_rv_m2": 307,
+ "East Lothian": {
+  "retail_rv_m2": 120,
+  "office_rv_m2": 96,
   "basis": "SAA",
-  "saa_shop_avg_rv": 41372,
-  "saa_office_avg_rv": 45205
+  "saa_shop_avg_rv": 19501,
+  "saa_office_avg_rv": 10949
+ },
+ "Midlothian": {
+  "retail_rv_m2": 200,
+  "office_rv_m2": 121,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 47260,
+  "saa_office_avg_rv": 15018
+ },
+ "West Lothian": {
+  "retail_rv_m2": 158,
+  "office_rv_m2": 118,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 32614,
+  "saa_office_avg_rv": 14534
+ },
+ "Scottish Borders": {
+  "retail_rv_m2": 112,
+  "office_rv_m2": 87,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 16696,
+  "saa_office_avg_rv": 9453
+ },
+ "_default": {
+  "retail_rv_m2": 140,
+  "office_rv_m2": 170,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 26524,
+  "saa_office_avg_rv": 22981
  }
 }

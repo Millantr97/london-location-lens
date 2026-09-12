@@ -1,0 +1,1648 @@
+[
+ {
+  "id": "st-airbles",
+  "name": "Airbles station area",
+  "lat": 55.78207,
+  "lng": -3.9947,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Airbles",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-airdrie",
+  "name": "Airdrie station area",
+  "lat": 55.86408,
+  "lng": -3.98225,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Airdrie",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-alexandra-parade",
+  "name": "Alexandra Parade station area",
+  "lat": 55.86362,
+  "lng": -4.21067,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Alexandra Parade",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-alexandria",
+  "name": "Alexandria station area",
+  "lat": 55.98527,
+  "lng": -4.57732,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Alexandria",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-anderston",
+  "name": "Anderston station area",
+  "lat": 55.85977,
+  "lng": -4.27026,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Anderston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-anniesland",
+  "name": "Anniesland station area",
+  "lat": 55.88994,
+  "lng": -4.32157,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Anniesland",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-argyle-street",
+  "name": "Argyle Street station area",
+  "lat": 55.85762,
+  "lng": -4.25058,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Argyle Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-ashfield",
+  "name": "Ashfield station area",
+  "lat": 55.88884,
+  "lng": -4.24846,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ashfield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-baillieston",
+  "name": "Baillieston station area",
+  "lat": 55.84451,
+  "lng": -4.11372,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Baillieston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bargeddie",
+  "name": "Bargeddie station area",
+  "lat": 55.8513,
+  "lng": -4.07375,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bargeddie",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-barnhill",
+  "name": "Barnhill station area",
+  "lat": 55.87774,
+  "lng": -4.22333,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Barnhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-barrhead",
+  "name": "Barrhead station area",
+  "lat": 55.80399,
+  "lng": -4.39711,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Barrhead",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bearsden",
+  "name": "Bearsden station area",
+  "lat": 55.91694,
+  "lng": -4.3326,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bearsden",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bellgrove",
+  "name": "Bellgrove station area",
+  "lat": 55.8567,
+  "lng": -4.22434,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bellgrove",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bellshill",
+  "name": "Bellshill station area",
+  "lat": 55.81706,
+  "lng": -4.02433,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bellshill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bishopbriggs",
+  "name": "Bishopbriggs station area",
+  "lat": 55.90397,
+  "lng": -4.22452,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bishopbriggs",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-blairhill",
+  "name": "Blairhill station area",
+  "lat": 55.86652,
+  "lng": -4.04272,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Blairhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-blantyre",
+  "name": "Blantyre station area",
+  "lat": 55.7973,
+  "lng": -4.08688,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Blantyre",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bowling",
+  "name": "Bowling station area",
+  "lat": 55.93106,
+  "lng": -4.49292,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bowling",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bridgeton",
+  "name": "Bridgeton station area",
+  "lat": 55.84833,
+  "lng": -4.22482,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bridgeton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-busby",
+  "name": "Busby station area",
+  "lat": 55.78039,
+  "lng": -4.26223,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Busby",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cambuslang",
+  "name": "Cambuslang station area",
+  "lat": 55.81945,
+  "lng": -4.17302,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cambuslang",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cardonald",
+  "name": "Cardonald station area",
+  "lat": 55.85276,
+  "lng": -4.34037,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cardonald",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-carfin",
+  "name": "Carfin station area",
+  "lat": 55.80768,
+  "lng": -3.95604,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Carfin",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-carmyle",
+  "name": "Carmyle station area",
+  "lat": 55.83426,
+  "lng": -4.15807,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Carmyle",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-carntyne",
+  "name": "Carntyne station area",
+  "lat": 55.8549,
+  "lng": -4.17917,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Carntyne",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cathcart",
+  "name": "Cathcart station area",
+  "lat": 55.81779,
+  "lng": -4.26039,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cathcart",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-charing-cross-(glasgow)",
+  "name": "Charing Cross (Glasgow) station area",
+  "lat": 55.86464,
+  "lng": -4.26958,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Charing Cross (Glasgow)",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-chatelherault",
+  "name": "Chatelherault station area",
+  "lat": 55.76512,
+  "lng": -4.00444,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Chatelherault",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-clarkston",
+  "name": "Clarkston station area",
+  "lat": 55.78946,
+  "lng": -4.27576,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Clarkston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-clydebank",
+  "name": "Clydebank station area",
+  "lat": 55.90057,
+  "lng": -4.40416,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Clydebank",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-coatbridge-central",
+  "name": "Coatbridge Central station area",
+  "lat": 55.86267,
+  "lng": -4.03208,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Coatbridge Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-coatbridge-sunnyside",
+  "name": "Coatbridge Sunnyside station area",
+  "lat": 55.86691,
+  "lng": -4.02796,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Coatbridge Sunnyside",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-coatdyke",
+  "name": "Coatdyke station area",
+  "lat": 55.8644,
+  "lng": -4.005,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Coatdyke",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-corkerhill",
+  "name": "Corkerhill station area",
+  "lat": 55.83747,
+  "lng": -4.33433,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Corkerhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-croftfoot",
+  "name": "Croftfoot station area",
+  "lat": 55.81825,
+  "lng": -4.22824,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Croftfoot",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-crookston",
+  "name": "Crookston station area",
+  "lat": 55.84223,
+  "lng": -4.3651,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Crookston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-crosshill",
+  "name": "Crosshill station area",
+  "lat": 55.83326,
+  "lng": -4.25666,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Crosshill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-crossmyloof",
+  "name": "Crossmyloof station area",
+  "lat": 55.83373,
+  "lng": -4.28479,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Crossmyloof",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-croy",
+  "name": "Croy station area",
+  "lat": 55.95563,
+  "lng": -4.03626,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Croy",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cumbernauld",
+  "name": "Cumbernauld station area",
+  "lat": 55.9419,
+  "lng": -3.9803,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cumbernauld",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dalmarnock",
+  "name": "Dalmarnock station area",
+  "lat": 55.84219,
+  "lng": -4.21747,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dalmarnock",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dalmuir",
+  "name": "Dalmuir station area",
+  "lat": 55.91201,
+  "lng": -4.42685,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dalmuir",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dalreoch",
+  "name": "Dalreoch station area",
+  "lat": 55.94728,
+  "lng": -4.57725,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dalreoch",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-drumchapel",
+  "name": "Drumchapel station area",
+  "lat": 55.90473,
+  "lng": -4.36303,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Drumchapel",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-drumry",
+  "name": "Drumry station area",
+  "lat": 55.9046,
+  "lng": -4.38548,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Drumry",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-duke-street",
+  "name": "Duke Street station area",
+  "lat": 55.85866,
+  "lng": -4.2126,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Duke Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dumbarton-central",
+  "name": "Dumbarton Central station area",
+  "lat": 55.94653,
+  "lng": -4.56761,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dumbarton Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dumbarton-east",
+  "name": "Dumbarton East station area",
+  "lat": 55.94235,
+  "lng": -4.55404,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dumbarton East",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dumbreck",
+  "name": "Dumbreck station area",
+  "lat": 55.84495,
+  "lng": -4.3008,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dumbreck",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dunlop",
+  "name": "Dunlop station area",
+  "lat": 55.71191,
+  "lng": -4.5324,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dunlop",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-east-kilbride",
+  "name": "East Kilbride station area",
+  "lat": 55.7661,
+  "lng": -4.17972,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "East Kilbride",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-easterhouse",
+  "name": "Easterhouse station area",
+  "lat": 55.85985,
+  "lng": -4.10687,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Easterhouse",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-garrowhill",
+  "name": "Garrowhill station area",
+  "lat": 55.85505,
+  "lng": -4.12984,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Garrowhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-garscadden",
+  "name": "Garscadden station area",
+  "lat": 55.88752,
+  "lng": -4.3644,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Garscadden",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-gartcosh",
+  "name": "Gartcosh station area",
+  "lat": 55.88562,
+  "lng": -4.07938,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Gartcosh",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-giffnock",
+  "name": "Giffnock station area",
+  "lat": 55.80394,
+  "lng": -4.29296,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Giffnock",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-gilshochill",
+  "name": "Gilshochill station area",
+  "lat": 55.89729,
+  "lng": -4.28246,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Gilshochill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-glasgow-central",
+  "name": "Glasgow Central station area",
+  "lat": 55.85831,
+  "lng": -4.25844,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Glasgow Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-glasgow-queen-street",
+  "name": "Glasgow Queen Street station area",
+  "lat": 55.86256,
+  "lng": -4.25112,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Glasgow Queen Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-greenfaulds",
+  "name": "Greenfaulds station area",
+  "lat": 55.93496,
+  "lng": -3.99351,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Greenfaulds",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hairmyres",
+  "name": "Hairmyres station area",
+  "lat": 55.76183,
+  "lng": -4.22989,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hairmyres",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hamilton-central",
+  "name": "Hamilton Central station area",
+  "lat": 55.77315,
+  "lng": -4.03882,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hamilton Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hamilton-west",
+  "name": "Hamilton West station area",
+  "lat": 55.77936,
+  "lng": -4.05549,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hamilton West",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hawkhead",
+  "name": "Hawkhead station area",
+  "lat": 55.8421,
+  "lng": -4.39954,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hawkhead",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hillfoot",
+  "name": "Hillfoot station area",
+  "lat": 55.92033,
+  "lng": -4.31972,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hillfoot",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hillington-east",
+  "name": "Hillington East station area",
+  "lat": 55.85423,
+  "lng": -4.3549,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hillington East",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hillington-west",
+  "name": "Hillington West station area",
+  "lat": 55.85586,
+  "lng": -4.37109,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hillington West",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-holytown",
+  "name": "Holytown station area",
+  "lat": 55.81256,
+  "lng": -3.97349,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Holytown",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hyndland",
+  "name": "Hyndland station area",
+  "lat": 55.87961,
+  "lng": -4.31449,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hyndland",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-jordanhill",
+  "name": "Jordanhill station area",
+  "lat": 55.88265,
+  "lng": -4.32464,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Jordanhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kelvindale",
+  "name": "Kelvindale station area",
+  "lat": 55.89348,
+  "lng": -4.31008,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kelvindale",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kennishead",
+  "name": "Kennishead station area",
+  "lat": 55.81346,
+  "lng": -4.32461,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kennishead",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kilpatrick",
+  "name": "Kilpatrick station area",
+  "lat": 55.92411,
+  "lng": -4.45284,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kilpatrick",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kings-park",
+  "name": "Kings Park station area",
+  "lat": 55.81951,
+  "lng": -4.24628,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kings Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kirkhill",
+  "name": "Kirkhill station area",
+  "lat": 55.81415,
+  "lng": -4.16797,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kirkhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kirkwood",
+  "name": "Kirkwood station area",
+  "lat": 55.85417,
+  "lng": -4.0483,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kirkwood",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-langbank",
+  "name": "Langbank station area",
+  "lat": 55.92457,
+  "lng": -4.58613,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Langbank",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-langside",
+  "name": "Langside station area",
+  "lat": 55.82096,
+  "lng": -4.2763,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Langside",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-larkhall",
+  "name": "Larkhall station area",
+  "lat": 55.73861,
+  "lng": -3.97501,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Larkhall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-lenzie",
+  "name": "Lenzie station area",
+  "lat": 55.92134,
+  "lng": -4.15393,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Lenzie",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-maryhill",
+  "name": "Maryhill station area",
+  "lat": 55.8975,
+  "lng": -4.30115,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Maryhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-maxwell-park",
+  "name": "Maxwell Park station area",
+  "lat": 55.83766,
+  "lng": -4.28852,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Maxwell Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-merryton",
+  "name": "Merryton station area",
+  "lat": 55.74901,
+  "lng": -3.97752,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Merryton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-milliken-park",
+  "name": "Milliken Park station area",
+  "lat": 55.82483,
+  "lng": -4.53421,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Milliken Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-milngavie",
+  "name": "Milngavie station area",
+  "lat": 55.94087,
+  "lng": -4.31428,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Milngavie",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-mosspark",
+  "name": "Mosspark station area",
+  "lat": 55.84067,
+  "lng": -4.34719,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Mosspark",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-motherwell",
+  "name": "Motherwell station area",
+  "lat": 55.79189,
+  "lng": -3.99467,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Motherwell",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-mount-florida",
+  "name": "Mount Florida station area",
+  "lat": 55.8268,
+  "lng": -4.2611,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Mount Florida",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-mount-vernon",
+  "name": "Mount Vernon station area",
+  "lat": 55.84047,
+  "lng": -4.13268,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Mount Vernon",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-muirend",
+  "name": "Muirend station area",
+  "lat": 55.81011,
+  "lng": -4.27381,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Muirend",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-neilston",
+  "name": "Neilston station area",
+  "lat": 55.78281,
+  "lng": -4.4272,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Neilston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-nitshill",
+  "name": "Nitshill station area",
+  "lat": 55.81189,
+  "lng": -4.36044,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Nitshill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-paisley-canal",
+  "name": "Paisley Canal station area",
+  "lat": 55.84018,
+  "lng": -4.42276,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Paisley Canal",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-paisley-gilmour-street",
+  "name": "Paisley Gilmour Street station area",
+  "lat": 55.84739,
+  "lng": -4.42428,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Paisley Gilmour Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-paisley-st-james",
+  "name": "Paisley St James station area",
+  "lat": 55.85212,
+  "lng": -4.44246,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Paisley St James",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-patterton",
+  "name": "Patterton station area",
+  "lat": 55.79058,
+  "lng": -4.33528,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Patterton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pollokshaws-east",
+  "name": "Pollokshaws East station area",
+  "lat": 55.8248,
+  "lng": -4.28715,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pollokshaws East",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pollokshaws-west",
+  "name": "Pollokshaws West station area",
+  "lat": 55.82385,
+  "lng": -4.30141,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pollokshaws West",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pollokshields-east",
+  "name": "Pollokshields East station area",
+  "lat": 55.84073,
+  "lng": -4.26898,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pollokshields East",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-pollokshields-west",
+  "name": "Pollokshields West station area",
+  "lat": 55.83764,
+  "lng": -4.27615,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Pollokshields West",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-possilpark-and-parkhouse",
+  "name": "Possilpark and Parkhouse station area",
+  "lat": 55.89014,
+  "lng": -4.25835,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Possilpark and Parkhouse",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-priesthill-and-darnley",
+  "name": "Priesthill and Darnley station area",
+  "lat": 55.81204,
+  "lng": -4.34296,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Priesthill and Darnley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-renton",
+  "name": "Renton station area",
+  "lat": 55.97031,
+  "lng": -4.58635,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Renton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-robroyston",
+  "name": "Robroyston station area",
+  "lat": 55.88688,
+  "lng": -4.17439,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Robroyston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rutherglen",
+  "name": "Rutherglen station area",
+  "lat": 55.83075,
+  "lng": -4.21304,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rutherglen",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-scotstounhill",
+  "name": "Scotstounhill station area",
+  "lat": 55.88501,
+  "lng": -4.35295,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Scotstounhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-shawlands",
+  "name": "Shawlands station area",
+  "lat": 55.8293,
+  "lng": -4.29232,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Shawlands",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-shettleston",
+  "name": "Shettleston station area",
+  "lat": 55.85365,
+  "lng": -4.15958,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Shettleston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-shieldmuir",
+  "name": "Shieldmuir station area",
+  "lat": 55.77743,
+  "lng": -3.95785,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Shieldmuir",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-singer",
+  "name": "Singer station area",
+  "lat": 55.90749,
+  "lng": -4.4055,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Singer",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-springburn",
+  "name": "Springburn station area",
+  "lat": 55.88185,
+  "lng": -4.23017,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Springburn",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stepps",
+  "name": "Stepps station area",
+  "lat": 55.89013,
+  "lng": -4.14044,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stepps",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-summerston",
+  "name": "Summerston station area",
+  "lat": 55.89884,
+  "lng": -4.29219,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Summerston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-thornliebank",
+  "name": "Thornliebank station area",
+  "lat": 55.81109,
+  "lng": -4.31171,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Thornliebank",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-thorntonhall",
+  "name": "Thorntonhall station area",
+  "lat": 55.76831,
+  "lng": -4.25059,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Thorntonhall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-uddingston",
+  "name": "Uddingston station area",
+  "lat": 55.82356,
+  "lng": -4.08702,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Uddingston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-westerton",
+  "name": "Westerton station area",
+  "lat": 55.90483,
+  "lng": -4.33513,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Westerton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-whifflet",
+  "name": "Whifflet station area",
+  "lat": 55.85383,
+  "lng": -4.0186,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Whifflet",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-whitecraigs",
+  "name": "Whitecraigs station area",
+  "lat": 55.79028,
+  "lng": -4.31031,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Whitecraigs",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-williamwood",
+  "name": "Williamwood station area",
+  "lat": 55.79401,
+  "lng": -4.28992,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Williamwood",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-yoker",
+  "name": "Yoker station area",
+  "lat": 55.89276,
+  "lng": -4.38685,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Yoker",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "buchanan-quarter",
+  "name": "Buchanan Quarter",
+  "lat": 55.8606,
+  "lng": -4.252,
+  "stype": "shopping_district",
+  "anchors": [
+   [
+    "Glasgow Queen Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "west-end-byres",
+  "name": "West End - Byres Road",
+  "lat": 55.8744,
+  "lng": -4.2927,
+  "stype": "high_street",
+  "anchors": [
+   [
+    "Partick",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "merchant-city",
+  "name": "Merchant City",
+  "lat": 55.858,
+  "lng": -4.2455,
+  "stype": "high_street",
+  "anchors": [
+   [
+    "Argyle Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "finnieston",
+  "name": "Finnieston",
+  "lat": 55.8645,
+  "lng": -4.283,
+  "stype": "high_street",
+  "anchors": [
+   [
+    "Exhibition Centre (Glasgow)",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "braehead",
+  "name": "Braehead",
+  "lat": 55.8767,
+  "lng": -4.3633,
+  "stype": "managed_estate",
+  "anchors": []
+ }
+]

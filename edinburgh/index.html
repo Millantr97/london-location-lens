@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edinburgh Location Potential - Street-level revenue and site selection for Edinburgh</title>
+<meta name="description" content="Compare Edinburgh street segments and individual commercial units for your exact business concept: real station flows, competition, residents, crime, rents and estimated monthly revenue.">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="../styles.css?v=23">
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <div class="brand">Edinburgh <span>Location Potential</span></div>
+    <nav class="citynav" id="citynav" aria-label="Cities"></nav>
+    <nav class="tabs" id="tabbar" aria-label="Sections">
+      <a href="#concept" data-tab="concept" class="on">Concept</a>
+      <a href="#detail" data-tab="detail">Street</a>
+      <a href="#trends" data-tab="trends">Trends</a>
+      <a href="#opportunity" data-tab="opportunity">Opportunity</a>
+      <a href="#method" data-tab="method">Method</a>
+      <a href="#rankings" data-tab="rankings">Rankings</a>
+      <a href="#expert" data-tab="expert" class="expert-tab">Expert help</a>
+    </nav>
+  </div>
+</header>
+
+<main id="panels">
+<section class="hero tab-panel on" data-panel="concept">
+  <div>
+    <div class="eyebrow">Street-level site selection · all of Edinburgh and the Lothians</div>
+    <h1>Where should your business open?</h1>
+    <p>Answer the questionnaire below first: ticket, format, hours, audience. The map and the top-20 table update live as you answer, scoring <span id="seg-count">249</span> Edinburgh street segments plus every recorded commercial unit against your concept, with an estimated monthly revenue for each. Every figure is labelled: observed at that street, area context, or modelled.</p>
+    <a class="hero-cta" href="#concept" id="hero-cta">Start with your concept ↓</a>
+  </div>
+  <aside class="truth">
+    <strong>Read the labels, not just the score</strong>
+    <p><b class="c-obs">OBSERVED</b> measured at the street or station. <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it. <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. Nothing is presented as more precise than its source.</p>
+  </aside>
+</section>
+
+<section class="concept-wrap tab-panel on" data-panel="concept" id="concept">
+  <div class="section-head">
+    <div class="eyebrow">Step 1 · Start here</div>
+    <h2>Define your concept</h2>
+    <p>Pick one of the <span id="preset-count">68</span> presets or start from scratch, then change anything. The map and the top-20 table update live with every answer.</p>
+  </div>
+  <div class="preset-row" id="preset-row"></div>
+  <div class="concept-grid" id="concept-grid"></div>
+</section>
+
+<section class="map-first tab-panel on" data-panel="concept" id="map">
+  <div class="section-head">
+    <div class="eyebrow">Step 2</div>
+    <h2>The map answers back</h2>
+    <p>Every answer in the Concept tab repaints the map. Zoom right in - past zoom 15 the map shows every individual commercial unit on record, with its own modelled revenue on click.</p>
+  </div>
+  <div class="mapbox"><div id="leaflet-map"></div>
+    <div id="map-controls"></div>
+    <div class="map-note" id="map-note">Markers are street segments. Colour = fit or estimated revenue for your concept. Click one for the full evidence panel. Zoom in past level 15 to reveal every individual commercial unit.</div>
+  </div>
+</section>
+
+<section class="rankings-wrap tab-panel on" data-panel="concept" id="top20">
+  <div class="section-head">
+    <div class="eyebrow">Step 3</div>
+    <h2>Top 20 streets for your concept</h2>
+    <p id="ranking-sub">The 20 best-matching street segments, sorted by overall fit. The map still shows every segment.</p>
+  </div>
+  <div class="rank-list" id="rank-list"></div>
+</section>
+
+<section class="detail-wrap tab-panel" data-panel="detail" id="detail">
+  <div class="detail-empty" id="detail-empty">
+    <div class="de-title">No street open yet</div>
+    <p>Select a segment on the map or in the top-20 table to open its full evidence panel: demand at your hours, named competitors, rent context, crime, revenue range and the slide report.</p>
+    <div class="de-btns"><button class="action primary" data-goto="map">Open the map</button><button class="action" data-goto="top20">See the top 20</button></div>
+  </div>
+  <div class="detail-panel" id="detail-panel" hidden></div>
+  <div class="workspace-block">
+    <div class="section-head">
+      <div class="eyebrow">Your workspace · saved on this device</div>
+      <h2>Shortlist, compare, track changes</h2>
+      <p>Save streets as favourites, compare up to three side by side, and see what changed in the published data since your last visit. Everything stays on this device.</p>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card"><h3>Favourites <span id="fav-count" class="count-badge">0</span></h3><div id="fav-list" class="saved-list"></div></div>
+      <div class="tool-card"><h3>Compare streets <span id="compare-count" class="count-badge">0/3</span></h3><div id="compare-list" class="saved-list"></div><button id="open-compare" class="action primary" disabled>Compare side by side</button></div>
+      <div class="tool-card"><h3>Change alerts</h3><p class="tool-copy">Favourites are checked against the latest published dataset whenever you return. If a competitor count, flow anchor or modelled score changes, you will see exactly what changed here.</p><div id="alert-list" class="saved-list"></div><p class="micro">ON-VISIT CHECK · A server is required for email or push alerts while this page is closed.</p></div>
+    </div>
+    <div id="compare-panel" class="compare-panel" hidden></div>
+  </div>
+</section>
+
+
+<section class="tools-wrap tab-panel" data-panel="method" id="method">
+  <div class="section-head method-head">
+    <div class="eyebrow">Sources &amp; transparency</div>
+    <h2>Method, sources and limits</h2>
+    <p>Ten clear evidence notes, arranged for easy side-by-side reading.</p>
+  </div>
+  <div class="method-grid" id="method-grid"></div>
+</section>
+
+
+
+<section class="tools-wrap tab-panel" data-panel="trends" id="trends">
+  <div class="section-head feature-head trend-feature-head">
+    <div class="feature-number">01</div><div>
+    <div class="eyebrow">Concept trends</div>
+    <h2>Is your concept rising or fading?</h2>
+    <p>Every concept, with two independent signals: venues actually recorded in London over time (category level, from OpenStreetMap history) and what people search for (Google Trends). Sort by growth to spot the risers, or search for a concept.</p></div>
+  </div>
+  <div class="trend-controls">
+    <div class="tc-searchwrap"><input id="trend-search" type="search" placeholder="Search a concept - e.g. matcha, ramen, Pilates..." aria-label="Search concepts"></div>
+    <label>Sort: <select id="trend-sort"><option value="growth">Fastest rising search interest</option><option value="osm">Most venues added</option><option value="az">A-Z</option></select></label>
+  </div>
+  <div id="trend-list" class="trend-grid"></div>
+  <div class="trend-pages" id="trend-pages"></div>
+  <div class="trend-note">Honest labels: the venue series counts <b>every recorded venue in the concept's category</b> (all cafés, all restaurants...) in the OpenStreetMap extract history - mapper coverage grows over time, so some of the rise is better mapping, not just more openings; it is OBSERVED data with that caveat. The search series is Google Trends interest for a matching keyword, an ESTIMATED index of attention, not shops or sales. Concept-level shop counts per year are not published by any open source at this granularity - where a figure is not available, the row says so instead of guessing.</div>
+</section>
+
+<section class="tools-wrap tab-panel" data-panel="opportunity" id="opportunity">
+  <div class="section-head feature-head premium-feature-head">
+    <div class="feature-number">02</div><div>
+    <div class="eyebrow">Opportunity tools</div>
+    <h2>The decision toolkit</h2>
+    <p>Three tools that turn the map into a decision.</p>
+    <div class="model-cta"><b>Planning a real investment?</b><span>These are estimates from a simple model and public data. For better data, a deeper report and hands-on geomarketing, tell us about your project.</span><a href="#expert" data-expert>Speak to a specialist →</a></div></div>
+  </div>
+  <div class="premium-grid">
+    <div class="tool-card prem-card gap-tool"><div class="tool-kicker"><span>01</span> Opportunity finder</div><h3>What's missing here?</h3>
+      <p class="tool-copy">Choose a street to uncover concepts with strong demand at the right hours and little recorded competition.</p>
+      <label class="prem-field"><span>Street or area</span><select id="gap-seg" class="prem-select"></select></label>
+      <button id="gap-run" class="action primary tool-run">Find underserved concepts <span>→</span></button>
+      <div class="tool-promise"><b>You will get</b><span>8 ranked concepts with demand, local supply and an opportunity score.</span></div>
+      <div id="gap-results" class="prem-results"></div>
+    </div>
+    <div class="tool-card prem-card premises-tool"><div class="tool-kicker"><span>02</span> Premises-first analysis</div><h3>I already have premises</h3>
+      <p class="tool-copy">Start with the site you have. Add its address, size and rent to rank the concepts that fit it best.</p>
+      <label class="prem-field"><span>Address</span><input id="inv-addr" class="prem-input" placeholder="e.g. 114 Curtain Road, London"></label>
+      <div class="prem-2col"><label class="prem-field"><span>Size</span><div class="input-unit"><input id="inv-size" class="prem-input" type="number" value="70" min="10" step="5"><i>m²</i></div></label><label class="prem-field"><span>Annual rent</span><div class="input-unit"><input id="inv-rent" class="prem-input" type="number" value="600" min="50" step="10"><i>£/m²</i></div></label></div>
+      <label class="prem-field prem-fallback"><span>Fallback street if the address cannot be found</span><select id="inv-seg" class="prem-select"></select></label>
+      <button id="inv-run" class="action primary tool-run">Rank the best concepts <span>→</span></button>
+      <div class="tool-promise"><b>You will get</b><span>10 concepts ranked by fit, modelled revenue and strongest reason.</span></div>
+      <div id="inv-results" class="prem-results"></div>
+    </div>
+    <div class="tool-card prem-card stress-tool"><div class="tool-kicker"><span>03</span> Downside planner</div><h3>Stress-test the plan</h3>
+      <p class="tool-copy">See how your current concept holds up if footfall falls 20%, a strong competitor opens nearby, or both happen together.</p>
+      <label class="prem-field"><span>Street to test</span><select id="stress-seg" class="prem-select"></select></label>
+      <button id="stress-run" class="action primary tool-run">Run downside scenarios <span>→</span></button>
+      <div class="tool-promise"><b>You will get</b><span>Base case and three downside scenarios with revenue impact.</span></div>
+      <div id="stress-results" class="prem-results"></div>
+    </div>
+  </div>
+</section>
+
+<section class="tools-wrap tab-panel" data-panel="rankings" id="rankings">
+  <div class="section-head feature-head">
+    <div class="feature-number">03</div><div>
+    <div class="eyebrow">Rankings &amp; guides</div>
+    <h2>Edinburgh, ranked by the model</h2>
+    <p>Data-driven rankings built with the same engine as the map: real station flows, recorded competition, Census context and transparent modelled revenue. Every figure keeps its honesty label.</p></div>
+  </div>
+  <div class="article-grid" id="article-grid"></div>
+  <p style="color:var(--muted);font-size:13px;margin:4px 0 14px">City-specific rankings for Edinburgh are being prepared - <a href="../#rankings">London&apos;s rankings</a> show the format.</p>
+  <div class="trend-note">Each ranking is one fixed concept run through the published model over 249 Edinburgh street segments. Scores and revenues are MODELLED planning estimates; station flows and venue counts are OBSERVED at named sources; residents and rents are AREA CONTEXT. Use a ranking to shortlist, then walk the street.</div>
+</section>
+
+
+<section class="expert-wrap tab-panel" data-panel="expert" id="expert">
+  <div class="expert-shell">
+    <div class="expert-intro">
+      <div class="eyebrow">Go beyond the public model</div>
+      <h2>Bring in a geomarketing specialist</h2>
+      <p>Location Potential is a fast first screen built from public data and a simple, transparent model. For a higher-stakes investment, tell us what you are planning and we will match your brief with a specialist geomarketing agency.</p>
+      <div class="expert-points"><span>Better commercial datasets</span><span>Deeper investment report</span><span>Hands-on site selection</span><span>Advanced geomarketing</span></div>
+    </div>
+    <form class="lead-form" id="lead-form" action="https://formsubmit.co/amazonmillan9@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Qualified Location Potential geomarketing lead">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="source" value="Edinburgh Location Potential expert brief">
+      <div class="form-head"><span class="form-step">Your brief</span><b>Usually 2 minutes</b></div>
+      <label>Full name<input required autocomplete="name" name="name" placeholder="Your name"></label>
+      <div class="form-two"><label>Email<input required type="email" autocomplete="email" name="email" placeholder="you@company.com"></label><label>Phone<input required type="tel" autocomplete="tel" name="phone" placeholder="+44..."></label></div>
+      <label>Business concept<input required name="concept" placeholder="e.g. premium Pilates studio"></label>
+      <label>Areas of interest<textarea required name="areas" rows="3" placeholder="Neighbourhoods, streets or boroughs you are considering"></textarea></label>
+      <div class="form-two"><label>Investment budget<select required name="investment_budget"><option value="">Choose a range</option><option>Under £50,000</option><option>£50,000-£100,000</option><option>£100,000-£250,000</option><option>£250,000-£500,000</option><option>£500,000+</option><option>Prefer not to say yet</option></select></label><label>Timeline<select required name="timeline"><option value="">Choose timing</option><option>Ready now</option><option>Within 3 months</option><option>3-6 months</option><option>6-12 months</option><option>Early research</option></select></label></div>
+      <label class="consent-row"><input required type="checkbox" name="partner_consent" value="yes"><span>I agree that Location Potential may use my details to assess this brief and share them with suitable geomarketing agencies so they can contact me.</span></label>
+      <label class="consent-row optional"><input type="checkbox" name="updates_opt_in" value="yes"><span>Send me occasional Location Potential product and market updates. Optional.</span></label>
+      <button class="action primary lead-submit" type="submit">Request a specialist match →</button>
+      <p class="form-legal">By submitting, you confirm you have read the <a href="../privacy.html">Privacy Notice</a>. Your details are handled by our form provider and sent to Location Potential by email.</p>
+      <div class="form-status" id="lead-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="foot">
+  <div>Edinburgh Location Potential · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="#rankings" data-goto="rankings">Rankings &amp; guides</a><a href="#expert" data-expert>Expert geomarketing</a><a href="../privacy.html">Privacy Notice</a></div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../cities.js?v=1"></script>
+<script src="city.js?v=1"></script>
+<script src="data/segments.js?v=1"></script>
+<script src="data/units.js?v=1"></script>
+<script src="data/competitors.js?v=1"></script>
+<script src="../app.js?v=23"></script>
+<script src="../report.js?v=19"></script>
+<script src="data/trends.js?v=1"></script>
+<script src="../extras.js?v=20"></script>
+<script src="../tabs.js?v=22"></script>
+<script src="../leads.js?v=20"></script>
+</body>
+</html>

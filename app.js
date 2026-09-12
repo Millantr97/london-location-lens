@@ -267,9 +267,9 @@ const nStudentsV=norm(SEGS.map(s=>s.lsoa.pct_students));const nStudents=s=>nStud
 const nYoungV=norm(SEGS.map(s=>s.lsoa.pct20_39*0.5+s.lsoa.pct_prof*0.5));const nYoung=s=>nYoungV(s.lsoa.pct20_39*0.5+s.lsoa.pct_prof*0.5);
 const nCultureV=logNorm(SEGS.map(s=>s.osm.culture));const nCulture=s=>nCultureV(s.osm.culture);
 const nNightV=logNorm(SEGS.map(s=>s.osm.pub_bar));const nNight=s=>nNightV(s.osm.pub_bar);
-const nParksV=norm(SEGS.map(s=>s.osm.parks_600));const nParks=s=>nParksV(s.osm.parks_600);
+const nParksV=logNorm(SEGS.map(s=>s.osm.parks_600));const nParks=s=>nParksV(s.osm.parks_600);
 const nCoworkV=logNorm(SEGS.map(s=>s.osm.cowork));const nCowork=s=>nCoworkV(s.osm.cowork);
-const nFamiliesV=norm(SEGS.map(s=>s.lsoa.pct_under20*0.6+s.osm.parks_600*8));const nFamilies=s=>nFamiliesV(s.lsoa.pct_under20*0.6+s.osm.parks_600*8);
+const nFamiliesV=logNorm(SEGS.map(s=>s.lsoa.pct_under20*0.6+s.osm.parks_600*8));const nFamilies=s=>nFamiliesV(s.lsoa.pct_under20*0.6+s.osm.parks_600*8);
 const nDivV=norm(SEGS.map(s=>s.lsoa.diversity));const nDiv=s=>nDivV(s.lsoa.diversity);
 const nNonUKV=norm(SEGS.map(s=>s.lsoa.pct_nonuk));const nNonUK=s=>nNonUKV(s.lsoa.pct_nonuk);
 const nSpendV=norm(SEGS.map(s=>s.model.spend_est));const nSpend=s=>nSpendV(s.model.spend_est);
@@ -331,7 +331,7 @@ function scoreSegment(s,c){
   if(c.takeaway>25){ff.push(nFlowAnnual(s));ffw.push(1);}
   if(c.delivery>15){ff.push(0.6*nResidents(s)+0.4*nYoung(s));ffw.push(1);}
   if(c.alcohol){ff.push(sup.nightlife);ffw.push(1);}
-  if(c.terrace){ff.push(clamp(0.5*s.osm.terrace_share+0.5*nParks(s),0,1));ffw.push(1);}
+  if(c.terrace){const foodN=(s.osm.cafe||0)+(s.osm.restaurant||0)+(s.osm.fast_food||0)+(s.osm.pub_bar||0);const terrEff=s.osm.terrace_share*foodN/(foodN+2);ff.push(clamp(0.5*terrEff+0.5*nParks(s),0,1));ffw.push(1);}
   if(c.franchise){ff.push(clamp(0.5+chainShare*0.5,0,1));ffw.push(0.6);}
   else {ff.push(clamp(1-chainShare*0.9,0,1));ffw.push(0.6);}
   const formatFit=ff.length?ff.reduce((a,b,i)=>a+b*ffw[i],0)/ffw.reduce((a,b)=>a+b,0):0.5;
@@ -417,12 +417,14 @@ function computeAll(c){
   const nDem=norm(raws);
   const out=SEGS.map((s,i)=>{
     const crit=scoreSegment(s,c);
-    crit.demand.score=nDem(raws[i]);
+    // demand at hours = rhythm match x absolute flow magnitude (log-scaled): a perfect rhythm with nobody passing is not demand
+    const dem=nDem(raws[i])*nFlowAnnual(s);
+    crit.demand.score=dem;
     // opportunity: demand tempered by saturation
     const compN=catN(c.cat,s.osm[c.cat]);
     const stance=(c.compStance||0)/100; // 0 = avoid rivals, 1 = proven clusters attract you
     const pen=0.65-0.85*stance; // penalty on saturated areas flips to a mild cluster bonus
-    crit.opportunity.score=clamp(nDem(raws[i])*(1-pen*compN)+0.15*(1-stance)*(1-compN),0,1);
+    crit.opportunity.score=clamp(dem*(1-pen*compN)+0.15*(1-stance)*(1-compN),0,1);
     let wsum=0,acc=0;
     for(const k in crit){acc+=crit[k].score*crit[k].w;wsum+=crit[k].w;}
     return {seg:s,crit,score:100*acc/wsum,rev:revenueFor(s,c)};
@@ -870,11 +872,21 @@ function renderMapControls(){
   $("mc-streets").onclick=()=>{streetsOn=!streetsOn;streetsAuto=false;renderMapControls();update();};
 }
 
+/* first paint: frame the top-20 results so they are visible without touching the map */
+function fitTop20Once(){
+  try{
+    if(!map||!rankedCache.length)return;
+    const pts=rankedCache.slice(0,20).map(r=>[r.seg.lat,r.seg.lng]);
+    if(!pts.length)return;
+    map.fitBounds(L.latLngBounds(pts).pad(0.18),{maxZoom:Math.max(CITY.mapZoom,11.5)});
+  }catch(e){}
+}
+
 /* deep link: ?concept=<preset-id> preselects a concept (used by the rankings articles) */
 (function(){try{const q=new URLSearchParams(location.search);const cid=q.get("concept");if(cid&&PRESETS.some(p=>p.id===cid)){activePreset=cid;concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS.find(p=>p.id===cid))));}}catch(e){}})();
 $("seg-count").textContent=SEGS.length;
   if($("preset-count"))$("preset-count").textContent=PRESETS.length;
-renderPresets(); renderConcept(); renderMethod(); initMap(); renderMapControls(); update();
+renderPresets(); renderConcept(); renderMethod(); initMap(); renderMapControls(); update(); fitTop20Once();
 
 /* ---------- shortlist, comparison, reports and on-visit change alerts ---------- */
 const STORAGE_KEY="locationLensWorkspaceV1";

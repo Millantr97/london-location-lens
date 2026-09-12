@@ -1,7 +1,7 @@
 /* Generate "best streets" ranking articles from the live model (same engine as the map). */
 global.window={};
 const fs=require('fs');
-const appHead=fs.readFileSync(__dirname+'/../app.js','utf8').split('\n').slice(0,436).join('\n');
+const appLines=fs.readFileSync(__dirname+'/../app.js','utf8').split('\n');const cut=appLines.findIndex(l=>l.startsWith('/* ---------- main loop'));const appHead=appLines.slice(0,cut).join('\n');
 const code=fs.readFileSync(__dirname+'/../segments.js','utf8')+'\n'+fs.readFileSync(__dirname+'/../units.js','utf8')+'\n'+fs.readFileSync(__dirname+'/../competitors.js','utf8')+'\n'+appHead+'\n;({SEGS,PRESETS,computeAll,normalizeConcept,weeklyFlowAbs})';
 const M=eval(code);
 
@@ -12,6 +12,26 @@ const money=n=>'£'+fmt(n);
 
 /* slug, preset, kicker, title phrase, standfirst, format line, competitor noun, card kick, card blurb */
 const ARTICLES=[
+ {slug:'coffee-shop',preset:'specialty-coffee',kick:'Coffee',noun:'a coffee shop',comp:'coffee shops',
+  stand:'We scored 2,480 London street segments for a specialty coffee and brunch concept using real station flows, recorded cafes, Census context and a transparent revenue model. These are the ten strongest.',
+  format:'A specialty coffee and brunch format: \u00a312 average ticket, 32 seats, weekday mornings and weekend daytime trading.',
+  card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
+ {slug:'cocktail-bar',preset:'cocktail-bar',kick:'Bars',noun:'a cocktail bar',comp:'cocktail bars',
+  stand:'Late-night demand is concentrated and competition is fierce, so the ranking leans on Friday and Saturday station flows, nightlife context and recorded bars within 250 m. These ten streets come out on top.',
+  format:'A cocktail and natural wine bar: \u00a330 average ticket, 36 seats, trading Wednesday to Saturday nights.',
+  card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
+ {slug:'bakery',preset:'bakery',kick:'Bakery',noun:'a bakery',comp:'bakeries',
+  stand:'Bakeries live on repeat local trade, so the model weighs residents, family context and morning flows heavily. These ten streets scored highest.',
+  format:'A bakery and patisserie: \u00a39 average ticket, mostly takeaway, trading mornings through early afternoon, seven days a week.',
+  card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
+ {slug:'gym',preset:'boutique-fitness',kick:'Fitness',noun:'a gym or fitness studio',comp:'gyms and fitness studios',
+  stand:'Studios sell memberships to people who live and work nearby, so the model converts residents and commuter flows into members. These ten streets scored highest.',
+  format:'A boutique fitness studio: \u00a325 per class, 20 spots, peak classes before work and after work on weekdays.',
+  card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
+ {slug:'restaurant',preset:'casual-dining',kick:'Restaurants',noun:'a restaurant',comp:'restaurants',
+  stand:'The model scores lunchtime and evening demand, recorded restaurants within 250 m, local spend levels and rent context. These ten streets scored highest.',
+  format:'A casual dining restaurant: \u00a324 average ticket, 60 covers, lunch and dinner seven days a week.',
+  card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
  {slug:'hairdresser-barber',preset:'hair-barber',kick:'Hair & beauty',noun:'a hairdresser or barber shop',comp:'hairdressers and barbers',
   stand:'Hair and barber shops live on repeat local custom, so the model weights residents, daytime flow and how many chairs already compete nearby. These ten streets scored highest.',
   format:'A unisex salon-barber hybrid: £28 average ticket, 3 chairs, open six days a week including early evenings.',
@@ -86,7 +106,7 @@ const ARTICLES=[
   card:'No. 1: {top}, fit {fit}/100. Plus nine more streets, with modelled revenue, real flows and competition counts.'},
 ];
 
-const today='11 September 2026';
+const today='12 September 2026';
 let cards=[];
 for(const a of ARTICLES){
   const p=M.PRESETS.find(x=>x.id===a.preset);
@@ -123,14 +143,22 @@ for(const a of ARTICLES){
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)} - London Location Potential</title>
+<title>${esc(title)} - Location Potential</title>
 <meta name="description" content="Data-driven ranking of the 10 best London streets to open ${esc(a.noun)}: fit scores, modelled revenue, real station flows and recorded competition, with honest labels on every figure.">
 <link rel="canonical" href="https://locationpotential.com/articles/best-streets-${a.slug}-london.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Location Potential">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="Data-driven ranking of the 10 best London streets to open ${esc(a.noun)}: fit scores, modelled revenue, real station flows and recorded competition.">
+<meta property="og:url" content="https://locationpotential.com/articles/best-streets-${a.slug}-london.html">
+<meta property="og:image" content="https://locationpotential.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../styles.css?v=23">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "${esc(title)}", "itemListElement": [${ldItems}]}</script>
 </head>
 <body>
-<header class="top"><div class="top-row"><a class="brand art-brand" href="../">London <span>Location Potential</span></a>
+<header class="top"><div class="top-row"><a class="brand art-brand" href="../">Location <span>Potential</span></a>
 <nav class="tabs" aria-label="Sections"><a href="../#rankings">All rankings</a><a href="../">Open the tool</a></nav></div></header>
 <main class="art">
 <article>
@@ -156,7 +184,7 @@ ${items}
 </div>
 </article>
 </main>
-<footer class="foot"><div>London Location Potential · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="../#rankings">Rankings &amp; guides</a><a href="../privacy.html">Privacy Notice</a></div></footer>
+<footer class="foot"><div>Location Potential · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="../#rankings">Rankings &amp; guides</a><a href="../privacy.html">Privacy Notice</a></div></footer>
 </body>
 </html>`;
   fs.writeFileSync(__dirname+'/../articles/best-streets-'+a.slug+'-london.html',html);

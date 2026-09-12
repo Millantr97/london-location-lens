@@ -252,6 +252,7 @@ function estRates(s,c){ // business rates proxy: unit RV ~ est rent; SBRR 2025-2
 }
 
 /* ---------- concept state ---------- */
+const OTHER=Object.assign(JSON.parse(JSON.stringify(SCRATCH)),{id:"other",name:"Other - concept not listed",cat:"other"});
 let concept=normalizeConcept(JSON.parse(JSON.stringify(PRESETS[0])));
 let activePreset=PRESETS[0].id;
 
@@ -279,6 +280,7 @@ const COMPR={"cafe":400,"fast_food":400,"services":500,"grocery":600,"pharmacy":
 window.COMPR=COMPR;
 const compCount=(s,c)=>(s.osm["comp_"+c]??s.osm[c])||0;
 const compChain=(s,c)=>(s.osm["comp_"+c+"_chain"]??s.osm[c+"_chain"])||0;
+const isOther=c=>!(c.cat in COMPR); /* Other/custom concept: no defined rival set - competition is not scored */
 const CATNORM={};
 ["cafe","restaurant","fast_food","pub_bar","grocery","fitness","cowork","services","agents","pharmacy","vets"].forEach(c=>{
   CATNORM[c]=norm(SEGS.map(s=>Math.log10(1+compCount(s,c))));
@@ -322,7 +324,7 @@ function scoreSegment(s,c){
   const audFit=awSum?Object.keys(aw).reduce((acc,k)=>acc+aw[k]*sup[k],0)/awSum:0.5;
 
   const demandRaw=allDemand(s);
-  const compN=catN(c.cat,compCount(s,c.cat));
+  const compN=isOther(c)?null:catN(c.cat,compCount(s,c.cat));
   const chainShare=compCount(s,c.cat)? compChain(s,c.cat)/compCount(s,c.cat):0;
 
   const rv=s.rent.retail_rv_m2;
@@ -391,7 +393,7 @@ function revenueFor(s,c){
   const R=REV[c.cat]||REV.cafe;
   const cover=clamp(windowDemand(s,c)/DAYREL7(s),0,1);
   const people=weeklyFlowAbs(s)*cover;
-  const comp=1/(1+R.dil*compCount(s,c.cat));
+  const comp=isOther(c)?1:1/(1+R.dil*compCount(s,c.cat)); /* Other: no dilution applied, shown as not scored */
   const sup=audienceSupply(s);
   const aw={...c.audience}; if(c.family)aw.families=Math.min(10,(aw.families||0)+3);
   const awSum=Object.values(aw).reduce((a,b)=>a+b,0);
@@ -426,10 +428,13 @@ function computeAll(c){
     const dem=nDem(raws[i])*nFlowAnnual(s);
     crit.demand.score=dem;
     // opportunity: demand tempered by saturation
-    const compN=catN(c.cat,compCount(s,c.cat));
-    const stance=(c.compStance||0)/100; // 0 = avoid rivals, 1 = proven clusters attract you
-    const pen=0.65-0.85*stance; // penalty on saturated areas flips to a mild cluster bonus
-    crit.opportunity.score=clamp(dem*(1-pen*compN)+0.15*(1-stance)*(1-compN),0,1);
+    const compN=isOther(c)?null:catN(c.cat,compCount(s,c.cat));
+    if(compN===null){ crit.opportunity.score=null; crit.opportunity.w=0; crit.opportunity.label="Demand vs competition (not scored for a custom concept)"; }
+    else{
+      const stance=(c.compStance||0)/100; // 0 = avoid rivals, 1 = proven clusters attract you
+      const pen=0.65-0.85*stance; // penalty on saturated areas flips to a mild cluster bonus
+      crit.opportunity.score=clamp(dem*(1-pen*compN)+0.15*(1-stance)*(1-compN),0,1);
+    }
     let wsum=0,acc=0;
     for(const k in crit){acc+=crit[k].score*crit[k].w;wsum+=crit[k].w;}
     return {seg:s,crit,score:100*acc/wsum,rev:revenueFor(s,c)};
@@ -444,19 +449,28 @@ function chipFor(how){
 }
 
 const PRESETS_VISIBLE=9; /* two rows of five incl. Start from scratch; the rest behind the toggle */
-let presetsExpanded=false;
+let presetsExpanded=false, presetFilter="all";
+const CATLABEL={cafe:"Café & coffee",restaurant:"Restaurants",pub_bar:"Pubs & bars",fast_food:"Fast food",grocery:"Grocery & food retail",fitness:"Fitness & gyms",cowork:"Workspace",services:"Services",agents:"Estate agents",pharmacy:"Pharmacy",vets:"Vets"};
 function renderPresets(){
-  const sel=PRESETS.find(p=>p.id===activePreset);
+  const sel=activePreset==="other"?OTHER:PRESETS.find(p=>p.id===activePreset);
   const ORDERED=[...PRESETS.slice(0,5),...PRESETS.slice(5).sort((a,b)=>a.name.localeCompare(b.name))]; /* first row curated, rest alphabetical */
-  let visible=presetsExpanded?ORDERED.slice():ORDERED.slice(0,PRESETS_VISIBLE);
-  if(sel&&!visible.some(p=>p.id===sel.id)) visible.push(sel); /* keep the active preset on screen */
-  $("preset-row").innerHTML=visible.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
+  const pool=presetFilter==="all"?ORDERED:ORDERED.filter(p=>p.cat===presetFilter);
+  let visible=presetsExpanded?pool.slice():ORDERED.slice(0,PRESETS_VISIBLE);
+  if(sel&&sel.id!=="other"&&!visible.some(p=>p.id===sel.id)) visible.push(sel); /* keep the active preset on screen */
+  const filterRow=presetsExpanded
+    ? `<div class="preset-filters"><span class="pf-label">Filter by category:</span><button class="preset filter ${presetFilter==="all"?"active":""}" data-f="all">All</button>`
+      +Object.keys(CATLABEL).filter(c=>PRESETS.some(p=>p.cat===c)).map(c=>`<button class="preset filter ${presetFilter===c?"active":""}" data-f="${c}">${CATLABEL[c]}</button>`).join("")
+      +`</div>`:"";
+  $("preset-row").innerHTML=filterRow+visible.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
     +`<button class="preset scratch ${activePreset==='scratch'?'active':''}" data-p="scratch">Start from scratch - no template</button>`
+    +`<button class="preset scratch ${activePreset==='other'?'active':''}" data-p="other">Other - my concept is not listed (competition not scored)</button>`
     +`<button class="preset more" data-p="__more">${presetsExpanded?'See fewer concepts':'See more concepts ('+(PRESETS.length-PRESETS_VISIBLE)+' more)'}</button>`;
   document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{
+    if(b.dataset.f){presetFilter=b.dataset.f;renderPresets();return;}
     if(b.dataset.p==="__more"){presetsExpanded=!presetsExpanded;renderPresets();return;}
     activePreset=b.dataset.p;
-    concept=normalizeConcept(JSON.parse(JSON.stringify(activePreset==="scratch"?SCRATCH:PRESETS.find(p=>p.id===activePreset))));
+    const base=activePreset==="scratch"?SCRATCH:activePreset==="other"?OTHER:PRESETS.find(p=>p.id===activePreset);
+    concept=normalizeConcept(JSON.parse(JSON.stringify(base)));
     renderPresets(); renderConcept(); update();
   });
 }
@@ -687,7 +701,7 @@ function selectSegment(id,scroll){
   const windowsTxt=concept.windows.map(w=>`${w.days.map(d=>DAYNAMES[d]).join(" ")} ${mm(w.from)}-${mm(w.to%1560)}`).join(" · ")||"no windows set";
   const catCount=compCount(s,concept.cat), catChain=compChain(s,concept.cat);
 
-  const critRows=Object.values(r.crit).sort((a,b)=>b.w-a.w).map(cr=>`
+  const critRows=Object.values(r.crit).filter(cr=>cr.w>0.001).sort((a,b)=>b.w-a.w).map(cr=>`
     <div class="crit-row"><div>${cr.label}${chipFor(cr.how==="obs"?"obs":cr.how==="ctx"?"ctx":"mod")}</div>
     <div class="bar"><i class="${cr.score<0.4?'neg':''}" style="width:${Math.round(cr.score*100)}%"></i></div>
     <div class="cw">${Math.round(cr.score*100)} · w ${(cr.w*100).toFixed(0)}%</div></div>`).join("");
@@ -704,8 +718,8 @@ function selectSegment(id,scroll){
     const avg=us.reduce((a,u)=>a+unitRevenue(u,rankedCache),0)/us.length;
     return {st,n:us.length,avg,clat:us.reduce((a,u)=>a+u[0],0)/us.length,clng:us.reduce((a,u)=>a+u[1],0)/us.length};
   }).sort((a,b)=>b.avg-a.avg).slice(0,8);
-  const strengths=Object.values(r.crit).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,2);
-  const weak=Object.values(r.crit).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,2);
+  const strengths=Object.values(r.crit).filter(x=>x.w>0.001).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,2);
+  const weak=Object.values(r.crit).filter(x=>x.w>0.001).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,2);
   const pct=x=>Math.round(x*100);
 
   $("detail-empty").hidden=true; const dp=$("detail-panel"); dp.hidden=false;
@@ -741,12 +755,12 @@ function selectSegment(id,scroll){
       ${s.osm.vets!=null?`<div class="ev-line"><span class="lv">Vets</span><span class="rv">${s.osm.vets}</span></div>`:""}
       <div class="ev-line"><span class="lv">Culture &amp; attractions</span><span class="rv">${s.osm.culture}</span></div>
       <div class="ev-line"><span class="lv">Food venues with outdoor seating</span><span class="rv">${Math.round(s.osm.terrace_share*100)}%</span></div>
-      <div class="ev-line"><span class="lv">Competing “${concept.cat}” venues</span><span class="rv">${catCount} (${catChain} chain)</span></div>
+      ${isOther(concept)?`<div class="ev-line"><span class="lv">Competition: not scored - a custom concept has no defined rival set, so no rival count enters the score or the revenue estimate.</span></div>`:`<div class="ev-line"><span class="lv">Competing “${concept.cat}” venues within ${COMPR[concept.cat]} m</span><span class="rv">${catCount} (${catChain} chain)</span></div>`}
       <div class="ev-line"><span class="lv">Source: OpenStreetMap extract ${META.osm_date}. Counts depend on mapper coverage.</span></div>
     </div>
     <div class="ev-card"><h4>Named competitors · ${concept.cat.replace(/_/g," ")}${chipFor("obs")}</h4>
-      ${compRows||`<div class="ev-line"><span class="lv">No named venues of this category recorded within ${COMPR[concept.cat]} m of the anchor.</span></div>`}
-      <div class="ev-line"><span class="lv">${catCount} recorded in total; the ${compList.length} nearest named are shown. Names, cuisine and distance from OpenStreetMap, ${META.osm_date}. A listed competitor is a real trading venue, not a vacancy.</span></div>
+      ${isOther(concept)?`<div class="ev-line"><span class="lv">A custom concept (Other) has no defined rival set, so no competitor list is shown.</span></div>`:(compRows||`<div class="ev-line"><span class="lv">No named venues of this category recorded within ${COMPR[concept.cat]} m of the anchor.</span></div>`)}
+      ${isOther(concept)?"":`<div class="ev-line"><span class="lv">${catCount} recorded in total; the ${compList.length} nearest named are shown. Names, cuisine and distance from OpenStreetMap, ${META.osm_date}. A listed competitor is a real trading venue, not a vacancy.</span></div>`}
     </div>
     <div class="ev-card"><h4>Best streets inside this segment${chipFor("mod")}</h4>
       ${streetRows.length?streetRows.map((t,i)=>`<div class="ev-line street" data-la="${t.clat}" data-ln="${t.clng}"><span class="lv">${i+1}. ${t.st} <span class="cui">${t.n} unit${t.n>1?"s":""}</span></span><span class="rv">${money(t.avg)}/mo</span></div>`).join(""):'<div class="ev-line"><span class="lv">Street-name coverage is thin here in OSM. Zoom past 15 on the map to browse every unit directly.</span></div>'}
@@ -787,7 +801,7 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Plausible range (capture-rate uncertainty)</span><span class="rv">${money(r.rev.low)} - ${money(r.rev.high)}</span></div>
       ${r.rev.weekTrans?`<div class="ev-line"><span class="lv">Modelled transactions / week</span><span class="rv">${fmt(Math.round(r.rev.weekTrans))}</span></div>`:`<div class="ev-line"><span class="lv">Modelled members/desks</span><span class="rv">${fmt(Math.round(r.rev.members||0))}</span></div>`}
       <div class="ev-line"><span class="lv">People passing in your trading windows / week</span><span class="rv">${fmt(Math.round(r.rev.people))}</span></div>
-      <div class="ev-line"><span class="lv">Competition dilution factor (${compCount(s,concept.cat)} rivals within ${COMPR[concept.cat]} m)</span><span class="rv">x${r.rev.comp.toFixed(2)}</span></div>
+      ${isOther(concept)?`<div class="ev-line"><span class="lv">Competition dilution: not applied (custom concept, no defined rival set)</span></div>`:`<div class="ev-line"><span class="lv">Competition dilution factor (${compCount(s,concept.cat)} rivals within ${COMPR[concept.cat]} m)</span><span class="rv">x${r.rev.comp.toFixed(2)}</span></div>`}
       <div class="ev-line"><span class="lv">Audience factor</span><span class="rv">x${r.rev.aud.toFixed(2)}</span></div>
       ${r.rev.capped?`<div class="ev-line"><span class="lv">Capped by unit throughput (seats x weekly covers + m² x throughput)</span><span class="rv">yes</span></div>`:""}
       <div class="ev-line"><span class="lv">Rule: weekly station flow in your hours x category capture rate x dilution x audience fit + resident spend, x your £${concept.ticket} ticket. All constants in Method. This is a planning estimate, not a valuation.</span></div>
@@ -836,7 +850,7 @@ function renderMethod(){
     <p>Three estimates the tool computes and labels: (1) typical spend per person - from resident occupation mix, borough retail rateable value and chain presence; (2) office-worker skew - from coworking density and weekday-weighted station flows; (3) intraday rhythm - station day-type flows spread across five dayparts using the local offer mix (food, retail, nightlife, culture). Rules are fixed and shown so you can argue with them.</p>
     <p>These are the layers to override with your own counts before committing money.</p></div>
   <div class="m-card"><h4>Revenue model${chipFor("mod")}</h4>
-    <p>Estimated monthly revenue for your concept, per segment and per unit. Weekly station entries+exits passing in your exact trading windows are multiplied by a category capture rate (share of passers-by who transact: grocery 3.0%, cafe 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2%), a competition dilution factor 1/(1 + k x rivals within the concept's competition radius), and an audience-fit factor (x0.5 to x1.5). Competition radius by concept type (how far away a rival still takes your customers): cafés and food-to-go 400 m; convenience services (hair, beauty, laundry, repair, florist, optician) 500 m; grocery, pharmacy, pubs and bars 600 m; restaurants, retail and vets 800 m; gyms, coworking and estate agents 1 km. Resident spend nearby is added from LSOA population x weekly purchase propensity. Monthly revenue = transactions x your average ticket x 4.33. A unit can only serve what fits through it: seats x weekly covers plus floorspace x weekly throughput per m² caps transactions, with soft absorption (queues, faster turns) beyond it. Fitness and coworking use membership models: residents and flow convert to members at fixed rates, capped by capacity, priced at ~2.6x day ticket (fitness) or ~9x day desk rate (coworking).</p>
+    <p>Estimated monthly revenue for your concept, per segment and per unit. Weekly station entries+exits passing in your exact trading windows are multiplied by a category capture rate (share of passers-by who transact: grocery 3.0%, cafe 2.0%, fast food 1.8%, pub/bar 1.5%, restaurant 1.2%), a competition dilution factor 1/(1 + k x rivals within the concept's competition radius), and an audience-fit factor (x0.5 to x1.5). Competition radius by concept type (how far away a rival still takes your customers): cafés and food-to-go 400 m; convenience services (hair, beauty, laundry, repair, florist, optician) 500 m; grocery, pharmacy, pubs and bars 600 m; restaurants, retail and vets 800 m; gyms, coworking and estate agents 1 km. Resident spend nearby is added from LSOA population x weekly purchase propensity. Monthly revenue = transactions x your average ticket x 4.33. A unit can only serve what fits through it: seats x weekly covers plus floorspace x weekly throughput per m² caps transactions, with soft absorption (queues, faster turns) beyond it. Fitness and coworking use membership models: residents and flow convert to members at fixed rates, capped by capacity, priced at ~2.6x day ticket (fitness) or ~9x day desk rate (coworking). Choosing "Other" (a concept outside the list) scores location fit without a rival set: the competition criterion is removed from the score, no dilution is applied to revenue, and competition is shown as not scored.</p>
     <p>The shown range is x0.55 to x1.6 of the central estimate - capture-rate uncertainty dominates. These are transparent planning assumptions you can argue with, not observed takings. No source publishes real per-street revenue; where a chain unit's accounts exist they are for the company, not the site.</p></div>
   <div class="m-card"><h4>Every commercial unit${chipFor("obs")}</h4>
     <p>The “Every unit” map layer plots every commercial premises OpenStreetMap records across all covered streets and areas (food, retail, fitness, coworking), coloured by the MODELLED revenue your concept could make at that exact spot: the segment estimate x a distance-to-anchor decay x a hyperlocal competition factor (same-category units within 150 m). Chain flags from brand-name matching.</p>
@@ -926,10 +940,11 @@ function showComparison(){const rows=workspace.compare.map(rowFor).filter(Boolea
  $("compare-panel").hidden=false;$("compare-panel").innerHTML=`<div class="compare-head"><h3>Side-by-side for “${concept.name}”</h3><button class="mini" id="close-compare">Close</button></div><table class="compare-table"><thead><tr><th>Evidence</th>${rows.map(r=>`<th>${r.seg.name}<br><small>${r.seg.borough}</small></th>`).join("")}</tr></thead><tbody>${labels.map((l,i)=>`<tr><td>${l}${chipFor(metrics[0][i][2])}</td>${rows.map((r,j)=>`<td>${metrics[j][i][1]}</td>`).join("")}</tr>`).join("")}</tbody></table>`;$("close-compare").onclick=()=>$("compare-panel").hidden=true;$("compare-panel").scrollIntoView({behavior:"smooth",block:"start"});}
 /* ---------- shareable verdict + comparables ---------- */
 function verdictText(r){
-  const s=r.seg,rev=r.rev,catN_=s.osm[concept.cat]||0;
-  const strengths=Object.values(r.crit).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,1);
-  const weak=Object.values(r.crit).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,1);
-  return `${s.name} scores ${Math.round(r.score)}/100 for "${concept.name}": ~${money(rev.month)}/mo estimated revenue (range ${money(rev.low)}-${money(rev.high)}), ${fmt(Math.round(weeklyFlowAbs(s)))} weekly station flow, ${catN_} rival ${concept.cat.replace(/_/g," ")} within ${COMPR[concept.cat]} m. Strongest: ${strengths[0].label.toLowerCase()}. Watch: ${weak[0].label.toLowerCase()}.`;
+  const s=r.seg,rev=r.rev;
+  const strengths=Object.values(r.crit).filter(x=>x.w>0.001).sort((a,b)=>b.score*b.w-a.score*a.w).slice(0,1);
+  const weak=Object.values(r.crit).filter(x=>x.w>0.001).sort((a,b)=>a.score*b.w-b.score*b.w).slice(0,1);
+  const compTxt=isOther(concept)?"competition not scored (custom concept - no defined rival set)":`${compCount(s,concept.cat)} rival ${concept.cat.replace(/_/g," ")} within ${COMPR[concept.cat]} m`;
+  return `${s.name} scores ${Math.round(r.score)}/100 for "${concept.name}": ~${money(rev.month)}/mo estimated revenue (range ${money(rev.low)}-${money(rev.high)}), ${fmt(Math.round(weeklyFlowAbs(s)))} weekly station flow, ${compTxt}. Strongest: ${strengths[0].label.toLowerCase()}. Watch: ${weak[0].label.toLowerCase()}.`;
 }
 function comparablesFor(r){
   const s=r.seg,myFlow=weeklyFlowAbs(s)||1;

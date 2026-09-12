@@ -158,7 +158,7 @@ for(const a of ARTICLES){
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "${esc(title)}", "itemListElement": [${ldItems}]}</script>
 </head>
 <body>
-<header class="top"><div class="top-row"><a class="brand art-brand" href="../">Location <span>Potential</span><i class="brand-city">- London</i></a>
+<header class="top"><div class="top-row"><a class="brand art-brand" href="../">Location <span>Potential</span><i class="brand-city">London</i></a>
 <nav class="tabs" aria-label="Sections"><a href="../#rankings">All rankings</a><a href="../">Open the tool</a></nav></div></header>
 <main class="art">
 <article>

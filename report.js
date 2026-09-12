@@ -18,6 +18,7 @@ function buildReport(id){
   const today=new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
   const sup=audienceSupply(s);
   const aw={...c.audience}; if(c.family)aw.families=Math.min(10,(aw.families||0)+3);
+  const otherCat=!(c.cat in COMPR); /* Other/custom: competition not scored */
   const catCount=compCount(s,c.cat), catChain=compChain(s,c.cat);
   const compList=((typeof COMPETITORS!=="undefined"?COMPETITORS[s.id]:null)||{})[c.cat]||[];
   const R=REV[c.cat]||REV.cafe;
@@ -138,18 +139,18 @@ function buildReport(id){
       ${catRows}
       ${kv("All other shops",s.osm.shops)}${kv("Culture & attractions",s.osm.culture)}
       ${kv("Food venues with outdoor seating",Math.round(s.osm.terrace_share*100)+"%")}
-      ${kv(`Competing “${c.cat.replace(/_/g," ")}” venues`,`${catCount} (${catChain} chain)`,"obs")}
+      ${otherCat?`<div class="rmini">Competition: not scored - a custom concept has no defined rival set, so no rival count enters the score or the revenue estimate.</div>`:kv(`Competing “${c.cat.replace(/_/g," ")}” venues within ${COMPR[c.cat]} m`,`${catCount} (${catChain} chain)`,"obs")}
       <div class="rmini">OpenStreetMap extract ${META.osm_date}. Counts depend on mapper coverage - treat as lower bounds.</div>
     </div>
     <div class="rcard"><div class="rsub">Nearest named competitors · ${c.cat.replace(/_/g," ")} ${chip("obs")}</div>
       ${compRows||`<div class="rkv"><span class="rl">No named venues of this category recorded within ${COMPR[c.cat]} m of the anchor.</span></div>`}
-      ${kv("Competing venues in total",catCount,"obs")}
+      ${otherCat?"":kv("Competing venues in total",catCount,"obs")}
       ${kv("Of which chain venues",catChain,"obs")}
-      ${kv("Independent venues",catCount-catChain,"obs")}
-      <div class="rmini">${catCount} recorded in total; the ${Math.min(compList.length,9)} nearest named are shown. A listed competitor is a real trading venue, not a vacancy.</div>
+      ${otherCat?"":kv("Independent venues",catCount-catChain,"obs")}
+      ${otherCat?"":`<div class="rmini">${catCount} recorded in total; the ${Math.min(compList.length,9)} nearest named are shown. A listed competitor is a real trading venue, not a vacancy.</div>`}
     </div>
   </div>
-  <div class="rnote">Demand-vs-competition score <b>${pct(r.crit.opportunity.score)}</b> ${chip("mod")} · revenue dilution factor <b>x${rev.comp.toFixed(2)}</b> = 1 / (1 + ${R.dil} x ${catCount} rivals). Stance: ${stanceTxt}.</div>`;
+  <div class="rnote">${otherCat?"Demand-vs-competition: not scored for a custom concept; no revenue dilution applied.":`Demand-vs-competition score <b>${pct(r.crit.opportunity.score)}</b> ${chip("mod")} · revenue dilution factor <b>x${rev.comp.toFixed(2)}</b> = 1 / (1 + ${R.dil} x ${catCount} rivals). Stance: ${stanceTxt}.`}</div>`;
 
   /* S7 occupancy cost + ticket */
   const s7body=`
@@ -238,11 +239,11 @@ function buildReport(id){
       <div class="rcfig"><div class="rcfig-v">${Math.round(r.score)}</div><div class="rcfig-l">fit score / 100</div></div>
       <div class="rcfig"><div class="rcfig-v">${money(rev.month)}</div><div class="rcfig-l">est. monthly revenue</div></div>
       <div class="rcfig"><div class="rcfig-v">${fmt(Math.round(weeklyFlowAbs(s)))}</div><div class="rcfig-l">weekly station flow</div></div>
-      <div class="rcfig"><div class="rcfig-v">${catCount}</div><div class="rcfig-l">rivals within ${COMPR[c.cat]} m</div></div>
+      ${otherCat?`<div class="rcfig"><div class="rcfig-v">n/a</div><div class="rcfig-l">competition not scored</div></div>`:`<div class="rcfig"><div class="rcfig-v">${catCount}</div><div class="rcfig-l">rivals within ${COMPR[c.cat]} m</div></div>`}
     </div>
     <div class="rsteps">
       <div class="rstep"><b>1 · Count it yourself.</b> Stand on ${esc(s.name)} during your exact trading windows (${esc(windowsTxt)}) and count passers-by. Override the modelled layers with your numbers.</div>
-      <div class="rstep"><b>2 · Walk the competition.</b> Visit the ${catCount} ${c.cat.replace(/_/g," ")} venues within ${COMPR[c.cat]} m at peak time. Queue length beats any model.</div>
+      ${otherCat?`<div class="rstep"><b>2 · Walk the area.</b> No rival set is defined for a custom concept: scout nearby venues yourself at peak time. Queue length beats any model.</div>`:`<div class="rstep"><b>2 · Walk the competition.</b> Visit the ${catCount} ${c.cat.replace(/_/g," ")} venues within ${COMPR[c.cat]} m at peak time. Queue length beats any model.</div>`}
       <div class="rstep"><b>3 · Get real quotes.</b> Ask agents for live availability and quoting rents around this street - the ${money(s.rent.est_rent_m2)}/m² here is a modelled borough estimate, not an asking rent.</div>
       <div class="rstep"><b>4 · Check licensing and planning.</b> ${c.alcohol?"Alcohol licence, late-night refreshment and ":""}Use-class, extraction and terrace permissions with ${esc(s.borough)} council.</div>
       <div class="rstep"><b>5 · Compare your finalists.</b> Shortlist up to three streets in Location Potential and compare them side by side before deciding.</div>

@@ -1,0 +1,16 @@
+{
+ "Glasgow City": {
+  "retail_rv_m2": 159,
+  "office_rv_m2": 223,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 32878,
+  "saa_office_avg_rv": 31555
+ },
+ "_default": {
+  "retail_rv_m2": 159,
+  "office_rv_m2": 223,
+  "basis": "SAA",
+  "saa_shop_avg_rv": 32878,
+  "saa_office_avg_rv": 31555
+ }
+}

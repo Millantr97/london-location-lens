@@ -29,7 +29,8 @@ for si,s in enumerate(segs):
         cc[cat]=[[u['name'][:44],(u.get('cuisine') or '')[:26],u['chain'],d] for d,u in us[:12]]
     if cc: COMPS[s['id']]=cc
 today=datetime.date.today().strftime('%-d %b %Y')
-META={"built":today,"osm_date":today,"crime_window":"Aug 2025 - Jul 2026","census":"Census 2021",
+SCOT=C.get('country')=='S'
+META={"built":today,"osm_date":today,"crime_window":"Aug 2025 - Jul 2026","census":"Census 2022 (Scotland)" if SCOT else "Census 2021",
       "numbat":"National Rail: ORR Estimates of Station Usage 2024-25 (annual; day-of-week split modelled)","sources":{}}
 for s in segs: s.pop('_units',None)
 outdir=f'{ROOT}/{cid}/data'

@@ -57,11 +57,47 @@ CITIES = {
     country='EW',
     police='South Yorkshire Police',
  ),
+ 'glasgow': dict(
+    id='glasgow', name='Glasgow', region='Greater Glasgow',
+    center=(55.8612, -4.2499),            # George Square
+    bbox=(55.70, -4.60, 56.00, -3.95),
+    bands=[(1500,'City centre'),(4000,'1.5-4 km from centre'),(8000,'4-8 km from centre'),(15000,'8-15 km from centre')],
+    band_far='15+ km from centre',
+    country='S',
+    police='Police Scotland',
+    no_crime=True,
+    crime_dropped='Police Scotland does not publish street-level recorded crime. Scottish recorded-crime statistics (statistics.gov.scot) are published at council-area level only, so no crime figures are shown for Glasgow anywhere on this page - we drop the field rather than estimate it. Every other data field is unaffected.',
+ ),
+ 'edinburgh': dict(
+    id='edinburgh', name='Edinburgh', region='Edinburgh and the Lothians',
+    center=(55.9533, -3.1883),            # Waverley / Princes Street
+    bbox=(55.85, -3.60, 56.05, -2.90),
+    bands=[(1500,'City centre'),(4000,'1.5-4 km from centre'),(8000,'4-8 km from centre'),(15000,'8-15 km from centre')],
+    band_far='15+ km from centre',
+    country='S',
+    police='Police Scotland',
+    no_crime=True,
+    crime_dropped='Police Scotland does not publish street-level recorded crime. Scottish recorded-crime statistics (statistics.gov.scot) are published at council-area level only, so no crime figures are shown for Edinburgh anywhere on this page - we drop the field rather than estimate it. Every other data field is unaffected.',
+ ),
 }
 # Curated non-station area pitches per city. anchors = ORR station names.
 CURATED = {
  'manchester': [
    dict(id='trafford-centre', name='Trafford Centre', lat=53.4660, lng=-2.3488, stype='managed_estate', anchors=[]),
    dict(id='mediacityuk', name='MediaCityUK, Salford Quays', lat=53.4727, lng=-2.2972, stype='managed_estate', anchors=[('Salford Crescent','ORR')]),
+ ],
+ 'glasgow': [
+   dict(id='buchanan-quarter', name='Buchanan Quarter', lat=55.8606, lng=-4.2520, stype='shopping_district', anchors=[('Glasgow Queen Street','ORR')]),
+   dict(id='west-end-byres', name='West End - Byres Road', lat=55.8744, lng=-4.2927, stype='high_street', anchors=[('Partick','ORR')]),
+   dict(id='merchant-city', name='Merchant City', lat=55.8580, lng=-4.2455, stype='high_street', anchors=[('Argyle Street','ORR')]),
+   dict(id='finnieston', name='Finnieston', lat=55.8645, lng=-4.2830, stype='high_street', anchors=[('Exhibition Centre (Glasgow)','ORR')]),
+   dict(id='braehead', name='Braehead', lat=55.8767, lng=-4.3633, stype='managed_estate', anchors=[]),
+ ],
+ 'edinburgh': [
+   dict(id='st-james-quarter', name='St James Quarter', lat=55.9555, lng=-3.1880, stype='managed_estate', anchors=[('Edinburgh','ORR')]),
+   dict(id='stockbridge', name='Stockbridge', lat=55.9600, lng=-3.2085, stype='high_street', anchors=[('Haymarket','ORR')]),
+   dict(id='leith-walk', name='Leith Walk', lat=55.9645, lng=-3.1770, stype='high_street', anchors=[('Edinburgh','ORR')]),
+   dict(id='bruntsfield', name='Bruntsfield & Morningside', lat=55.9360, lng=-3.2090, stype='high_street', anchors=[('Haymarket','ORR')]),
+   dict(id='gyle', name='The Gyle', lat=55.9380, lng=-3.3170, stype='managed_estate', anchors=[('South Gyle','ORR')]),
  ],
 }

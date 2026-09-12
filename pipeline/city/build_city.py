@@ -66,41 +66,57 @@ def band(la,lo):
     return C['band_far']
 
 # ---------- census ----------
-def load(fname):
-    with open(f'{CENSUS}/{fname}') as f:
-        rd=csv.reader(f); hdr=next(rd)
-        return hdr,{r[2]:r for r in rd}
-h7,d7=load('census2021-ts007a-lsoa.csv'); h4,d4=load('census2021-ts004-lsoa.csv')
-h21,d21=load('census2021-ts021-lsoa.csv'); h63,d63=load('census2021-ts063-lsoa.csv'); h66,d66=load('census2021-ts066-lsoa.csv')
-def idx(h,frag,exact=False):
-    for i,c in enumerate(h):
-        if (c==frag) if exact else (frag in c): return i
-    raise KeyError(frag)
-i7_tot=idx(h7,'Age: Total',True)
-i7_u20=[idx(h7,'Age: Aged 4 years and under',True)]+[idx(h7,f'Age: Aged {b} years') for b in ['5 to 9','10 to 14','15 to 19']]
-i7_2039=[idx(h7,f'Age: Aged {b} years') for b in ['20 to 24','25 to 29','30 to 34','35 to 39']]
-i4_tot=idx(h4,'Country of birth: Total'); i4_uk=idx(h4,'Country of birth: Europe: United Kingdom')
-i63_tot=idx(h63,'Occupation (current): Total')
-i63_prof=[idx(h63,'Occupation (current): 1.'),idx(h63,'Occupation (current): 2.'),idx(h63,'Occupation (current): 3.')]
-i66_tot=idx(h66,'Total: All usual residents aged 16')
-i66_stu=[idx(h66,'Economically active and a full-time student'),idx(h66,'Economically inactive: Student')]
-ETH=[('White','Ethnic group: White'),('Asian, Asian British or Asian Welsh','Ethnic group: Asian, Asian British or Asian Welsh'),
-     ('Black, Black British, Black Welsh, Caribbean or African','Ethnic group: Black, Black British, Black Welsh, Caribbean or African'),
-     ('Mixed or Multiple ethnic groups','Ethnic group: Mixed or Multiple ethnic groups'),('Other ethnic group','Ethnic group: Other ethnic group')]
-i21_tot=idx(h21,'Ethnic group: Total'); i21=[(n,idx(h21,c,True)) for n,c in ETH]
-def census(code):
-    r7,r4,r21,r63,r66=d7[code],d4[code],d21[code],d63[code],d66[code]
-    tot=float(r7[i7_tot])
-    u20=sum(float(r7[i]) for i in i7_u20); a2039=sum(float(r7[i]) for i in i7_2039)
-    nonuk=1-float(r4[i4_uk])/float(r4[i4_tot])
-    prof=sum(float(r63[i]) for i in i63_prof)/float(r63[i63_tot])
-    stu=(float(r66[i66_stu[0]])+float(r66[i66_stu[1]]))/float(r66[i66_tot])
-    shares=[(n,float(r21[i])/float(r21[i21_tot])) for n,i in i21]
-    diversity=1-sum(p*p for _,p in shares)
-    top=sorted(shares,key=lambda x:-x[1])[:3]
-    return {'code':code,'residents':tot,'pct20_39':round(100*a2039/tot,1),'pct_under20':round(100*u20/tot,1),
-            'pct_students':round(100*stu,1),'pct_prof':round(100*prof,1),'pct_nonuk':round(100*nonuk,1),
-            'diversity':round(diversity,3),'top_eth':[[n,round(100*p,1)] for n,p in top]}
+SCOT=C.get('country')=='S'
+if SCOT:
+    SDZ=json.load(open(f'{ROOT}/pipeline/city/census_scot_dz.json'))
+    SOA=json.load(open(f'{ROOT}/pipeline/city/census_scot_oa.json'))
+    d7=None
+    def census_scot(pc):
+        codes=pc.get('codes') or {}
+        dz=SDZ.get(codes.get('lsoa11') or '')
+        if not dz: return None
+        d=dict(dz)
+        oa=SOA.get(codes.get('oa21') or '')
+        if oa is not None: d['pct_nonuk']=oa
+        else: d['pct_nonuk']=None
+        return d
+else:
+    def load(fname):
+        with open(f'{CENSUS}/{fname}') as f:
+            rd=csv.reader(f); hdr=next(rd)
+            return hdr,{r[2]:r for r in rd}
+    h7,d7=load('census2021-ts007a-lsoa.csv'); h4,d4=load('census2021-ts004-lsoa.csv')
+    h21,d21=load('census2021-ts021-lsoa.csv'); h63,d63=load('census2021-ts063-lsoa.csv'); h66,d66=load('census2021-ts066-lsoa.csv')
+if not SCOT:
+    def idx(h,frag,exact=False):
+        for i,c in enumerate(h):
+            if (c==frag) if exact else (frag in c): return i
+        raise KeyError(frag)
+    i7_tot=idx(h7,'Age: Total',True)
+    i7_u20=[idx(h7,'Age: Aged 4 years and under',True)]+[idx(h7,f'Age: Aged {b} years') for b in ['5 to 9','10 to 14','15 to 19']]
+    i7_2039=[idx(h7,f'Age: Aged {b} years') for b in ['20 to 24','25 to 29','30 to 34','35 to 39']]
+    i4_tot=idx(h4,'Country of birth: Total'); i4_uk=idx(h4,'Country of birth: Europe: United Kingdom')
+    i63_tot=idx(h63,'Occupation (current): Total')
+    i63_prof=[idx(h63,'Occupation (current): 1.'),idx(h63,'Occupation (current): 2.'),idx(h63,'Occupation (current): 3.')]
+    i66_tot=idx(h66,'Total: All usual residents aged 16')
+    i66_stu=[idx(h66,'Economically active and a full-time student'),idx(h66,'Economically inactive: Student')]
+    ETH=[('White','Ethnic group: White'),('Asian, Asian British or Asian Welsh','Ethnic group: Asian, Asian British or Asian Welsh'),
+         ('Black, Black British, Black Welsh, Caribbean or African','Ethnic group: Black, Black British, Black Welsh, Caribbean or African'),
+         ('Mixed or Multiple ethnic groups','Ethnic group: Mixed or Multiple ethnic groups'),('Other ethnic group','Ethnic group: Other ethnic group')]
+    i21_tot=idx(h21,'Ethnic group: Total'); i21=[(n,idx(h21,c,True)) for n,c in ETH]
+    def census(code):
+        r7,r4,r21,r63,r66=d7[code],d4[code],d21[code],d63[code],d66[code]
+        tot=float(r7[i7_tot])
+        u20=sum(float(r7[i]) for i in i7_u20); a2039=sum(float(r7[i]) for i in i7_2039)
+        nonuk=1-float(r4[i4_uk])/float(r4[i4_tot])
+        prof=sum(float(r63[i]) for i in i63_prof)/float(r63[i63_tot])
+        stu=(float(r66[i66_stu[0]])+float(r66[i66_stu[1]]))/float(r66[i66_tot])
+        shares=[(n,float(r21[i])/float(r21[i21_tot])) for n,i in i21]
+        diversity=1-sum(p*p for _,p in shares)
+        top=sorted(shares,key=lambda x:-x[1])[:3]
+        return {'code':code,'residents':tot,'pct20_39':round(100*a2039/tot,1),'pct_under20':round(100*u20/tot,1),
+                'pct_students':round(100*stu,1),'pct_prof':round(100*prof,1),'pct_nonuk':round(100*nonuk,1),
+                'diversity':round(diversity,3),'top_eth':[[n,round(100*p,1)] for n,p in top]}
 
 # ---------- classify pool once ----------
 print('classifying pool',len(pool),flush=True)
@@ -266,11 +282,16 @@ for s in areas:
     osm['parks_600']=near_count(PARK_G,s['lat'],s['lng'],0.01,600,1)
     near9=[x for x in near_stations(s['lat'],s['lng']) if x[0]<=900]
     pc=PC.get(f"a-{sid}") or {}
-    lsoa_code=(pc.get('codes') or {}).get('lsoa')
-    if lsoa_code and lsoa_code in d7:
-        lsoa=census(lsoa_code); lsoa['name']=pc.get('lsoa') or lsoa_code
+    if SCOT:
+        lsoa=census_scot(pc)
+        if lsoa: lsoa['name']=pc.get('lsoa') or lsoa['code']
+        else: print('WARN no dz for',sid)
     else:
-        print('WARN no lsoa for',sid); lsoa=None
+        lsoa_code=(pc.get('codes') or {}).get('lsoa')
+        if lsoa_code and lsoa_code in d7:
+            lsoa=census(lsoa_code); lsoa['name']=pc.get('lsoa') or lsoa_code
+        else:
+            print('WARN no lsoa for',sid); lsoa=None
     crime=None if NO_CRIME else crime_cached(sid,s['lat'],s['lng'])
     district=pc.get('admin_district') or ''
     voa=VOA.get(district)
@@ -282,7 +303,7 @@ for s in areas:
         '_annual':sum(a['annual'] for a in anch),
         'transport':{'stations_900m':len(near9),'names':[n for _,n in near9]},
         'osm':osm,'lsoa':lsoa,'crime':crime,
-        'rent':{'retail_rv_m2':voa['retail_rv_m2'],'office_rv_m2':voa['office_rv_m2']},
+        'rent':{k:voa[k] for k in ('retail_rv_m2','office_rv_m2','basis','saa_shop_avg_rv','saa_office_avg_rv') if k in voa},
         '_units':us})
 print('areas built:',len(A),flush=True)
 
@@ -406,10 +427,15 @@ for i,st in enumerate(streets):
         if NO_CRIME: crime=None
         elif pdist<=1200 and par: crime=dict(par['crime'])
         else: crime=crime_cached(f"s-{round(la,4)}-{round(lo,4)}",la,lo)
-        lsoa_code=(pc.get('codes') or {}).get('lsoa')
-        if lsoa_code and lsoa_code in d7: lsoa=census(lsoa_code); lsoa['name']=pc.get('lsoa') or lsoa_code
-        elif par and par['lsoa']: lsoa=dict(par['lsoa'])
-        else: lsoa=None
+        if SCOT:
+            lsoa=census_scot(pc)
+            if lsoa: lsoa['name']=pc.get('lsoa') or lsoa['code']
+            elif par and par['lsoa']: lsoa=dict(par['lsoa'])
+        else:
+            lsoa_code=(pc.get('codes') or {}).get('lsoa')
+            if lsoa_code and lsoa_code in d7: lsoa=census(lsoa_code); lsoa['name']=pc.get('lsoa') or lsoa_code
+            elif par and par['lsoa']: lsoa=dict(par['lsoa'])
+            else: lsoa=None
         anchors=[]; share=None; annual=0; days={k:0.0 for k in ('mon','mid','fri','sat','sun')}; mfrom=None
     district2=district if district in VOA else (par['borough'] if par else district)
     voa=VOA.get(district2) or VOA.get('_default')
@@ -419,7 +445,7 @@ for i,st in enumerate(streets):
        'anchors':anchors,
        'flow':{'annual_total':annual,'days':days,'modelled_from':mfrom,'share':round(share,3) if share else None},
        'transport':transport,'osm':osm,'lsoa':lsoa,'crime':crime,
-       'rent':{'retail_rv_m2':voa['retail_rv_m2'],'office_rv_m2':voa['office_rv_m2']},
+       'rent':{k:voa[k] for k in ('retail_rv_m2','office_rv_m2','basis','saa_shop_avg_rv','saa_office_avg_rv') if k in voa},
        '_units':us}
     new.append(s)
 print('streets enriched:',len(new),flush=True)
@@ -452,10 +478,15 @@ print('parent units moved to streets:',dropped,flush=True)
 segs=A+new
 # fill lsoa None with city median later; first collect median residents
 med_res=sorted(s['lsoa']['residents'] for s in segs if s['lsoa'])[max(1,len([s for s in segs if s['lsoa']])//2)]
+if SCOT:
+    med_nonuk=sorted(s['lsoa']['pct_nonuk'] for s in segs if s['lsoa'] and s['lsoa'].get('pct_nonuk') is not None)
+    med_nonuk=med_nonuk[len(med_nonuk)//2] if med_nonuk else 10.0
+    for s in segs:
+        if s['lsoa'] and s['lsoa'].get('pct_nonuk') is None: s['lsoa']['pct_nonuk']=med_nonuk
 for s in segs:
     if not s['lsoa']:
         s['lsoa']={'code':'','name':f"({C['name']} median)",'residents':med_res,'pct20_39':30.0,'pct_under20':20.0,
-                   'pct_students':5.0,'pct_prof':40.0,'pct_nonuk':20.0,'diversity':0.5,'top_eth':[]}
+                   'pct_students':5.0,'pct_prof':40.0,'pct_nonuk':None if SCOT else 20.0,'diversity':0.5,'top_eth':[]}
         s['weak']=True
     cr=s['crime']
     if cr is None:

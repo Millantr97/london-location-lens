@@ -115,7 +115,7 @@ function buildReport(id){
       ${kv("Usual residents (Census 2021)",Math.round(s.lsoa.residents).toLocaleString("en-GB"))}
       ${kv("Aged 20-39",s.lsoa.pct20_39.toFixed(1)+"%")}${kv("Under 20",s.lsoa.pct_under20.toFixed(1)+"%")}
       ${kv("Students (16+)",s.lsoa.pct_students.toFixed(1)+"%")}${kv("Professional / managerial jobs",s.lsoa.pct_prof.toFixed(1)+"%")}
-      ${kv("Born outside the UK",s.lsoa.pct_nonuk.toFixed(1)+"%")}${kv("Ethnic diversity index (0-1)",s.lsoa.diversity.toFixed(2))}
+      ${s.lsoa.pct_nonuk!=null?kv("Born outside the UK",s.lsoa.pct_nonuk.toFixed(1)+"%"):""}${kv("Ethnic diversity index (0-1)",s.lsoa.diversity.toFixed(2))}
       ${topEth}
       <div class="rmini">LSOA ≈ 1,500 residents - it describes residents, not the people walking this street. Census 2021 via Nomis.</div>
     </div>
@@ -146,8 +146,9 @@ function buildReport(id){
   const s7body=`
   <div class="rcols2">
     <div class="rcard"><div class="rsub">Occupancy cost · ${esc(s.borough)} ${chip("ctx")}</div>
-      ${kv("Retail rateable value / m² (VOA, Mar 2023)",money(s.rent.retail_rv_m2))}
-      ${kv("Office rateable value / m²",money(s.rent.office_rv_m2))}
+      ${s.rent.basis==="SAA"
+        ?kv("Retail RV / m² (modelled from Scottish Assessors roll)",money(s.rent.retail_rv_m2),"mod")+kv("Office RV / m² (modelled)",money(s.rent.office_rv_m2),"mod")+kv("Avg RV per shop (SAA roll, observed)",money(s.rent.saa_shop_avg_rv),"ctx")
+        :kv("Retail rateable value / m² (VOA, "+(CITY.texts.voaYear||"Mar 2023")+")",money(s.rent.retail_rv_m2))+kv("Office rateable value / m²",money(s.rent.office_rv_m2))}
       ${kv("Estimated passing rent / m² (2026)",money(s.rent.est_rent_m2),"mod")}
       ${kv(`Est. rent for your ${c.floorspace} m² unit`,money(s.rent.est_rent_m2*c.floorspace/12)+"/mo","mod")}
       ${kv("Est. business rates after small-biz relief",money(estRates(s,c)/12)+"/mo","mod")}

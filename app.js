@@ -753,7 +753,7 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Born outside the UK</span><span class="rv">${s.lsoa.pct_nonuk.toFixed(1)}%</span></div>
       <div class="ev-line"><span class="lv">Ethnic diversity index (0-1)</span><span class="rv">${s.lsoa.diversity.toFixed(2)}</span></div>
       ${topEth}
-      <div class="ev-line"><span class="lv">LSOA ≈ 1,500 residents. It describes residents, not the people walking this street.</span></div>
+      <div class="ev-line"><span class="lv">${CITY.texts.resNote||"LSOA ≈ 1,500 residents. It describes residents, not the people walking this street."}</span></div>
     </div>
     ${s.crime?`<div class="ev-card"><h4>Business crime, ${META.crime_window}${chipFor("ctx")}</h4>
       <div class="ev-line"><span class="lv">Shoplifting</span><span class="rv">${s.crime.shoplifting}</span></div>
@@ -764,8 +764,12 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">${CITY.texts.crimeNote||"Source: Metropolitan Police recorded offences around the anchor, via data.police.uk. A relative signal between areas, not an absolute risk figure."}</span></div>
     </div>`:''}
     <div class="ev-card"><h4>Occupancy cost · ${s.borough}${chipFor("ctx")}</h4>
-      <div class="ev-line"><span class="lv">Retail rateable value / m² (VOA, ${CITY.texts.voaYear||"Mar 2023"})</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
-      <div class="ev-line"><span class="lv">Office rateable value / m²</span><span class="rv">${money(s.rent.office_rv_m2)}</span></div>
+      ${s.rent.basis==="SAA"
+        ?`<div class="ev-line"><span class="lv">Retail rateable value / m² (modelled from Scottish Assessors roll)${chipFor("mod")}</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
+      <div class="ev-line"><span class="lv">Office rateable value / m² (modelled)${chipFor("mod")}</span><span class="rv">${money(s.rent.office_rv_m2)}</span></div>
+      <div class="ev-line"><span class="lv">Avg rateable value per shop (SAA valuation roll, observed)</span><span class="rv">${money(s.rent.saa_shop_avg_rv)}</span></div>`
+        :`<div class="ev-line"><span class="lv">Retail rateable value / m² (VOA, ${CITY.texts.voaYear||"Mar 2023"})</span><span class="rv">${money(s.rent.retail_rv_m2)}</span></div>
+      <div class="ev-line"><span class="lv">Office rateable value / m²</span><span class="rv">${money(s.rent.office_rv_m2)}</span></div>`}
       <div class="ev-line"><span class="lv">Estimated passing rent / m² (2026)${chipFor("mod")}</span><span class="rv">${money(s.rent.est_rent_m2)}</span></div>
       <div class="ev-line"><span class="lv">Est. rent for your ${concept.floorspace} m² unit${chipFor("mod")}</span><span class="rv">${money(s.rent.est_rent_m2*concept.floorspace/12)}/mo</span></div>
       <div class="ev-line"><span class="lv">Est. business rates after small-biz relief${chipFor("mod")}</span><span class="rv">${money(estRates(s,concept)/12)}/mo</span></div>
@@ -808,9 +812,9 @@ function renderMethod(){
     <p><a href="https://www.openstreetmap.org/copyright">openstreetmap.org (ODbL)</a> · <a href="https://overpass-api.de/">Overpass API</a></p>
     <p>Resolution: real points near the anchor, but coverage depends on mappers; treat counts as lower bounds.</p></div>
   <div class="m-card"><h4>Residents${chipFor("ctx")}</h4>
-    <p>Census 2021 lower-layer super output area (LSOA) statistics for the segment anchor: age bands (TS007A), ethnic group (TS021), country of birth (TS004), occupation (TS063), economic activity and students (TS066). Office for National Statistics via Nomis bulk files.</p>
+    ${CITY.texts.resMethod||`<p>Census 2021 lower-layer super output area (LSOA) statistics for the segment anchor: age bands (TS007A), ethnic group (TS021), country of birth (TS004), occupation (TS063), economic activity and students (TS066). Office for National Statistics via Nomis bulk files.</p>`}
     <p><a href="https://www.nomisweb.co.uk/sources/census_2021_bulk">nomisweb.co.uk - Census 2021 bulk downloads</a></p>
-    <p>Resolution: LSOA (~1,500 residents). These are people who <i>live</i> here, not workers or visitors. The tool never claims street-level demographics.</p></div>
+    <p>${CITY.texts.resResolution||"Resolution: LSOA (~1,500 residents)."} These are people who <i>live</i> here, not workers or visitors. The tool never claims street-level demographics.</p></div>
   ${HAS_CRIME?`<div class="m-card"><h4>Business crime${chipFor("ctx")}</h4>
     ${CITY.texts.crimeMethod||`<p>Metropolitan Police recorded street-level offences within ~450 m of each segment anchor, 12 months to July 2026: shoplifting, theft from the person, robbery and burglary, via data.police.uk. Rates are normalised per 1,000 residents.</p>`}
     <p><a href="https://data.police.uk/data/">data.police.uk - street-level crime</a></p>

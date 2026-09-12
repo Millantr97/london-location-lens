@@ -1,0 +1,795 @@
+[
+ {
+  "id": "st-aigburth",
+  "name": "Aigburth station area",
+  "lat": 53.36451,
+  "lng": -2.92661,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Aigburth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-aintree",
+  "name": "Aintree station area",
+  "lat": 53.47382,
+  "lng": -2.95633,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Aintree",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bank-hall",
+  "name": "Bank Hall station area",
+  "lat": 53.4379,
+  "lng": -2.9878,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bank Hall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bebington",
+  "name": "Bebington station area",
+  "lat": 53.35766,
+  "lng": -3.00307,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bebington",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bidston",
+  "name": "Bidston station area",
+  "lat": 53.40936,
+  "lng": -3.07878,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bidston",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birkenhead-central",
+  "name": "Birkenhead Central station area",
+  "lat": 53.3882,
+  "lng": -3.02088,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birkenhead Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birkenhead-north",
+  "name": "Birkenhead North station area",
+  "lat": 53.40471,
+  "lng": -3.05793,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birkenhead North",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-birkenhead-park",
+  "name": "Birkenhead Park station area",
+  "lat": 53.3976,
+  "lng": -3.03982,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Birkenhead Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-blundellsands-and-crosby",
+  "name": "Blundellsands and Crosby station area",
+  "lat": 53.48773,
+  "lng": -3.04043,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Blundellsands and Crosby",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bootle-new-strand",
+  "name": "Bootle New Strand station area",
+  "lat": 53.45278,
+  "lng": -2.99462,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bootle New Strand",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bootle-oriel-road",
+  "name": "Bootle Oriel Road station area",
+  "lat": 53.4467,
+  "lng": -2.99567,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bootle Oriel Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-broad-green",
+  "name": "Broad Green station area",
+  "lat": 53.40651,
+  "lng": -2.89339,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Broad Green",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bromborough",
+  "name": "Bromborough station area",
+  "lat": 53.32186,
+  "lng": -2.98689,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bromborough",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bromborough-rake",
+  "name": "Bromborough Rake station area",
+  "lat": 53.33028,
+  "lng": -2.99022,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bromborough Rake",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-brunswick",
+  "name": "Brunswick station area",
+  "lat": 53.38322,
+  "lng": -2.97602,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Brunswick",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-conway-park",
+  "name": "Conway Park station area",
+  "lat": 53.39352,
+  "lng": -3.02309,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Conway Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-cressington",
+  "name": "Cressington station area",
+  "lat": 53.35869,
+  "lng": -2.91209,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Cressington",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-eastham-rake",
+  "name": "Eastham Rake station area",
+  "lat": 53.30757,
+  "lng": -2.98127,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Eastham Rake",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-eccleston-park",
+  "name": "Eccleston Park station area",
+  "lat": 53.43073,
+  "lng": -2.78034,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Eccleston Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-edge-hill",
+  "name": "Edge Hill station area",
+  "lat": 53.40249,
+  "lng": -2.94665,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Edge Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-fazakerley",
+  "name": "Fazakerley station area",
+  "lat": 53.46898,
+  "lng": -2.93697,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Fazakerley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-formby",
+  "name": "Formby station area",
+  "lat": 53.55432,
+  "lng": -3.07092,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Formby",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-freshfield",
+  "name": "Freshfield station area",
+  "lat": 53.56621,
+  "lng": -3.07189,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Freshfield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-green-lane",
+  "name": "Green Lane station area",
+  "lat": 53.3833,
+  "lng": -3.01628,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Green Lane",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-halewood",
+  "name": "Halewood station area",
+  "lat": 53.36449,
+  "lng": -2.83011,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Halewood",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hall-road",
+  "name": "Hall Road station area",
+  "lat": 53.49762,
+  "lng": -3.04974,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hall Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-headbolt-lane",
+  "name": "Headbolt Lane station area",
+  "lat": 53.49158,
+  "lng": -2.88371,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Headbolt Lane",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-heswall",
+  "name": "Heswall station area",
+  "lat": 53.32967,
+  "lng": -3.07335,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Heswall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hightown",
+  "name": "Hightown station area",
+  "lat": 53.52538,
+  "lng": -3.05718,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hightown",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-hunts-cross",
+  "name": "Hunts Cross station area",
+  "lat": 53.36073,
+  "lng": -2.85541,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Hunts Cross",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-huyton",
+  "name": "Huyton station area",
+  "lat": 53.40963,
+  "lng": -2.84322,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Huyton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kirkdale",
+  "name": "Kirkdale station area",
+  "lat": 53.44078,
+  "lng": -2.98117,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kirkdale",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-leasowe",
+  "name": "Leasowe station area",
+  "lat": 53.40807,
+  "lng": -3.09998,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Leasowe",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-liverpool-central",
+  "name": "Liverpool Central station area",
+  "lat": 53.40422,
+  "lng": -2.97951,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Liverpool Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-liverpool-james-street",
+  "name": "Liverpool James Street station area",
+  "lat": 53.405,
+  "lng": -2.99221,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Liverpool James Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-liverpool-lime-street",
+  "name": "Liverpool Lime Street station area",
+  "lat": 53.40761,
+  "lng": -2.97758,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Liverpool Lime Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-liverpool-south-parkway",
+  "name": "Liverpool South Parkway station area",
+  "lat": 53.35762,
+  "lng": -2.8892,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Liverpool South Parkway",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-maghull",
+  "name": "Maghull station area",
+  "lat": 53.50647,
+  "lng": -2.93102,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Maghull",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-maghull-north",
+  "name": "Maghull North station area",
+  "lat": 53.51674,
+  "lng": -2.92123,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Maghull North",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-moorfields",
+  "name": "Moorfields station area",
+  "lat": 53.40855,
+  "lng": -2.98924,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Moorfields",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-mossley-hill",
+  "name": "Mossley Hill station area",
+  "lat": 53.37856,
+  "lng": -2.91483,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Mossley Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-new-brighton",
+  "name": "New Brighton station area",
+  "lat": 53.43739,
+  "lng": -3.04805,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "New Brighton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-old-roan",
+  "name": "Old Roan station area",
+  "lat": 53.48692,
+  "lng": -2.95068,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Old Roan",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-orrell-park",
+  "name": "Orrell Park station area",
+  "lat": 53.46171,
+  "lng": -2.96288,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Orrell Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-port-sunlight",
+  "name": "Port Sunlight station area",
+  "lat": 53.34848,
+  "lng": -2.99825,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Port Sunlight",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-prescot",
+  "name": "Prescot station area",
+  "lat": 53.42353,
+  "lng": -2.79899,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Prescot",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rainford",
+  "name": "Rainford station area",
+  "lat": 53.51711,
+  "lng": -2.78858,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rainford",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rainhill",
+  "name": "Rainhill station area",
+  "lat": 53.41721,
+  "lng": -2.76629,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rainhill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rice-lane",
+  "name": "Rice Lane station area",
+  "lat": 53.45751,
+  "lng": -2.9631,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rice Lane",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-roby",
+  "name": "Roby station area",
+  "lat": 53.41006,
+  "lng": -2.8555,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Roby",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rock-ferry",
+  "name": "Rock Ferry station area",
+  "lat": 53.3728,
+  "lng": -3.01082,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rock Ferry",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-sandhills",
+  "name": "Sandhills station area",
+  "lat": 53.42954,
+  "lng": -2.992,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Sandhills",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-seaforth-and-litherland",
+  "name": "Seaforth and Litherland station area",
+  "lat": 53.46558,
+  "lng": -3.0048,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Seaforth and Litherland",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-spital",
+  "name": "Spital station area",
+  "lat": 53.34005,
+  "lng": -2.99409,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Spital",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-st-michaels",
+  "name": "St Michaels station area",
+  "lat": 53.37594,
+  "lng": -2.95353,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "St Michaels",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-thatto-heath",
+  "name": "Thatto Heath station area",
+  "lat": 53.43669,
+  "lng": -2.75947,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Thatto Heath",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wallasey-grove-road",
+  "name": "Wallasey Grove Road station area",
+  "lat": 53.42844,
+  "lng": -3.06974,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wallasey Grove Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wallasey-village",
+  "name": "Wallasey Village station area",
+  "lat": 53.42298,
+  "lng": -3.06916,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wallasey Village",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-wavertree-technology-park",
+  "name": "Wavertree Technology Park station area",
+  "lat": 53.40522,
+  "lng": -2.92281,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Wavertree Technology Park",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-west-allerton",
+  "name": "West Allerton station area",
+  "lat": 53.36933,
+  "lng": -2.90719,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "West Allerton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-whiston",
+  "name": "Whiston station area",
+  "lat": 53.41391,
+  "lng": -2.79652,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Whiston",
+    "ORR"
+   ]
+  ]
+ }
+]

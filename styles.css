@@ -391,3 +391,6 @@ main.art{max-width:880px;margin:0 auto;padding:34px 20px 50px}
 .citynav a.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
 .citynav a:hover{color:var(--ink);border-color:#b9b3a4;background:#ece7d9}
 @media(max-width:900px){.citynav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}.citynav::-webkit-scrollbar{display:none}}
+/* full-width CTA banner rows at section bottoms */
+.cta-wrap{max-width:1440px;margin:0 auto;padding:18px 24px 0}
+@media(max-width:520px){.cta-wrap{padding:14px 12px 0}}

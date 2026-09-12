@@ -746,7 +746,7 @@ function selectSegment(id,scroll){
       <div class="ev-line"><span class="lv">Ranked by mean MODELLED revenue per recorded unit for "${concept.name}" - the drill-down from this segment to its strongest streets. Click a street to fly the map to it and reveal its units.</span></div>
     </div>
     <div class="ev-card"><h4>Who lives around it · ${s.lsoa.name}${chipFor("ctx")}</h4>
-      <div class="ev-line"><span class="lv">Usual residents (Census 2021)</span><span class="rv">${Math.round(s.lsoa.residents).toLocaleString("en-GB")}</span></div>
+      <div class="ev-line"><span class="lv">Usual residents (${META.census||"Census 2021"})</span><span class="rv">${Math.round(s.lsoa.residents).toLocaleString("en-GB")}</span></div>
       <div class="ev-line"><span class="lv">Aged 20-39</span><span class="rv">${s.lsoa.pct20_39.toFixed(1)}%</span></div>
       <div class="ev-line"><span class="lv">Students (16+)</span><span class="rv">${s.lsoa.pct_students.toFixed(1)}%</span></div>
       <div class="ev-line"><span class="lv">Professional / managerial jobs</span><span class="rv">${s.lsoa.pct_prof.toFixed(1)}%</span></div>

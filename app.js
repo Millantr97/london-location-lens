@@ -482,6 +482,10 @@ function prioField(label,key){
   return `<div class="field"><label>${label}<b id="vp-${key}">${concept.priorities[key]}</b></label>
   <input type="range" min="0" max="5" step="1" value="${concept.priorities[key]}" data-pr="${key}"></div>`;
 }
+function audField(label,key){
+  return `<div class="field"><label>${label}<b id="av-${key}">${concept.audience[key]}</b></label>
+  <input type="range" min="0" max="5" step="1" value="${concept.audience[key]}" data-aud="${key}"></div>`;
+}
 
 function rentReference(){
   const londonBands=["Zone 1","Zone 2","Zone 3","Zone 4"];
@@ -497,8 +501,7 @@ function rentReference(){
 
 function renderConcept(){
   const c=concept;
-  const audRows=AUDIENCES.map(([k,label])=>`
-    <div class="aud-row"><span>${label}</span><input type="range" min="0" max="5" step="1" value="${c.audience[k]}" data-aud="${k}"><span class="val" id="av-${k}">${c.audience[k]}</span></div>`).join("");
+  const audRows=AUDIENCES.map(([k,label])=>audField(label,k)).join("");
   const cats=[["cafe","Cafe / coffee"],["restaurant","Restaurant"],["fast_food","Fast food"],["pub_bar","Pub / bar"],["grocery","Grocery & food retail"],["fitness","Fitness"],["cowork","Coworking"]];
   $("concept-grid").innerHTML=`
   <div class="cg-card"><h3>Format &amp; offer</h3>
@@ -517,12 +520,12 @@ function renderConcept(){
       <span class="tog ${c.family?'on':''}" data-tog="family">Family-friendly focus</span>
     </div>
   </div>
+  <div class="cg-card aud-card"><h3>Target audience <span style="font-weight:500;color:var(--muted);font-size:12px">0 = irrelevant, 5 = core</span></h3>
+    <div class="aud-fields">${audRows}</div>
+  </div>
   <div class="cg-card"><h3>Opening windows <span style="font-weight:500;color:var(--muted);font-size:12px">exact days and hours</span></h3>
     <div class="win-list" id="win-list"></div>
     <button class="add-win" id="add-win">+ Add a trading window</button>
-  </div>
-  <div class="cg-card"><h3>Target audience <span style="font-weight:500;color:var(--muted);font-size:12px">0 = irrelevant, 5 = core</span></h3>
-    ${audRows}
   </div>
   <div class="cg-card money-card"><h3>Money</h3>
     ${sliderField("Rent tolerance (rateable-value proxy, £/m²/yr)","rent",100,1500,25,v=>money(v)+"/m²")}

@@ -43,9 +43,9 @@ h1,h2,h3{letter-spacing:-.03em}
 .toggles{display:flex;flex-wrap:wrap;gap:8px}
 .tog{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;cursor:pointer;user-select:none}
 .tog.on{background:var(--lime);border-color:#9fca4d}
-.aud-row{display:grid;grid-template-columns:1fr 90px 24px;align-items:center;gap:8px;font-size:13px;margin-bottom:6px}
-.aud-row input{width:100%;accent-color:var(--ink)}
-.aud-row .val{text-align:right;font-weight:800}
+.aud-card{display:flex;flex-direction:column}
+.aud-card .aud-fields{flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+.aud-card .aud-fields .field{margin-bottom:0}
 .win-list{display:flex;flex-direction:column;gap:8px}
 .win{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}
 .win .days{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}

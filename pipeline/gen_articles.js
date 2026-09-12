@@ -154,7 +154,7 @@ for(const a of ARTICLES){
 <meta property="og:image" content="https://locationpotential.com/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../styles.css?v=30">
+<link rel="stylesheet" href="../styles.css?v=31">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "${esc(title)}", "itemListElement": [${ldItems}]}</script>
 </head>
 <body>

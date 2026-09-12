@@ -185,6 +185,7 @@ ${items}
 </article>
 </main>
 <footer class="foot"><div>Location Potential · a decision-support prototype. Verify any shortlist with on-street counts, agent enquiries and a licensing check before signing a lease.</div><div class="foot-links"><a href="../#rankings">Rankings &amp; guides</a><a href="../privacy.html">Privacy Notice</a></div></footer>
+<script data-goatcounter="https://locationpotential.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>`;
   fs.writeFileSync(__dirname+'/../articles/best-streets-'+a.slug+'-london.html',html);

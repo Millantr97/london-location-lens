@@ -167,8 +167,7 @@ for(const a of ARTICLES){
 <p class="art-stand">${esc(a.stand)}</p>
 <p class="art-meta">Format scored: ${esc(a.format)}</p>
 <p class="art-meta">Computed ${today} over ${M.SEGS.length.toLocaleString('en-GB')} London street segments. Every figure carries its label: OBSERVED, AREA CONTEXT or MODELLED.</p></header>
-<aside class="truth art-truth"><strong>Read the labels, not just the score</strong>
-<p><b class="c-obs">OBSERVED</b> measured at the street or station. <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it. <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. Nothing is presented as more precise than its source.</p></aside>
+<p class="truth-strip"><b class="c-obs">OBSERVED</b> measured at the street or station · <b class="c-ctx">AREA CONTEXT</b> residents or borough statistics around it · <b class="c-mod">MODELLED</b> transparent estimates we compute, with the rule shown. Nothing is presented as more precise than its source.</p>
 <ol class="art-list">
 ${items}
 </ol>

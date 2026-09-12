@@ -51,7 +51,7 @@ s=s.replace('<div>London Location Potential ·',f'<div>{C["name"]} Location Pote
 s=s.replace('href="privacy.html"','href="../privacy.html"')
 s=s.replace('value="London Location Potential expert brief"',f'value="{C["name"]} Location Potential expert brief"')
 s=re.sub(r'<script src="cities\.js\?v=\d+"></script>\s*<script src="segments\.js\?v=\d+"></script>\s*<script src="units\.js\?v=\d+"></script>\s*<script src="competitors\.js\?v=\d+"></script>\s*<script src="app\.js\?v=\d+"></script>\s*<script src="report\.js\?v=\d+"></script>\s*<script src="trends\.js\?v=\d+"></script>',
- '<script src="../cities.js?v=5"></script>\n<script src="city.js?v=1"></script>\n<script src="data/segments.js?v=1"></script>\n<script src="data/units.js?v=1"></script>\n<script src="data/competitors.js?v=1"></script>\n<script src="../app.js?v=31"></script>\n<script src="../report.js?v=20"></script>\n<script src="data/trends.js?v=1"></script>',s)
+ '<script src="../cities.js?v=5"></script>\n<script src="city.js?v=1"></script>\n<script src="data/segments.js?v=1"></script>\n<script src="data/units.js?v=1"></script>\n<script src="data/competitors.js?v=1"></script>\n<script src="../app.js?v=32"></script>\n<script src="../report.js?v=20"></script>\n<script src="data/trends.js?v=1"></script>',s)
 s=s.replace('<script src="extras.js?v=20"></script>','<script src="../extras.js?v=20"></script>')
 s=s.replace('<script src="tabs.js?v=22"></script>','<script src="../tabs.js?v=22"></script>')
 s=s.replace('<script src="leads.js?v=20"></script>','<script src="../leads.js?v=20"></script>')

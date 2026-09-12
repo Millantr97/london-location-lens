@@ -461,9 +461,10 @@ function renderPresets(){
     ? `<div class="preset-filters"><span class="pf-label">Filter by category:</span><button class="preset filter ${presetFilter==="all"?"active":""}" data-f="all">All</button>`
       +Object.keys(CATLABEL).filter(c=>PRESETS.some(p=>p.cat===c)).map(c=>`<button class="preset filter ${presetFilter===c?"active":""}" data-f="${c}">${CATLABEL[c]}</button>`).join("")
       +`</div>`:"";
-  $("preset-row").innerHTML=filterRow+visible.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
+  const moreBtn=`<button class="preset more" data-p="__more">${presetsExpanded?'See fewer concepts':'See more concepts ('+(PRESETS.length-PRESETS_VISIBLE)+' more)'}</button>`;
+  $("preset-row").innerHTML=(presetsExpanded?moreBtn:"")+filterRow+visible.map(p=>`<button class="preset ${p.id===activePreset?'active':''}" data-p="${p.id}">${p.name}</button>`).join("")
     +`<button class="preset scratch ${activePreset==='scratch'?'active':''}" data-p="scratch">Start from scratch - no template</button>`
-    +`<button class="preset more" data-p="__more">${presetsExpanded?'See fewer concepts':'See more concepts ('+(PRESETS.length-PRESETS_VISIBLE)+' more)'}</button>`;
+    +(presetsExpanded?"":moreBtn); /* expanded list: collapse control first, not buried at the bottom */
   document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{
     if(b.dataset.f){presetFilter=b.dataset.f;renderPresets();return;}
     if(b.dataset.p==="__more"){presetsExpanded=!presetsExpanded;renderPresets();return;}

@@ -1,0 +1,80 @@
+[
+ {
+  "id": "st-darnall",
+  "name": "Darnall station area",
+  "lat": 53.38455,
+  "lng": -1.41236,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Darnall",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-dore-and-totley",
+  "name": "Dore and Totley station area",
+  "lat": 53.32757,
+  "lng": -1.51532,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Dore and Totley",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-kiveton-bridge",
+  "name": "Kiveton Bridge station area",
+  "lat": 53.34094,
+  "lng": -1.26708,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Kiveton Bridge",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-rotherham-central",
+  "name": "Rotherham Central station area",
+  "lat": 53.4317,
+  "lng": -1.36105,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Rotherham Central",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-sheffield",
+  "name": "Sheffield station area",
+  "lat": 53.37837,
+  "lng": -1.46214,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Sheffield",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-woodhouse",
+  "name": "Woodhouse station area",
+  "lat": 53.3638,
+  "lng": -1.35737,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Woodhouse",
+    "ORR"
+   ]
+  ]
+ }
+]

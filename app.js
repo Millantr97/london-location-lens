@@ -483,6 +483,18 @@ function prioField(label,key){
   <input type="range" min="0" max="5" step="1" value="${concept.priorities[key]}" data-pr="${key}"></div>`;
 }
 
+function rentReference(){
+  const londonBands=["Zone 1","Zone 2","Zone 3","Zone 4"];
+  const cityBands=["City centre","1.5-4 km from centre","4-8 km from centre","8-15 km from centre","15+ km from centre"];
+  const bands=CITY.id==="london"?londonBands:cityBands;
+  const rows=bands.map(zone=>{
+    const vals=SEGMENTS.filter(s=>s.zone===zone&&Number.isFinite(+s.rent?.retail_rv_m2)).map(s=>+s.rent.retail_rv_m2);
+    return vals.length?`<span><b>${zone}</b><i>${money(vals.reduce((a,b)=>a+b,0)/vals.length)}/m²/yr</i></span>`:"";
+  }).filter(Boolean).join("");
+  const basis=(CITY.id==="glasgow"||CITY.id==="edinburgh")?"SAA-derived retail RV proxy":"VOA retail rateable value";
+  return `<div class="rent-ref"><strong>${CITY.name} reference ${chipFor("ctx")}</strong><div>${rows}</div><small>Average ${basis} across this tool's published segments in each ${CITY.id==="london"?"transport zone":"distance band"}; not an asking-rent quote.</small></div>`;
+}
+
 function renderConcept(){
   const c=concept;
   const audRows=AUDIENCES.map(([k,label])=>`
@@ -512,18 +524,20 @@ function renderConcept(){
   <div class="cg-card"><h3>Target audience <span style="font-weight:500;color:var(--muted);font-size:12px">0 = irrelevant, 5 = core</span></h3>
     ${audRows}
   </div>
-  <div class="cg-card"><h3>Money</h3>
+  <div class="cg-card money-card"><h3>Money</h3>
     ${sliderField("Rent tolerance (rateable-value proxy, £/m²/yr)","rent",100,1500,25,v=>money(v)+"/m²")}
-    <p style="font-size:12px;color:var(--muted)">Compared with the borough's VOA retail rateable value per m²${chipFor("ctx")} - a proxy for occupancy cost, not a quote for a specific unit.</p>
+    ${rentReference()}
   </div>
-  <div class="cg-card"><h3>Priorities &amp; competition <span style="font-weight:500;color:var(--muted);font-size:12px">3 = standard, 0 = ignore, 5 = dominate</span></h3>
+  <div class="cg-card priorities-card"><h3>Priorities &amp; competition <span style="font-weight:500;color:var(--muted);font-size:12px">3 = standard, 0 = ignore, 5 = dominate</span></h3>
     ${sliderField("Competition stance: avoid rivals (0) - seek proven clusters (100)","compStance",0,100,5,v=>v)}
-    ${prioField("Low rent matters","rent")}
-    ${prioField("Transport access matters","access")}
-    ${HAS_CRIME?prioField("Low business crime matters","safety"):""}
-    ${prioField("Green space matters","green")}
-    ${prioField("Strong residential base matters","residential")}
-    <p style="font-size:12px;color:var(--muted)">These re-weight the criteria in the score. Stance flips existing rivals from a penalty into a cluster bonus - useful for categories that trade better next to competitors.</p>
+    <div class="priority-fields">
+      ${prioField("Low rent matters","rent")}
+      ${prioField("Transport access matters","access")}
+      ${HAS_CRIME?prioField("Low business crime matters","safety"):""}
+      ${prioField("Green space matters","green")}
+      ${prioField("Strong residential base matters","residential")}
+    </div>
+    <p class="priority-note">These re-weight the criteria in the score. Stance flips rivals from a penalty into a cluster bonus.</p>
   </div>`;
   document.querySelectorAll("[data-k]").forEach(el=>el.oninput=()=>{
     concept[el.dataset.k]=+el.value;

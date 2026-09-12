@@ -417,3 +417,20 @@ main.art{max-width:880px;margin:0 auto;padding:34px 20px 50px}
 
 /* truth box must span full container width (overrides .hero p / .art p max-width) */
 .truth p{max-width:none}
+
+/* Compact questionnaire cards */
+.priorities-card{grid-column:span 2;padding:13px 16px}
+.priorities-card h3{margin-bottom:7px}
+.priorities-card>.field{margin-bottom:7px}
+.priority-fields{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:2px 18px}
+.priority-fields .field{margin-bottom:3px}
+.priority-note{font-size:11px;color:var(--muted);margin:3px 0 0}
+.money-card{padding:13px 16px;align-self:start}
+.money-card h3,.money-card .field{margin-bottom:7px}
+.rent-ref{border-top:1px solid var(--line);padding-top:7px}
+.rent-ref>strong{display:block;font-size:11px;margin-bottom:5px}
+.rent-ref>div{display:flex;flex-wrap:wrap;gap:4px}
+.rent-ref span{display:flex;gap:5px;align-items:baseline;background:#f1eee5;border-radius:7px;padding:4px 6px;font-size:10px}
+.rent-ref span b{font-weight:800}.rent-ref span i{font-style:normal;color:var(--muted);white-space:nowrap}
+.rent-ref small{display:block;color:var(--muted);font-size:9.5px;line-height:1.3;margin-top:5px}
+@media(max-width:760px){.priorities-card{grid-column:auto}.priority-fields{grid-template-columns:1fr}.rent-ref>div{display:grid;grid-template-columns:1fr 1fr}}

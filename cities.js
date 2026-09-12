@@ -4,6 +4,7 @@ window.CITIES=[
  {id:"manchester",name:"Manchester",url:"./manchester/"},
  {id:"birmingham",name:"Birmingham",url:"./birmingham/"},
  {id:"leeds",name:"Leeds",url:"./leeds/"},
+ {id:"bristol",name:"Bristol",url:"./bristol/"},
  /* new sections are added here as they go live */
 ];
 (function(){

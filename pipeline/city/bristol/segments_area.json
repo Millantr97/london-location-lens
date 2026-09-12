@@ -1,0 +1,184 @@
+[
+ {
+  "id": "st-ashley-down",
+  "name": "Ashley Down station area",
+  "lat": 51.47813,
+  "lng": -2.57665,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Ashley Down",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-avonmouth",
+  "name": "Avonmouth station area",
+  "lat": 51.49972,
+  "lng": -2.69886,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Avonmouth",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bedminster",
+  "name": "Bedminster station area",
+  "lat": 51.44061,
+  "lng": -2.59363,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bedminster",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-bristol-temple-meads",
+  "name": "Bristol Temple Meads station area",
+  "lat": 51.4491,
+  "lng": -2.5804,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Bristol Temple Meads",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-clifton-down",
+  "name": "Clifton Down station area",
+  "lat": 51.46443,
+  "lng": -2.61144,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Clifton Down",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-lawrence-hill",
+  "name": "Lawrence Hill station area",
+  "lat": 51.45858,
+  "lng": -2.56417,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Lawrence Hill",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-montpelier",
+  "name": "Montpelier station area",
+  "lat": 51.46834,
+  "lng": -2.58812,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Montpelier",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-parson-street",
+  "name": "Parson Street station area",
+  "lat": 51.43299,
+  "lng": -2.60854,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Parson Street",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-portway-park-and-ride",
+  "name": "Portway Park and Ride station area",
+  "lat": 51.48811,
+  "lng": -2.68756,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Portway Park and Ride",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-redland",
+  "name": "Redland station area",
+  "lat": 51.46838,
+  "lng": -2.59891,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Redland",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-sea-mills",
+  "name": "Sea Mills station area",
+  "lat": 51.4795,
+  "lng": -2.64965,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Sea Mills",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-shirehampton",
+  "name": "Shirehampton station area",
+  "lat": 51.48428,
+  "lng": -2.67893,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Shirehampton",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-st-andrews-road",
+  "name": "St Andrews Road station area",
+  "lat": 51.51245,
+  "lng": -2.69644,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "St Andrews Road",
+    "ORR"
+   ]
+  ]
+ },
+ {
+  "id": "st-stapleton-road",
+  "name": "Stapleton Road station area",
+  "lat": 51.46745,
+  "lng": -2.56632,
+  "stype": "transport_hub",
+  "anchors": [
+   [
+    "Stapleton Road",
+    "ORR"
+   ]
+  ]
+ }
+]

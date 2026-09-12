@@ -455,7 +455,7 @@ function renderPresets(){
   const sel=activePreset==="other"?OTHER:PRESETS.find(p=>p.id===activePreset);
   const ORDERED=[...PRESETS.slice(0,5),...PRESETS.slice(5).sort((a,b)=>a.name.localeCompare(b.name))]; /* first row curated, rest alphabetical */
   const pool=presetFilter==="all"?ORDERED:ORDERED.filter(p=>p.cat===presetFilter);
-  let visible=presetsExpanded?pool.slice():ORDERED.slice(0,PRESETS_VISIBLE);
+  let visible=presetsExpanded?pool.slice():[...ORDERED].sort((a,b)=>a.name.length-b.name.length||a.name.localeCompare(b.name)).slice(0,PRESETS_VISIBLE); /* default set: shortest names so the chips stay compact */
   if(sel&&sel.id!=="other"&&!visible.some(p=>p.id===sel.id)) visible.push(sel); /* keep the active preset on screen */
   const filterRow=presetsExpanded
     ? `<div class="preset-filters"><span class="pf-label">Filter by category:</span><button class="preset filter ${presetFilter==="all"?"active":""}" data-f="all">All</button>`

@@ -17,7 +17,7 @@ window.CITIES=[
  const cur=(window.CITIES.find(c=>c.url!=="/"&&path.indexOf(c.url)===0)||window.CITIES[0]).id;
  const nav=document.getElementById("citynav");
  if(nav){
-  nav.innerHTML='<span class="cn-label">Best area in the city of:</span>'+window.CITIES.map(c=>
+  nav.innerHTML='<span class="cn-label cn-full">Best area in the city of:</span><span class="cn-label cn-short">Area:</span>'+window.CITIES.map(c=>
    `<a href="${c.url}"${c.id===cur?' class="on"':''}>${c.name}</a>`).join("");
  }
 })();
